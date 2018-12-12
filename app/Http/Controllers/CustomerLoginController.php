@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customers;
+use App\Customer;
+use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class CustomerLoginController extends Controller
@@ -38,16 +39,16 @@ class CustomerLoginController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customers;
+        $customer = new Customer;
         $this->validate($request,[
             'email' => 'required',
             'password' => 'required',
         ]);
-      $customer = Auth::guard('customers')->attempt(['email'=>$request->email,'password'=> $request->password,'is_verified'=>'1']);
+      $customer = Auth::guard('customer')->attempt(['email'=>$request->email,'password'=> $request->password,'is_verified'=>'1']);
         if($customer){
             return redirect('/');
         }else{ 
-        Session::flash('status','Registered! But verify your email to activate your account');
+        Session::flash('status','Registered! But verify your email to activate your account or Wrong Username and Password');
         return redirect("/customer-login");  
 
         }

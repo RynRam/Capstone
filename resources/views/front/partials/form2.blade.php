@@ -28,28 +28,28 @@
           <div class="row section-bg">
             <div class="form">
               <div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">Contact Information</h3><div>
-              <form action="/basic-catering" method="post" role="form" class="contactForm">
+              <form action="{{action('FrontController@postCatering')}}" method="post" role="form" class="contactForm">
                   {{csrf_field()}}
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"  />
+                    <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"   value="{{ Auth::guard('customer')->user()->fname ?? '' }}"/>
                     <div class="validation"></div>
                   </div>
                     <div class="form-group col-md-6">
-                    <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" />
+                    <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" value="{{ Auth::guard('customer')->user()->lname ?? '' }}" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-md-12">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true" value="{{ Auth::guard('customer')->user()->email ?? '' }}">
                     <div class="validation"></div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true"  />
+                  <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true" value="{{ Auth::guard('customer')->user()->contact ?? '' }}" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" />
+                  <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" value="{{ Auth::guard('customer')->user()->address ?? '' }}"/>
                   <div class="validation"></div>
                 </div>
                 <h3 style="border-bottom: 1px solid #222;">Reservation Details</h3>

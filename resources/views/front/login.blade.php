@@ -31,6 +31,11 @@
   	        <div class="form">
   	        	<div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">FILL UP</h3><div>
   	          <form action="{{action('CustomerLoginController@store')}}" method="post" role="form" class="contactForm">
+             @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+            @endif
                   {{csrf_field()}}
   	            <div class="form-row">
   	              <div class="form-group col-md-12">

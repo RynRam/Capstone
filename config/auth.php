@@ -46,7 +46,7 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        'customers' => [
+        'customer' => [
             'driver' => 'session',
             'provider' => 'customers',
         ],
@@ -81,7 +81,7 @@ return [
         ],
         'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Customers::class,
+            'model' => App\Customer::class,
         ],
 
 

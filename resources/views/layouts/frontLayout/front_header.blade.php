@@ -37,14 +37,30 @@
             </ul>
           </li>
           <li><a href="{{url('/blog')}}">Blog</a></li>
-         
+         @if (Auth::guard('customer')->guest())
           <li class="menu-has-children"><a href="">Account</a>
             <ul>
               <li><a href="{{url('/customer-register')}}">Register</a></li>
               <li><a href="{{url('/customer-login')}}">Login</a></li>
             </ul>
           </li>
+         @else
+          <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
+            <ul>
+            <li>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
 
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            </ul>
+         </li>
+          @endif
         </ul>
 
       </nav><!-- #nav-menu-container -->
