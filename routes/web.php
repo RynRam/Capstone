@@ -89,7 +89,8 @@
 	Route::patch('/admin/venue/{venue}', 'VenueController@updateStatus'); 
 	//Manpower
 	Route::resource('/admin/manpower','ManpowerController');
-	Route::resource('/admin/manpower/roles','ManpowerRolesController');
+	Route::resource('/admin/manpowerroles','ManpowerRolesController');
+	Route::patch('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus'); 
 	Route::patch('/admin/manpower/{manpower}', 'ManpowerController@updateStatus'); 
 	Route::get('/admin/manpowerReserve1pdf','ManpowerController@pdf');
 	Route::get('/admin/manpowerReserve2pdf','ManpowerController@pdfreserve');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staffs;
+use App\ManpowerRoles;
 use PDF;
 class ManpowerController extends Controller
 {
@@ -52,7 +53,8 @@ class ManpowerController extends Controller
     }  
     public function create()
     {
-         return view('admin.manpower.create');
+        $roles = ManpowerRoles::where('is_active',1)->get();
+         return view('admin.manpower.create',compact('roles'));
     }
 
     /**
@@ -97,8 +99,9 @@ class ManpowerController extends Controller
      */
     public function edit($id)
     {
+        $roles = ManpowerRoles::where('is_active',1)->get();
         $staffs = Staffs::find($id);
-     return view('admin.manpower.edit',compact('staffs'));
+     return view('admin.manpower.edit',compact('staffs','roles'));
     }
 
     /**

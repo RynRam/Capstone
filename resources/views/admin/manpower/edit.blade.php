@@ -25,8 +25,9 @@
 	            <div class="col-md-6">
 	                <select name="role" class="form-control" style="width: 17%" >
 	                    <option value="{{$staffs->roles}}">{{$staffs->roles}}</option>
-	                    <option value="Chefs">Chefs</option>
-	                    <option value="Servers">Servers</option>
+		            	@foreach($roles as $role)
+		                    <option value="{{$role->name}}">{{$role->name}}</option>
+		                @endforeach
 	                </select> 
 	            </div>
 	        </div>

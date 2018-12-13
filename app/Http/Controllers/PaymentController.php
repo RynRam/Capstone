@@ -7,9 +7,9 @@ use App\Reservations;
 use App\Payments;
 class PaymentController extends Controller
 {
-             public function __construct()
+    public function __construct()
     {
-        $this->middleware(['admin','reservation','sales']);
+        $this->middleware('reservation');
 
        
     }
@@ -37,13 +37,13 @@ class PaymentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * @param  int  $id
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
+        $reservations = Reservations::find($id);
         $payments = new Payments;
         $this->validate($request,[
             'reserveid' => 'required',
@@ -58,9 +58,7 @@ class PaymentController extends Controller
         $payments->change = $request->change;
         $payments->balance = $request->balance;
         $payments->save();
-
         return redirect('admin/payment');
-  
     }
 
     /**

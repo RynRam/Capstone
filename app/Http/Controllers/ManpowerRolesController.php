@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\ManpowerRoles;
 class ManpowerRolesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('hr');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,8 +17,8 @@ class ManpowerRolesController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.manpower.roles.index');
+        $roles = ManpowerRoles::all();
+        return view('admin.manpower.roles.index',compact('roles'));
     }
 
     /**
@@ -35,7 +39,31 @@ class ManpowerRolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $roles = new ManpowerRoles;
+        $this->validate($request,[
+            'name' => 'required|unique:manpower_roles',
+             
+        ]);
+
+        $roles->name = $request->name;
+
+        $roles->save();
+
+        return redirect('admin/manpowerroles');
+    }
+
+    public function updateStatus(Request $request,$id){
+         $roles = ManpowerRoles::find($id);
+        if($roles->is_active == true){
+        $roles->is_active = false;
+        $roles->save();
+        return redirect('/admin/manpowerroles');
+        }
+        else if($roles->is_active == false){
+        $roles->is_active = true;
+        $roles->save();
+        return redirect('/admin/manpowerroles');
+        }
     }
 
     /**

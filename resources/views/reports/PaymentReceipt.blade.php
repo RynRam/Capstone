@@ -18,6 +18,7 @@
     <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->contact}}</p>
     <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->address}}</p>
     <br>
+
     <b>Payment Method: CASH</b>
     </div>
   

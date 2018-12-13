@@ -8,11 +8,10 @@ use App\Venues;
 use App\Inventory;
 class AuditController extends Controller
 {
-             public function __construct()
+    public function __construct()
     {
-        $this->middleware('audit');
-
-      } 
+        $this->middleware('admin');
+    } 
     /**
      * Display a listing of the resource.
      *

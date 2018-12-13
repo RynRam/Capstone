@@ -9,11 +9,11 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/manpower/roles" method="POST">
+		<form action="{{action('ManpowerRolesController@store')}}" method="POST">
 	      {{csrf_field()}}	@include('admin.partials.error')
 		    <div class="form-group">
 			    <label for="roles">Roles:</label>
-			    <input type="text" class="form-control" name="roles" id="roles">
+			    <input type="text" class="form-control" name="name" id="roles">
 		    </div>
 		  <input type="submit" value="submit" class="btn btn-success form-control" style="margin-top: 17px;">
 		</form>

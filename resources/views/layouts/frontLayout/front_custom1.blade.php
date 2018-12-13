@@ -26,7 +26,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
-
+  <link href="{{asset('css/frontend_css/jquery-ui.min.css')}}" rel="stylesheet">
+  <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -157,8 +158,18 @@
 
   <!-- Template Main Javascript File -->
   <script src="{{asset('js/frontend_js/main.js')}}"></script>
-
-          <script>
+  <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
+  <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+  <script>
+      var dateToday = new Date();
+      var dates = $("#datepicker").datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          minDate: dateToday
+      });
+</script>
+  <script>
 
 $(function() {
 

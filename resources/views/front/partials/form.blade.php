@@ -1,6 +1,6 @@
  <style type="text/css">
    #main{
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url(../../images/backend_images/Blogs/blog3.jpg) fixed center center;
+    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
     background-size: cover;
    }
    #services {
@@ -33,24 +33,24 @@
                   {{csrf_field()}}
   	            <div class="form-row">
   	              <div class="form-group col-md-6">
-  	                <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"   value="{{ Auth::guard('customer')->user()->fname ?? '' }}"/>
+  	                <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"   value="{{ Auth::guard('customer')->user()->fname ?? '' }}" readonly/>
   	                <div class="validation"></div>
   	              </div>
     	              <div class="form-group col-md-6">
-  	                <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" value="{{ Auth::guard('customer')->user()->lname ?? '' }}" />
+  	                <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" value="{{ Auth::guard('customer')->user()->lname ?? '' }}" readonly />
   	                <div class="validation"></div>
   	              </div>
   	              <div class="form-group col-md-12">
-  	                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true" value="{{ Auth::guard('customer')->user()->email ?? '' }}">
+  	                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true" value="{{ Auth::guard('customer')->user()->email ?? '' }}" readonly>
   	                <div class="validation"></div>
   	              </div>
   	            </div>
   	            <div class="form-group">
-  	              <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true" value="{{ Auth::guard('customer')->user()->contact ?? '' }}" />
+  	              <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true" value="{{ Auth::guard('customer')->user()->contact ?? '' }}" readonly />
   	              <div class="validation"></div>
   	            </div>
   	            <div class="form-group">
-  	              <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" value="{{ Auth::guard('customer')->user()->address ?? '' }}"/>
+  	              <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" value="{{ Auth::guard('customer')->user()->address ?? '' }}" readonly/>
   	              <div class="validation"></div>
   	            </div>
   	            <h3 style="border-bottom: 1px solid #222;">Reservation Details</h3>
@@ -221,8 +221,8 @@
                 <div class="col-md-12">
   	            <div class="form-group col-md-3" style="display: inline-block;">
   	            	<label >Event Schedule</label>
-  			 		  <input type="date" id="schedule" class="form-control fa fa-calendar" name="schedule" placeholder="Schedule" value="<?php date_default_timezone_set('Asia/Manila'); echo date('Y-m-d'); ?>">
-  	            </div>
+                  <input type="text" id="datepicker" name="schedule" class="form-control" readonly/>
+                </div>
   	            <div class="form-group col-md-2" style="display: inline-block;">
                 <label >Event Venue</label>
                 <select class="form-control" name="venuename" id="select">

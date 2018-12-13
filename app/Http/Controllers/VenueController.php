@@ -12,7 +12,7 @@ class VenueController extends Controller
 {
          public function __construct()
     {
-        $this->middleware('venue');
+        $this->middleware('admin');
 
        
     }

@@ -27,6 +27,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('css/frontend_css/jquery-ui.min.css')}}" rel="stylesheet">
+  <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -154,6 +156,22 @@
   <script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
   <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
   <script src="{{asset('lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+  <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
+  <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+  <script>
+$(function() {
+$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+});
+var dateToday = new Date();
+var dates = $("#datepicker").datepicker({
+    defaultDate: "+1w",
+    changeMonth: true,
+    numberOfMonths: 1,
+    minDate: dateToday,
+    format: "yy-mm-dd"
+});
+
+</script>
 
   <!-- Template Main Javascript File -->
   <script src="{{asset('js/frontend_js/main.js')}}"></script>
@@ -172,6 +190,7 @@
             }
             
         </script> -->
+
         <script>
 
 $(function() {
