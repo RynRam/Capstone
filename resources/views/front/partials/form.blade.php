@@ -28,8 +28,8 @@
 
           <div class="row section-bg">
   	        <div class="form">
-  	        	<div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">Contact Information</h3><div>
-  	          <form action="{{action('FrontController@postCatering')}}" method="post" role="form" class="contactForm">
+  	        	<div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">Contact Information( @if (session('status')){{ session('status') }}@endif)</h3><div>
+            <form action="{{action('FrontController@postCatering')}}" method="post" role="form" class="contactForm" id="fillform"> <!-- id = fillform -->
                   {{csrf_field()}}
   	            <div class="form-row">
   	              <div class="form-group col-md-6">
@@ -249,6 +249,7 @@
   	              <div class="validation"></div>
   	            </div>
                 </div>
+                <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
                 <div class="form-group text-center">
   	            <input type="submit" class="reserve-button" value="Send Reservation">
                 </div>

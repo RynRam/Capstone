@@ -164,7 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
-
+        
         /*
          * Package Service Providers...
          */
@@ -181,6 +181,7 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         OwenIt\Auditing\AuditingServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
     ],
 
     /*
@@ -234,6 +235,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
     ],
 
 ];

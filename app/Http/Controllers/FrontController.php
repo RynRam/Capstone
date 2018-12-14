@@ -12,6 +12,8 @@ use App\Reservations;
 use App\Reserves;
 use App\Discounts;
 use Calendar;
+use Session;
+use GuzzleHttp\Client;
 class FrontController extends Controller
 {
     public function getIndex(){
@@ -93,7 +95,7 @@ class FrontController extends Controller
             'schedule' => 'required',
             'category' => 'required',
             'people' => 'required',
-
+            'g-recaptcha-response'=> 'required',
         ]);
         $reservations->fname = $request->fname;
         $reservations->lname = $request->lname;
@@ -106,9 +108,31 @@ class FrontController extends Controller
         $reservations->category_id = $request->category;
         $reservations->guest = $request->people;
         $reservations->total = ($reservations->guest * $reservations->package->price);
-        $reservations->save();
+        $token = $request->input('g-recaptcha-response');
+        if ($token > 0){
+            $client = new Client();
+            $response = $client->post('https://www.google.com/recaptcha/api/siteverify',[
+            'form_params' => array(
+                'secret' => '6LdhPIEUAAAAAAT2upoo9qyMTsrs3X-t_Ttv2udc',
+                'response' => $token
+            )
+            ]);
+            $result = json_decode($response->getBody()->getContents());
+            if($result->success){
+                $reservations->save();
+                Session::flash('status','reservation sent!');
+                return redirect()->back();
+            }else{
+                Session::flash('error','You are probably a robot!');
+                return redirect()->back();
+            }
 
-        return redirect()->back();
+        }else{ 
+            return redirect()->back();
+        }
+       
+     
+      
 
     }
 

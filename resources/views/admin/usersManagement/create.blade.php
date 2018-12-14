@@ -44,11 +44,8 @@
 	                <select name="role" class="form-control" style="width: 17%" >
 	                    <option value="admin">Admin</option>
 	                    <option value="reservation">Reservation</option>
-	                    <option value="logistic">Logistic</option>
-	                    <option value="hr">Human Resource</option>
-	                    <option value="venue">Venue</option>
-	                    <option value="account">Account</option>
-	                    <option value="audit">Audit</option>
+	                    <option value="logistic">Inventory</option>
+	                    <option value="hr">Manpower</option>
 	                </select> 
 	            </div>
 	        </div>

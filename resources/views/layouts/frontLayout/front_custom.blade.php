@@ -29,7 +29,7 @@
   <link href="{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
   <link href="{{asset('css/frontend_css/jquery-ui.min.css')}}" rel="stylesheet">
   <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -159,57 +159,40 @@
   <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
   <script>
-$(function() {
-$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
-});
-var dateToday = new Date();
-var dates = $("#datepicker").datepicker({
-    defaultDate: "+1w",
-    changeMonth: true,
-    numberOfMonths: 1,
-    minDate: dateToday,
-    format: "yy-mm-dd"
-});
-
+  $(function() {
+  $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+  var dateToday = new Date();
+  var dates = $("#datepicker").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      minDate: dateToday,
+      format: "yy-mm-dd"
+  });
 </script>
-
+  <script>
+  $(function() {
+      $('#add').on('click', function(){
+          var changed = this;
+      console.log(changed);
+          var select = $('#venue').val();
+          $('#select').append('<option value='+select+' selected>'+select+'</option>');
+      });
+  });
+</script>
+<script>
+  $(function(){
+    $('#fillform').submit(function(event){
+      var verified = grecaptcha.getResponse();
+      if(verified.length === 0){
+        event.preventDefault();
+      } 
+    });
+  });
+</script>
   <!-- Template Main Javascript File -->
   <script src="{{asset('js/frontend_js/main.js')}}"></script>
- <!--  <script>
-            
-            function insertValue()
-            {
-                var select = document.getElementById("select"),
-                    txtVal = document.getElementById("val").value,
-                    newOption = document.createElement("OPTION"),
-                    newOptionVal = document.createTextNode(txtVal);
-                    newOption.value = txtVal;
-             
-                newOption.appendChild(newOptionVal);
-                select.insertBefore(newOption,select.firstChild);
-            }
-            
-        </script> -->
-
-        <script>
-
-$(function() {
-
-    $('#add').on('click', function(){
-        var changed = this;
-    console.log(changed);
-        var select = $('#venue').val();
-        $('#select').append('<option value='+select+' selected>'+select+'</option>');
-
-
-
-
-    });
-});
-
- 
-</script>
-
 
   <!-- Scripts -->
 <script src="http://code.jquery.com/jquery.js"></script>
