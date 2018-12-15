@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Staffs;
 use App\ManpowerRoles;
 use PDF;
+use App\Reservations;
 class ManpowerController extends Controller
 {
 
@@ -21,11 +22,15 @@ class ManpowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   date_default_timezone_set('Asia/Manila');
+        $todaydate = date("Y-m-d");
+        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',1)->first();
+        $reservationsIncoming2 = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',1)->skip(1)->first();
+        
         $staffs = Staffs::all();
         $assign1 = Staffs::where('is_assign','Assign 1')->where('is_active',1)->get();
         $assign2 = Staffs::where('is_assign','Assign 2')->where('is_active',1)->get();
-        return view ('admin.manpower.index',compact('staffs','assign1','assign2'));
+        return view ('admin.manpower.index',compact('staffs','assign1','assign2','reservationsIncoming','reservationsIncoming2'));
     }
 
     /**

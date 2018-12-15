@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6));
   position: absolute;
   height: 100%;
   width: 100%;
@@ -533,7 +533,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 .section-header h3 {
   font-size: 32px;
-  color: #111;
+  color: #fff;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -1357,4 +1357,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     color: #fff;
     transition: 0.4s;
     cursor: pointer;
+}
+.g-recaptcha div{
+  margin: 0 auto;
 }

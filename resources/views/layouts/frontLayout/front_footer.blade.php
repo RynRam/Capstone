@@ -4,20 +4,61 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info text-center">
-            <h4>Clients Feedback</h4>
-           <div><img src="{{asset('images/logo2.png')}}" alt="" title="" / style="padding-top: 20px;"></div>
- <!--          <form method="" post="" style="padding:20px;background:#666;">
-            {{csrf_field()}}
-            <div class="form-group">
-              <input type="text" name="uname" placeholder="Name"  class="form-control">
-            </div>
-            <div class="form-group">
-              <textarea rows="5" cols="10" class="form-control" placeholder="Comments"></textarea>
-            </div>
-             <input type="submit" class="btn btn-success" value="SEND" style="margin-top: 2px;text-align: left;">
-          </form> -->
-          </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Payments</h4>
+            <ul>
+              <li>        
+              <div id="paypal-button" style="margin:0 auto;"></div>
+              <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+              <script>
+                paypal.Button.render({
+                  // Configure environment
+                  env: 'sandbox',
+                  client: {
+                    sandbox: 'AWbHet5U6VqpDjQ37uksQ7CFs7VlLfu6Hto088Mmf1xO_LOgRbnJhagtXmUjr1FYa5dDjDJlSucsa3Qi',
+                    production: 'demo_production_client_id'
+                  },
+                  // Customize button (optional)
+                  locale: 'en_US',
+                  style: {
+                    size: 'medium',
+                    color: 'gold',
+                    shape: 'pill',
+                  },
+              
+                  // Enable Pay Now checkout flow (optional)
+                  commit: true,
+              
+                  // Set up a payment
+                  payment: function(data, actions) {
+                    return actions.payment.create({
+                        redirect_urls:{
+                          return_url:'http://localhost:8000/execute-payment'
+                        },
+                      transactions: [{
+                        amount: {
+                          total: '10000',
+                          currency: 'PHP'
+                        }
+                      }]
+                    });
+                  },
+                  // Execute the payment
+                  onAuthorize: function(data, actions) {
+                    return actions.redirect();
+                    // return actions.payment.execute().then(function() {
+                      // Show a confirmation message to the buyer
+                      // window.alert('Thankyou For Paying Reservation Fee!');
+                    // });
+                  }
+                }, '#paypal-button');
+              
+              </script>
+              </li>
+
+
+            </ul>
+        </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Help & Support</h4>
@@ -53,7 +94,6 @@
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe" disabled="true">
             </form>
-            
           </div>
 
         </div>

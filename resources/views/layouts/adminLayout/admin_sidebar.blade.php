@@ -42,6 +42,7 @@
     </ul>
   </li>
   <li> <a href="{{url('/admin/user')}}"><i class="icon icon-group"></i> <span>User Management</span> <span class="label label-important"></span></a></li>
+  <li> <a href="{{url('/admin/customers')}}"><i class="icon icon-group"></i> <span>Customers</span> <span class="label label-important"></span></a></li>
   <li> <a href="{{url('/admin/audit')}}"><i class="icon icon-book"></i> <span>Audit Trail</span> <span class="label label-important"></span></a></li>
 
          @endif

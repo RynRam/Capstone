@@ -95,9 +95,63 @@
       <div class="container">
         <div class="row">
 
+        <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Payments</h4>
+            <ul>
+              <li>        
+              <div id="paypal-button" style="margin:0 auto;"></div>
+              <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+              <script>
+                paypal.Button.render({
+                  // Configure environment
+                  env: 'sandbox',
+                  client: {
+                    sandbox: 'AWbHet5U6VqpDjQ37uksQ7CFs7VlLfu6Hto088Mmf1xO_LOgRbnJhagtXmUjr1FYa5dDjDJlSucsa3Qi',
+                    production: 'demo_production_client_id'
+                  },
+                  // Customize button (optional)
+                  locale: 'en_US',
+                  style: {
+                    size: 'medium',
+                    color: 'gold',
+                    shape: 'pill',
+                  },
+              
+                  // Enable Pay Now checkout flow (optional)
+                  commit: true,
+              
+                  // Set up a payment
+                  payment: function(data, actions) {
+                    return actions.payment.create({
+                        redirect_urls:{
+                          return_url:'http://localhost:8000/execute-payment'
+                        },
+                      transactions: [{
+                        amount: {
+                          total: '20',
+                          currency: 'PHP'
+                        }
+                      }]
+                    });
+                  },
+                  // Execute the payment
+                  onAuthorize: function(data, actions) {
+                    return actions.redirect();
+                    // return actions.payment.execute().then(function() {
+                      // Show a confirmation message to the buyer
+                      // window.alert('Thankyou For Paying Reservation Fee!');
+                    // });
+                  }
+                }, '#paypal-button');
+              
+              </script>
+              </li>
 
 
-          <div class="col-lg-4 col-md-6 footer-links">
+            </ul>
+        </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Help & Support</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="/">Home</a></li>
@@ -108,7 +162,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-contact">
+          <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
               <strong>Address: </strong>254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100<br/>
@@ -125,7 +179,7 @@
 
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <div class="col-lg-3 col-md-6 footer-newsletter">
             <h4>Join Our Mailing List</h4>
             <p>Receive invitations, updates and news</p>
             <form action="" method="post">

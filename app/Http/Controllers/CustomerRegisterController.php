@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Customers;
+use App\Customer;
 use Mail;
 use App\Mail\Verifyemail;
 use Session;
@@ -52,7 +52,7 @@ class CustomerRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customers;
+        $customer = new Customer;
         $this->validate($request,[
             'fname' => 'required',
             'lname' => 'required',
@@ -68,16 +68,16 @@ class CustomerRegisterController extends Controller
             $customer->verification_token = Str::random(40);
             $customer->password = bcrypt($request->password);
         $customer->save();
-        $insertedCustomer = Customers::findOrFail($customer->id);
+        $insertedCustomer = Customer::findOrFail($customer->id);
         $this->sendEmail($insertedCustomer);
         Session::flash('status','Registered! But verify your email to activate your account');
         return redirect("/customer-login");
     }
     public function sendEmailDone($email, $verification_token)
     {
-        $customer = Customers::where(['email'=>$email,'verification_token'=>$verification_token])->first();
+        $customer = Customer::where(['email'=>$email,'verification_token'=>$verification_token])->first();
         if($customer){
-            Customers::where(['email'=>$email,'verification_token'=>$verification_token])->update(['is_verified'=>'1','verification_token'=>NULL]);
+            Customer::where(['email'=>$email,'verification_token'=>$verification_token])->update(['is_verified'=>'1','verification_token'=>NULL]);
             return redirect("/customer-login");
         }else{
             'user not found';

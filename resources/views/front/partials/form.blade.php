@@ -17,7 +17,7 @@
 }
 
  </style> 
-  <main id="main" class="wow fadeInUp">
+  <main id="main">
   	  <section id="form">
         <div class="container">
 
@@ -257,7 +257,10 @@
   	        </div>
           </div>
         </div>
+      
+
 	    </section><!-- #form -->
+      
 <div class="col-md-8" style="margin: 0 auto;background: #fff;border-radius: 8px;color: #000;">{!! $calendar_details->calendar() !!}</div>
 
 

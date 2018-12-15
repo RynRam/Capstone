@@ -48,7 +48,7 @@ class UserController extends Controller
            'name' => 'required|string|max:255',
            'email' => 'required|string|email|max:255|unique:users',
            'password' => 'required|string|min:6|confirmed',
-           'role' => 'required|in:admin,reservation,sales,logistic,hr,venue,account,audit', 
+           'role' => 'required|in:admin,reservation,sales,inventory,manpower,venue,account,audit', 
         ]);
         $users->name = $request->name;
         $users->email = $request->email;

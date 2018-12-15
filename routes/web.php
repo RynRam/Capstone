@@ -27,7 +27,7 @@
 	
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');
-	
+	Route::get('/execute-payment','CustomerPaymentController@execute');
 	// Route::post('/customer-login', 'CustomersLoginController@logout');
 	// Route::get('/customer-login', 'CustomersLoginController@showLoginForm');
 	// Route::post('/', 'CustomersLoginController@login');
@@ -104,4 +104,6 @@
 	//Payment
 	Route::resource('/admin/payment','PaymentController');
 	Route::get('/admin/Paymentpdf','PaymentController@pdf');
+	//Customer
+	Route::resource('/admin/customers','AdminCustomerController');
 Route::get('/logout', 'AdminController@logout')->middleware('auth');

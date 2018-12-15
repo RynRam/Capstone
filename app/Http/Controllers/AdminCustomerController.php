@@ -3,31 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Audits;
-use App\Venues;
-use App\Reservations;
-use App\Inventory;
-use App\EventCategories;
-class AuditController extends Controller
+use App\Customer;
+class AdminCustomerController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('admin');
-    } 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    $reservation = Reservations::first();
-         $ecategories = EventCategories::first();
-         $inventory = Inventory::first();
-         $audit = $inventory->audits;
-         $reservations = $reservation->audits;
-         $ecategories = $ecategories->audits;
-         // return $audits;
-        return view('admin.audit.index',compact('audit','reservations','ecategories'));
+    {
+        $customers=  Customer::all();
+        return view('admin.customer.index',compact('customers'));
     }
 
     /**

@@ -61,7 +61,7 @@
       <div class="span6">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Reservation 1</h5>
+            <h5>{{$reservationsIncoming->eventdate ?? ''}} | {{$reservationsIncoming->lname ?? ''}} | {{$reservationsIncoming->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming->guest ?? ''}} | @ {{$reservationsIncoming->venuename ?? ''}}</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
@@ -101,7 +101,7 @@
       <div class="span6">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Reservation 2</h5>
+            <h5>{{$reservationsIncoming2->eventdate ?? ''}} | {{$reservationsIncoming2->lname ?? ''}} | {{$reservationsIncoming2->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming2->guest ?? ''}} | @ {{$reservationsIncoming2->venuename ?? ''}}</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">

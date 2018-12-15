@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Customers;
+use App\Customer;
 class Verifyemail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -18,7 +18,7 @@ class Verifyemail extends Mailable
      */
     public $customer;
 
-    public function __construct(Customers $customer)
+    public function __construct(Customer $customer)
     {
         $this->customer = $customer;
     }
