@@ -54,7 +54,9 @@
 
                 <div class="form-group text-center">
   	            <input type="submit" class="reserve-button" value="Login">
+                <a href="/customer-register"><h5><u> Not Registered Yet? Click here</u></h5></a>
                 </div>
+                
   	          </form>
   	        </div>
           </div>

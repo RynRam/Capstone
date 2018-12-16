@@ -16,7 +16,7 @@ class Logistic
     public function handle($request, Closure $next)
     {
         $user = $request->user(); 
-        if ($user && ($user->role_id == 'logistic' || $user->role_id == 'admin')   ) {
+        if ($user && ($user->role_id == 'inventory' || $user->role_id == 'admin')   ) {
            return $next($request);
         }else if ($user && $user->role_id == 'hr') {
             return redirect('admin/manpower');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 class UserController extends Controller
 {
          public function __construct()
@@ -55,7 +56,8 @@ class UserController extends Controller
         $users->role_id = $request->role;
         $users->password = bcrypt($request->password);
         $users->save();
-        return redirect('/admin');
+        Session::flash('status','Account Created!');
+        return redirect()->back();
     }
 
     /**

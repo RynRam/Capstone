@@ -43,17 +43,14 @@
   	                <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" />
   	                <div class="validation"></div>
   	              </div>
-                  <div class= "form-group col-md-6 {{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" class="form-control" name="password" placeholder="password" required>
+                  <div class= "form-group col-md-12 {{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                         @if ($errors->has('password'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                         @endif
                    </div>
-                    <div class="form-group col-md-6">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="password confirmation" required>
-                    </div>
   	              <div class="form-group col-md-12">
   	                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true">
   	                <div class="validation"></div>

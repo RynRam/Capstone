@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro .carousel-item::before {
   content: '';
-  background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6));
+  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7));
   position: absolute;
   height: 100%;
   width: 100%;
@@ -580,7 +580,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #featured-services{
   padding: 40px 0;
-      background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+      background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
   
 }
@@ -627,7 +627,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
 
   position: relative;
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -717,7 +717,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services {
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -872,7 +872,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #skills {
   padding: 60px 0;
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -881,7 +881,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Portfolio Section
 --------------------------------*/
 #portfolio{
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -1030,7 +1030,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #feedbacks {
   padding: 60px 0;
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
 }
 
@@ -1111,7 +1111,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #contact{
     padding: 60px 0;
-        background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
+        background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
   background-size: cover;
 }
 
@@ -1328,7 +1328,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*form*/
 #form{
    padding: 40px 0;
-  background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
    background-size: cover;
 }
 #form .section-header p {

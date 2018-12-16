@@ -43,7 +43,7 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        $reservations = Reservations::find($id);
+        //someone added
         $payments = new Payments;
         $this->validate($request,[
             'reserveid' => 'required',

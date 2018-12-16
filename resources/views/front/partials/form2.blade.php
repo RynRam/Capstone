@@ -1,17 +1,17 @@
 <style type="text/css">
    #main{
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
     background-size: cover;
    }
    #services {
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
         #about {
 
   position: relative;
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
   background-size: cover;
   padding: 40px 0;
 }
@@ -248,7 +248,10 @@
                   <div class="validation"></div>
                 </div>
                 </div>
+                @if (Auth::guard('customer')->guest())
+                @else
                 <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
+                @endif
                 <div class="form-group text-center">
                 <button type="submit" class="reserve-button">Send Reservation</button>
                 </div>

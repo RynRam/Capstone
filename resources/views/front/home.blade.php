@@ -111,7 +111,7 @@
     }
     </style>
  <!-- Featured Services -->
-    <section id="featured-services" class="wow fadeInUp">
+    <section id="featured-services" >
       <div class="container">
         <header class="section-header">
           <h3>Discounts & Promotions</h3>

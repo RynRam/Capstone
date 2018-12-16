@@ -45,8 +45,10 @@
             </ul>
           </li>
          @else
-          <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
+          <li><a href=""><i class="ion-ios-contact" ></i> {{ Auth::guard('customer')->user()->fname }} </a>
+          
             <ul>
+            <!-- <li><a href="{{url('/customer-calendar')}}">Calendar</a></li> -->
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -58,6 +60,7 @@
                     {{ csrf_field() }}
                 </form>
             </li>
+           
             </ul>
          </li>
           @endif

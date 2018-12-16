@@ -16,7 +16,7 @@ class HR
     public function handle($request, Closure $next)
     {
         $user = $request->user(); 
-        if ($user && ($user->role_id == 'hr' || $user->role_id == 'admin')   ) {
+        if ($user && ($user->role_id == 'manpower' || $user->role_id == 'admin')   ) {
            return $next($request);
         }else if ($user && $user->role_id == 'venue') {
             return redirect('admin/venue');

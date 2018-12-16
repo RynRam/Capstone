@@ -47,7 +47,7 @@
 
          @endif
 
-        @if(Auth::user()->role_id=="logistic")
+        @if(Auth::user()->role_id=="inventory")
   <li ><a href="{{url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
   <li class="submenu"><a><i class="icon  icon-edit"></i> <span>Posts</span></a>
         <ul>
@@ -85,7 +85,7 @@
     @endif
 
 
-        @if(Auth::user()->role_id=="hr")
+        @if(Auth::user()->role_id=="manpower")
   <li ><a href="{{url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
   <li class="submenu"><a><i class="icon  icon-edit"></i> <span>Posts</span></a>
         <ul>
