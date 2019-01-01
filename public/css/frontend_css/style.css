@@ -1053,7 +1053,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #000;
+  color: #fff;
 }
 
 #feedbacks .testimonial-item h4 {
@@ -1137,7 +1137,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 #contact .contact-info a {
@@ -1150,6 +1150,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
   margin-bottom: 20px;
+  background: rgba(255,255,255,0.5);
+  
 }
 
 @media (min-width: 768px) {
@@ -1334,7 +1336,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #form .section-header p {
     text-align: center;
     padding-bottom: 30px;
-    color: #000;
+    color: #fff;
 }
 #form .section-bg {
   border-radius: 7px;

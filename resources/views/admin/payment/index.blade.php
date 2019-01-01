@@ -24,7 +24,7 @@
                   <th>Name</th>
                   <th>Payment</th>
                   <th>Percentage</th>
-                  <th>Change</th>
+                  <th>Amount Due</th>
                   <th>Balance</th>
                   <th>Method of Payment</th>
                   <th>Invoice Date</th>

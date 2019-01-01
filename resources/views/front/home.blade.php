@@ -474,7 +474,7 @@
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100</address>
+              <address>254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100 </address>
             </div>
           </div>
 
@@ -482,7 +482,7 @@
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p>0927 999 2081</p>
+              <p>0927 999 2081</p><br/>
             </div>
           </div>
 
@@ -490,7 +490,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p>Lynagailscater@gmail.com</p>
+              <p>Lynagailscater@gmail.com</p><br/>
             </div>
           </div>
 

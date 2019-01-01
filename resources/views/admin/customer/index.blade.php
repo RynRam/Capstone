@@ -20,11 +20,13 @@
             <table class="table table-bordered data-table">
               <thead>
                 <tr>
+                  <th>ID</th>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Contact</th>
                   <th>Address</th>
                   <th>Email</th>
+                  <th>Verification Status</th>
                   <th>Date Added</th>
                   <th>Date Updated</th>
                 </tr>
@@ -32,11 +34,13 @@
               <tbody>
                 @foreach($customers as $customer)
                     <tr>
+                    <td>Customer ID no. {{$customer->id}}</td>
                     <td>{{$customer->fname}}</td>
                   <td>{{$customer->lname}}</td>
                   <td>{{$customer->contact}}</td>
                   <td>{{$customer->address}}</td>
                   <td>{{$customer->email}}</td>
+                  <td>{{$customer->is_verified ? 'Verified' : 'Needs Email Verification'}}</td>
                   <td>{{$customer->created_at}}</td>
                   <td>{{$customer->updated_at}}</td>
                     </tr>

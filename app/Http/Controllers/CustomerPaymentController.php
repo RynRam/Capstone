@@ -32,10 +32,10 @@ class CustomerPaymentController extends Controller
 
         $details->setShipping(1.2)
                 ->setTax(1.3)
-                ->setSubtotal(9997.50);
+                ->setSubtotal(4997.50);
 
         $amount->setCurrency('PHP');
-        $amount->setTotal(10000);
+        $amount->setTotal(5000);
         $amount->setDetails($details);
         $transaction->setAmount($amount);
 

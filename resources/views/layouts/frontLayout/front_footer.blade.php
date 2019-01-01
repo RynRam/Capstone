@@ -37,7 +37,7 @@
                         },
                       transactions: [{
                         amount: {
-                          total: '10000',
+                          total: '5000',
                           currency: 'PHP'
                         }
                       }]

@@ -131,7 +131,7 @@
                         },
                       transactions: [{
                         amount: {
-                          total: '20',
+                          total: '5000',
                           currency: 'PHP'
                         }
                       }]
@@ -216,10 +216,14 @@
   <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
   <script>
+  function addDays(dateObj, numDays) {
+   dateObj.setDate(dateObj.getDate() + numDays);
+   return dateObj;
+}
   $(function() {
   $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
   });
-  var dateToday = new Date();
+  var dateToday = addDays(new Date(), 7)
   var dates = $("#datepicker").datepicker({
       defaultDate: "+1w",
       changeMonth: true,

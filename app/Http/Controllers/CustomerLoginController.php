@@ -48,7 +48,7 @@ class CustomerLoginController extends Controller
         if($customer){
             return redirect('/');
         }else{ 
-        Session::flash('status','Registered! But verify your email to activate your account or Wrong Username and Password');
+        Session::flash('status','The username or password you have entered is incorrect or your account is not verified.');
         return redirect("/customer-login");  
 
         }

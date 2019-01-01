@@ -60,6 +60,7 @@ class CustomerRegisterController extends Controller
             'contact' => 'required|size:11',
             'address' => 'required',
         ]);
+        
             $customer->lname = $request->lname;
             $customer->fname = $request->fname;
             $customer->contact = $request->contact;
@@ -70,7 +71,7 @@ class CustomerRegisterController extends Controller
         $customer->save();
         $insertedCustomer = Customer::findOrFail($customer->id);
         $this->sendEmail($insertedCustomer);
-        Session::flash('status','Registered! But verify your email to activate your account');
+        Session::flash('status','Please verify your email before logging in.');
         return redirect("/customer-login");
     }
     public function sendEmailDone($email, $verification_token)
