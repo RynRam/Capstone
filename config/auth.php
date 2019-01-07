@@ -112,10 +112,10 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'admins' => [
-            'provider' => 'admins',
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_resets',
-            'expire' => 15,
+            'expire' => 60,
         ],
     ],
 ];

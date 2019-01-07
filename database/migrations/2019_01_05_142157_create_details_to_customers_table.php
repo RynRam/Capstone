@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomerAccountTable extends Migration
+class CreateDetailsToCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,16 +15,19 @@ class CreateCustomerAccountTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('fname');
             $table->string('lname');
             $table->string('contact');
+            $table->string('facebook')->default(null);
+            $table->string('twitter')->default(null);
+            $table->string('gplus')->default(null);
             $table->string('address');
-            $table->string('is_verified'); // default value 0 (false)
-            $table->string('verification_token'); // based sa tuts
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('is_verified'); // default value 0 (false)
+            $table->string('verification_token'); // based sa tuts
             $table->rememberToken();
+            $table->timestamps();
         });
     }
 

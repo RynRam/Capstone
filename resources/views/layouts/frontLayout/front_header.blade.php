@@ -30,7 +30,7 @@
             <ul>
               <li><a href="{{url('/debutA')}}">Debut A</a></li>
               <li><a href="{{url('/debutB')}}">Debut B</a></li>
-              <li><a href="{{url('/debutC')}}">Debut C</a></li>
+              
               <li><a href="{{url('/classA')}}">Wedding A</a></li>
               <li><a href="{{url('/classB')}}">Wedding B</a></li>
               <li><a href="{{url('/classC')}}">Wedding C</a></li>
@@ -45,22 +45,19 @@
             </ul>
           </li>
          @else
-          <li><a href=""><i class="ion-ios-contact" ></i> {{ Auth::guard('customer')->user()->fname }} </a>
-          
+          <li class="menu-has-children"><a href=""><i class="ion-ios-contact" ></i> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
-            <!-- <li><a href="{{url('/customer-calendar')}}">Calendar</a></li> -->
-            <li>
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-           
+              <li><a href="{{url('/debutC')}}">Debut C</a></li>
+              <li>
+                  <a href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+              </li>
             </ul>
          </li>
           @endif

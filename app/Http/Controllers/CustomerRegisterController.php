@@ -66,6 +66,10 @@ class CustomerRegisterController extends Controller
             $customer->contact = $request->contact;
             $customer->address = $request->address;
             $customer->email = $request->email;
+            $customer->facebook = $request->facebook;
+            $customer->twitter = $request->twitter;
+            $customer->gplus = $request->gplus;
+            $customer->is_verified = 0;
             $customer->verification_token = Str::random(40);
             $customer->password = bcrypt($request->password);
         $customer->save();

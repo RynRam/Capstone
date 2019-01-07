@@ -1,26 +1,7 @@
 @extends('layouts.frontLayout.front_custom_account')
 @section('content')
-
- <style type="text/css">
-   #main{
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url(../../images/backend_images/Blogs/blog3.jpg) fixed center center;
-    background-size: cover;
-   }
-   #services {
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
-  background-size: cover;
-  padding: 40px 0;
-}
-        #about {
-
-  position: relative;
-    background: linear-gradient(rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.6)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
-  background-size: cover;
-  padding: 40px 0;
-}
-
- </style> 
-  <main id="main" class="wow fadeInUp">
+@include('front.partials.accountStyle')
+ <main id="main" class="wow fadeInUp">
   	  <section id="form">
         <div class="container">
 
@@ -29,47 +10,45 @@
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>
 
-          <div class="row section-bg">
-  	        <div class="form">
-  	        	<div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">FILL UP</h3><div>
-  	          <form action="{{action('CustomerRegisterController@store')}}" method="post" role="form" class="contactForm">
-                  {{csrf_field()}}
-  	            <div class="form-row">
-  	              <div class="form-group col-md-6">
-  	                <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"  />
-  	                <div class="validation"></div>
-  	              </div>
-    	              <div class="form-group col-md-6">
-  	                <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" />
-  	                <div class="validation"></div>
-  	              </div>
-                  <div class= "form-group col-md-12 {{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
-                   </div>
-  	              <div class="form-group col-md-12">
-  	                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true">
-  	                <div class="validation"></div>
-  	              </div>
-  	            </div>
-  	            <div class="form-group">
-  	              <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true"  />
-  	              <div class="validation"></div>
-  	            </div>
-  	            <div class="form-group">
-  	              <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" />
-  	              <div class="validation"></div>
-  	            </div>
-                <div class="form-group text-center">
-  	            <input type="submit" class="reserve-button" value="Register">
-                </div>
-  	          </form>
-  	        </div>
-          </div>
+         
+            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form" >
+	 {{csrf_field()}}
+                <!-- progressbar -->
+                <ul id="progressbar">
+                  <li class="active">Account Setup</li>
+                  <li>Social Profiles</li>
+                  <li>Personal Details</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                  <h2 class="fs-title">Create your account</h2>
+                  <h3 class="fs-subtitle">This is step 1</h3>
+                  <input type="email" name="email" placeholder="Email" required/>
+                  <input type="password" name="password" placeholder="Password" required/>
+                  <input type="password" name="cpass" placeholder="Confirm Password" />
+                  <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                  <h2 class="fs-title">Social Profiles</h2>
+                  <h3 class="fs-subtitle">Your presence on the social network</h3>
+                  <input type="text" name="twitter" placeholder="Twitter" />
+                  <input type="text" name="facebook" placeholder="Facebook" />
+                  <input type="text" name="gplus" placeholder="Google Plus" />
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
+                  <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+                <fieldset>
+                  <h2 class="fs-title">Personal Details</h2>
+                  <h3 class="fs-subtitle">We will never sell it</h3>
+                  <input type="text" name="fname" placeholder="First Name" required />
+                  <input type="text" name="lname" placeholder="Last Name" required />
+                  <input type="text" name="contact" placeholder="Phone" required />
+                  <textarea name="address" placeholder="Address" required></textarea>
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
+                  <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                </fieldset>
+             </form>
+          
         </div>
 	    </section><!-- #form -->
 

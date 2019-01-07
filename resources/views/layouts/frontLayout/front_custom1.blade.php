@@ -38,9 +38,10 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="{{url('/')}}" class="scrollto">Lynagails Catering</a></h1>
+        <!-- <h1><a href="{{url('/')}}" class="scrollto">Lynagails Catering</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <!-- <a href="#intro"><img src="{{asset('images/backend_images/logo.png')}}" alt="" title="" /></a> -->
+         <a href="#intro"><img src="{{asset('images/logo2.png')}}" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
