@@ -21,6 +21,9 @@
                   <input type="email" name="email" placeholder="Email" required/>
                   <input type="password" name="password" placeholder="Password" required/>
                   <input type="submit" name="submit" class="submit action-button" value="Login" />
+                  <a class="btn btn-link" href="{{ route('customer.password.request') }}">
+                                    Forgot Your Password?
+                                </a>
               </fieldset>
              </form>
           

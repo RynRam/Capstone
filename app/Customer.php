@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use OwenIt\Auditing\Contracts\Auditable;
-
+use App\Notifications\CustomerResetPasswordNotification;
 class Customer extends Authenticatable implements Auditable
 {
     use \OwenIt\Auditing\Auditable; 
@@ -17,7 +18,7 @@ class Customer extends Authenticatable implements Auditable
      * @var array
      */
 
-    protected $fillable = ['fname','lname','address','contact','password','email'];
+    protected $fillable = ['fname','lname','address','contact','password','email','facebook','twitter','gplus'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -28,5 +29,8 @@ class Customer extends Authenticatable implements Auditable
         'password', 'remember_token',
     ];
 
-
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomerResetPasswordNotification($token));
+    }
 }

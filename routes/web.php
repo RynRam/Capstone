@@ -30,13 +30,22 @@
 	Route::get('/execute-payment','CustomerPaymentController@execute');
 	// Route::post('/customer-login', 'CustomersLoginController@logout');
 	// Route::get('/customer-login', 'CustomersLoginController@showLoginForm');
-	// Route::post('/', 'CustomersLoginController@login');
+	// Route::post('/', 'CustomersLoginController@login');	
+	Route::group(['prefix' => 'customer'], function ()
+    {
+	Route::post('password/email','Auth\CustomerForgotPasswordController@sendResetLinkEmail')->name('customer.password.email');
+	Route::get('password/reset','Auth\CustomerForgotPasswordController@showLinkRequestForm')->name('customer.password.request');
+	Route::post('password/reset','Auth\CustomerResetPasswordController@reset');
+	Route::get('password/reset/{token}','Auth\CustomerResetPasswordController@showResetForm')->name('customer.password.reset');
+});
 
 	Route::resource('/customer-login','CustomerLoginController');
 	// Route::get('/customer-login','CustomerLoginController@create')->name('customer.login');
 	Route::get('/verify', 'CustomerRegisterController@verifyFirst');
 	Route::get('/verifyDone', 'CustomerRegisterController@verifyDone');
 	Route::get('verify/{email}/{verification_token}','CustomerRegisterController@sendEmailDone')->name('sendEmailDone');
+	
+	
 	//Admin Login
 	Route::match(['get','post'],'/admin', 'AdminController@login');
 
