@@ -1,7 +1,7 @@
 @extends('layouts.frontLayout.front_custom_account')
 @section('content')
 @include('front.partials.accountStyle')
-<main id="main" class="wow fadeInUp">
+<main id="main">
   	  <section id="form">
         <div class="container">
           <header class="section-header wow fadeInUp" style="padding-top: 45px;">

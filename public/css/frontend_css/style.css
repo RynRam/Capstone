@@ -533,7 +533,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 .section-header h3 {
   font-size: 32px;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -580,8 +580,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #featured-services{
   padding: 40px 0;
-      background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+
   
 }
 
@@ -627,8 +626,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
 
   position: relative;
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+  
   padding: 40px 0;
 }
 
@@ -717,8 +715,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services {
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+  
   padding: 40px 0;
 }
 
@@ -872,8 +869,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #skills {
   padding: 60px 0;
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+  
   padding: 40px 0;
 }
 
@@ -881,8 +877,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Portfolio Section
 --------------------------------*/
 #portfolio{
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+  
   padding: 40px 0;
 }
 
@@ -1030,8 +1025,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #feedbacks {
   padding: 60px 0;
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+  
 }
 
 #feedbacks .section-header {
@@ -1053,7 +1047,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #fff;
+  color: #000;
 }
 
 #feedbacks .testimonial-item h4 {
@@ -1080,7 +1074,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #feedbacks .testimonial-item p {
   font-style: italic;
   margin: 0 auto 15px auto;
-  color: #fff;
+  color: #000;
 }
 
 @media (min-width: 992px) {
@@ -1111,8 +1105,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #contact{
     padding: 60px 0;
-        background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog1.jpg') fixed center center;
-  background-size: cover;
+      
 }
 
 #contact .contact-info {
@@ -1129,7 +1122,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .contact-info address, #contact .contact-info p {
   margin-bottom: 0;
-  color: #fff;
+  color: #000;
 }
 
 #contact .contact-info h3 {
@@ -1137,7 +1130,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
 }
 
 #contact .contact-info a {
@@ -1150,7 +1143,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
   margin-bottom: 20px;
-  background: rgba(255,255,255,0.5);
+
   
 }
 
@@ -1162,8 +1155,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (min-width: 768px) {
   #contact .contact-phone {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border-left: 1px solid #a4a4a4;
+    border-right: 1px solid #a4a4a4;
   }
 }
 

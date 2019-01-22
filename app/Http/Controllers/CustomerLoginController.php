@@ -10,6 +10,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class CustomerLoginController extends Controller
 {
 
+    // public function __construct()
+    // {
+    //     $this->middleware('customerlogin')->except('logout');
+    // }
     protected $redirectTo = '/';
     /**
      * Display a listing of the resource.

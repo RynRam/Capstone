@@ -21,11 +21,11 @@
               <li><a href="{{url('/wedding')}}">Wedding</a></li>
             </ul>
           </li>
-          <li><a href="#skills">Why Us</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#portfolio">Catered Events</a></li>
-          <li><a href="#feedbacks">Feedbacks</a>
-          <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#skills">Why Us</a></li>
+            <li><a href="#about">About Us</a></li>
+          <li><a href="#portfolio">Catered Events</a></li> -->
+          <!-- <li><a href="#feedbacks">Feedbacks</a>
+          <li><a href="#contact">Contact</a></li> -->
           <li class="menu-has-children"><a href="#">Menus</a>
             <ul>
               <li><a href="{{url('/debutA')}}">Debut A</a></li>

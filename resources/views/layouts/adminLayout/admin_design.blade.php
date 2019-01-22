@@ -57,44 +57,42 @@
   $('.textarea_editor').wysihtml5();
 </script>
 
+
 <script>
+	$(function() {
 
-$(function() {
+		$('#price').on('change', function(){
+				var changed = this;
 
-    $('#price').on('change', function(){
-    		var changed = this;
+				console.log(changed);
 
-    		console.log(changed);
+				var total = parseFloat($('#totalhidden').val());
 
-  			var total = parseFloat($('#totalhidden').val());
+				var terms = parseFloat($('input[name=terms]:checked').val());
 
-  			var terms = parseFloat($('input[name=terms]:checked').val());
+				var equiv = terms * total;
 
-  			var equiv = terms * total;
+				var price = parseFloat(changed.value);
+	
 
-  			var price = parseFloat(changed.value);
-  
+				$('#change').val(price - equiv);
 
-	  		$('#change').val(price - equiv);
+		});
 
-  	});
+			$('input[name=terms]').on('click', function(){
+				var changed = this;
 
-  	    $('input[name=terms]').on('click', function(){
-    		var changed = this;
+				var price = $("#price").val();
+				console.log(price);
+				var total = parseFloat($('#totalhidden').val());
+				var terms = parseFloat(changed.value);
 
-    		var price = $("#price").val();
-    		console.log(price);
-    		var total = parseFloat($('#totalhidden').val());
-    		var terms = parseFloat(changed.value);
+				var equiv = terms * total;
+				$('#balance').val(equiv);
+				
 
-    		var equiv = terms * total;
-    		$('#balance').val(equiv);
-    		
-
-  	});
-});
-
- 
+		});
+	});
 </script>
 
 

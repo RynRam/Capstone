@@ -6,9 +6,15 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
+  <style>
+    html{
+  
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blogs/blog3.jpg) fixed center center;
+    background-size: cover;
+    }
+  </style>
   <!-- Favicons -->
-
+  
   <link href="{{asset('images/title.png')}}" rel="icon">
 
   <!-- Google Fonts -->
@@ -45,17 +51,7 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="{{url('/')}}">Home</a></li>
-          <li class="menu-has-children"><a href="#">Menus</a>
-            <ul>
-              <li><a href="{{url('/debutA')}}">Debut A</a></li>
-              <li><a href="{{url('/debutB')}}">Debut B</a></li>
-              <li><a href="{{url('/debutC')}}">Debut C</a></li>
-              <li><a href="{{url('/classA')}}">Wedding A</a></li>
-              <li><a href="{{url('/classB')}}">Wedding B</a></li>
-              <li><a href="{{url('/classC')}}">Wedding C</a></li>
-            </ul>
           </li>
-          <li><a href="{{url('/blog')}}">Blog</a></li>
          @if (Auth::guard('customer')->guest())
           <li class="menu-has-children"><a href="">Account</a>
             <ul>
@@ -87,58 +83,6 @@
 
 
  @yield('content')
-<!-- footer -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-
-
-          <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Help & Support</h4>
-            <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/about">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/services">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/terms&condition">Terms & Conditions</a></li>
-
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              <strong>Address: </strong>254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100<br/>
-              <strong>Phone:</strong> 0927 999 2081<br>
-              <strong>Email:</strong> Lynagailscater@gmail.com<br>
-            </p>
-
-            <div class="social-links text-center">
-              <a href="https://www.facebook.com/Lynagails-Catering-Services-313110160307/" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/lynagailscatering/" ><i class="fa fa-instagram"></i></a>
-              <a href="https://www.pinoyprofessionals.com/Food+Services/20623/lynagails-catering"><i class="fa fa-google-plus"></i></a>
-        
-            </div>
-
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Mailing List</h4>
-            <p>Receive invitations, updates and news</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe" disabled="true">
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </footer><!-- #footer -->
- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<a href="https://www.messenger.com/t/313110160307" class="call"><i class="fa fa-comment"></i></a>
-
-
 
   <!-- JavaScript Libraries -->
   <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
@@ -156,89 +100,92 @@
 
   <!-- Template Main Javascript File -->
   <script src="{{asset('js/frontend_js/main.js')}}"></script>
-  <script>
 
-//jQuery time
-var current_fs, next_fs, previous_fs; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
+  <!-- form -->
+<script>
 
-$(".next").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
-	
-	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-	
-	//show the next fieldset
-	next_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale current_fs down to 80%
-			scale = 1 - (1 - now) * 0.2;
-			//2. bring next_fs from the right(50%)
-			left = (now * 50)+"%";
-			//3. increase opacity of next_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'relative'
-      });
-			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
+  //jQuery time
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var left, opacity, scale; //fieldset properties which we will animate
+  var animating; //flag to prevent quick multi-click glitches
 
-$(".previous").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	previous_fs = $(this).parent().prev();
-	
-	//de-activate current step on progressbar
-	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-	
-	//show the previous fieldset
-	previous_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale previous_fs from 80% to 100%
-			scale = 0.8 + (1 - now) * 0.2;
-			//2. take current_fs to the right(50%) - from 0%
-			left = ((1-now) * 50)+"%";
-			//3. increase opacity of previous_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({'left': left});
-			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
+  $(".next").click(function(){
+    if(animating) return false;
+    animating = true;
+    
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+    
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    
+    //show the next fieldset
+    next_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+        //2. bring next_fs from the right(50%)
+        left = (now * 50)+"%";
+        //3. increase opacity of next_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({
+          'transform': 'scale('+scale+')',
+          'position': 'relative'
+        });
+        next_fs.css({'left': left, 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  });
 
-// $(".submit").click(function(){
-// 	return false;
-// });
+  $(".previous").click(function(){
+    if(animating) return false;
+    animating = true;
+    
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+    
+    //de-activate current step on progressbar
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    
+    //show the previous fieldset
+    previous_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale previous_fs from 80% to 100%
+        scale = 0.8 + (1 - now) * 0.2;
+        //2. take current_fs to the right(50%) - from 0%
+        left = ((1-now) * 50)+"%";
+        //3. increase opacity of previous_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'left': left});
+        previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  });
+
+  // $(".submit").click(function(){
+  // 	return false;
+  // });
 </script>
+<!-- /form -->
 </body>
 </html>

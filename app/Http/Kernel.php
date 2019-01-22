@@ -73,6 +73,7 @@ class Kernel extends HttpKernel
         'sales' => \App\Http\Middleware\Sales::class,
         'venue' => \App\Http\Middleware\Venue::class,
         'audit' => \App\Http\Middleware\Audit::class,
-        'account' => \App\Http\Middleware\Account::class, 
+        'account' => \App\Http\Middleware\Account::class,
+        'customerlogin' => \App\Http\Middleware\Account::class, 
     ];
 }
