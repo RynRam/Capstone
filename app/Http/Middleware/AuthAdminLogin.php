@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Closure;
 
-class AuthCustomerLogin
+class AuthAdminLogin
 {
     /**
      * Handle an incoming request.
@@ -13,10 +13,10 @@ class AuthCustomerLogin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = 'customer')
+    public function handle($request, Closure $next, $guard = 'web')
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/');
+            return redirect('/admin/dashboard');
         }
 
         return $next($request);

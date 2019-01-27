@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reservations;
+use App\Customer;
 use App\Packages;
 use Pinq\ITraversable, Pinq\Traversable;
 use App\Payments;
@@ -27,6 +28,7 @@ class ReservationController extends Controller
         
         foreach ($reservations as $reservation) {
             $id = $reservation->id;
+            $reservation->customer = Reservations::find($id)->customer;
              $reservation->category = Reservations::find($id)->category;
             $reservation->package = Reservations::find($id)->package;
             $reservation->venue = Reservations::find($id)->venue;
@@ -96,12 +98,6 @@ class ReservationController extends Controller
     public function update(Request $request, $id)
         {
         $reservations = Reservations::find($id);
-        $reservations->fname = $reservations->fname;
-        $reservations->lname = $reservations->lname;
-        $reservations->email = $reservations->email;
-        $reservations->contact = $reservations->contact;
-        $reservations->address = $reservations->address;
-
         $reservations->venuename = $reservations->venuename;
         $reservations->package_id = $reservations->package_id;
         $reservations->eventdate = $reservations->eventdate;

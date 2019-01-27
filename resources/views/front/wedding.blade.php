@@ -14,7 +14,7 @@
   }
 </style>
 
-   <section id="call-to-action" class="wow fadeIn">
+   <section id="call-to-action">
       <div class="container text-center">
         <h3>Wedding Caterings</h3>
           <p>we package each event to come up with an above satisfying, worry free party with a budget you can afford.</p>
@@ -22,9 +22,9 @@
     </section><!-- #call-to-action -->
 
 @include('front.partials.form2')
-
+<!-- 
 @include('front.partials.classApartials')
 @include('front.partials.classBpartials')
-@include('front.partials.classCpartials')
+@include('front.partials.classCpartials') -->
 
  @endsection

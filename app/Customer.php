@@ -33,4 +33,7 @@ class Customer extends Authenticatable implements Auditable
     {
         $this->notify(new CustomerResetPasswordNotification($token));
     }
+    public function reservation(){
+    	return $this->hasOne(Reservations::class,'customers_id');
+    }
 }

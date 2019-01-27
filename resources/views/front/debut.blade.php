@@ -22,9 +22,9 @@
     </section><!-- #call-to-action -->
 
 @include('front.partials.form2')
-
+<!-- 
 @include('front.partials.debutApartials')
 @include('front.partials.debutBpartials')
-@include('front.partials.debutCpartials')
+@include('front.partials.debutCpartials') -->
 
  @endsection

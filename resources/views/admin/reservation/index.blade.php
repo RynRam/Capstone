@@ -20,11 +20,7 @@
             <table class="table table-bordered data-table">
               <thead>
                 <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
                   <th>Email</th>
-                  <th>Contact</th>
-                  <th>Address</th>
                   <th>Venue name</th>
                   <th>Package name</th>
                   <th>Event Date</th>
@@ -41,11 +37,8 @@
   
                 @foreach($reservations as $reservation)
                 <tr class="gradeX">
-                <td>{{ucfirst($reservation->fname)}}</td>
-                <td> {{ucfirst($reservation->lname)}}</td>
-                <td>{{ucfirst($reservation->email)}}</td>	
-                <td>{{ucfirst($reservation->contact)}}</td>
-                <td>{{ucfirst($reservation->address)}}</td> 
+
+                <td>{{ucfirst($reservation->customer->email)}}</td>	 
 	              <td>{{ucfirst($reservation->venuename)}}</td>
                 <td>{{$reservation->package->name}}</td>  
                 <td>{{$reservation->eventdate}}</td>

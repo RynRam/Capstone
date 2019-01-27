@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reservations;
 use App\Payments;
+use App\Customer;
 class PaymentController extends Controller
 {
     public function __construct()
@@ -59,6 +60,7 @@ class PaymentController extends Controller
         $payments->balance = $request->balance;
         $payments->save();
         return redirect('admin/payment');
+    
     }
 
     /**
@@ -83,10 +85,14 @@ class PaymentController extends Controller
      */
     public function edit($id)
     { 
-        $reservations = Reservations::find($id);
-        $total = $reservations->total;
+        $package = Reservations::find($id);
+        $total = $package->total;
+        $reservations = Reservations::find($id)->customer;
+    
+     
 
-        return view('admin.payment.edit',compact('reservations','total'));
+
+        return view('admin.payment.edit',compact('reservations','package','total'));
     }
 
     /**

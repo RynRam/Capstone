@@ -19,7 +19,11 @@ class Reservations extends Model implements Auditable
 	 }
        public function payment(){
     	return $this->hasMany(Payments::class);
-    }
+	}
+	public function customer()
+	{
+		return $this->belongsTo(Customer::class,'customers_id');
+	}
 }
 
 

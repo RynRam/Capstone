@@ -9,7 +9,7 @@
 <main id="main"> 
   <section id="form"> 
     <div class="container"> 
-      <header class="section-header wow fadeInUp" style="padding-top: 45px;">
+      <header class="section-header" style="padding-top: 45px;">
        <h3>Fill Up</h3>
        <p>It’s easy, just fill up the form below with the necessary details</p> 
       </header>
@@ -26,6 +26,7 @@
          <fieldset> 
          <h2 class="fs-title">Reservation</h2>
           <h3 class="fs-subtitle">Planning & Setting</h3> 
+          <input type="hidden" name="customer" value="{{ Auth::guard('customer')->user()->id  ?? ''}}">
           <label >Food Package</label> 
           <select class="form-control" name="package"> 
           @foreach($package as $package)
@@ -51,10 +52,12 @@
           <label >Number of Pax :</label> 
           <input type="number" class="form-control" name="people" id="people" required="true" /> 
           @if (Auth::guard('customer')->guest())
+          <a href="/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
                 @else
                 <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
+                <input type="button" name="next" class="next action-button" value="Next" /> 
                 @endif
-          <input type="button" name="next" class="next action-button" value="Next" /> 
+         
           </fieldset> 
 
             <fieldset> 
@@ -82,7 +85,7 @@
                   // Enable Pay Now checkout flow (optional)
                   commit: true,
               
-                  // Set up a payment
+                  // Set up a payment 
                   payment: function(data, actions) {
                     return actions.payment.create({
                         redirect_urls:{

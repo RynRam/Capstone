@@ -51,9 +51,9 @@
               <tbody>
                 <form>
                 <tr>
-                  <td>{{$reservations->package->name}}</td>
-                  <td>{{$reservations->package->price}}</td>
-                  <td>{{$reservations->guest}}</td>
+                  <td>{{$package->package->name}}</td>
+                  <td>{{$package->package->price}}</td>
+                  <td>{{$package->guest}}</td>
                    <td><input type="number"  name="total" class="form-control" disabled="true" value="{{$total}}" /></td>
                   <td>     <a href="{{action('PaymentController@create')}}"><button class="btn btn-success" data-toggle="modal" data-target="#payment" >Payment</button></a></td>
 
@@ -83,7 +83,7 @@
       <div class="modal-body">
         <form action="{{action('PaymentController@store')}}" method="POST">
               {{csrf_field()}}
-              <input type="hidden" name="reserveid" value="{{ucfirst($reservations->id)}}">
+              <input type="hidden" name="reserveid" value="{{ucfirst($package->id)}}">
           
           <div class="form-group">
             <input type="hidden" name="totalhidden" id="totalhidden" value="{{$total}}">

@@ -47,7 +47,7 @@
 	
 	
 	//Admin Login
-	Route::match(['get','post'],'/admin', 'AdminController@login');
+	Route::match(['get','post'],'/admin', 'AdminController@login')->middleware('adminauth');;
 
 	Auth::routes();
 

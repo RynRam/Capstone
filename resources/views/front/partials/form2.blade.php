@@ -1,267 +1,123 @@
-<style type="text/css">
-   #main{
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
-    background-size: cover;
-   }
-   #services {
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
-  background-size: cover;
-  padding: 40px 0;
-}
-        #about {
+<style type="text/css"> 
+#main{ background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; } 
+#services { background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; padding: 40px 0; } 
+#about { position: relative; background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; padding: 40px 0; }
+ .gj-datepicker-md [role=right-icon]{ font-size:36px; }
+</style> 
+@include('front.partials.accountStyle') 
 
-  position: relative;
-    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
-  background-size: cover;
-  padding: 40px 0;
-}
- </style> 
-  <main id="main" class="wow fadeInUp">
-      <section id="form">
-        <div class="container">
+<main id="main"> 
+  <section id="form"> 
+    <div class="container"> 
+      <header class="section-header" style="padding-top: 45px;">
+       <h3>Fill Up</h3>
+       <p>It’s easy, just fill up the form below with the necessary details</p> 
+      </header>
 
-          <header class="section-header wow fadeInUp" style="padding-top: 45px;">
-            <h3>Fill Up</h3>
-            <p>It’s easy, just fill up the form below with the necessary details</p>
-          </header>
-
-          <div class="row section-bg">
-            <div class="form">
-              <div class="col-md-12"><h3 style="border-bottom: 1px solid #222;">Contact Information</h3><div>
-              <form action="{{action('FrontController@postCatering')}}" method="post" role="form" class="contactForm" id="fillform"> <!-- id = fillform -->
-                  {{csrf_field()}}
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="text" name="fname" class="form-control" id="name" placeholder="First Name" required="true"   value="{{ Auth::guard('customer')->user()->fname ?? '' }}" readonly/>
-                    <div class="validation"></div>
-                  </div>
-                    <div class="form-group col-md-6">
-                    <input type="text" name="lname" class="form-control" id="name" placeholder="Last Name" required="true" value="{{ Auth::guard('customer')->user()->lname ?? '' }}" readonly />
-                    <div class="validation"></div>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required="true" value="{{ Auth::guard('customer')->user()->email ?? '' }}" readonly>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="contact" placeholder="Contact No.(Ex. 09#########)" required="true" value="{{ Auth::guard('customer')->user()->contact ?? '' }}" readonly />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="address" id="address" placeholder="Complete Address" required="true" value="{{ Auth::guard('customer')->user()->address ?? '' }}" readonly/>
-                  <div class="validation"></div>
-                </div>
-                <h3 style="border-bottom: 1px solid #222;">Reservation Details</h3>
-                <!-- Food Package -->
-                <div class="scoped"> 
-                  <!-- checkbox style -->
-                   <style scoped>
-                      .scoped{
-                        text-align: center;
-                      }
-                      @media (min-width: 1025px){
-                        .scoped ul{
-                        list-style-type: none;
-                        text-align: center;
-                      }
-                       .scoped p {
-                        color: #FFF;
-                        padding: 5px;
-                        background: #330101;
-                        font-size:13px;
-                        display: block !important;
-                      }
-                      .scoped li {
-                        display: inline-block;
-                      }
-                      
-                      input[type="radio"][id^="cb"] {
-                        display: none;
-                      }
-                      
-                      .scoped label{
-                        border: 1px solid #fff;
-                        padding: 10px;
-                        display: block;
-                        position: relative;
-                        margin: 10px;
-                        cursor: pointer;
-                      }
-                      
-                      .scoped label:before {
-                        background-color: white;
-                        color: white;
-                        content: " ";
-                        display: block;
-                        border-radius: 50%;
-                        border: 1px solid grey;
-                        position: absolute;
-                        top: -5px;
-                        left: -5px;
-                        width: 25px;
-                        height: 25px;
-                        text-align: center;
-                        line-height: 28px;
-                        transition-duration: 0.4s;
-                        transform: scale(0);
-                      }
-                      
-                      .scoped label img {
-                        height: 250px !important;
-                        width: 250px !important;
-                        transition-duration: 0.2s;
-                        transform-origin: 50% 50%;
-                        object-fit:cover;
-                      }
-                      
-                      :checked + label {
-                        border-color: #ddd;
-                      }
-                      
-                      :checked + label:before {
-                        content: "✓";
-                        background-color: #18d36e !important;
-                        transform: scale(1);
-                      }
-                      
-                      :checked + .scoped label img {
-                        transform: scale(0.9);
-                        box-shadow: 0 0 5px #333;
-                        z-index: -1;
-                      }
-                        }
-                      @media (min-width: 320px){
-                       .scoped label img {
-                        height: 100px;
-                        width: 100px;
-                        transition-duration: 0.2s;
-                        transform-origin: 50% 50%;
-                         }
-                      .scoped p {
-                        font-size:13px;
-                        display: none;
-                        }
-                        .scoped ul{
-                        list-style-type: none;
-                        padding: 0;
-                        }
-                      
-                      .scoped li {
-                        display: inline-block;
-                        }
-                      
-                      input[type="radio"][id^="cb"] {
-                        display: none;
-                        }
-                      
-                      .scoped label{
-                        border: 1px solid #fff;
-                        padding: 10px;
-                        display: block;
-                        position: relative;
-                        margin: 10px;
-                        cursor: pointer;
-                        }
-                      
-                      .scoped label:before {
-                        background-color: white;
-                        color: white;
-                        content: " ";
-                        display: block;
-                        border-radius: 50%;
-                        border: 1px solid grey;
-                        position: absolute;
-                        top: -5px;
-                        left: -5px;
-                        width: 25px;
-                        height: 25px;
-                        text-align: center;
-                        line-height: 28px;
-                        transition-duration: 0.4s;
-                        transform: scale(0);
-                        }
-                      
-                      :checked + label {
-                        border-color: #f7f7f7;
-                        }
-                      
-                      :checked + label:before {
-                        content: "✓";
-                        background-color: #18d36e !important;
-                        transform: scale(1);
-                        }
-                      
-                      :checked + .scoped label img {
-                        transform: scale(0.9);
-                        box-shadow: 0 0 5px #333;
-                        z-index: -1;
-                        }
-                      }
-                  </style>  
-                  <!-- end style -->
-                  <div class="w-100">
-                    <label for="package">Packages (<i>Required</i>)</label>
-                    <ul class="customr-control" name="package">
-                       <?php $pl = 100;?>
-                      @foreach($package as $package)  
-                        <li>
-                           <?php echo '<input type="radio" id="cb'.$pl.'" value="'.$package->id.'" data-checkbox-value="'.$package->id.'" name="package" required>'; ?>
-                            <?php echo '<label for="cb'.$pl.'">'?><img src="{{asset('storage/upload/'.$package->file)}}">
-                                <p class="text-center">{{$package->name}} <br>   &#8369;{{$package->price}} per head</p>
-                            </label>
-                        </li>
-                        <?php $pl++;?>
-                    @endforeach
-                    </ul>
-                  </div>
-                </div>  
-                <!-- End Food Package -->
-                <div class="col-md-12">
-                <div class="form-group col-md-3" style="display: inline-block;">
-                  <label >Event Schedule</label>
-                  <input type="text" id="datepicker" name="schedule" class="form-control" readonly/>
-                </div>
-                <div class="form-group col-md-2" style="display: inline-block;">
-                <label >Event Venue</label>
-                <select class="form-control" name="venuename" id="select">
-                  @foreach($venue as $venue)         
-                  <option value="{{$venue->name}}">{{$venue->name}}</option>
-                 @endforeach
-                </select>
-                </div>
-               <div class="form-group col-md-2" style="display: inline-grid;">  
-                <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)">
-                <button class="add-button" id="add" type="button">Add</button>
-               </div>
-                 <div class="form-group col-md-2" style="display: inline-block;">
-                <label >Event Category</label>
-                <select class="form-control" name="category">
-                  @foreach($catering as $catering)                
-                  <option value="{{$catering->id}}">{{$catering->name}}</option>
-                 @endforeach
-                </select>
-              </div>
-                <div class="form-group col-md-2" style="display: inline-block;">
-                <label >Number of Pax (min:50)</label>
-                  <input type="number" class="form-control" name="people" id="people" required="true" value="50" />
-                  <div class="validation"></div>
-                </div>
-                </div>
-                @if (Auth::guard('customer')->guest())
+       <!-- test --> 
+       
+       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" > 
+       {{csrf_field()}}
+        <!-- progressbar --> 
+        <ul id="progressbar" style="display:none;">
+         <li class="active">Reservation Details</li>
+         <li>Reservation Payment</li>
+        </ul> <!-- fieldsets -->
+         <fieldset> 
+         <h2 class="fs-title">Reservation</h2>
+          <h3 class="fs-subtitle">Planning & Setting</h3> 
+          <input type="hidden" name="customer" value="{{ Auth::guard('customer')->user()->id  ?? ''}}">
+          <label >Food Package</label> 
+          <select class="form-control" name="package"> 
+          @foreach($package as $package)
+           <option value="{{$package->id}}">{{$package->name}} -- {{$package->price}} per head</option>
+          @endforeach 
+          </select> 
+          <label >Event Category</label>
+          <select class="form-control" name="category"> 
+          @foreach($catering as $catering)
+           <option value="{{$catering->id}}">{{$catering->name}}</option>
+          @endforeach 
+          </select> 
+          <label style="display:block;" >Event Venue</label> 
+          <select class="form-control" name="venuename" id="select" style="width:47%;display:inline-block;"> 
+          @foreach($venue as $venue) 
+            <option value="{{$venue->name}}">{{$venue->name}}</option>
+          @endforeach 
+          </select> 
+          <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 
+          <button class="add-button" id="add" type="button">Add</button> 
+          <label >Event Schedule</label> 
+          <input type="text" id="datepicker" name="schedule" class="form-control" style="padding:10px;" readonly/>
+          <label >Number of Pax :</label> 
+          <input type="number" class="form-control" name="people" id="people" required="true" /> 
+          @if (Auth::guard('customer')->guest())
+          <a href="/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
                 @else
                 <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
+                <input type="button" name="next" class="next action-button" value="Next" /> 
                 @endif
-                <div class="form-group text-center">
-                <button type="submit" class="reserve-button">Send Reservation</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section><!-- #form -->
-<div class="col-md-8" style="margin: 0 auto;background: #fff;border-radius: 8px;color: #000;">{!! $calendar_details->calendar() !!}</div>
+         
+          </fieldset> 
 
-
-@include('front.partials.section')
-  </main>
+            <fieldset> 
+            <h2 class="fs-title">Payment</h2> 
+            <h3 class="fs-subtitle">Reservation Fee</h3> 
+           <div id="paypal-button" style="margin:0 auto;"></div>
+              <!-- paypal -->
+              
+              <script>
+                paypal.Button.render({
+                  // Configure environment
+                  env: 'sandbox',
+                  client: {
+                    sandbox: 'AWbHet5U6VqpDjQ37uksQ7CFs7VlLfu6Hto088Mmf1xO_LOgRbnJhagtXmUjr1FYa5dDjDJlSucsa3Qi',
+                    production: 'demo_production_client_id'
+                  },
+                  // Customize button (optional)
+                  locale: 'en_US',
+                  style: {
+                    size: 'medium',
+                    color: 'gold',
+                    shape: 'pill',
+                  },
+              
+                  // Enable Pay Now checkout flow (optional)
+                  commit: true,
+              
+                  // Set up a payment 
+                  payment: function(data, actions) {
+                    return actions.payment.create({
+                        redirect_urls:{
+                          return_url:'http://localhost:8000/execute-payment'
+                        },
+                      transactions: [{
+                        amount: {
+                          total: '5000',
+                          currency: 'PHP'
+                        }
+                      }]
+                    });
+                  },
+                  // Execute the payment
+                  onAuthorize: function(data, actions) {
+                    return actions.redirect();
+                    // return actions.payment.execute().then(function() {
+                      // Show a confirmation message to the buyer
+                      // window.alert('Thankyou For Paying Reservation Fee!');
+                    // });
+                  }
+                }, '#paypal-button');
+              
+              </script>
+              <!-- /paypal -->
+            <input type="button" name="previous" class="previous action-button" value="Previous" /> 
+            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            </fieldset> 
+         </form> <!-- /test -->
+      </div> 
+    </section><!-- #form -->
+    
+     <div class="col-md-8" style="margin: 0 auto;background: #fff;border-radius: 8px;color: #000;">{!! $calendar_details->calendar() !!}</div>
+      @include('front.partials.section')
+</main>

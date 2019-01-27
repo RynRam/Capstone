@@ -13,7 +13,7 @@
       font-weight: 100;
   }
 </style>
-   <section id="call-to-action" class="wow fadeIn">
+   <section id="call-to-action">
       <div class="container text-center">
         <h3>Basic Caterings</h3>
           <p>we package each event to come up with an above satisfying, worry free party with a budget you can afford.</p>

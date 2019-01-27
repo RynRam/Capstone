@@ -85,11 +85,6 @@ class FrontController extends Controller
     public function postCatering(Request $request){
         $reservations = new Reservations;
         $this->validate($request,[
-            'fname' => 'required',
-            'lname' => 'required',
-            'email' => 'required',
-            'contact' => 'required|size:11',
-            'address' => 'required',
             'venuename' => 'required',
             'package' => 'required',
             'schedule' => 'required',
@@ -97,11 +92,8 @@ class FrontController extends Controller
             'people' => 'required',
             'g-recaptcha-response'=> 'required',
         ]);
-        $reservations->fname = $request->fname;
-        $reservations->lname = $request->lname;
-        $reservations->email = $request->email;
-        $reservations->contact = $request->contact;
-        $reservations->address = $request->address;
+
+        $reservations->customers_id = $request->customer;
         $reservations->venuename = $request->venuename;
         $reservations->package_id = $request->package;
         $reservations->eventdate = $request->schedule;

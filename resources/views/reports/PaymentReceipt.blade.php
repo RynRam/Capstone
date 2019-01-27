@@ -13,10 +13,10 @@
         <h5 style="text-align:center;">TIN No. :000-000-549-000</h5>
         <div  style="position:absolute;top:14%;left:0;">  
       <h1 style="text-align:center;"><i><u>Payment Receipt</u></i></h1>
-      <b>Customer: </b> {{$payments->reservation->fname}} {{$payments->reservation->lname}}<b style="float:right;">Invoice Date: <u>{{date('m-d-y',strtotime($payments->date_invoice)) }}</u></b> 
-    <br/><p style="margin-left: 81px;margin-top: 2px;margin-bottom: 1px;">{{$payments->reservation->email}}</p>
-    <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->contact}}</p>
-    <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->address}}</p>
+      <b>Customer: </b> {{$payments->reservation->customer->fname}} {{$payments->reservation->customer->lname}}<b style="float:right;">Invoice Date: <u>{{date('m-d-y',strtotime($payments->date_invoice)) }}</u></b> 
+    <br/><p style="margin-left: 81px;margin-top: 2px;margin-bottom: 1px;">{{$payments->reservation->customer->email}}</p>
+    <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->customer->contact}}</p>
+    <p style="margin-left: 81px;margin-top: 2px;margin-bottom: 2px;">{{$payments->reservation->customer->address}}</p>
     <br>
 
     <b>Payment Method: CASH</b>

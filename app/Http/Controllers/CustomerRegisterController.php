@@ -12,6 +12,10 @@ use App\Mail\Verifyemail;
 use Session;
 class CustomerRegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('customerauth')->except('logout');
+    }
 
     /**
      * Display a listing of the resource.
