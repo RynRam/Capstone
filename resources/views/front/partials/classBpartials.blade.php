@@ -3,7 +3,16 @@
  		color: #000;
  		font-weight: 500;
  		font-family: "Montserrat", sans-serif;
- 	}
+     }
+     #about {
+    position: relative;
+    padding: 40px 0;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+    background-size: cover;
+	}
+	.section-header h3{
+		color:#fff;
+	}
 
  </style>
     <section id="about">

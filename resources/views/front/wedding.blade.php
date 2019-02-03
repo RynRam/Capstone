@@ -12,6 +12,9 @@
       font-size: 400%;
       font-weight: 100;
   }
+  .section-header h3{
+        color:#fff;
+      }
 </style>
 
    <section id="call-to-action">

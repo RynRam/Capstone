@@ -16,7 +16,7 @@
 
        <!-- test --> 
        
-       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" > 
+       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" > 
        {{csrf_field()}}
         <!-- progressbar --> 
         <ul id="progressbar" style="display:none;">
@@ -63,56 +63,10 @@
             <fieldset> 
             <h2 class="fs-title">Payment</h2> 
             <h3 class="fs-subtitle">Reservation Fee</h3> 
-           <div id="paypal-button" style="margin:0 auto;"></div>
-              <!-- paypal -->
-              
-              <script>
-                paypal.Button.render({
-                  // Configure environment
-                  env: 'sandbox',
-                  client: {
-                    sandbox: 'AWbHet5U6VqpDjQ37uksQ7CFs7VlLfu6Hto088Mmf1xO_LOgRbnJhagtXmUjr1FYa5dDjDJlSucsa3Qi',
-                    production: 'demo_production_client_id'
-                  },
-                  // Customize button (optional)
-                  locale: 'en_US',
-                  style: {
-                    size: 'medium',
-                    color: 'gold',
-                    shape: 'pill',
-                  },
-              
-                  // Enable Pay Now checkout flow (optional)
-                  commit: true,
-              
-                  // Set up a payment 
-                  payment: function(data, actions) {
-                    return actions.payment.create({
-                        redirect_urls:{
-                          return_url:'http://localhost:8000/execute-payment'
-                        },
-                      transactions: [{
-                        amount: {
-                          total: '5000',
-                          currency: 'PHP'
-                        }
-                      }]
-                    });
-                  },
-                  // Execute the payment
-                  onAuthorize: function(data, actions) {
-                    return actions.redirect();
-                    // return actions.payment.execute().then(function() {
-                      // Show a confirmation message to the buyer
-                      // window.alert('Thankyou For Paying Reservation Fee!');
-                    // });
-                  }
-                }, '#paypal-button');
-              
-              </script>
-              <!-- /paypal -->
+            <div><input type="submit" name="submit" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
+            <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('http://127.0.0.1:8000/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
             <input type="button" name="previous" class="previous action-button" value="Previous" /> 
-            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            
             </fieldset> 
          </form> <!-- /test -->
       </div> 

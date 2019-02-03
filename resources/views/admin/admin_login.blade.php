@@ -45,7 +45,9 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                   
+                <a class="btn btn-danger" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                                </a>
                     <span class="pull-right"><input type="submit" value="Login" class="btn btn-primary" /></span>
                 </div>
             </form>

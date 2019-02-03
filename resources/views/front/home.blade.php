@@ -137,7 +137,7 @@
 
     <section id="services">
       <div class="container">
-        <header class="section-header wow fadeInUp">
+        <header class="section-header">
           <h3>Services</h3>
            <p></p>
         </header>
@@ -194,20 +194,10 @@
     </section><!-- #services -->
 <!-- skill section -->
     <section id="skills">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Why Us</h3>
-           <p></p>
-          <img src="{{asset('images/frontend_images/home/whyusV2.png')}}" alt="" width="100%">
-        </header>
-
-        <div class="skills-content">
-  
-
-        </div>
-
-      </div>
+    <header class="section-header">
+          <h3 style="color:#fff;">Why Us</h3>
+    <img src="{{asset('images/frontend_images/Why_us_final.png')}}" alt="" width="100%">
+   
     </section>
     <!-- about section -->
     <section id="about" >
@@ -320,6 +310,14 @@
 
       </div>
     </section><!-- #feedback -->
+    <section id="call-to-action">
+      <div class="container text-center">
+        <h3 style="font-size:400%;">Let Us Co-Create Your Event</h3>
+          <p>we package each event to come up with an above satisfying, worry free party with a budget you can afford.</p>
+          <a href="/basic-catering" class="btn-get-started scrollto">Click Here</a>
+      </div>
+    </section><!-- #call-to-action -->
+
   <!-- contact -->
     <section id="contact" class="section-bg ">
       <div class="container">

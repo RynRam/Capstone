@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Caterings;
 use App\Contents;
@@ -14,6 +15,15 @@ use App\Discounts;
 use Calendar;
 use Session;
 use GuzzleHttp\Client;
+
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\RedirectUrls;
+use PayPal\Api\Transaction;
 class FrontController extends Controller
 {
     public function getIndex(){
@@ -21,11 +31,11 @@ class FrontController extends Controller
 	    return view('front.home',compact('discounts'));
     }
     public function getCatering(){
-        $events = Reservations::where('is_approved',1)->get();
+        $events= Reservations::where('is_approved',1)->get();
         $event_list = [];
         foreach ($events as $key => $event) {
             $event_list[] = Calendar::event(
-                $event->lname.' '.$event->category->name,
+                $event->customer->fname.' '.$event->category->name,
                 true,
                 new \DateTime($event->eventdate),
                 new \DateTime($event->eventdate)
@@ -47,7 +57,7 @@ class FrontController extends Controller
         $event_list = [];
         foreach ($events as $key => $event) {
             $event_list[] = Calendar::event(
-               $event->lname.' '.$event->category->name,
+                $event->customer->fname.' '.$event->category->name,
                 true,
                 new \DateTime($event->eventdate),
                 new \DateTime($event->eventdate)
@@ -67,7 +77,7 @@ class FrontController extends Controller
         $event_list = [];
         foreach ($events as $key => $event) {
             $event_list[] = Calendar::event(
-                $event->lname.' '.$event->category->name,
+                $event->customer->fname.' '.$event->category->name,
                 true,
                 new \DateTime($event->eventdate),
                 new \DateTime($event->eventdate)
@@ -83,6 +93,57 @@ class FrontController extends Controller
     }
 
     public function postCatering(Request $request){
+
+        // After Step 1
+        $apiContext = new \PayPal\Rest\ApiContext(
+            new \PayPal\Auth\OAuthTokenCredential(
+                'AWbHet5U6VqpDjQ37uksQ7CFs7VlLfu6Hto088Mmf1xO_LOgRbnJhagtXmUjr1FYa5dDjDJlSucsa3Qi',     // ClientID
+                'EJppNfTRlTRN4oKCJAfsWcA5ho2yz144RwcvS7Ws6ixn2KVZ5MYwaEPIfMTKAbbC-iIjIYu8DREKRIqY'      // ClientSecret
+            )
+        );
+
+        $payer = new Payer();
+        $payer->setPaymentMethod("paypal"); 
+
+        $item1 = new Item();
+        $item1->setName('Initial Payment for Reservation')
+                ->setCurrency('PHP')
+                ->setQuantity(1)
+                ->setSku("123123") // Similar to `item_number` in Classic API
+                ->setPrice(1.0);
+      
+
+        $itemList = new ItemList();
+        $itemList->setItems(array($item1));
+
+        $details = new Details();
+        $details->setShipping(1.2)
+                ->setTax(1.3)
+                ->setSubtotal(1.0);
+
+        $amount = new Amount();
+        $amount->setCurrency("PHP")
+                ->setTotal(3.50)
+                ->setDetails($details);
+
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+                ->setItemList($itemList)
+                ->setDescription("Payment description")
+                ->setInvoiceNumber(uniqid());
+
+        $redirectUrls = new RedirectUrls();
+        $redirectUrls->setReturnUrl("http://127.0.0.1:8000/execute-payment")
+                ->setCancelUrl("http://127.0.0.1:8000/cancel");
+
+        $payment = new Payment();
+        $payment->setIntent("sale")
+                ->setPayer($payer)
+                ->setRedirectUrls($redirectUrls)
+                ->setTransactions(array($transaction));
+
+        $payment->create($apiContext);
+        
         $reservations = new Reservations;
         $this->validate($request,[
             'venuename' => 'required',
@@ -92,7 +153,7 @@ class FrontController extends Controller
             'people' => 'required',
             'g-recaptcha-response'=> 'required',
         ]);
-
+            
         $reservations->customers_id = $request->customer;
         $reservations->venuename = $request->venuename;
         $reservations->package_id = $request->package;
@@ -113,7 +174,7 @@ class FrontController extends Controller
             if($result->success){
                 $reservations->save();
                 Session::flash('status','reservation sent!');
-                return redirect()->back();
+                return redirect($payment->getApprovalLink());
             }else{
                 Session::flash('error','You are probably a robot!');
                 return redirect()->back();

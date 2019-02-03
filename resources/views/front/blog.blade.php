@@ -21,6 +21,15 @@
     padding-right: 50px;
     height: 200px;
   }
+  #about {
+    position: relative;
+    padding: 40px 0;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+    background-size: cover;
+  }
+  .section-header h3{
+    color:#fff;
+  }
  </style>
   <main id="main">
 <!-- about section -->
@@ -59,6 +68,6 @@
         </div>
       </div>
     </section>
-       @include('front.partials.section')
+     
 </main>
  @endsection

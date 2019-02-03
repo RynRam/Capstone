@@ -6,7 +6,7 @@
         <div class="container">
 
           <header class="section-header wow fadeInUp" style="padding-top: 45px;">
-            <h3>Registration Form</h3>
+            <h3 style="color:#fff;">Registration Form</h3>
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>
 

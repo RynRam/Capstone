@@ -832,8 +832,29 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  padding: 60px 0;
+  padding: 170px 0;
+  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+  background-size: cover;
 }
+#call-to-action .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+  background: #18d26e;
+}
+
+#call-to-action .btn-get-started:hover {
+  background: #fff;
+  color: #18d26e;
+}
+
 
 #call-to-action h3 {
   color: #fff;
@@ -869,8 +890,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #skills {
   padding: 60px 0;
-  
-  padding: 40px 0;
+  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/frontend_images/corporate-768x576.jpg) fixed center center;
+  background-size: cover;
 }
 
 

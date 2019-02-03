@@ -5,7 +5,7 @@
   	  <section id="form">
         <div class="container">
           <header class="section-header wow fadeInUp" style="padding-top: 45px;">
-            <h3>Login Form</h3>
+            <h3 style="color:#fff;">Login Form</h3>
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>         
             <form id="msform" action="{{action('CustomerLoginController@store')}}" method="post" role="form" >

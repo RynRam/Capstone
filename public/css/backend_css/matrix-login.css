@@ -39,8 +39,9 @@ hr{ border-top-color:#dadada;}
 .bg_lv{ background:#603bbc;}
 .bg_lh{ background:#b6b3b3;}
 
-body { background-color:#330101;    padding: 0;    margin-top:10%;}
-#logo, #loginbox {    width: 32%;    margin-left: auto;    margin-right: auto;    position: relative;}
+body {   background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/frontend_images/corporate-768x576.jpg) fixed center center;
+    background-size: cover;    padding: 0; }
+#logo, #loginbox {       top: 25%; width: 32%;    margin-left: auto;    margin-right: auto;    position: relative;}
 #logo img {  margin: 0 auto;    display: block;}
 #loginbox { overflow: hidden !important;    text-align: left;    position: relative; }
 #loginbox form{ width:100%; background:#108043; position:relative; top:0; left:0; }
