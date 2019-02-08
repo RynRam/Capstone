@@ -112,6 +112,26 @@ class FrontController extends Controller
                 ->setSku("123123") // Similar to `item_number` in Classic API
                 ->setPrice(1.0);
       
+        $this->validate($request,[
+            'venuename' => 'required',
+            'package' => 'required',
+            'schedule' => 'required',
+            'category' => 'required',
+            'people' => 'required',
+            'g-recaptcha-response'=> 'required',
+        ]);
+        $reservations = new Reservations;   
+        $reservations->package_id = $request->package; 
+        $reservations->guest = $request->people;
+        Session::put('reservation', [
+            'customers_id' => $request->customer,
+            'venuename' => $request->venuename,
+            'package_id' => $request->package,
+            'eventdate' => $request->schedule,
+            'category_id' => $request->category,
+            'guest' => $request->people,
+            'total' =>($reservations->guest * $reservations->package->price)
+            ]); 
 
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
@@ -134,7 +154,7 @@ class FrontController extends Controller
 
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("http://127.0.0.1:8000/execute-payment")
-                ->setCancelUrl("http://127.0.0.1:8000/cancel");
+                ->setCancelUrl("http://127.0.0.1:8000/basic-catering");
 
         $payment = new Payment();
         $payment->setIntent("sale")
@@ -144,23 +164,7 @@ class FrontController extends Controller
 
         $payment->create($apiContext);
         
-        $reservations = new Reservations;
-        $this->validate($request,[
-            'venuename' => 'required',
-            'package' => 'required',
-            'schedule' => 'required',
-            'category' => 'required',
-            'people' => 'required',
-            'g-recaptcha-response'=> 'required',
-        ]);
-            
-        $reservations->customers_id = $request->customer;
-        $reservations->venuename = $request->venuename;
-        $reservations->package_id = $request->package;
-        $reservations->eventdate = $request->schedule;
-        $reservations->category_id = $request->category;
-        $reservations->guest = $request->people;
-        $reservations->total = ($reservations->guest * $reservations->package->price);
+
         $token = $request->input('g-recaptcha-response');
         if ($token > 0){
             $client = new Client();
@@ -172,8 +176,8 @@ class FrontController extends Controller
             ]);
             $result = json_decode($response->getBody()->getContents());
             if($result->success){
-                $reservations->save();
-                Session::flash('status','reservation sent!');
+
+
                 return redirect($payment->getApprovalLink());
             }else{
                 Session::flash('error','You are probably a robot!');

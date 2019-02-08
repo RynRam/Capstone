@@ -8,7 +8,8 @@ use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
-
+use Session;
+use App\Reservations;
 class CustomerPaymentController extends Controller
 {
     public function execute(){
@@ -39,10 +40,24 @@ class CustomerPaymentController extends Controller
         $amount->setDetails($details);
         $transaction->setAmount($amount);
 
+        $result = request()->session()->get('reservation');
+        
+        $reservations = new Reservations;   
+            $reservations->customers_id = Session::get('reservation')['customers_id'];
+            $reservations->venuename =    Session::get('reservation')['venuename'];
+            $reservations->package_id =   Session::get('reservation')['package_id'];
+            $reservations->eventdate =    Session::get('reservation')['eventdate'];
+            $reservations->category_id =  Session::get('reservation')['category_id'];
+            $reservations->guest =        Session::get('reservation')['guest'];
+            $reservations->total =        Session::get('reservation')['total'];
+    
+            $reservations->save();
+
+
         $execution->addTransaction($transaction);
 
         $result = $payment->execute($execution, $apiContext);
-     
+        
         return redirect()->back();
        
  
