@@ -32,11 +32,12 @@
         <td style="border:1px solid; padding:12px;">{{$venue->contact_person}}</td>
         <td style="border:1px solid; padding:12px;">{{$venue->contact}}</td>
         <td style="border:1px solid; padding:12px;">{{$venue->price}}</td>
-<div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
+
         </tr>
         @endforeach
       </tbody>
       </table>
+      <div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
  </div>
  <div style="position:absolute;bottom:0;left:0%;">Date Printed :<?php date_default_timezone_set('Asia/Manila');
 echo date('F j, Y g:i a'); ?>

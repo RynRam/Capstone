@@ -107,6 +107,7 @@
 	Route::resource('/admin/audit','AuditController');
 	//Sales
 	Route::resource('/admin/sales','SalesController');
+	Route::get('/admin/salespdf','SalesController@pdf');
 	//Discount
 	Route::resource('/admin/discount','DiscountController');
 	Route::patch('/admin/discount/{discount}', 'DiscountController@updateStatus'); 

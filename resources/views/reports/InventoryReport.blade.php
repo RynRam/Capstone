@@ -36,11 +36,12 @@
         <td style="border:1px solid; padding:12px;">{{$inventory->stock_on_hand}}</td>
         <td style="border:1px solid; padding:12px;">{{$inventory->created_at}}</td>
         <td style="border:1px solid; padding:12px;">{{$inventory->updated_at}}</td>
-<div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
+
         </tr>
         @endforeach
       </tbody>
       </table>
+      <div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
  </div>
  <div style="position:absolute;bottom:0;left:0%;">Date Printed :<?php date_default_timezone_set('Asia/Manila');
 echo date('F j, Y g:i a'); ?>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Inventory;
-
+use Session;
+use App\Payments;
 class SalesController extends Controller
 {
     public function __construct()
@@ -22,10 +23,18 @@ class SalesController extends Controller
      */
     public function index()
     {
-         $inventories = Inventory::all();
-        return view('admin.sales.index',compact('inventories'));
+        return view('admin.sales.index');
     }
-
+    public function pdf()
+    {
+    $from = Session::get('sales')['from'];
+    $to = Session::get('sales')['to'];
+    $pdf = \App::make('dompdf.wrapper');
+    $dates = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+    $sales = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->sum('balance');
+    $pdf->loadView('reports.SalesReport',compact('sales','from','to','dates'));
+    return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +42,7 @@ class SalesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.sales.index');
     }
 
     /**
@@ -44,7 +53,11 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::put('sales', [
+            'from' => $request->from,
+            'to' => $request->to
+            ]);  
+            return redirect('admin/salespdf');
     }
 
     /**
@@ -91,4 +104,5 @@ class SalesController extends Controller
     {
         //
     }
+
 }
