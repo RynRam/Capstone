@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use App\Notifications\CustomerResetPasswordNotification;
-class Customer extends Authenticatable implements Auditable
+class Customer extends Authenticatable
 {
-    use \OwenIt\Auditing\Auditable; 
+   
     use Notifiable;
     protected $guard = 'customers';
     /**
