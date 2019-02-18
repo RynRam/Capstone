@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRolesToStaffs extends Migration
+class CreateWarehousesDeployTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddRolesToStaffs extends Migration
      */
     public function up()
     {
-        Schema::table('staffs', function (Blueprint $table) {
-             $table->string('roles')->after('lastname');
+        Schema::create('warehouses', function (Blueprint $table) {
+            $table->increments('id');   
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddRolesToStaffs extends Migration
      */
     public function down()
     {
-        Schema::table('\staffs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('warehouses');
     }
 }
