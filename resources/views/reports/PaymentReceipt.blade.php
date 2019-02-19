@@ -48,8 +48,8 @@
      <h4 style="position: absolute;right:12%;top:59%;">Change: </h4>
       <p style="position: absolute;right:2%;top:567px;">{{$payments->change}}</p>
  </div>
- <div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
- <div style="position:absolute;bottom:0;left:0%;">Date Printed :<?php date_default_timezone_set('Asia/Manila');
+ <div style="position:absolute;bottom:0;right:0%;">Prepared By : __________________</div>
+ <div style="position:absolute;bottom:0;left:0%;">Date & Time Stamp :<?php date_default_timezone_set('Asia/Manila');
 echo date('F j, Y g:i a'); ?>
 
 </body>

@@ -33,14 +33,14 @@
         <td style="border:1px solid; padding:12px;">PHP {{$sales}}</td> 
       @endforeach 
 
-<div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
+<div style="position:absolute;bottom:0;right:0%;">Prepared By : __________________</div>
         </tr>
   
       </tbody>
       </table>
     
  </div>
- <div style="position:absolute;bottom:0;left:0%;">Date Printed :<?php date_default_timezone_set('Asia/Manila');
+ <div style="position:absolute;bottom:0;left:0%;">Date & Time Stamp :<?php date_default_timezone_set('Asia/Manila');
 echo date('F j, Y g:i a'); ?>
  
 </body>

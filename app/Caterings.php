@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Contracts\Auditable;
-class Caterings extends Model implements Auditable
+
+class Caterings extends Model 
 {	
-	use \OwenIt\Auditing\Auditable;
+
 	protected $fillable= ['name', 'categoryId'];
 
     public function category(){

@@ -13,7 +13,7 @@
         <h1 style="text-align:center;"><i><u>Reservation 1 Report</u></i></h1>
     <table width="100%" style="border-collapse:collapse; border:0px">
       <thead>
-        <tr><div style="position:absolute;bottom:0;right:0%;">Printed By : __________________</div>
+        <tr><div style="position:absolute;bottom:0;right:0%;">Prepared By : __________________</div>
           <th style="border: 1px solid; padding:12px; background-color:#5bb75b;" width="20%">First Name</th>
           <th style="border: 1px solid; padding:12px; background-color:#5bb75b;" width="20%">Last Name</th>
           <th style="border: 1px solid; padding:12px; background-color:#5bb75b;" width="20%">Assign</th>
@@ -36,7 +36,7 @@
       </tbody>
       </table>
  </div>
- <div style="position:absolute;bottom:0;left:0%;">Date Printed :<?php date_default_timezone_set('Asia/Manila');
+ <div style="position:absolute;bottom:0;left:0%;">Date & Time Stamp :<?php date_default_timezone_set('Asia/Manila');
 echo date('F j, Y g:i a'); ?>
 </html>
      

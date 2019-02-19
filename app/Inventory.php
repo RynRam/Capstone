@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use OwenIt\Auditing\Contracts\Auditable;
+
 use App\User;
-class Inventory extends Model implements Auditable
+class Inventory extends Model
 {
-		use \OwenIt\Auditing\Auditable;
+		
    protected $fillable = ['item_code','item_name','price','inventory_categories_id','stock_on_hand'];
   
    public function user(){

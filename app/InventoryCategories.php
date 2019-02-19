@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
-class InventoryCategories extends Model implements Auditable
+class InventoryCategories extends Model 
 {
-    	use \OwenIt\Auditing\Auditable;
+    	
     protected $fillable = ['category','description'];
   
     public function inventory(){

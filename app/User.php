@@ -6,9 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use OwenIt\Auditing\Contracts\Auditable;
 use App\Inventory;
-class User extends Authenticatable implements Auditable
+class User extends Authenticatable 
 {
-        use \OwenIt\Auditing\Auditable; 
     use Notifiable;
     protected $guard = 'web';
     /**
