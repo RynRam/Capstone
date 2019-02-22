@@ -16,7 +16,7 @@
 
        <!-- test --> 
        
-       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" > 
+       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" > 
        {{csrf_field()}}
         <!-- progressbar --> 
         <ul id="progressbar" style="display:none;">
@@ -42,7 +42,7 @@
           <label style="display:block;" >Event Venue</label> 
           <select class="form-control" name="venuename" id="select" style="width:47%;display:inline-block;"> 
           @foreach($venue as $venue) 
-            <option value="{{$venue->name}}">{{$venue->name}}</option>
+            <option data-capacity="{{$venue->capacity}}" value="{{$venue->id}}">{{$venue->name}}-({{$venue->capacity}} max capacity)</option>
           @endforeach 
           </select> 
           <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 

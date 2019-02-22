@@ -34,6 +34,10 @@
 		    <label for="prc">Price:</label>
 		    <input type="number" class="form-control" name="price" id="prc" value="@yield('editPrice')">
 		  </div>
+			<div class="form-group">
+		    <label for="capacity">Capacity:</label>
+		    <input type="number" class="form-control" name="capacity" id="capacity" value="@yield('editCapacity')">
+		  </div>
   		  <div class="form-group">
 		    <label for="file">Upload Image:</label>
 		    <input type="file" class="form-control" name="file" id="file" value="@yield('editFile')">

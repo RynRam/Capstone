@@ -8,4 +8,7 @@ class Venues extends Model implements Auditable
 {
 	use \OwenIt\Auditing\Auditable;
 
+    public function reservation(){
+    	return $this->hasOne(Reservations::class);
+    }
 }

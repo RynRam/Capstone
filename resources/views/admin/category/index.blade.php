@@ -36,9 +36,9 @@
                 <tr class="gradeX">
               <td><?php echo $var;?></td>
      	        <td>{{ucfirst($catering->name)}}</td>
-              @if($catering->event_categories_id == '2')
+              @if($catering->event_categories_id == '1')
               <td>Basic Catering</td>
-              @elseif($catering->event_categories_id == '1')
+              @elseif($catering->event_categories_id == '2')
               <td> Debut Catering </td>  
               @elseif($catering->event_categories_id == '3')
               <td>Wedding Catering</td>  

@@ -44,7 +44,7 @@ class CustomerPaymentController extends Controller
         
         $reservations = new Reservations;   
             $reservations->customers_id = Session::get('reservation')['customers_id'];
-            $reservations->venuename =    Session::get('reservation')['venuename'];
+            $reservations->venues_id =    Session::get('reservation')['venuename'];
             $reservations->package_id =   Session::get('reservation')['package_id'];
             $reservations->eventdate =    Session::get('reservation')['eventdate'];
             $reservations->category_id =  Session::get('reservation')['category_id'];
@@ -58,7 +58,7 @@ class CustomerPaymentController extends Controller
 
         $result = $payment->execute($execution, $apiContext);
         
-        return redirect()->back();
+        return redirect('receipt');
        
  
     }

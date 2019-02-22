@@ -17,6 +17,10 @@ class Reservations extends Model
 	 {
 	 	return $this->belongsTo(Caterings::class);
 	 }
+	 public function venue()
+	 {
+	 	return $this->belongsTo(Venues::class,'venues_id');
+	 }
        public function payment(){
     	return $this->hasMany(Payments::class);
 	}

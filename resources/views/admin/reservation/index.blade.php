@@ -39,7 +39,7 @@
                 <tr class="gradeX">
 
                 <td>{{ucfirst($reservation->customer->email)}}</td>	 
-	              <td>{{ucfirst($reservation->venuename)}}</td>
+	              <td>{{ucfirst($reservation->venue->name)}}</td>
                 <td>{{$reservation->package->name}}</td>  
                 <td>{{$reservation->eventdate}}</td>
                 <td>{{$reservation->category->name}}</td>

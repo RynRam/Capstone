@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Reservations;
 use App\Customer;
 use App\Packages;
+use App\Venues;
 use Pinq\ITraversable, Pinq\Traversable;
 use App\Payments;
 class ReservationController extends Controller
@@ -42,6 +43,10 @@ class ReservationController extends Controller
         }     
         // return $reservations;
         return view ('admin.reservation.index',compact('reservations'));
+    }
+    public function getCapacity($id){
+        $capacity = Venues::find($id);
+        return $capacity;
     }
 
     /**

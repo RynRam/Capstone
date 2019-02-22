@@ -32,6 +32,10 @@
 		    <label for="prc">Price:</label>
 		    <input type="number" class="form-control" name="price" id="prc" value="{{$files->price}}">
 		  </div>
+			<div class="form-group">
+		    <label for="capacity">Capacity:</label>
+		    <input type="number" class="form-control" name="capacity" id="capacity" value="{{$files->capacity}}">
+		  </div>
   		  <div class="form-group">
 		    <label for="file">Upload Image:</label>
 		    <input type="file" class="form-control" name="file" id="file" value="{{$files->file}}">

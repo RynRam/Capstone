@@ -74,6 +74,7 @@ class VenueController extends Controller
         $file->contact_person = $request->contact_person;
         $file->price = $request->price;
         $file->file = $filename;
+        $file->capacity =  $request->capacity;
         $file->save();
         return redirect('admin/venue');
         }
@@ -89,6 +90,7 @@ class VenueController extends Controller
             $file->address = $request->address;
             $file->contact = $request->contact;
             $file->contact_person = $request->contact_person;
+            $file->capacity =  $request->capacity;
             $file->price = $request->price;
                $file->save();
          return redirect('admin/venue');
@@ -145,6 +147,7 @@ class VenueController extends Controller
         $file->contact = $request->contact;
         $file->contact_person = $request->contact_person;
         $file->price = $request->price;
+        $file->capacity =  $request->capacity;
         $file->file = $filename;
         $file->save();
         return redirect('admin/venue');
@@ -164,6 +167,7 @@ class VenueController extends Controller
             $file->contact = $request->contact;
             $file->contact_person = $request->contact_person;
             $file->price = $request->price;
+            $file->capacity =  $request->capacity;
             $file->save();
          return redirect('admin/venue');
          }

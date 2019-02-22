@@ -11,7 +11,7 @@
           </header>
 
          
-            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form" >
+            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form"  onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" >
 	 {{csrf_field()}}
                 <!-- progressbar -->
                 <ul id="progressbar">
@@ -44,6 +44,7 @@
                   <input type="text" name="lname" placeholder="Last Name" required />
                   <input type="text" name="contact" placeholder="Phone" required />
                   <textarea name="address" placeholder="Address" required></textarea>
+                  <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('http://127.0.0.1:8000/privacy&policy')">Terms and Conditions and Privacy Policy</a></u></div>
                   <input type="button" name="previous" class="previous action-button" value="Previous" />
                   <input type="submit" name="submit" class="submit action-button" value="Submit" />
                 </fieldset>

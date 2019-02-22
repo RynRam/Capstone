@@ -172,6 +172,36 @@
 
   <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+
+  <!-- Form Venue validation -->
+<script>
+  
+
+
+
+$(function(){
+  $('#msform').submit(function(e) {
+ 
+    var venue = $("select#select").find(':selected').data('capacity');
+    var pax = $('#people').val();
+    if(document.getElementById('agree').checked){
+      if (venue < pax) {
+        alert('The pax exceeds the venue limit');
+     return false;
+      }
+    }
+    else{
+      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+      console.log(venue);
+     return false;
+    }
+
+
+  });
+});
+
+  </script>
+
 <!-- form datepicker -->
 <script>
   function addDays(dateObj, numDays) {
@@ -307,6 +337,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
 
 {!! $calendar_details->script() !!}
+
 
 </body>
 </html>

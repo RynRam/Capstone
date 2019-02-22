@@ -16,7 +16,7 @@
 
        <!-- test --> 
        
-       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" > 
+       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" > 
        {{csrf_field()}}
         <!-- progressbar --> 
         <ul id="progressbar" style="display:none;">
@@ -64,6 +64,7 @@
             <h2 class="fs-title">Payment</h2> 
             <h3 class="fs-subtitle">Reservation Fee</h3> 
             <div><input type="submit" name="submit" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
+            <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('http://127.0.0.1:8000/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
             <input type="button" name="previous" class="previous action-button" value="Previous" /> 
             
             </fieldset> 

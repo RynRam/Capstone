@@ -15,6 +15,7 @@ use App\Discounts;
 use Calendar;
 use Session;
 use GuzzleHttp\Client;
+use Auth;
 
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
@@ -43,7 +44,7 @@ class FrontController extends Controller
         }
         $calendar_details = Calendar::addEvents($event_list); 
  
-    	$catering = Caterings::where('event_categories_id',2)->get();
+    	$catering = Caterings::where('event_categories_id',1)->get();
     	$venue = Venues::where('is_active',1)->take(12)->get();
     	$package = Packages::where('is_active',1)->where('event_categories_id','2')->get();
         $food = Packages::where('is_active',1)->take(12)->get();
@@ -65,7 +66,7 @@ class FrontController extends Controller
         }
         $calendar_details = Calendar::addEvents($event_list); 
  
-        $catering = Caterings::where('event_categories_id',1)->get();
+        $catering = Caterings::where('event_categories_id',2)->get();
         $venue = Venues::where('is_active',1)->take(12)->get();
               $package = Packages::where('is_active',1)->where('event_categories_id','1')->get();
         $location = Venues::where('is_active',1)->take(12)->get();
@@ -132,7 +133,7 @@ class FrontController extends Controller
             'guest' => $request->people,
             'total' =>($reservations->guest * $reservations->package->price)
             ]); 
-
+            
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
 
@@ -177,8 +178,8 @@ class FrontController extends Controller
             $result = json_decode($response->getBody()->getContents());
             if($result->success){
 
-
                 return redirect($payment->getApprovalLink());
+                
             }else{
                 Session::flash('error','You are probably a robot!');
                 return redirect()->back();
@@ -194,9 +195,16 @@ class FrontController extends Controller
     }
 
 
+    public function receipt(){
+       
+        $reservation = Reservations::where('customers_id', Auth::guard('customer')->user()->id)->get()->last();
+        // return $reservation;
+        return view('front.receipt',compact('reservation'));
+    }
     public function menuA(){
         return view('front.classA');
     }
+
     public function menuB(){
         return view('front.classB');
     }
@@ -218,6 +226,9 @@ class FrontController extends Controller
     }
     public function terms(){
         return view('front.terms');
+    }
+    public function privacy(){
+        return view('front.privacy');
     }
 
 

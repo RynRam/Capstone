@@ -24,6 +24,8 @@
 	Route::get('/debutC', 'FrontController@debutC');
 	Route::get('/blog', 'FrontController@blog');
 	Route::get('/terms&condition', 'FrontController@terms');
+	Route::get('/privacy&policy', 'FrontController@privacy');
+	Route::get('/receipt', 'FrontController@receipt');
 	
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');
@@ -77,6 +79,7 @@
 	//Reservations
 	Route::resource('/admin/reservation','ReservationController');
 	Route::put('/admin/reservation/{reservation}', 'ReservationController@updateStatus');
+	Route::get('/admin/reservation/getcapacity/{id}', 'ReservationController@getCapacity');
 
 	//Food Package
 	Route::resource('/admin/food','FoodController');
