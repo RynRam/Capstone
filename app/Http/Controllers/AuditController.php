@@ -20,13 +20,14 @@ class AuditController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    $reservation = Reservations::first();
-         $ecategories = EventCategories::first();
-         $inventory = Inventory::first();
-         $audit = $inventory->audits;
-         $reservations = $reservation->audits;
-         $ecategories = $ecategories->audits;
-         // return $audits;
+    {    
+        // $reservation = Reservations::first();
+        //  $ecategories = EventCategories::first();
+        //  $inventory = Inventory::first();
+        //  $audit = $inventory->audits;
+        //  $reservations = $reservation->audits;
+        //  $ecategories = $ecategories->audits;
+        //  // return $audits;
         return view('admin.audit.index',compact('audit','reservations','ecategories'));
     }
 

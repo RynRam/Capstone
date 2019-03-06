@@ -22,6 +22,7 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th>Event</th>
                   <th>Payment</th>
                   <th>Percentage</th>
                   <th>Amount Due</th>
@@ -37,6 +38,7 @@
                 @foreach($payments as $payment)
                 <tr class="gradeX">
               <td> {{ucfirst($payment->reservation->customer->fname)}} {{ucfirst($payment->reservation->customer->lname)}}</td>
+              <td>{{$payment->reservation->category->name}}</td>
               <td>{{$payment->amount_payment}}</td>
               <td>{{$payment->percentage}}</td>
               <td>{{$payment->change}}</td>

@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Inventory;
 use Session;
 use App\Payments;
+use App\Caterings;
+use App\Reservations;
 class SalesController extends Controller
 {
     public function __construct()
     {
 
-        $this->middleware('sales');
+        $this->middleware('admin');
 
        
     }
@@ -23,7 +25,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return view('admin.sales.index');
+        $eventCategories=Caterings::all();
+        return view('admin.sales.index',compact('eventCategories'));
     }
     public function pdf()
     {
@@ -59,6 +62,27 @@ class SalesController extends Controller
             ]);  
             return redirect('admin/salespdf');
     }
+    
+    public function categorypdf()
+    {
+
+
+    $category = Session::get('sales_category')['category'];
+    $pdf = \App::make('dompdf.wrapper');
+    $amount =Payments::where('category',$category)->sum('balance');
+    $sales = Payments::where('category',$category)->get();
+    $pdf->loadView('reports.SalesCategoryReport',compact('sales','amount'));
+    return $pdf->stream();
+    }
+
+    public function category(Request $request)
+    {
+        Session::put('sales_category', [
+            'category' => $request->category,
+            ]);  
+            return redirect('admin/salescategorypdf');
+    }
+
 
     /**
      * Display the specified resource.

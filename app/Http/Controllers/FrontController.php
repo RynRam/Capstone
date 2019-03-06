@@ -16,6 +16,7 @@ use Calendar;
 use Session;
 use GuzzleHttp\Client;
 use Auth;
+use PDF;
 
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
@@ -194,12 +195,23 @@ class FrontController extends Controller
 
     }
 
-
+    public function reserved(){
+        $reserve = Reservations::all();
+        return ($reserve);
+    }
     public function receipt(){
        
         $reservation = Reservations::where('customers_id', Auth::guard('customer')->user()->id)->get()->last();
         // return $reservation;
         return view('front.receipt',compact('reservation'));
+    }
+    public function report(){
+       
+        $pdf = \App::make('dompdf.wrapper');
+        $reservation = Reservations::where('customers_id', Auth::guard('customer')->user()->id)->get()->last();
+       $pdf->loadView('front.report',compact('reservation'));
+       return $pdf->stream();
+
     }
     public function menuA(){
         return view('front.classA');

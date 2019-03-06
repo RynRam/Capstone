@@ -48,6 +48,22 @@
               </tbody>
             </table>
           </div>
+              <!-- As Date -->
+    <form action="{{action('AdminCustomerController@store')}}" method="POST">
+    {{csrf_field()}}
+
+      <div class="form-group text-center" style="margin-top:100px;">
+      <h2>Report as Date</h2>
+      <h4 style="display:inline-block;">From :</h3> 
+      <input type="date" name="from" id="salesfrom">
+      <h4 style="display:inline-block;">To :</h3> 
+      <input type="date" name="to" id="salesto">
+      </div>
+        <div class="form-group text-center">
+        <input type="submit" value="View or Print" class="btn btn-success">
+        </div>
+    </form>
+      <!-- /As Date -->
         </div>
       </div>
     </div>

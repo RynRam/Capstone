@@ -122,8 +122,8 @@
         <div class="colour-block">
          
           @foreach($discounts as $discount)
-          <h4><b><u>{{$discount->name ?? 'NO DISCOUNT'}}</u></b></h4>
-          <h5>{{$discount->description ?? 'POST DESCRIPTION'}}</h5>
+          <h4><b><u>{{$discount->name ??   "NO DISCOUNT AVAILABLE"}}</u></b></h4>
+          <h5>{{$discount->description ??  'POST DESCRIPTION'}}</h5>
      
           @endforeach
         </div>

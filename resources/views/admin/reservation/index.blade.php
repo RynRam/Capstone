@@ -28,13 +28,10 @@
                   <th>Guests</th>
                   <th>Status</th>
                   <th>Total Amount</th>
-                  <th></th>
-               
+                  <th></th>  
                 </tr>
               </thead>
               <tbody>
-
-  
                 @foreach($reservations as $reservation)
                 <tr class="gradeX">
 
@@ -91,6 +88,37 @@
               </tbody>
             </table>
           </div>
+                <!-- As Date -->
+            <form action="{{action('ReservationController@store')}}" method="POST">
+            {{csrf_field()}}
+
+              <div class="form-group text-center" style="margin-top:100px;">
+              <h2>Report As Date</h2>
+              <h4 style="display:inline-block;">From :</h3> 
+              <input type="date" name="from" id="salesfrom">
+              <h4 style="display:inline-block;">To :</h3> 
+              <input type="date" name="to" id="salesto">
+              </div>
+                <div class="form-group text-center">
+                <input type="submit" value="View or Print" class="btn btn-success">
+                </div>
+            </form>
+              <!-- /As Date -->
+              <hr>
+              <!-- As Event Date -->
+            <form action="{{action('ReservationController@eventdate')}}" method="POST">
+            {{csrf_field()}}
+
+              <div class="form-group text-center" style="margin-top:100px;">
+              <h2>Report As Event Date</h2>
+                <input type="date" name="eventdate" id="date">
+              </div><br>
+                <div class="form-group text-center">
+                <input type="submit" value="View or Print" class="btn btn-success">
+                </div>
+            </form>
+                <!-- /As Event Date -->
+           <hr>
         </div>
       </div>
     </div>

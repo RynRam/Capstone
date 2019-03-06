@@ -7,8 +7,10 @@ use App\Reservations;
 use App\Customer;
 use App\Packages;
 use App\Venues;
+use App\Caterings;
 use Pinq\ITraversable, Pinq\Traversable;
 use App\Payments;
+use Session;
 class ReservationController extends Controller
 {
          public function __construct()
@@ -39,15 +41,13 @@ class ReservationController extends Controller
             foreach ($reservation->payment as $paid) {
                 $reservation->total_paid += $paid->amount_payment;
                 }
+        $eventCategories=Caterings::all();
             
         }     
         // return $reservations;
-        return view ('admin.reservation.index',compact('reservations'));
+        return view ('admin.reservation.index',compact('reservations','eventCategories'));
     }
-    public function getCapacity($id){
-        $capacity = Venues::find($id);
-        return $capacity;
-    }
+ 
 
     /**
      * Show the form for creating a new resource.
@@ -67,9 +67,23 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-
+        Session::put('reservations', [
+            'from' => $request->from,
+            'to' => $request->to
+            ]);  
+            return redirect('admin/reservationpdf');
     }
 
+    public function pdf()
+    {
+    $from = Session::get('reservations')['from'];
+    $to = Session::get('reservations')['to'];
+    $pdf = \App::make('dompdf.wrapper');
+    $dates = Reservations::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+    $sales = Reservations::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to);
+    $pdf->loadView('reports.ReservationsReport',compact('sales','from','to','dates'));
+    return $pdf->stream();
+    }
     /**
      * Display the specified resource.
      *
@@ -103,7 +117,7 @@ class ReservationController extends Controller
     public function update(Request $request, $id)
         {
         $reservations = Reservations::find($id);
-        $reservations->venuename = $reservations->venuename;
+        $reservations->venues_id = $reservations->venues_id;
         $reservations->package_id = $reservations->package_id;
         $reservations->eventdate = $reservations->eventdate;
         $reservations->category_id = $reservations->category_id;
@@ -127,6 +141,25 @@ class ReservationController extends Controller
             $reservations->save();
            return redirect('/admin/reservation');
         }
+    }
+
+    public function eventdatepdf()
+    {
+
+
+    $edate = Session::get('reservations_eventdate')['eventdate'];
+    $pdf = \App::make('dompdf.wrapper');
+    $eventdates = Reservations::where('eventdate',$edate)->get();
+    $pdf->loadView('reports.ReservationsEventReport',compact('eventdates','amount'));
+    return $pdf->stream();
+    }
+
+    public function eventdate(Request $request)
+    {
+        Session::put('reservations_eventdate', [
+            'eventdate' => $request->eventdate,
+            ]);  
+            return redirect('admin/reservationseventdatepdf');
     }
 
     /**

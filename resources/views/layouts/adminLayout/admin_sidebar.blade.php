@@ -5,6 +5,7 @@
     @if(Auth::check())
         @if(Auth::user()->role_id=="admin")
   <li ><a href="{{url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+  <li ><a href="{{url('/admin/sales')}}"><i class="icon icon-money"></i> <span>Sales</span></a> </li>
   <li class="submenu"><a><i class="icon icon-bookmark-empty"></i> <span>Catering Essentials</span></a>
         <ul>
         <li> <a href="{{url('/admin/venue')}}"><i class="icon icon-map-marker"></i> <span>Venues</span><span class="label label-important"></span></a> </li>

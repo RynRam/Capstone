@@ -70,6 +70,7 @@
          @else
           <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
+            <li><a href="{{url('/customer-profile')}}">Profile</a></li>
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -174,11 +175,35 @@
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
 
   <!-- Form Venue validation -->
+  <script>
+ 
+ $(function(){
+   $('#msform').submit(function(e) {
+     var date = $('#datepicker').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reserved",
+      data: date,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        let date = $('#datepicker').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].eventdate == date){
+            alert('Date is already reserved');
+            return false;
+          }
+          
+        }
+
+      }
+    });
+   });
+ });
+ 
+   </script>
 <script>
-  
-
-
-
 $(function(){
   $('#msform').submit(function(e) {
  
@@ -202,6 +227,8 @@ $(function(){
 
   </script>
 
+
+
 <!-- form datepicker -->
 <script>
   function addDays(dateObj, numDays) {
@@ -209,7 +236,7 @@ $(function(){
    return dateObj;
   }
   $(function() {
-  $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+  $("#datepicker").datepicker({ dateFormat: 'yyyy-mm-dd' });
   });
   var dateToday = addDays(new Date(), 7)
   var dates = $("#datepicker").datepicker({
@@ -217,7 +244,7 @@ $(function(){
       changeMonth: true,
       numberOfMonths: 1,
       minDate: dateToday,
-      format: "yy-mm-dd"
+      format: "yyyy-mm-dd"
   });
 </script>
 <!-- /form datepicker -->

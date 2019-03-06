@@ -58,6 +58,7 @@ class PaymentController extends Controller
         $payments->percentage = $request->terms;
         $payments->change = $request->change;
         $payments->balance = $request->balance;
+        $payments->category = $request->category;
         $payments->save();
         return redirect('admin/payment');
     
@@ -88,11 +89,10 @@ class PaymentController extends Controller
         $package = Reservations::find($id);
         $total = $package->total;
         $reservations = Reservations::find($id)->customer;
-    
-     
+        $category = Reservations::find($id)->category->name;
 
 
-        return view('admin.payment.edit',compact('reservations','package','total'));
+        return view('admin.payment.edit',compact('reservations','package','total','category'));
     }
 
     /**

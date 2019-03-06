@@ -76,6 +76,7 @@ class Kernel extends HttpKernel
         'account' => \App\Http\Middleware\Account::class,
         'customerlogin' => \App\Http\Middleware\Account::class, 
         'customerauth' => \App\Http\Middleware\AuthCustomerLogin::class, 
+        'customerprofileauth' => \App\Http\Middleware\AuthCustomerProfile::class, 
         'adminauth' => \App\Http\Middleware\AuthAdminLogin::class,
     ];
 }

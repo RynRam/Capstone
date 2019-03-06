@@ -26,6 +26,9 @@
 	Route::get('/terms&condition', 'FrontController@terms');
 	Route::get('/privacy&policy', 'FrontController@privacy');
 	Route::get('/receipt', 'FrontController@receipt');
+	Route::get('/receipt/report', 'FrontController@report');
+	Route::get('/reserved', 'FrontController@reserved');
+
 	
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');
@@ -42,6 +45,9 @@
 });
 
 	Route::resource('/customer-login','CustomerLoginController');
+
+	Route::get('/customer-profile/{id}/edit','CustomerProfileController@edit');
+	Route::put('/customer-profile/{id}','CustomerProfileController@update');
 	// Route::get('/customer-login','CustomerLoginController@create')->name('customer.login');
 	Route::get('/verify', 'CustomerRegisterController@verifyFirst');
 	Route::get('/verifyDone', 'CustomerRegisterController@verifyDone');
@@ -78,8 +84,12 @@
 	Route::resource('/admin/warehouse','WarehouseController');
 	//Reservations
 	Route::resource('/admin/reservation','ReservationController');
+	Route::get('/admin/reservationpdf','ReservationController@pdf');
+	Route::post('/admin/reservationseventdate','ReservationController@eventdate');
+	Route::get('/admin/reservationseventdatepdf','ReservationController@eventdatepdf');
+	// Route::get('/admin/reserveDatePDF','ReservationController@reserveDatePDF');
 	Route::put('/admin/reservation/{reservation}', 'ReservationController@updateStatus');
-	Route::get('/admin/reservation/getcapacity/{id}', 'ReservationController@getCapacity');
+
 
 	//Food Package
 	Route::resource('/admin/food','FoodController');
@@ -111,6 +121,8 @@
 	//Sales
 	Route::resource('/admin/sales','SalesController');
 	Route::get('/admin/salespdf','SalesController@pdf');
+	Route::post('/admin/category','SalesController@category');
+	Route::get('/admin/salescategorypdf','SalesController@categorypdf');
 	//Discount
 	Route::resource('/admin/discount','DiscountController');
 	Route::patch('/admin/discount/{discount}', 'DiscountController@updateStatus'); 
@@ -119,4 +131,5 @@
 	Route::get('/admin/Paymentpdf','PaymentController@pdf');
 	//Customer
 	Route::resource('/admin/customers','AdminCustomerController');
+	Route::get('/admin/customerspdf','AdminCustomerController@pdf');
 Route::get('/logout', 'AdminController@logout')->middleware('auth');

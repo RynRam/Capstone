@@ -11,8 +11,7 @@
        <h4 style="text-align:center; width:240px; margin:0 auto;">254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100</h4>
         <h5 style="text-align:center;">TIN No. :000-000-549-000</h5>
         <h1 style="text-align:center;"><i><u>Sales Report</u></i></h1>
-        <h3>Sales From {{$from}} To {{$to}}</h3>
-        <table width="100%" style="border-collapse:collapse; border:0px">
+        <table width="100%" style="border-collapse:collapse; border:0px" >
       <thead>
         <tr>
         <th style="border: 1px solid; padding:12px; background-color:#5bb75b;" width="20%">Customer</th>
@@ -27,16 +26,15 @@
         </tr>
       </thead>
       <tbody>
-      @foreach($dates as $date)   
+      @foreach($sales as $sale)   
           <tr class="gradeX">
-          <td style="border:1px solid; padding:12px;">{{$date->reservation->customer->fname}} {{$date->reservation->customer->lname}}</td>
-          <td style="border:1px solid; padding:12px;">{{$date->reservation->category->name}}</td>
-        <td style="border:1px solid; padding:12px;">{{$date->reservation->package->name}}</td>
-        <td style="border:1px solid; padding:12px;">{{date('M/d/Y', strtotime($date->date_invoice))}}</td>
-        <td style="border:1px solid; padding:12px;">PHP {{$date->balance}}</td>
-     
+          <td style="border:1px solid; padding:12px;">{{$sale->reservation->customer->fname}} {{$sale->reservation->customer->lname}}</td>
+          <td style="border:1px solid; padding:12px;">{{$sale->reservation->category->name}}</td>
+        <td style="border:1px solid; padding:12px;">{{$sale->reservation->package->name}}</td>
+        <td style="border:1px solid; padding:12px;">{{date('M/d/Y', strtotime($sale->date_invoice))}}</td>
+        <td style="border:1px solid; padding:12px;">PHP {{$sale->balance}}</td>
       @endforeach 
-        <h2 style="position:relative;text-align:right;"><b>Total Sales: <u> PHP {{$sales}} </u></b></h2>
+        <h2 style=text-align:right;"><b>Total Sales: <u> PHP {{$amount}} </u></b></h2>
 <div style="position:absolute;bottom:0;right:0%;">Prepared By : __________________</div>
         </tr>
   

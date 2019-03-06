@@ -84,6 +84,7 @@
         <form action="{{action('PaymentController@store')}}" method="POST">
               {{csrf_field()}}
               <input type="hidden" name="reserveid" value="{{ucfirst($package->id)}}">
+              <input type="hidden" name="category" value="{{$category}}">
           
           <div class="form-group">
             <input type="hidden" name="totalhidden" id="totalhidden" value="{{$total}}">

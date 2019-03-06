@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use Session;
 class AdminCustomerController extends Controller
 {
     /**
@@ -35,7 +36,11 @@ class AdminCustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::put('dates', [
+            'from' => $request->from,
+            'to' => $request->to
+            ]);  
+            return redirect('admin/customerspdf');
     }
 
     /**
@@ -82,4 +87,14 @@ class AdminCustomerController extends Controller
     {
         //
     }
+    public function pdf()
+    {
+    $from = Session::get('dates')['from'];
+    $to = Session::get('dates')['to'];
+    $pdf = \App::make('dompdf.wrapper');
+    $dates = Customer::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+    $pdf->loadView('reports.CustomerReport',compact('from','to','dates'));
+    return $pdf->stream();
+    }
 }
+    

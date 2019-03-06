@@ -32,7 +32,7 @@
                    <b> Status :</b> <u style="font-size:23px;">{{$reservation->is_approved == 0 ? 'Pending' : 'Approved'}} </u><br/>
                    </div>
                    <a href="/"><input type="button" class="submit action-button" value="Back to home" /></a>
-                   <input type="button" class="submit action-button" value="Print" />
+                   <a href="/receipt/report"><input type="button" class="submit action-button" value="Print" /></a>
 
 
 
