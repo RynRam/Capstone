@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{asset('images/title.png')}}" rel="icon">
+  <link href="https://lynagailscaters.herokuapp.com/images/title.png" rel="icon">
 
 
   <!-- Google Fonts -->
