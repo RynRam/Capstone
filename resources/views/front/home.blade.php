@@ -33,7 +33,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="../../images/frontend_images/wedding.jpg" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/Wedding.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Debuts</h2>
@@ -147,8 +147,8 @@
           <div class="col-lg-4 col-md-6 services-item filter-card wow fadeInUp">
             <div class="services-wrap">
               <figure>
-                <img src="../../images/frontend_images/onie.jpg" class="img-fluid" alt="">
-                <a href="../../images/frontend_images/onie.jpg" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <img src="../../images/frontend_images/Onie.jpg" class="img-fluid" alt="">
+                <a href="../../images/frontend_images/Onie.jpg" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="{{url('/basic-catering')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
 
@@ -197,7 +197,7 @@
     <section id="skills">
     <header class="section-header">
           <h3 style="color:#fff;">Why Us</h3>
-    <img src="../../images/frontend_images/Why_us_final.png" alt="" width="100%">
+    <img src="../../images/frontend_images/why_us_final.png" alt="" width="100%">
    
     </section>
     <!-- about section -->
