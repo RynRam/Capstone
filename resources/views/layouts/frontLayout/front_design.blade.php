@@ -25,7 +25,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
+  <link href="https://lynagailscaters.herokuapp.com/{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
 
 </head>
 

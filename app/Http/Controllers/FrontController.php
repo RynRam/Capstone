@@ -29,7 +29,7 @@ use PayPal\Api\Transaction;
 class FrontController extends Controller
 {
     public function getIndex(){
-        $discounts = Discounts::where('is_active',1)->get();
+       $discounts = Discounts::where('is_active',1)->get();
 	    return view('front.home',compact('discounts'));
     }
     public function getCatering(){
