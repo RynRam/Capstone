@@ -3,7 +3,7 @@
 @section('content')
 <style>
   #call-to-action {
-  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center;
+  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blog3.jpg) fixed center center;
   background-size: cover;
       padding: 14% 0%;
   }

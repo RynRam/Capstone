@@ -44,7 +44,7 @@
                   <input type="text" name="lname" placeholder="Last Name" required />
                   <input type="text" name="contact" placeholder="Phone" required />
                   <textarea name="address" placeholder="Address" required></textarea>
-                  <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('http://127.0.0.1:8000/privacy&policy')">Terms and Conditions and Privacy Policy</a></u></div>
+                  <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('https://lynagailscaters.herokuapp.com/privacy&policy')">Terms and Conditions and Privacy Policy</a></u></div>
                   <input type="button" name="previous" class="previous action-button" value="Previous" />
                   <input type="submit" name="submit" class="submit action-button" value="Submit" />
                 </fieldset>

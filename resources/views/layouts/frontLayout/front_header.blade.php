@@ -7,7 +7,7 @@
       <div id="logo" class="pull-left">
         <!-- <h1><a href="#intro" class="scrollto">Lynagails Catering</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-         <a href="#intro"><img src="{{asset('images/logo2.png')}}" alt="" title="" /></a>
+         <a href="#intro"><img src="../../images/logo2.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">

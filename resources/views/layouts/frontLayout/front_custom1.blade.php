@@ -9,24 +9,25 @@
 
   <!-- Favicons -->
 
-  <link href="{{asset('images/title.png')}}" rel="icon">
+  <link href="https://lynagailscaters.herokuapp.com/images/title.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Libraries CSS Files -->
-  <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+ <!-- Libraries CSS Files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
   <!-- Main Stylesheet File -->
-  <link href="{{asset('css/frontend_css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('css/frontend_css/jquery-ui.min.css')}}" rel="stylesheet">
+  <link href="https://lynagailscaters.herokuapp.com/css/frontend_css/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
   <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -41,7 +42,7 @@
         <!-- <h1><a href="{{url('/')}}" class="scrollto">Lynagails Catering</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <!-- <a href="#intro"><img src="{{asset('images/backend_images/logo.png')}}" alt="" title="" /></a> -->
-         <a href="#intro"><img src="{{asset('images/logo2.png')}}" alt="" title="" /></a>
+         <a href="#intro"><img src="../../images/logo2.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -155,25 +156,25 @@
 
 
 
-  <!-- JavaScript Libraries -->
-  <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
-
-  <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('lib/easing/easing.min.js')}}"></script>
-  <script src="{{asset('lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{asset('lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{asset('lib/wow/wow.min.js')}}"></script>
-  <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('lib/lightbox/js/lightbox.min.js')}}"></script>
-  <script src="{{asset('lib/touchSwipe/jquery.touchSwipe.min.js')}}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.8.1/jquery.hoverIntent.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.9/js/superfish.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/graingert-wow/1.2.2/wow.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.5/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="{{asset('js/frontend_js/main.js')}}"></script>
-  <script src="{{asset('js/frontend_js/jquery-ui.min.js')}}"></script>
+  <script src="https://lynagailscaters.herokuapp.com/js/frontend_js/main.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+
   <script>
       var dateToday = new Date();
       var dates = $("#datepicker").datepicker({

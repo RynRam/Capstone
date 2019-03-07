@@ -1,7 +1,7 @@
 <style type="text/css"> 
-#main{ background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; } 
-#services { background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; padding: 40px 0; } 
-#about { position: relative; background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url('../../images/backend_images/Blogs/blog3.jpg') fixed center center; background-size: cover; padding: 40px 0; }
+#main{ background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blog3.jpg) fixed center center; background-size: cover; } 
+#services { background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blog3.jpg) fixed center center; background-size: cover; padding: 40px 0; } 
+#about { position: relative; background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blog3.jpg) fixed center center; background-size: cover; padding: 40px 0; }
  .gj-datepicker-md [role=right-icon]{ font-size:36px; }
 </style> 
 @include('front.partials.accountStyle') 
@@ -64,7 +64,7 @@
             <h2 class="fs-title">Payment</h2> 
             <h3 class="fs-subtitle">Reservation Fee</h3> 
             <div><input type="submit" name="submit" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
-            <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('http://127.0.0.1:8000/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
+            <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('https://lynagailscaters.herokuapp.com/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
             <input type="button" name="previous" class="previous action-button" value="Previous" /> 
             
             </fieldset> 

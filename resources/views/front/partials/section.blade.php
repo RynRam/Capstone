@@ -9,8 +9,8 @@
             <div class="col-lg-4 col-md-6 services-item filter-card wow fadeInUp">
               <div class="services-wrap">
                 <figure>
-                  <img src="{{asset('images/frontend_images/cards/onie.jpg')}}" class="img-fluid" alt="">
-                  <a href="{{asset('images/frontend_images/cards/onie.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <img src="{{asset('images/frontend_images/Onie.jpg')}}" class="img-fluid" alt="">
+                  <a href="{{asset('images/frontend_images/Onie.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="{{url('/basic-catering')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
@@ -24,8 +24,8 @@
             <div class="col-lg-4 col-md-6 services-item filter-card wow fadeInUp" data-wow-delay="0.1s">
               <div class="services-wrap">
                 <figure>
-                  <img src="{{asset('images/frontend_images/cards/9.jpg')}}" class="img-fluid" alt="">
-                  <a href="{{asset('images/frontend_images/cards/9.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <img src="{{asset('images/frontend_images/9.jpg')}}" class="img-fluid" alt="">
+                  <a href="{{asset('images/frontend_images/9.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="{{url('/debut')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
@@ -39,8 +39,8 @@
             <div class="col-lg-4 col-md-6 services-item filter-web wow fadeInUp" data-wow-delay="0.2s">
               <div class="services-wrap">
                 <figure>
-                  <img src="{{asset('images/frontend_images/cards/weddingfirst.jpg')}}" class="img-fluid" alt="">
-                  <a href="{{asset('images/frontend_images/cards/weddingfirst.jpg')}}" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <img src="{{asset('images/frontend_images/weddingfirst.jpg')}}" class="img-fluid" alt="">
+                  <a href="{{asset('images/frontend_images/weddingfirst.jpg')}}" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="{{url('/wedding')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
