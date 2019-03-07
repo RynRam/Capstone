@@ -11,7 +11,7 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="{{asset('images/frontend_images/cards/corporate.jpg')}}" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/corporate.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Lynagails Catering Services</h2>
@@ -22,7 +22,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{{asset('images/frontend_images/cards/post1.jpg')}}" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/post1.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Basic Caterings</h2>
@@ -33,7 +33,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{{asset('images/frontend_images/cards/wedding.jpg')}}" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/wedding.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Debuts</h2>
@@ -44,7 +44,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{{asset('images/frontend_images/cards/post2.jpg')}}" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/post2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Weddings</h2>
@@ -55,7 +55,7 @@
           </div>
 
           <div class="carousel-item">
-            <div class="carousel-background"><img src="{{asset('images/frontend_images/cards/6.jpg')}}" alt=""></div>
+            <div class="carousel-background"><img src="../../images/frontend_images/6.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2>Christenings</h2>
@@ -147,8 +147,8 @@
           <div class="col-lg-4 col-md-6 services-item filter-card wow fadeInUp">
             <div class="services-wrap">
               <figure>
-                <img src="{{asset('images/frontend_images/cards/onie.jpg')}}" class="img-fluid" alt="">
-                <a href="{{asset('images/frontend_images/cards/onie.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <img src="../../images/frontend_images/onie.jpg" class="img-fluid" alt="">
+                <a href="../../images/frontend_images/onie.jpg" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="{{url('/basic-catering')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
 
@@ -162,8 +162,8 @@
           <div class="col-lg-4 col-md-6 services-item filter-card wow fadeInUp" data-wow-delay="0.1s">
             <div class="services-wrap">
               <figure>
-                <img src="{{asset('images/frontend_images/cards/9.jpg')}}" class="img-fluid" alt="">
-                <a href="{{asset('images/frontend_images/cards/9.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <img src="../../images/frontend_images/9.jpg" class="img-fluid" alt="">
+                <a href="../../images/frontend_images/9.jpg" class="link-preview" data-lightbox="services" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="{{url('/debut')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
 
@@ -177,8 +177,8 @@
           <div class="col-lg-4 col-md-6 services-item filter-web wow fadeInUp" data-wow-delay="0.2s">
             <div class="services-wrap">
               <figure>
-                <img src="{{asset('images/frontend_images/cards/weddingfirst.jpg')}}" class="img-fluid" alt="">
-                <a href="{{asset('images/frontend_images/cards/weddingfirst.jpg')}}" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <img src="../../images/frontend_images/weddingfirst.jpg" class="img-fluid" alt="">
+                <a href="../../images/frontend_images/weddingfirst.jpg" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                 <a href="{{url('/basic-catering')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
 
@@ -197,7 +197,7 @@
     <section id="skills">
     <header class="section-header">
           <h3 style="color:#fff;">Why Us</h3>
-    <img src="{{asset('images/frontend_images/Why_us_final.png')}}" alt="" width="100%">
+    <img src="../../images/frontend_images/Why_us_final.png" alt="" width="100%">
    
     </section>
     <!-- about section -->
