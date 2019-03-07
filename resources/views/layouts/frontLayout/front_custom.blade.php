@@ -46,31 +46,31 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{url('/')}}">Home</a></li>
+          <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           <li><a href="#form">Fill Up</a></li>
           <li><a href="#services">Services</a></li>
           <li class="menu-has-children"><a href="#">Menus</a>
             <ul>
-              <li><a href="{{url('/debutA')}}">Debut A</a></li>
-              <li><a href="{{url('/debutB')}}">Debut B</a></li>
-              <li><a href="{{url('/debutC')}}">Debut C</a></li>
-              <li><a href="{{url('/classA')}}">Wedding A</a></li>
-              <li><a href="{{url('/classB')}}">Wedding B</a></li>
-              <li><a href="{{url('/classC')}}">Wedding C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutB">Debut B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutC">Debut C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classA">Wedding A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classB">Wedding B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classC">Wedding C</a></li>
             </ul>
           </li>
-          <li><a href="{{url('/blog')}}">Blog</a></li>
+          <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
     @if (Auth::guard('customer')->guest())
           <li class="menu-has-children"><a href="">Account</a>
             <ul>
-              <li><a href="{{url('/customer-register')}}">Register</a></li>
-              <li><a href="{{url('/customer-login')}}">Login</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/customer-register">Register</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/customer-login">Login</a></li>
             </ul>
           </li>
          @else
           <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
-            <li><a href="{{url('/customer-profile')}}">Profile</a></li>
+            <li><a href="https://lynagailscaters.herokuapp.com/customer-profile">Profile</a></li>
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -112,10 +112,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Help & Support</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/#about">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/#about">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="/terms&condition">Terms & Conditions</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/terms&condition">Terms & Conditions</a></li>
 
             </ul>
           </div>

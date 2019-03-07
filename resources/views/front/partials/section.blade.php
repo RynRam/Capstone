@@ -11,11 +11,11 @@
                 <figure>
                   <img src="{{asset('images/frontend_images/Onie.jpg')}}" class="img-fluid" alt="">
                   <a href="{{asset('images/frontend_images/Onie.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                  <a href="{{url('/basic-catering')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  <a href="https://lynagailscaters.herokuapp.com/basic-catering" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
                 <div class="services-info">
-                  <h4><a href="{{url('/basic-catering')}}">Basic Catering</a></h4>
+                  <h4><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></h4>
                   <p>Details</p>
                 </div>
               </div>
@@ -26,11 +26,11 @@
                 <figure>
                   <img src="{{asset('images/frontend_images/9.jpg')}}" class="img-fluid" alt="">
                   <a href="{{asset('images/frontend_images/9.jpg')}}" class="link-preview" data-lightbox="services" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                  <a href="{{url('/debut')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  <a href="https://lynagailscaters.herokuapp.com/debut" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
                 <div class="services-info">
-                  <h4><a href="{{url('/debut')}}">Debut</a></h4>
+                  <h4><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></h4>
                   <p>Details</p>
                 </div>
               </div>
@@ -41,11 +41,11 @@
                 <figure>
                   <img src="{{asset('images/frontend_images/weddingfirst.jpg')}}" class="img-fluid" alt="">
                   <a href="{{asset('images/frontend_images/weddingfirst.jpg')}}" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                  <a href="{{url('/wedding')}}" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                  <a href="https://lynagailscaters.herokuapp.com/wedding" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </figure>
 
                 <div class="services-info">
-                  <h4><a href="{{url('/wedding')}}">Wedding</a></h4>
+                  <h4><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></h4>
                   <p>Details</p>
                 </div>
               </div>

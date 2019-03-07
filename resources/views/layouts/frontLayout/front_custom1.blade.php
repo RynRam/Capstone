@@ -39,7 +39,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <!-- <h1><a href="{{url('/')}}" class="scrollto">Lynagails Catering</a></h1> -->
+        <!-- <h1><a href="https://lynagailscaters.herokuapp.com" class="scrollto">Lynagails Catering</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <!-- <a href="#intro"><img src="{{asset('images/backend_images/logo.png')}}" alt="" title="" /></a> -->
          <a href="#intro"><img src="../../images/logo2.png" alt="" title="" /></a>
@@ -47,36 +47,36 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="{{url('/')}}">Home</a></li>
+          <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           <li class="menu-has-children"><a href="#services">Services</a>
             <ul>
-              <li><a href="{{url('/basic-catering')}}">Basic Catering</a></li>
-              <li><a href="{{url('/debut')}}">Debut</a></li>
-              <li><a href="{{url('/wedding')}}">Wedding</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
             </ul>
           </li>
           <li class="menu-has-children"><a href="#">Menus</a>
             <ul>
-              <li><a href="{{url('/debutA')}}">Debut A</a></li>
-              <li><a href="{{url('/debutB')}}">Debut B</a></li>
-              <li><a href="{{url('/debutC')}}">Debut C</a></li>
-              <li><a href="{{url('/classA')}}">Wedding A</a></li>
-              <li><a href="{{url('/classB')}}">Wedding B</a></li>
-              <li><a href="{{url('/classC')}}">Wedding C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutB">Debut B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutC">Debut C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classA">Wedding A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classB">Wedding B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classC">Wedding C</a></li>
             </ul>
           </li>
-          <li><a href="{{url('/blog')}}">Blog</a></li>
+          <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
     @if (Auth::guard('customer')->guest())
           <li class="menu-has-children"><a href="">Account</a>
             <ul>
-              <li><a href="{{url('/customer-register')}}">Register</a></li>
-              <li><a href="{{url('/customer-login')}}">Login</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/customer-register">Register</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/customer-login">Login</a></li>
             </ul>
           </li>
          @else
           <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
-            <li><a href="{{url('/customer-profile')}}">Profile</a></li>
+            <li><a href="https://lynagailscaters.herokuapp.com/customer-profile">Profile</a></li>
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
