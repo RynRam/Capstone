@@ -25,8 +25,8 @@ class CreateCustomersDeployTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('is_verified'); // default value 0 (false)
-            $table->string('verification_token')->default(null); // based sa tuts
-            $table->rememberToken()->default(null);
+            $table->string('verification_token'); // based sa tuts
+            $table->rememberToken();
             $table->timestamps();
         });
     }
