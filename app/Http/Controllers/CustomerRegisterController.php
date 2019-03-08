@@ -56,6 +56,7 @@ class CustomerRegisterController extends Controller
      */
     public function store(Request $request)
     {
+        return 's';
         $customer = new Customer;
         $this->validate($request,[
             'fname' => 'required',
