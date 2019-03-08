@@ -19,8 +19,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'admin',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 2,
@@ -30,8 +30,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'admin',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 3,
@@ -41,8 +41,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'inventory',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 4,
@@ -52,8 +52,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'inventory',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 5,
@@ -63,8 +63,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'inventory',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 6,
@@ -74,8 +74,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'manpower',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 7,
@@ -85,8 +85,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'reservation',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 8,
@@ -96,8 +96,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'manpower',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 9,
@@ -107,8 +107,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'reservation',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 10,
@@ -118,8 +118,8 @@ class UsersTableSeeder extends Seeder
             'role_id' => 'reservation',
             'is_active' => 1,         
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ]
 
 

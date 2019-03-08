@@ -2,7 +2,7 @@
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class CustomersTableSeeder extends Seeder
 {
     /**
@@ -26,8 +26,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 2,
@@ -43,8 +43,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ], 
         [
             'id' => 3,
@@ -60,8 +60,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 4,
@@ -77,8 +77,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
          [
             'id' =>5 ,
@@ -94,8 +94,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 6,
@@ -111,8 +111,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 7,
@@ -128,8 +128,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 8,
@@ -145,8 +145,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 9,
@@ -162,8 +162,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 10,
@@ -179,8 +179,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 11,
@@ -196,8 +196,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 12,
@@ -213,8 +213,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 13,
@@ -230,8 +230,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 14,
@@ -247,8 +247,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 15,
@@ -264,8 +264,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
             'id' => 16,
@@ -281,8 +281,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
             'id' => 17,
@@ -298,8 +298,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
             'id' => 18,
@@ -315,8 +315,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
             'id' => 19,
@@ -332,8 +332,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
             'id' => 20,
@@ -349,8 +349,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
             'id' => 21,
@@ -366,8 +366,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
             'id' => 22,
@@ -383,8 +383,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
             'id' => 23,
@@ -400,8 +400,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 24,
@@ -417,8 +417,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 25,
@@ -434,8 +434,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 26,
@@ -451,8 +451,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 27,
@@ -468,8 +468,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 28,
@@ -485,8 +485,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 29,
@@ -502,8 +502,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 30,
@@ -519,8 +519,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 31,
@@ -536,8 +536,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
             'id' => 32,
@@ -553,8 +553,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
             'id' => 33,
@@ -570,8 +570,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 34,
@@ -587,8 +587,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 35,
@@ -604,8 +604,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 36,
@@ -621,8 +621,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 37,
@@ -638,8 +638,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 38,
@@ -655,8 +655,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 39,
@@ -672,8 +672,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
                 [
             'id' => 40,
@@ -689,8 +689,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
                 [
             'id' => 41,
@@ -706,8 +706,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
                   [
             'id' => 42,
@@ -723,8 +723,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
             'id' => 43,
@@ -740,8 +740,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 44,
@@ -757,8 +757,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 45,
@@ -774,8 +774,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 46,
@@ -791,8 +791,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 47,
@@ -808,8 +808,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 48,
@@ -825,8 +825,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 49,
@@ -842,8 +842,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
             'id' => 50,
@@ -859,8 +859,8 @@ class CustomersTableSeeder extends Seeder
             'is_verified' => 1,
             'verification_token' =>null ,
             'remember_token' => str_random(40),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ]
     );
     }

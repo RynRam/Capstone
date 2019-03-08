@@ -18,8 +18,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Bartender',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
         [
@@ -29,8 +29,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Head Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
         [
@@ -40,8 +40,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Bartender',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -51,8 +51,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Head Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -62,8 +62,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -73,8 +73,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Event Planner',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -84,8 +84,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Host',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -95,8 +95,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -106,8 +106,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -117,8 +117,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -128,8 +128,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -139,8 +139,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -150,8 +150,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -161,8 +161,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		[
             'id' => 15,
@@ -171,8 +171,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -182,8 +182,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -193,8 +193,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -204,8 +204,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -215,8 +215,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Host',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -226,8 +226,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -237,8 +237,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -248,8 +248,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -259,8 +259,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -270,8 +270,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Event Planner',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -281,8 +281,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -292,8 +292,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Event Planner',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -303,8 +303,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -314,8 +314,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -325,8 +325,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -336,8 +336,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Event Planner',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -347,8 +347,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -358,8 +358,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -369,8 +369,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -380,8 +380,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -391,8 +391,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -402,8 +402,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -413,8 +413,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -424,8 +424,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -435,8 +435,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -446,8 +446,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Server',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -457,8 +457,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -468,8 +468,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Event Planner',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -479,8 +479,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -490,8 +490,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Setup Crew',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -501,8 +501,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -512,8 +512,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Chef',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -523,8 +523,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -534,8 +534,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Dishwasher',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -545,8 +545,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Bartender',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ],
 		
 		[
@@ -556,8 +556,8 @@ class StaffsTableSeeder extends Seeder
             'roles' => 'Supervisor',
             'is_assign'=> 'Available',
             'is_active' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ]
 		
 
