@@ -52,7 +52,7 @@ class DiscountController extends Controller
         $discounts->discount = $request->discount;
         $discounts->save();
 
-        return view('admin/discount');
+        return view('admin.discount.index');
     }
 
     /**
