@@ -196,7 +196,7 @@ class FrontController extends Controller
     }
 
     public function reserved(){
-        $reserve = Customers::all();
+        $reserve = Reservations::all();
         return ($reserve);
     }
     public function receipt(){

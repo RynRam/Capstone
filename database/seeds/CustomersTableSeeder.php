@@ -2,7 +2,7 @@
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+
 class CustomersTableSeeder extends Seeder
 {
     /**
@@ -30,7 +30,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 2,
+            'id' => 52,
             'fname' => 'Carlisle',
             'lname' => 'Doe',
             'contact' => '09158547791',

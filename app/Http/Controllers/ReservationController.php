@@ -41,11 +41,10 @@ class ReservationController extends Controller
             foreach ($reservation->payment as $paid) {
                 $reservation->total_paid += $paid->amount_payment;
                 }
-        $eventCategories=Caterings::all();
-            
+     
         }     
         // return $reservations;
-        return view ('admin.reservation.index',compact('reservations','eventCategories'));
+        return view ('admin.reservation.index',compact('reservations'));
     }
  
 
