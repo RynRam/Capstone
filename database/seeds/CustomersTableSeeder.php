@@ -13,7 +13,7 @@ class CustomersTableSeeder extends Seeder
     public function run()
     {
         DB::table('customers')->insert([
-            'id' => 1,
+            'id' => 51,
             'fname' => 'Ryan',
             'lname' => 'Owens',
             'contact' => '09158547791',
