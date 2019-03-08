@@ -8,7 +8,7 @@
             <h3 style="color:#fff;">Login Form</h3>
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>         
-            <form id="msform" action="{{action('CustomerLoginController@store')}}" method="post" role="form" >
+            <form id="msform" action="https://lynagailscaters.herokuapp.com/customer-login" method="post" role="form" >
 	              {{csrf_field()}}
                 <!-- fieldsets -->
                 <fieldset>
@@ -21,7 +21,7 @@
                   <input type="email" name="email" placeholder="Email" required/>
                   <input type="password" name="password" placeholder="Password" required/>
                   <input type="submit" name="submit" class="submit action-button" value="Login" />
-                  <a class="btn btn-link" href="{{ route('customer.password.request') }}">
+                  <a class="btn btn-link" href="https://lynagailscaters.herokuapp.com/customer/password/reset">
                                     Forgot Your Password?
                                 </a>
               </fieldset>
