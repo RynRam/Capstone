@@ -81,7 +81,7 @@ class CustomerRegisterController extends Controller
         $this->sendEmail($insertedCustomer);
         Session::flash('status','Please verify your email before logging in.');
         return redirect("https://lynagailscaters.herokuapp.com/customer-login");
-        return 's';
+       
     }
     public function sendEmailDone($email, $verification_token)
     {
