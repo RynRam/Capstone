@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/css/backend_css/matrix-media.css" />
 <link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/lib/lightbox/css/lightbox.min.css" />
 <link href="https://lynagailscaters.herokuapp.com/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="https://lynagailscaters.herokuapp.com/fonts/backend_fonts/css/font-awesome.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.0/css/font-awesome.css" rel="stylesheet">
 <link href="https://lynagailscaters.herokuapp.com/css/backend_css/uniform.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/css/backend_css/select2.css" />
 <link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/css/backend_css/bootstrap-wysihtml5.css" />
