@@ -53,7 +53,7 @@ hr{ border-top-color:#dadada;}
 	z-index: -9;
 }
 #header h1 {
-	background: url("../../images/logo2.png") no-repeat scroll 0 0 transparent;
+	background: url(../../images/logo2.png) no-repeat scroll 0 0 transparent;
 	height: 31px;
 	left: 20px;
 	line-height: 600px;
@@ -118,7 +118,7 @@ hr{ border-top-color:#dadada;}
     font-size: 13px;
     font-weight: 600;
 }
-}
+
 #user-nav > ul > li > a:hover, #user-nav > ul > li.open > a {
 	color: #ffffff;  background:#108043;
 
@@ -140,8 +140,8 @@ hr{ border-top-color:#dadada;}
 #user-nav > ul ul > li > a {
 	text-align: left;
 }
-#user-nav > ul ul > li > a:hover {
-}
+/* #user-nav > ul ul > li > a:hover {
+} */
 /* Sidebar Navigation */
 #sidebar {
 	display: block;
@@ -174,7 +174,7 @@ hr{ border-top-color:#dadada;}
 	color: #18d26e;
 }
 #sidebar > ul > li.active > a {
-	background: url("../../images/backend_images/menu-active.png") no-repeat scroll right center transparent !important;
+	background: url(../../images/backend_images/menu-active.png) no-repeat scroll right center transparent !important;
 	text-decoration:none;
 }
 #sidebar > ul > li > a > .label {
@@ -252,7 +252,7 @@ hr{ border-top-color:#dadada;}
 #breadcrumb a {
 	padding: 8px 20px 8px 10px;
 	display: inline-block;
-	background-image: url('../../images/backend_images/breadcrumb.png');
+	background-image: url(../../images/backend_images/breadcrumb.png);
 	background-position: center right;
 	background-repeat: no-repeat;
 	font-size: 11px;
@@ -457,8 +457,8 @@ hr{ border-top-color:#dadada;}
 	margin-bottom: 3px;
 	margin-top: 6px;
 }
-.stat-boxes .peity_bar_good, .stat-boxes .peity_line_good, {
- color: #459D1C;
+.stat-boxes .peity_bar_good, .stat-boxes .peity_line_good {
+ 	color: #459D1C;
 }
 .stat-boxes .peity_bar_neutral, .stat-boxes .peity_line_neutral {
 	color: #757575;
@@ -466,8 +466,8 @@ hr{ border-top-color:#dadada;}
 .stat-boxes .peity_bar_bad, .stat-boxes .peity_line_bad {
 	color: #BA1E20;
 }
-.stats-plain {
-}
+/* .stats-plain {
+} */
 
 .site-stats {
 	margin: 0;
@@ -798,7 +798,7 @@ hr{ border-top-color:#dadada;}
 }
 #chat-messages-inner p img {
 	display: inline-block;
-	float: left;
+	/* float: left; */
 	vertical-align: middle;
 	width: 28px;
 	height: 28px;
@@ -1109,7 +1109,7 @@ div.dataTables_wrapper .ui-widget-header {
 	opacity: 1; color:#fff; top:50%; transition:1s ease-out;
 }
 .line {
-	background: url("../../images/backend_images/line.png") repeat-x scroll 0 0 transparent;
+	background: url(../../images/backend_images/line.png) repeat-x scroll 0 0 transparent;
 	display: block;
 	height: 8px;
 }
@@ -1163,8 +1163,8 @@ form {
 	margin-left: 200px;
 	padding: 10px 0;
 }
-.form-horizontal input[type=text], .form-horizontal input[type=password], .form-horizontal textarea {
-}
+/* .form-horizontal input[type=text], .form-horizontal input[type=password], .form-horizontal textarea {
+} */
 .row-fluid .span20 {
 	width:97.8%
 }
@@ -1421,7 +1421,7 @@ form {
 	font-size:12px;
 }
 #sidebar > ul li a i {
-	background-image: url("../img/glyphicons-halflings-white.png");
+	background-image: url(../img/backend_images/glyphicons-halflings-white.png);
 	margin-top:4px;
 	vertical-align: top;
 }
