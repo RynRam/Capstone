@@ -11,7 +11,7 @@
           </header>
 
          
-            <form id="msform"  action="https://lynagailscaters.herokuapp.com/customer-register" method="post" role="form"  onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" >
+            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form"  onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }" >
 	 {{csrf_field()}}
                 <!-- progressbar -->
                 <ul id="progressbar">

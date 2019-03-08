@@ -8,7 +8,7 @@
             <h3 style="color:#fff;">Login Form</h3>
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>         
-            <form id="msform" action="https://lynagailscaters.herokuapp.com/customer-login" method="post" role="form" >
+            <form id="msform" action="{{action('CustomerLoginController@store')}}" method="post" role="form" >
 	              {{csrf_field()}}
                 <!-- fieldsets -->
                 <fieldset>
