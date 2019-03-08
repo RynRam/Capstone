@@ -139,13 +139,13 @@ class FrontController extends Controller
         $itemList->setItems(array($item1));
 
         $details = new Details();
-        $details->setShipping(1.2)
-                ->setTax(1.3)
+        $details->setShipping(4998.0)
+                ->setTax(1.0)
                 ->setSubtotal(1.0);
 
         $amount = new Amount();
         $amount->setCurrency("PHP")
-                ->setTotal(3.50)
+                ->setTotal(5000.00)
                 ->setDetails($details);
 
         $transaction = new Transaction();

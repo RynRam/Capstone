@@ -22,7 +22,7 @@ class WarehouseController extends Controller
     {
                 
         $warehouses = Warehouses::all();
-        return view('admin.inventory.warehouse.index',compact('warehouses','warehouseId'));
+        return view('admin.inventory.warehouse.index',compact('warehouses'));
     }
 
     /**

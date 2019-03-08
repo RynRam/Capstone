@@ -66,10 +66,10 @@ class AdminController extends Controller
             );
         }
         $calendar_details = Calendar::addEvents($event_list); 
-        $todaydate = date("Y-m-d");
-        $payments = Payments::whereDate('created_at', $todaydate )->sum('amount_payment');
+        $datepayment = date( "Y-m-d H:i:s");
+        $payments = Payments::whereDate('created_at', $datepayment )->sum('amount_payment');
         $reservationsCount = Reservations::where('is_approved',1)->count();
-  
+        $todaydate = date("Y-m-d");
         // return $todaydate;
         $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
         $post = Contents::where('is_active', 1)->count();
