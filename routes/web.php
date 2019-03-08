@@ -11,32 +11,30 @@
 |
 
 */
-if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
-}
+
 	//Customer Pages
-	Route::get('https://lynagailscaters.herokuapp.com', 'FrontController@getIndex');
-	Route::get('https://lynagailscaters.herokuapp.com/basic-catering', 'FrontController@getCatering');
-	Route::post('https://lynagailscaters.herokuapp.com/basic-catering','FrontController@postCatering');
-	Route::get('https://lynagailscaters.herokuapp.com/debut', 'FrontController@getDebut');
-	Route::get('https://lynagailscaters.herokuapp.com/wedding', 'FrontController@getWedding');
-	Route::get('https://lynagailscaters.herokuapp.com/classA', 'FrontController@menuA');
-	Route::get('https://lynagailscaters.herokuapp.com/classB', 'FrontController@menuB');
-	Route::get('https://lynagailscaters.herokuapp.com/classC', 'FrontController@menuC');
-	Route::get('https://lynagailscaters.herokuapp.com/debutA', 'FrontController@debutA');
-	Route::get('https://lynagailscaters.herokuapp.com/debutB', 'FrontController@debutB');
-	Route::get('https://lynagailscaters.herokuapp.com/debutC', 'FrontController@debutC');
-	Route::get('https://lynagailscaters.herokuapp.com/blog', 'FrontController@blog');
-	Route::get('https://lynagailscaters.herokuapp.com/terms&condition', 'FrontController@terms');
-	Route::get('https://lynagailscaters.herokuapp.com/privacy&policy', 'FrontController@privacy');
-	Route::get('https://lynagailscaters.herokuapp.com/receipt', 'FrontController@receipt');
-	Route::get('https://lynagailscaters.herokuapp.com/receipt/report', 'FrontController@report');
-	Route::get('https://lynagailscaters.herokuapp.com/reserved', 'FrontController@reserved');
+	Route::get('/', 'FrontController@getIndex');
+	Route::get('/basic-catering', 'FrontController@getCatering');
+	Route::post('/basic-catering','FrontController@postCatering');
+	Route::get('/debut', 'FrontController@getDebut');
+	Route::get('/wedding', 'FrontController@getWedding');
+	Route::get('/classA', 'FrontController@menuA');
+	Route::get('/classB', 'FrontController@menuB');
+	Route::get('/classC', 'FrontController@menuC');
+	Route::get('/debutA', 'FrontController@debutA');
+	Route::get('/debutB', 'FrontController@debutB');
+	Route::get('/debutC', 'FrontController@debutC');
+	Route::get('/blog', 'FrontController@blog');
+	Route::get('/terms&condition', 'FrontController@terms');
+	Route::get('/privacy&policy', 'FrontController@privacy');
+	Route::get('/receipt', 'FrontController@receipt');
+	Route::get('/receipt/report', 'FrontController@report');
+	Route::get('/reserved', 'FrontController@reserved');
 
 	
 		//Customer Account
-	Route::resource('https://lynagailscaters.herokuapp.com/customer-register','CustomerRegisterController');
-	Route::get('https://lynagailscaters.herokuapp.com/execute-payment','CustomerPaymentController@execute');
+	Route::resource('/customer-register','CustomerRegisterController');
+	Route::get('/execute-payment','CustomerPaymentController@execute');
 	// Route::post('/customer-login', 'CustomersLoginController@logout');
 	// Route::get('/customer-login', 'CustomersLoginController@showLoginForm');
 	// Route::post('/', 'CustomersLoginController@login');	
@@ -48,14 +46,14 @@ if (env('APP_ENV') === 'production') {
 	Route::get('password/reset/{token}','Auth\CustomerResetPasswordController@showResetForm')->name('customer.password.reset');
 });
 
-	Route::resource('https://lynagailscaters.herokuapp.com/customer-login','CustomerLoginController');
+	Route::resource('/customer-login','CustomerLoginController');
 
-	Route::get('https://lynagailscaters.herokuapp.com/customer-profile/{id}/edit','CustomerProfileController@edit');
-	Route::put('https://lynagailscaters.herokuapp.com/customer-profile/{id}','CustomerProfileController@update');
+	Route::get('/customer-profile/{id}/edit','CustomerProfileController@edit');
+	Route::put('/customer-profile/{id}','CustomerProfileController@update');
 	// Route::get('/customer-login','CustomerLoginController@create')->name('customer.login');
-	Route::get('https://lynagailscaters.herokuapp.com/verify', 'CustomerRegisterController@verifyFirst');
-	Route::get('https://lynagailscaters.herokuapp.com/verifyDone', 'CustomerRegisterController@verifyDone');
-	Route::get('https://lynagailscaters.herokuapp.com/verify/{email}/{verification_token}','CustomerRegisterController@sendEmailDone')->name('sendEmailDone');
+	Route::get('/verify', 'CustomerRegisterController@verifyFirst');
+	Route::get('/verifyDone', 'CustomerRegisterController@verifyDone');
+	Route::get('verify/{email}/{verification_token}','CustomerRegisterController@sendEmailDone')->name('sendEmailDone');
 	
 	
 	//Admin Login
