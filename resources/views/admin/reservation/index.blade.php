@@ -95,9 +95,9 @@
               <div class="form-group text-center" style="margin-top:100px;">
               <h2>Report As Date</h2>
               <h4 style="display:inline-block;">From :</h3> 
-              <input type="date" name="from" id="salesfrom">
+              <input type="date" name="from" id="salesfrom" value="<?php echo date('Y-m-d'); ?>" >
               <h4 style="display:inline-block;">To :</h3> 
-              <input type="date" name="to" id="salesto">
+              <input type="date" name="to" id="salesto" value="<?php echo date('Y-m-d'); ?>" >
               </div>
                 <div class="form-group text-center">
                 <input type="submit" value="View or Print" class="btn btn-success">
@@ -111,7 +111,7 @@
 
               <div class="form-group text-center" style="margin-top:100px;">
               <h2>Report As Event Date</h2>
-                <input type="date" name="eventdate" id="date">
+                <input type="date" name="eventdate" id="date" value="<?php echo date('Y-m-d'); ?>" >
               </div><br>
                 <div class="form-group text-center">
                 <input type="submit" value="View or Print" class="btn btn-success">
