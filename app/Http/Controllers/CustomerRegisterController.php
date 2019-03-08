@@ -80,14 +80,14 @@ class CustomerRegisterController extends Controller
         $insertedCustomer = Customer::findOrFail($customer->id);
         $this->sendEmail($insertedCustomer);
         Session::flash('status','Please verify your email before logging in.');
-        return redirect("/customer-login");
+        return redirect("http://lynagailscaters.herokuapp.com/customer-login");
     }
     public function sendEmailDone($email, $verification_token)
     {
         $customer = Customer::where(['email'=>$email,'verification_token'=>$verification_token])->first();
         if($customer){
             Customer::where(['email'=>$email,'verification_token'=>$verification_token])->update(['is_verified'=>'1','verification_token'=>NULL]);
-            return redirect("/customer-login");
+            return redirect("http://lynagailscaters.herokuapp.com/customer-login");
         }else{
             'user not found';
         }
