@@ -29,23 +29,23 @@ class AdminController extends Controller
         {
             $user = User::where('email', $request->email)->first();
             if ($user->role('admin')) {
-               return response()->redirect('/admin/dashboard');
+               return redirect('/admin/dashboard');
             }else if ($user->role('venue')) {
-               return response()->redirect('/admin/venue');
+               return redirect('/admin/venue');
             }else if ($user->role('logistic')) {
-               return response()->redirect('/admin/inventory');
+               return redirect('/admin/inventory');
             }else if ($user->role('hr')) {
-               return response()->redirect('/admin/manpower');
+               return redirect('/admin/manpower');
             }else if ($user->role('reservation')) {
-               return response()->redirect('/admin/reservation');
+               return redirect('/admin/reservation');
             }else if ($user->role('sales')) {
-               return response()->redirect('/admin/sales');
+               return redirect('/admin/sales');
             }else if ($user->role('audit')) {
-               return response()->redirect('/admin/audit');
+               return redirect('/admin/audit');
             }else if ($user->role('account')) {
-              return response()->redirect('/admin/user');
+              return redirect('/admin/user');
             }else{
-               return response()->redirect('/admin')->with('flash_message_error','Invalid Email or Password');    
+               return redirect('/admin')->with('flash_message_error','Invalid Email or Password');    
             }
 
         }
@@ -135,6 +135,6 @@ class AdminController extends Controller
 
     public function logout(){
         Auth::logout();
-       return response()->redirect('/admin')->with('flash_message_success','Logged out Successfully');
+       return redirect('/admin')->with('flash_message_success','Logged out Successfully');
     }
 }
