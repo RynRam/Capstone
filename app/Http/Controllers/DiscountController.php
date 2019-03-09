@@ -40,7 +40,7 @@ class DiscountController extends Controller
      */
     public function store(Request $request)
     {
-                $discounts = new Discounts;
+        $discounts = new Discounts;
         $this->validate($request,[
             'name' => 'required|unique:discounts',
             'description' => 'required',
@@ -52,7 +52,7 @@ class DiscountController extends Controller
         $discounts->discount = $request->discount;
         $discounts->save();
 
-        return view('admin.discount.index');
+        return response()->redirectTo('admin/discount');
     }
 
     /**

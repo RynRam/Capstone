@@ -80,7 +80,7 @@ class CustomerRegisterController extends Controller
         $insertedCustomer = Customer::findOrFail($customer->id);
         $this->sendEmail($insertedCustomer);
         Session::flash('status','Please verify your email before logging in.');
-        return view("https://lynagailscaters.herokuapp.com/customer-login");
+        return response()->redirectTo("https://lynagailscaters.herokuapp.com/customer-login");
        
     }
     public function sendEmailDone($email, $verification_token)
@@ -88,7 +88,7 @@ class CustomerRegisterController extends Controller
         $customer = Customer::where(['email'=>$email,'verification_token'=>$verification_token])->first();
         if($customer){
             Customer::where(['email'=>$email,'verification_token'=>$verification_token])->update(['is_verified'=>'1','verification_token'=>NULL]);
-            return redirect("https://lynagailscaters.herokuapp.com/customer-login");
+            return response()->redirectTo("https://lynagailscaters.herokuapp.com/customer-login");
         }else{
             'user not found';
         }
