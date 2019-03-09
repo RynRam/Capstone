@@ -99,7 +99,7 @@ class DiscountController extends Controller
         $discounts->discount = $request->discount;
         $discounts->save();
 
-        return redirect('admin/discount');
+        return response()->redirectTo('admin/discount');
     }
 
     public function updateStatus(Request $request,$id){
@@ -108,13 +108,13 @@ class DiscountController extends Controller
         $discounts->is_active = false;
         $discounts->save();
         // session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/discount');
+        return response()->redirectTo('/admin/discount');
         }
     else if($discounts->is_active == false){
         $discounts->is_active = true;
         $discounts->save();
         // session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/discount');
+        return response()->redirectTo('/admin/discount');
         }
     }
     /**

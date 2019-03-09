@@ -40,7 +40,7 @@ class AdminCustomerController extends Controller
             'from' => $request->from,
             'to' => $request->to
             ]);  
-            return redirect('admin/customerspdf');
+            return response()->redirectTo('admin/customerspdf');
     }
 
     /**

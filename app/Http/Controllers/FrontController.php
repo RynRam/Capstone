@@ -179,15 +179,15 @@ class FrontController extends Controller
             $result = json_decode($response->getBody()->getContents());
             if($result->success){
 
-                return redirect($payment->getApprovalLink());
+                return response()->redirectTo($payment->getApprovalLink());
                 
             }else{
                 Session::flash('error','You are probably a robot!');
-                return redirect()->back();
+                return response()->redirectTo('/basic-catering');
             }
 
         }else{ 
-            return redirect()->back();
+            return response()->redirectTo('/basic-catering');
         }
        
      

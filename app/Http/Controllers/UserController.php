@@ -57,7 +57,8 @@ class UserController extends Controller
         $users->password = bcrypt($request->password);
         $users->save();
         Session::flash('status','Account Created!');
-        return redirect()->back();
+        
+        return response()->redirectTo('/admin/user');
     }
 
     /**
@@ -106,7 +107,7 @@ class UserController extends Controller
         $users->role_id = $request->role;
         $users->password = bcrypt($request->password);
         $users->save();
-        return redirect('/admin');
+        return response()->redirectTo('/admin');
     }
 
     public function updateStatus(Request $request,$id){
@@ -115,13 +116,13 @@ class UserController extends Controller
         $user->is_active = false;
         $user->save();
         session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/user');
+        return response()->redirectTo('/admin/user');
         }
         else if($user->is_active == false){
         $user->is_active = true;
         $user->save();
         session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/user');
+        return response()->redirectTo('/admin/user');
         }
     }
 
@@ -137,6 +138,6 @@ class UserController extends Controller
        //  $users = User::find($id);
        //  $users->delete();
        //  session()->flash('flash_message_success','Successfully Deleted');
-       // return redirect('/admin/user');
+       // return response()->redirectTo('/admin/user');
     }
 }

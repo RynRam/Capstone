@@ -60,7 +60,7 @@ class PaymentController extends Controller
         $payments->balance = $request->balance;
         $payments->category = $request->category;
         $payments->save();
-        return redirect('admin/payment');
+        return response()->redirectTo('admin/payment');
     
     }
 

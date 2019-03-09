@@ -7,7 +7,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/food/{{$food->id}}" method="POST" enctype="multipart/form-data">
+		<form action="{{ action('FoodController@update', $food->id) }}" method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
   	      {{csrf_field()}}{{method_field('PUT')}}
   	      		@include('admin.partials.error')

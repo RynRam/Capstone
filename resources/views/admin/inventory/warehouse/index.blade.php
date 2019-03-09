@@ -59,7 +59,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="/admin/warehouse" method="POST">
+        <form action="{{action('WarehouseController@store')}}" method="POST">
               {{csrf_field()}}
           <div class="form-group">
             <label for="warehouse" class="col-form-label">Warehouse Name:</label>

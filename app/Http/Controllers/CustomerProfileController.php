@@ -47,7 +47,7 @@ class CustomerProfileController extends Controller
             $customer->gplus = $request->gplus;
             $customer->password = bcrypt($request->password);
             $customer->save();
-        return redirect("/");
+            return response()->redirectTo("/");
     }
 
 

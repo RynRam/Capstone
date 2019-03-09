@@ -82,7 +82,7 @@ class ManpowerController extends Controller
             $staffs->roles = $request->role;
             $staffs->is_assign = $request->assign;
             $staffs->save();
-            return redirect('/admin/manpower');
+           return response()->redirectTo('/admin/manpower');
     }
 
     /**
@@ -130,7 +130,7 @@ class ManpowerController extends Controller
         $staffs->roles = $request->role;
         $staffs->is_assign = $request->assign;
         $staffs->save();
-        return redirect('/admin/manpower');
+       return response()->redirectTo('/admin/manpower');
     }
 
     public function updateStatus(Request $request,$id){
@@ -138,12 +138,12 @@ class ManpowerController extends Controller
         if($staffs->is_active == true){
         $staffs->is_active = false;
         $staffs->save();
-        return redirect('/admin/manpower');
+       return response()->redirectTo('/admin/manpower');
         }
         else if($staffs->is_active == false){
         $staffs->is_active = true;
         $staffs->save();
-        return redirect('/admin/manpower');
+       return response()->redirectTo('/admin/manpower');
         }
     }
     /**

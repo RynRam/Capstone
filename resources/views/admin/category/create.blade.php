@@ -8,7 +8,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/category/" method="POST">
+		<form action="{{action('CategoryController@store')}}" method="POST">
 			  	      {{csrf_field()}}
   	      @section('editMethod')
   	      	@show

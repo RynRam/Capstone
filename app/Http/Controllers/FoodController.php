@@ -81,7 +81,7 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
-        return redirect('admin/food');              
+        return response()->redirectTo('admin/food');              
         }
         }
 
@@ -137,7 +137,7 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
-        return redirect('admin/food');      
+        return response()->redirectTo('admin/food');      
                
         }else{
        $food = Packages::find($id);
@@ -153,7 +153,7 @@ class FoodController extends Controller
         $food->price = $request->price;
         $food->save();
    
-         return redirect('/admin/food');
+         return response()->redirectTo('/admin/food');
         }
     }
 
@@ -164,13 +164,13 @@ class FoodController extends Controller
         $food->is_active = false;
         $food->save();
         // session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/food');
+        return response()->redirectTo('/admin/food');
         }
     else if($food->is_active == false){
         $food->is_active = true;
         $food->save();
         // session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/food');
+        return response()->redirectTo('/admin/food');
         }
     }
     /**
@@ -184,6 +184,6 @@ class FoodController extends Controller
         $food = Packages::find($id);
         $food->delete();
         session()->flash('flash_message_success','Successfully Deleted');
-       return redirect('/admin/food');
+       return response()->redirectTo('/admin/food');
     }
 }

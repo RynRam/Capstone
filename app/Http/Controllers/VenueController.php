@@ -76,7 +76,7 @@ class VenueController extends Controller
         $file->file = $filename;
         $file->capacity =  $request->capacity;
         $file->save();
-        return redirect('admin/venue');
+        return response()->redirectTo('admin/venue');
         }
             $this->validate($request,[
             'name' => 'required|unique:venues',
@@ -93,7 +93,7 @@ class VenueController extends Controller
             $file->capacity =  $request->capacity;
             $file->price = $request->price;
                $file->save();
-         return redirect('admin/venue');
+            return response()->redirect('admin/venue');
     }
 
     /**
@@ -150,7 +150,7 @@ class VenueController extends Controller
         $file->capacity =  $request->capacity;
         $file->file = $filename;
         $file->save();
-        return redirect('admin/venue');
+        return response()->redirect('admin/venue');
            
        
         }else{
@@ -169,7 +169,7 @@ class VenueController extends Controller
             $file->price = $request->price;
             $file->capacity =  $request->capacity;
             $file->save();
-         return redirect('admin/venue');
+         return response()->redirect('admin/venue');
          }
     }
 
@@ -179,12 +179,12 @@ class VenueController extends Controller
             $file->is_active = false;
             $file->save();
             session()->flash('flash_message_success','Successfully Updated');
-            return redirect('/admin/venue');
+            return response()->redirect('/admin/venue');
         }else if($file->is_active == false ){
             $file->is_active = true;
             $file->save();
             session()->flash('flash_message_success','Successfully Updated');
-           return redirect('/admin/venue');
+           return response()->redirect('/admin/venue');
         }
     }
 
@@ -201,6 +201,6 @@ class VenueController extends Controller
          $files = Venues::find($id);
         $files->delete();
         session()->flash('flash_message_success','Successfully Deleted');
-       return redirect('/admin/venue');
+        return response()->redirect('/admin/venue');
     }
 }

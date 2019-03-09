@@ -55,7 +55,7 @@ class InventoryCategoryController extends Controller
         $categories->category = $request->category ;
         $categories->description = $request->description;
         $categories->save();
-        return redirect('admin/inventory-category');  
+        return response()->redirectTo('admin/inventory-category');  
        }
 
     /**
@@ -103,7 +103,7 @@ class InventoryCategoryController extends Controller
         $categories->category = $request->category ;
         $categories->description = $request->description;
         $categories->save();
-        return redirect('admin/inventory-category');  
+        return response()->redirectTo('admin/inventory-category');  
 
     }
         public function updateStatus(Request $request,$id){
@@ -112,13 +112,13 @@ class InventoryCategoryController extends Controller
         $categories->is_active = false;
         $categories->save();
         session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/inventory-category');
+        return response()->redirectTo('/admin/inventory-category');
         }
     else if($categories->is_active == false){
         $categories->is_active = true;
         $categories->save();
         session()->flash('flash_message_success','Successfully Updated');
-        return redirect('/admin/inventory-category');
+        return response()->redirectTo('/admin/inventory-category');
         }
     }
 

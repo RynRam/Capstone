@@ -14,7 +14,7 @@
         <button type="button" class="close" data-dismiss="alert">×</button>
         </h3>
       @endif
-		 <form method="POST" action="/admin/user/@yield('editId')">
+		 <form method="POST" action="{{action('UserController@store')}}">
   	      		{{csrf_field()}}
   	      		@include('admin.partials.error')
 	        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

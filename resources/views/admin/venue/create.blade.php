@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/venue/@yield('editId')" method="POST" enctype="multipart/form-data">
+		<form action="{{action('VenueController@store')}}" method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
   	      {{csrf_field()}}
   	      @section('editMethod')

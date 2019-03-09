@@ -29,23 +29,23 @@ class AdminController extends Controller
         {
             $user = User::where('email', $request->email)->first();
             if ($user->role('admin')) {
-                return redirect('/admin/dashboard');
+               return response()->redirect('/admin/dashboard');
             }else if ($user->role('venue')) {
-                return redirect('/admin/venue');
+               return response()->redirect('/admin/venue');
             }else if ($user->role('logistic')) {
-                return redirect('/admin/inventory');
+               return response()->redirect('/admin/inventory');
             }else if ($user->role('hr')) {
-                return redirect('/admin/manpower');
+               return response()->redirect('/admin/manpower');
             }else if ($user->role('reservation')) {
-                return redirect('/admin/reservation');
+               return response()->redirect('/admin/reservation');
             }else if ($user->role('sales')) {
-                return redirect('/admin/sales');
+               return response()->redirect('/admin/sales');
             }else if ($user->role('audit')) {
-                return redirect('/admin/audit');
+               return response()->redirect('/admin/audit');
             }else if ($user->role('account')) {
-               return redirect('/admin/user');
+              return response()->redirect('/admin/user');
             }else{
-                return redirect('/admin')->with('flash_message_error','Invalid Email or Password');    
+               return response()->redirect('/admin')->with('flash_message_error','Invalid Email or Password');    
             }
 
         }
@@ -124,9 +124,9 @@ class AdminController extends Controller
                 $password = bcrypt($request->new_pwd);
                  $user_id = Auth::User()->id; 
                 User::where('id',$user_id)->update(['password'=> $password]);
-                return redirect('admin/settings')->with('flash_message_success','Updated Successfully!');
+               return response()->redirect('admin/settings')->with('flash_message_success','Updated Successfully!');
             }else{
-                return redirect('admin/settings')->with('flash_message_error','Incorrect Current Password!');
+               return response()->redirect('admin/settings')->with('flash_message_error','Incorrect Current Password!');
             }
 
         }
@@ -135,6 +135,6 @@ class AdminController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('/admin')->with('flash_message_success','Logged out Successfully');
+       return response()->redirect('/admin')->with('flash_message_success','Logged out Successfully');
     }
 }

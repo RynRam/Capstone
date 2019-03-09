@@ -101,7 +101,7 @@ class InventoryController extends Controller
         $inventories->stock_on_hand = $request->quantity;
         $inventories->save();
        session()->flash('flash_message_success','Successfully Created');
-        return redirect('admin/inventory');
+        return response()->redirectTo('admin/inventory');
   
     }
 
@@ -161,19 +161,19 @@ class InventoryController extends Controller
         $inventories->stock_on_hand = $request->quantity + $inventories->stock_on_hand - ($request->damage + $request->defect); 
 
         $inventories->save();
-        return redirect('admin/inventory');
+        return response()->redirectTo('admin/inventory');
     }
         public function updateStatus(Request $request,$id){
          $inventories = Inventory::find($id);
     if($inventories->is_active == true){
         $inventories->is_active = false;
         $inventories->save();
-        return redirect('/admin/inventory');
+        return response()->redirectTo('/admin/inventory');
         }
     else if($inventories->is_active == false){
         $inventories->is_active = true;
         $inventories->save();
-        return redirect('/admin/inventory');
+        return response()->redirectTo('/admin/inventory');
         }
     }
 
@@ -191,7 +191,7 @@ class InventoryController extends Controller
         $inventories = Inventory::find($id);
         $inventories->delete();
         session()->flash('flash_message_success','Successfully Deleted');
-       return redirect('/admin/inventory');
+       return response()->redirectTo('/admin/inventory');
     }
 
 

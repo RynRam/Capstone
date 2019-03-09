@@ -49,7 +49,7 @@ class WarehouseController extends Controller
         ]);
         $warehouses->name =  $request->name;
         $warehouses->save();
-        return redirect('/admin/warehouse');
+        return response()->redirect('/admin/warehouse');
     }
 
     /**
@@ -90,7 +90,7 @@ class WarehouseController extends Controller
         ]);
         $warehouses->name =  $request->name;
         $warehouses->save();
-        return redirect('/admin/warehouse');
+        return response()->redirect('/admin/warehouse');
     }
 
     /**

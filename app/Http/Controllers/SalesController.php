@@ -60,7 +60,7 @@ class SalesController extends Controller
             'from' => $request->from,
             'to' => $request->to
             ]);  
-            return redirect('admin/salespdf');
+            return response()->redirectTo('admin/salespdf');
     }
     
     public function categorypdf()
@@ -80,7 +80,7 @@ class SalesController extends Controller
         Session::put('sales_category', [
             'category' => $request->category,
             ]);  
-            return redirect('admin/salescategorypdf');
+            return response()->redirectTo('admin/salescategorypdf');
     }
 
 

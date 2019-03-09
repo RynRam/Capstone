@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/food/" method="POST" enctype="multipart/form-data">
+		<form action="{{action('FoodController@store')}}" method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
   	      {{csrf_field()}}
   	      		@include('admin.partials.error')

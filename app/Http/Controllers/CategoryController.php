@@ -64,7 +64,7 @@ class CategoryController extends Controller
             $caterings->event_categories_id = $request->category;
 
             $caterings->save();
-            return redirect('/admin/category');
+            return response()->redirectTo('/admin/category');
     }
 
     /**
@@ -114,7 +114,7 @@ class CategoryController extends Controller
         $caterings->event_categories_id = $request->category;
         $caterings->name =  $request->name;
         $caterings->save();
-        return redirect('/admin/category');
+        return response()->redirect('/admin/category');
     }
 
     /**
@@ -127,7 +127,7 @@ class CategoryController extends Controller
     {
         $catering = Caterings::find($id);
         $catering->delete();
-       return redirect('/admin/category');
+       return response()->redirect('/admin/category');
     }
 }
 

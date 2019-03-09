@@ -59,7 +59,7 @@ class CMSController extends Controller
 
         $posts->save();
 
-        return redirect('admin/post');
+        return response()->redirectTo('admin/post');
         
 
         }

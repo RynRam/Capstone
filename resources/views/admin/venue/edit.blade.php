@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="/admin/venue/{{$files->id}}" method="POST" enctype="multipart/form-data">
+		<form action="{{action('VenueController@update', $files->id)}}" method="POST" enctype="multipart/form-data">
 		  <div class="form-group">
   	      {{csrf_field()}}	{{method_field('PUT')}}
   	      		@include('admin.partials.error')

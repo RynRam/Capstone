@@ -49,7 +49,7 @@ class ManpowerRolesController extends Controller
 
         $roles->save();
 
-        return redirect('admin/manpowerroles');
+        return response()->redirectTo('admin/manpowerroles');
     }
 
     public function updateStatus(Request $request,$id){
@@ -57,12 +57,12 @@ class ManpowerRolesController extends Controller
         if($roles->is_active == true){
         $roles->is_active = false;
         $roles->save();
-        return redirect('/admin/manpowerroles');
+        return response()->redirectTo('/admin/manpowerroles');
         }
         else if($roles->is_active == false){
         $roles->is_active = true;
         $roles->save();
-        return redirect('/admin/manpowerroles');
+        return response()->redirectTo('/admin/manpowerroles');
         }
     }
 

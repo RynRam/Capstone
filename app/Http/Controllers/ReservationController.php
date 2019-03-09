@@ -70,7 +70,7 @@ class ReservationController extends Controller
             'from' => $request->from,
             'to' => $request->to
             ]);  
-            return redirect('admin/reservationpdf');
+            return response()->redirectTo('admin/reservationpdf');
     }
 
     public function pdf()
@@ -125,7 +125,7 @@ class ReservationController extends Controller
         $discounts = $reservations->total * ($discount / 100);
         $reservations->total = $reservations->total - $discounts;
         $reservations->save();      
-        return redirect('/admin/reservation');  
+        return response()->redirectTo('/admin/reservation');  
 
     }
     
@@ -134,11 +134,11 @@ class ReservationController extends Controller
         if($reservations->is_approved == true) {
             $reservations->is_approved = false;
             $reservations->save();
-            return redirect('/admin/reservation');
+            return response()->redirectTo('/admin/reservation');
         }else if($reservations->is_approved == false ){
             $reservations->is_approved = true;
             $reservations->save();
-           return redirect('/admin/reservation');
+           return response()->redirectTo('/admin/reservation');
         }
     }
 
@@ -158,7 +158,7 @@ class ReservationController extends Controller
         Session::put('reservations_eventdate', [
             'eventdate' => $request->eventdate,
             ]);  
-            return redirect('admin/reservationseventdatepdf');
+            return response()->redirectTo('admin/reservationseventdatepdf');
     }
 
     /**
