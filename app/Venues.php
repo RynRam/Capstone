@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
-class Venues extends Model implements Auditable
+class Venues extends Model 
 {
-	use \OwenIt\Auditing\Auditable;
 
     public function reservation(){
     	return $this->hasOne(Reservations::class);

@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="{{ action('InventoryCategoryController@update', $category->id }}" method="POST">
+		<form action="{{ action('InventoryCategoryController@update', $category->id) }}" method="POST">
 		  <div class="form-group">
   	      {{csrf_field()}} 	{{method_field('PUT')}}
   	      		@include('admin.partials.error')
