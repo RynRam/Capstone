@@ -155,8 +155,8 @@ class FrontController extends Controller
                 ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("/execute-payment")
-                ->setCancelUrl("/basic-catering");
+        $redirectUrls->setReturnUrl("https://lynagailscaters.herokuapp.com/execute-payment")
+                ->setCancelUrl("https://lynagailscaters.herokuapp.com/basic-catering");
 
         $payment = new Payment();
         $payment->setIntent("sale")
