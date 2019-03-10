@@ -47,7 +47,7 @@ class FrontController extends Controller
  
     	$catering = Caterings::where('event_categories_id',1)->get();
     	$venue = Venues::where('is_active',1)->take(12)->get();
-    	$package = Packages::where('is_active',1)->where('event_categories_id','2')->get();
+    	$package = Packages::where('is_active',1)->where('event_categories_id','1')->get();
         $food = Packages::where('is_active',1)->take(12)->get();
         $location = Venues::where('is_active',1)->take(12)->get();
 
@@ -69,7 +69,7 @@ class FrontController extends Controller
  
         $catering = Caterings::where('event_categories_id',2)->get();
         $venue = Venues::where('is_active',1)->take(12)->get();
-              $package = Packages::where('is_active',1)->where('event_categories_id','1')->get();
+              $package = Packages::where('is_active',1)->where('event_categories_id','2')->get();
         $location = Venues::where('is_active',1)->take(12)->get();
         return view('front.debut',compact('catering','venue','package','location','calendar_details'));
     }
@@ -155,8 +155,8 @@ class FrontController extends Controller
                 ->setInvoiceNumber(uniqid());
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl("https://lynagailscaters.herokuapp.com/execute-payment")
-                ->setCancelUrl("https://lynagailscaters.herokuapp.com/basic-catering");
+        $redirectUrls->setReturnUrl("/execute-payment")
+                ->setCancelUrl("/basic-catering");
 
         $payment = new Payment();
         $payment->setIntent("sale")
