@@ -52,7 +52,7 @@
           <label >Number of Pax :</label> 
           <input type="number" class="form-control" name="people" id="people" required="true" /> 
           @if (Auth::guard('customer')->guest())
-          <a href="https://lynagailscaters.herokuapp.com/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
+          <a href="/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
                 @else
                 <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
                 <input type="button" name="next" class="next action-button" value="Next" /> 

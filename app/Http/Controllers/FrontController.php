@@ -71,7 +71,7 @@ class FrontController extends Controller
         $venue = Venues::where('is_active',1)->take(12)->get();
               $package = Packages::where('is_active',1)->where('event_categories_id','1')->get();
         $location = Venues::where('is_active',1)->take(12)->get();
-        return view('front.debut',compact('catering','venue','package','food','location','calendar_details'));
+        return view('front.debut',compact('catering','venue','package','location','calendar_details'));
     }
 
     public function getWedding(){
@@ -91,7 +91,7 @@ class FrontController extends Controller
         $venue = Venues::where('is_active',1)->take(12)->get();
         $package = Packages::where('is_active',1)->where('event_categories_id','3')->get();
         $location = Venues::where('is_active',1)->take(12)->get();
-        return view('front.wedding',compact('catering','venue','package','food','location','calendar_details'));
+        return view('front.wedding',compact('catering','venue','package','location','calendar_details'));
     }
 
     public function postCatering(Request $request){

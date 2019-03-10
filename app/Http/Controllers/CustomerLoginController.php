@@ -50,10 +50,10 @@ class CustomerLoginController extends Controller
         ]);
       $customer = Auth::guard('customer')->attempt(['email'=>$request->email,'password'=> $request->password,'is_verified'=>'1']);
         if($customer){
-           return response()->redirect('https://lynagailscaters.herokuapp.com');
+           return response()->redirect('/');
         }else{ 
         Session::flash('status','The username or password you have entered is incorrect or your account is not verified.');
-       return response()->redirect("https://lynagailscaters.herokuapp.com/customer-login");  
+       return response()->redirect("/customer-login");  
 
         }
     }
