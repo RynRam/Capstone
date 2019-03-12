@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Charts;
 use Calendar;
 use DB;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
