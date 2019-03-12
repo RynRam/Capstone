@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Caterings;
+use App\Audits;
+use Auth;
 use App\EventCategories;
 
 class CategoryController extends Controller
@@ -60,10 +62,23 @@ class CategoryController extends Controller
             $this->validate($request,[
             'name' => 'required|unique:caterings',
             ]);
-            $caterings->name =  $request->name;
+            $caterings->name = $request->name ;
             $caterings->event_categories_id = $request->category;
 
             $caterings->save();
+               //audits
+            $data = array(
+                "name" =>  $request->name,
+                "category" => $request->category
+              );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'created';
+            $audits->audit_type = 'Category';
+            $audits->new_values =  $data;
+            $audits->save();
+               //audits
+
             return response()->redirectTo('/admin/category');
     }
 
@@ -108,12 +123,34 @@ class CategoryController extends Controller
     {
 // return $request->all();
         $caterings = Caterings::find($id); 
+        //audits
+        $old_data = array(
+            "name" =>  $caterings->name,
+            "category" => $caterings->category
+          );
+        $data = array(
+            "name" =>  $request->name,
+            "category" => $request->category
+          );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Category';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+         //audits
+
         $this->validate($request,[
         'name' => 'required',
         ]);
         $caterings->event_categories_id = $request->category;
         $caterings->name =  $request->name;
         $caterings->save();
+
+
+
+        
         return response()->redirect('/admin/category');
     }
 

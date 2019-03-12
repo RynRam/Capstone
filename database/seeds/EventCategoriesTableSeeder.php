@@ -11,25 +11,17 @@ class EventCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('event_categories')->insert([
-            'id' => 1,
-            'name' => 'Basic Catering',
-     
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
+        if(DB::table('event_categories')->get()->count() == 0){
+        DB::table('event_categories')->insert(
         [
-            'id' => 2,
             'name' => 'Debut Catering',
-
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 3,
             'name' => 'Wedding Catering',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
-    }
+    }}
 }

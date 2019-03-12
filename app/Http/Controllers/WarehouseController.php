@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Warehouses;
+use App\Audits;
+use Auth;
 class WarehouseController extends Controller
 {
 
@@ -49,6 +51,18 @@ class WarehouseController extends Controller
         ]);
         $warehouses->name =  $request->name;
         $warehouses->save();
+        //audits
+        $data = array(
+            "name" =>  $request->name,
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Warehouse';
+        $audits->new_values =  $data;
+
+        $audits->save();
+        //audits
         return response()->redirect('/admin/warehouse');
     }
 
@@ -90,6 +104,22 @@ class WarehouseController extends Controller
         ]);
         $warehouses->name =  $request->name;
         $warehouses->save();
+        //audits
+        $old_data = array(
+        "name" =>  $warehouses->name,
+        
+        );
+        $data = array(
+            "name" =>  $request->name,
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Warehouse';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
         return response()->redirect('/admin/warehouse');
     }
 

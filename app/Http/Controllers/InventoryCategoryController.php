@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\InventoryCategories;
+use Auth;
+use App\Audits;
 class InventoryCategoryController extends Controller
 {
          public function __construct()
@@ -55,6 +57,20 @@ class InventoryCategoryController extends Controller
         $categories->category = $request->category ;
         $categories->description = $request->description;
         $categories->save();
+
+        //audits
+        $data = array(
+            "category" =>  $request->category,
+            "description" => $request->description    
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Inventory Category';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
+
         return response()->redirectTo('admin/inventory-category');  
        }
 
@@ -93,6 +109,23 @@ class InventoryCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $categories = InventoryCategories::find($id); 
+        //audits
+        $old_data = array(
+            "category" =>  $categories->category,
+            "description" => $categories->description    
+            );
+        $data = array(
+            "category" =>  $request->category,
+            "description" => $request->description    
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Inventory Category';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
 
         $this->validate($request,[
             'category' => 'required',

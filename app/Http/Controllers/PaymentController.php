@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Reservations;
 use App\Payments;
 use App\Customer;
+use App\Audits;
 class PaymentController extends Controller
 {
     public function __construct()
@@ -60,6 +61,24 @@ class PaymentController extends Controller
         $payments->balance = $request->balance;
         $payments->category = $request->category;
         $payments->save();
+
+        //audits
+        $data = array(
+            "reservedid" =>  $request->reservedid,
+            "tender" => $request->tender,
+            "terms" =>  $request->terms,
+            "change" => $request->change,
+            "balance" => $request->balance,
+            "category" =>  $request->category
+
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Payment';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
         return response()->redirectTo('admin/payment');
     
     }

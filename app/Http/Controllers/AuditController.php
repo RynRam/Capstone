@@ -21,14 +21,19 @@ class AuditController extends Controller
      */
     public function index()
     {    
-        // $reservation = Reservations::first();
-        //  $ecategories = EventCategories::first();
-        //  $inventory = Inventory::first();
-        //  $audit = $inventory->audits;
-        //  $reservations = $reservation->audits;
-        //  $ecategories = $ecategories->audits;
-        //  // return $audits;
-        return view('admin.audit.index',compact('audit','reservations','ecategories'));
+        $category= Audits::where('audit_type','Category')->get();
+        $cms= Audits::where('audit_type','Post')->get();
+        $discount= Audits::where('audit_type','Discount')->get();
+        $package= Audits::where('audit_type','Package')->get();
+        $inventorycategory= Audits::where('audit_type','Inventory Category')->get();
+        $inventory= Audits::where('audit_type','Inventory')->get();
+        $manpower= Audits::where('audit_type','Staff')->get();
+        $roles= Audits::where('audit_type','Role')->get();
+        $payment= Audits::where('audit_type','Payment')->get();
+        $user= Audits::where('audit_type','User Account')->get();
+        $venue= Audits::where('audit_type','Venue')->get();
+        $warehouse= Audits::where('audit_type','Warehouse')->get();
+        return view('admin.audit.index',compact('category','cms','discount','package','inventorycategory','inventory','manpower','roles','payment','user','venue','warehouse'));
     }
 
     /**

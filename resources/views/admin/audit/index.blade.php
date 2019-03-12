@@ -16,8 +16,20 @@
           <div class="widget-title"> <span class="icon"> <i class="icon-list"></i> </span>
             <h5>Audit Trail</h5>
           </div>
-          <h5><ul>
-        
+          <h4>Event  Categories</h4>
+          <ul>
+            @foreach($category as $category){
+              <li><b>ID:</b>{{$category->id}} </li>
+              <li><b>USER:</b>{{$category->user}} </li>
+              <li><b>EVENT:</b>{{$category->event}} </li>
+              <li><b>CATEGORY:</b>{{$category->audit_type}}</li>
+              <li><b>OLD VALUE:</b>{{$category->old_values}}</li>
+              <li><b>NEW VALUE:</b>{{$category->new_values}}</li>
+              <li><b>NEW VALUE:</b>{{$category->created_at->diffForHumans()}}</li>
+              <li><b>NEW VALUE:</b>{{$category->updated_at->diffForHumans()}}</li>
+            }
+            @endforeach
+          </ul>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ use App\Customer;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Audits;
 class CustomerLoginController extends Controller
 {
 

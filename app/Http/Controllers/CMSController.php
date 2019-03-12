@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contents;
+use App\Audits;
+use Auth;
 class CMSController extends Controller
 {
      public function __construct()
@@ -58,6 +60,23 @@ class CMSController extends Controller
         $posts->file = $filename;
 
         $posts->save();
+        
+        //audits
+        $data = array(
+        "title" =>  $request->title,
+        "info" => $request->info,
+        "author" =>  $request->author,
+        "file" => $request->filename
+
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Post';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
+        
 
         return response()->redirectTo('admin/post');
         
@@ -103,9 +122,33 @@ class CMSController extends Controller
         $request->file->storeAs('public/upload',$filename);
         $posts = Contents::find($id);
 
+            //audits
+            $old_data = array(
+                "title" =>  $posts->title,
+                "info" => $posts->info,
+                "author" =>  $posts->author,
+                "file" => $posts->file
+        
+                );
+            $data = array(
+                "title" =>  $request->title,
+                "info" => $request->info,
+                "author" =>  $request->author,
+                "file" => $request->filename
+        
+                );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'updated';
+            $audits->audit_type = 'Post';
+            $audits->new_values =  $data;
+            $audits->old_values =  $old_data;
+            $audits->save();
+                //audits
+
         $posts = Contents::find($id);
         $this->validate($request,[
-            'title' => 'required|unique:contents',
+            'title' => 'required',
             'info' => 'required',
             'author' => 'required', 
           
@@ -121,7 +164,32 @@ class CMSController extends Controller
         return redirect('admin/post');
         }else{
          $posts = Contents::find($id);
-        $this->validate($request,[
+
+        //audits
+        $old_data = array(
+            "title" =>  $posts->title,
+            "info" => $posts->info,
+            "author" =>  $posts->author,
+            "file" => $post->file  
+    
+            );
+        $data = array(
+        "title" =>  $request->title,
+        "info" => $request->info,
+        "author" =>  $request->author,
+        "file" => $post->file
+
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Post';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+            //audits
+        
+            $this->validate($request,[
             'title' => 'required',
             'info' => 'required',
             'active' => 'required',

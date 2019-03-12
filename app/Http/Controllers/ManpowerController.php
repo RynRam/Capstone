@@ -7,6 +7,8 @@ use App\Staffs;
 use App\ManpowerRoles;
 use PDF;
 use App\Reservations;
+use App\Audits;
+use Auth;
 class ManpowerController extends Controller
 {
 
@@ -82,6 +84,23 @@ class ManpowerController extends Controller
             $staffs->roles = $request->role;
             $staffs->is_assign = $request->assign;
             $staffs->save();
+
+            
+            //audits
+            $data = array(
+                "fname" =>  $request->firstname,
+                "lname" => $request->lastname,
+                "assign" =>  $request->assign,
+                "role" => $request->role   
+                );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'created';
+            $audits->audit_type = 'Staff';
+            $audits->new_values =  $data;
+            $audits->save();
+            //audits
+            
            return response()->redirectTo('/admin/manpower');
     }
 
@@ -119,6 +138,27 @@ class ManpowerController extends Controller
     public function update(Request $request, $id)
     {
          $staffs = Staffs::find($id); 
+        //audits
+        $old_data = array(
+            "fname" =>  $staffs->firstname,
+            "lname" => $staffs->lastname,
+            "assign" =>  $staffs->assign,
+            "role" => $staffs->role   
+            );
+        $data = array(
+        "fname" =>  $request->firstname,
+        "lname" => $request->lastname,
+        "assign" =>  $request->assign,
+        "role" => $request->role   
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Staff';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
         $this->validate($request,[
         'firstname' => 'required',
         'lastname' => 'required',

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Discounts;
+use App\Audits;
+use Auth;
 class DiscountController extends Controller
 {
     public function __construct()
@@ -41,6 +43,7 @@ class DiscountController extends Controller
     public function store(Request $request)
     {
         $discounts = new Discounts;
+        
         $this->validate($request,[
             'name' => 'required|unique:discounts',
             'description' => 'required',
@@ -51,6 +54,21 @@ class DiscountController extends Controller
         $discounts->description = $request->description;
         $discounts->discount = $request->discount;
         $discounts->save();
+
+        //audits
+        $data = array(
+        "name" =>  $request->name,
+        "description" => $request->description,
+        "discount" => $request->discount
+
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Discount';
+        $audits->new_values =  $data;
+        $audits->save();
+            //audits
 
         return response()->redirectTo('admin/discount');
     }
@@ -88,6 +106,30 @@ class DiscountController extends Controller
     public function update(Request $request, $id)
     {
        $discounts = Discounts::find($id);
+
+        //audits
+        $old_data = array(
+            "name" =>  $discounts->name,
+            "description" => $discounts->description,
+            "discount" => $discounts->discount
+    
+            );
+        $data = array(
+            "name" =>  $request->name,
+            "description" => $request->description,
+            "discount" => $request->discount
+    
+            );
+            
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Discount';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+            //audits
+    
         $this->validate($request,[
             'name' => 'required',
             'description' => 'required',

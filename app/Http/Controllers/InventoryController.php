@@ -9,7 +9,8 @@ use App\Inventory;
 use App\Warehouses;
 use App\InventoryCategories;
 use PDF;
-
+use Auth;
+use App\Audits;
 class InventoryController extends Controller
 {
          public function __construct()
@@ -100,6 +101,26 @@ class InventoryController extends Controller
         $inventories->price = $request->price ;
         $inventories->stock_on_hand = $request->quantity;
         $inventories->save();
+
+        //audits
+
+        $data = array(
+            "code" =>  $request->item_code,
+            "description" => $request->description,
+            "category" =>  $request->category,
+            "warehouse" => $request->warehouse,
+            "price" =>  $request->price,
+            "stock" => $request->quantity,
+            "damage"=> "0",
+            "defect"=> "0"   
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Inventory';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
        session()->flash('flash_message_success','Successfully Created');
         return response()->redirectTo('admin/inventory');
   
@@ -142,7 +163,39 @@ class InventoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $inventories = Inventory::find($id);
+        $inventories = Inventory::find($id);
+        
+        //audits
+        $old_data = array(
+            "code" =>  $inventories->item_code,
+            "description" => $inventories->description,
+            "category" =>  $inventories->category,
+            "warehouse" => $inventories->warehouse,
+            "price" =>  $inventories->price,
+            "stock" => $inventories->quantity,
+            "damage"=> $inventories->damage,
+            "defect"=> $inventories->defect  
+            );
+        $data = array(
+            "code" =>  $request->item_code,
+            "description" => $request->description,
+            "category" =>  $request->category,
+            "warehouse" => $request->warehouse,
+            "price" =>  $request->price,
+            "stock" => $request->quantity,
+            "damage" => $request->damage + $inventories->damage,
+            "defect" => $request->defect + $inventories->defect,
+                
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Inventory';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
+
         $this->validate($request,[
             'item_code' => 'required',
             'description' => 'required',

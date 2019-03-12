@@ -9,6 +9,7 @@ use PayPal\Api\Details;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use Session;
+use App\Audits;
 use App\Reservations;
 class CustomerPaymentController extends Controller
 {

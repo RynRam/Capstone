@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Reservations;
 use App\Customer;
 use App\Packages;
+use App\Audits;
 use App\Venues;
 use App\Caterings;
+
 use Pinq\ITraversable, Pinq\Traversable;
 use App\Payments;
 use Session;
+
 class ReservationController extends Controller
 {
          public function __construct()

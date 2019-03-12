@@ -11,8 +11,8 @@ class InventoriesTableSeeder extends Seeder
      */
     public function run()
     {
+      if(DB::table('inventories')->get()->count() == 0){
         DB::table('inventories')->insert([
-            'id' => 1,
             'item_code' => 'ST00001',
             'item_name' => 'Table',
             'warehouses_id' => 1,
@@ -26,7 +26,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 2,
             'item_code' => 'ST00002',
             'item_name' => 'Long Table',
             'warehouses_id' => 2,
@@ -40,7 +39,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ], 
         [
-            'id' => 3,
             'item_code' => 'ST00003',
             'item_name' => 'Monoblock Chairs',
             'warehouses_id' => 4,
@@ -54,7 +52,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 4,
             'item_code' => 'ST00004',
             'item_name' => 'Fork',
             'warehouses_id' => 6,
@@ -68,7 +65,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
          [
-            'id' =>5 ,
             'item_code' => 'ST00005',
             'item_name' => 'Spoons',
             'warehouses_id' => 4,
@@ -82,7 +78,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 6,
             'item_code' => 'ST00006',
             'item_name' => 'Teaspoons',
             'warehouses_id' => 8,
@@ -96,7 +91,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 7,
             'item_code' => 'ST00007',
             'item_name' => 'Wine Glass',
             'warehouses_id' => 9,
@@ -110,7 +104,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 8,
             'item_code' => 'ST00008',
             'item_name' => 'Drinking Glass',
             'warehouses_id' => 9,
@@ -124,7 +117,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 9,
             'item_code' => 'ST00009',
             'item_name' => 'Oscillating light System',
             'warehouses_id' => 10,
@@ -138,7 +130,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 10,
             'item_code' => 'ST00010',
             'item_name' => 'Focused Light System',
             'warehouses_id' => 5,
@@ -152,7 +143,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 11,
             'item_code' => 'ST00011',
             'item_name' => 'Colander',
             'warehouses_id' => 4,
@@ -166,7 +156,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 12,
             'item_code' => 'ST00012',
             'item_name' => 'Frying Pan',
             'warehouses_id' => 10,
@@ -180,7 +169,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 13,
             'item_code' => 'ST00013',
             'item_name' => 'Boiling Pan',
             'warehouses_id' => 5,
@@ -194,7 +182,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 14,
             'item_code' => 'ST00014',
             'item_name' => 'Spatula',
             'warehouses_id' => 6,
@@ -208,7 +195,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 15,
             'item_code' => 'ST00015',
             'item_name' => 'Tongs',
             'warehouses_id' => 1,
@@ -222,7 +208,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
           [
-            'id' => 16,
             'item_code' => 'ST00016',
             'item_name' => 'Rice Cooker',
             'warehouses_id' => 2,
@@ -236,7 +221,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
-            'id' => 17,
             'item_code' => 'ST00017',
             'item_name' => 'Chocolate Fountain',
             'warehouses_id' => 7,
@@ -250,7 +234,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
-            'id' => 18,
             'item_code' => 'ST00018',
             'item_name' => 'Cooler',
             'warehouses_id' => 8,
@@ -264,7 +247,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
-            'id' => 19,
             'item_code' => 'ST00019',
             'item_name' => 'Table Cloth',
             'warehouses_id' => 2,
@@ -278,7 +260,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
-            'id' => 20,
             'item_code' => 'ST00020',
             'item_name' => 'Premium Chairs',
             'warehouses_id' => 10,
@@ -292,7 +273,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
        [
-            'id' => 21,
             'item_code' => 'ST00021',
             'item_name' => 'Flower Vase',
             'warehouses_id' => 2,
@@ -306,7 +286,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
-            'id' => 22,
             'item_code' => 'ST00022',
             'item_name' => 'Candles',
             'warehouses_id' => 5,
@@ -320,7 +299,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
-            'id' => 23,
             'item_code' => 'ST00023',
             'item_name' => 'Electic Stove',
             'warehouses_id' => 6,
@@ -334,7 +312,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 24,
             'item_code' => 'ST00024',
             'item_name' => 'High Speed Fan',
             'warehouses_id' => 1,
@@ -348,7 +325,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 25,
             'item_code' => 'ST00025',
             'item_name' => 'Sauce Pan',
             'warehouses_id' => 5,
@@ -362,7 +338,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 26,
             'item_code' => 'ST00026',
             'item_name' => 'Griddle Pan',
             'warehouses_id' => 8,
@@ -376,7 +351,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 27,
             'item_code' => 'ST00027',
             'item_name' => 'Pressure Cooker',
             'warehouses_id' => 4,
@@ -390,7 +364,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 28,
             'item_code' => 'ST00028',
             'item_name' => 'Plates',
             'warehouses_id' => 9,
@@ -404,7 +377,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 29,
             'item_code' => 'ST00029',
             'item_name' => 'Water Jug',
             'warehouses_id' => 3,
@@ -418,7 +390,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 30,
             'item_code' => 'ST00030',
             'item_name' => 'Trash Can',
             'warehouses_id' => 7,
@@ -432,7 +403,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 31,
             'item_code' => 'ST00031',
             'item_name' => 'Serving Tray',
             'warehouses_id' => 10,
@@ -446,7 +416,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 32,
             'item_code' => 'ST00032',
             'item_name' => 'Salt Shaker',
             'warehouses_id' => 10,
@@ -460,7 +429,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-            'id' => 33,
             'item_code' => 'ST00033',
             'item_name' => 'Table Napkins',
             'warehouses_id' => 5,
@@ -474,7 +442,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 34,
             'item_code' => 'ST00034',
             'item_name' => 'Chafing Dishes',
             'warehouses_id' => 8,
@@ -488,7 +455,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 35,
             'item_code' => 'ST00035',
             'item_name' => 'Electric Fryer',
             'warehouses_id' => 9,
@@ -502,7 +468,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 36,
             'item_code' => 'ST00036',
             'item_name' => 'Juice Dispenser',
             'warehouses_id' => 4,
@@ -516,7 +481,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 37,
             'item_code' => 'ST00037',
             'item_name' => 'Tiered Tray',
             'warehouses_id' => 7,
@@ -530,7 +494,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 38,
             'item_code' => 'ST00038',
             'item_name' => 'Chef Torch',
             'warehouses_id' => 6,
@@ -544,7 +507,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 39,
             'item_code' => 'ST00039',
             'item_name' => 'Microwave',
             'warehouses_id' => 2,
@@ -558,7 +520,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
                 [
-            'id' => 40,
             'item_code' => 'ST00040',
             'item_name' => 'Bread Knife',
             'warehouses_id' => 5,
@@ -572,7 +533,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
                 [
-            'id' => 41,
             'item_code' => 'ST00041',
             'item_name' => 'Microwave',
             'warehouses_id' => 2,
@@ -586,7 +546,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
                   [
-            'id' => 42,
             'item_code' => 'ST00042',
             'item_name' => 'Rolling Pin',
             'warehouses_id' => 5,
@@ -600,7 +559,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
       [
-            'id' => 43,
             'item_code' => 'ST00043',
             'item_name' => 'Blender',
             'warehouses_id' => 6,
@@ -614,7 +572,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 44,
             'item_code' => 'ST00044',
             'item_name' => 'Dessert Plate',
             'warehouses_id' => 5,
@@ -628,7 +585,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 45,
             'item_code' => 'ST00045',
             'item_name' => 'Pepper Shaker',
             'warehouses_id' => 5,
@@ -642,7 +598,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 46,
             'item_code' => 'ST00046',
             'item_name' => 'Speakers Large',
             'warehouses_id' => 5,
@@ -656,7 +611,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 47,
             'item_code' => 'ST00047',
             'item_name' => 'Speakers Small',
             'warehouses_id' => 6,
@@ -670,7 +624,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 48,
             'item_code' => 'ST00048',
             'item_name' => 'Microphone',
             'warehouses_id' => 3,
@@ -684,7 +637,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 49,
             'item_code' => 'ST00049',
             'item_name' => 'Microphone Stand',
             'warehouses_id' => 4,
@@ -698,7 +650,6 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
               [
-            'id' => 50,
             'item_code' => 'ST00050',
             'item_name' => 'Candle Stand',
             'warehouses_id' => 5,
@@ -712,5 +663,5 @@ class InventoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ]
     );
-    }
+    }}
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Audits;
 use App\User;
+use Auth;
 use Session;
 class UserController extends Controller
 {
@@ -56,6 +58,20 @@ class UserController extends Controller
         $users->role_id = $request->role;
         $users->password = bcrypt($request->password);
         $users->save();
+
+        //audits
+        $data = array(
+            "name" =>  $request->name,
+            "email" => $request->email,
+            "role" =>  $request->role
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'User Account';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
         Session::flash('status','Account Created!');
         
         return response()->redirectTo('/admin/user');
@@ -96,6 +112,26 @@ class UserController extends Controller
     {
        $users = new User;
 
+
+        //audits
+        $old_data = array(
+        "name" =>  $users->name,
+        "email" => $users->email,
+        "role" =>  $users->role
+        );
+        $data = array(
+        "name" =>  $request->name,
+        "email" => $request->email,
+        "role" =>  $request->role
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'User Account';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
         $this->validate($request,[
            'name' => 'required|string|max:255',
            'email' => 'required|string|email|max:255',

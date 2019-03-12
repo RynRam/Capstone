@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ManpowerRoles;
+use App\Audits;
+use Auth;
 class ManpowerRolesController extends Controller
 {
     public function __construct()
@@ -49,6 +51,17 @@ class ManpowerRolesController extends Controller
 
         $roles->save();
 
+    //audits
+    $data = array(
+        "name" =>  $request->name
+        );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Role';
+        $audits->new_values =  $data;
+        $audits->save();
+        //audits
         return response()->redirectTo('admin/manpowerroles');
     }
 

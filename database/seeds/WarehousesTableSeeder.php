@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-class WarehousesTableSeeder extends Seeder
+class StockroomsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,74 +11,61 @@ class WarehousesTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        DB::table('warehouses')->insert([
-            'id' => 1,
-            'name' => 'Warehouse 1',
-     
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
+    { 
+          if(DB::table('warehouses')->get()->count() == 0){
+        DB::table('warehouses')->insert(
         [
-            'id' => 2,
-            'name' => 'Warehouse 2',
+            
+            'name' => 'Stockroom 2',
 
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 3,
-            'name' => 'Warehouse 3',        
+            'name' => 'Stockroom 3',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 4,
-            'name' => 'Warehouse 4',
+            'name' => 'Stockroom 4',
      
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 5,
-            'name' => 'Warehouse 5',
+            'name' => 'Stockroom 5',
 
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 6,
-            'name' => 'Warehouse 6',        
+            'name' => 'Stockroom 6',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 7,
-            'name' => 'Warehouse 7',
+            'name' => 'Stockroom 7',
      
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 8,
-            'name' => 'Warehouse 8',
+            'name' => 'Stockroom 8',
 
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 9,
-            'name' => 'Warehouse 9',        
+            'name' => 'Stockroom 9',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
-            'id' => 10,
-            'name' => 'Warehouse 10',        
+            'name' => 'Stockroom 10',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]
     );
         
     }
-}
+}}

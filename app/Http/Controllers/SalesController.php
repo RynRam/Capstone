@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Inventory;
 use Session;
 use App\Payments;
+use App\Audits;
 use App\Caterings;
 use App\Reservations;
 class SalesController extends Controller

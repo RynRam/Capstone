@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Packages;
+use App\Audits;
 use App\EventCategories;
 use PDF;
 class FoodController extends Controller
@@ -81,9 +82,27 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
+
+        //audits
+
+        $data = array(
+            "name" =>  $request->name,
+            "inclusion" => $request->inclusion,
+            "price" => $request->price,
+            "category" => $request->category,
+            "file" => $filename,
+    
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'created';
+        $audits->audit_type = 'Package';
+        $audits->new_values =  $data;
+        $audits->save();
+            //audits
         return response()->redirectTo('admin/food');              
         }
-        }
+    }
 
     /**
      * Display the specified resource.
@@ -121,6 +140,8 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {   
          $food = Packages::find($id);
+
+        
         if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
         $request->file->storeAs('public/upload',$filename);
@@ -137,6 +158,31 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
+
+                //audits
+                $old_data = array(
+                    "name" =>  $food->name,
+                    "inclusion" => $food->inclusion,
+                    "price" => $food->price,
+                    "category" => $food->category,
+                    "file" => $food->file
+                    );
+                $data = array(
+                    "name" =>  $request->name,
+                    "inclusion" => $request->inclusion,
+                    "price" => $request->price,
+                    "category" => $request->category,
+                    "file" => $filename
+            
+                    );
+                $audits = new Audits; 
+                $audits->user = Auth::user()->name;
+                $audits->event = 'updated';
+                $audits->audit_type = 'Package';
+                $audits->new_values =  $data;
+                $audits->old_values =  $old_data;
+                $audits->save();
+                //audits
         return response()->redirectTo('admin/food');      
                
         }else{
@@ -152,7 +198,30 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->price = $request->price;
         $food->save();
-   
+            //audits
+            $old_data = array(
+                "name" =>  $food->name,
+                "inclusion" => $food->inclusion,
+                "price" => $food->price,
+                "category" => $food->category,
+                "file" => $food->file
+                );
+            $data = array(
+                "name" =>  $request->name,
+                "inclusion" => $request->inclusion,
+                "price" => $request->price,
+                "category" => $request->category,
+                "file" => $food->file
+        
+                );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'updated';
+            $audits->audit_type = 'Package';
+            $audits->new_values =  $data;
+            $audits->old_values =  $old_data;
+            $audits->save();
+            //audits
          return response()->redirectTo('/admin/food');
         }
     }
