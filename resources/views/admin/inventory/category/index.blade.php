@@ -9,7 +9,7 @@
     @include('admin.partials.message')
   <div class="container-fluid">
     <hr>
-     <a href="{{action('InventoryCategoryController@create')}}"><button class="btn btn-success">Add Category +</button></a>
+     <a href="{{'/admin/inventory-category/create'}}"><button class="btn btn-success">Add Category +</button></a>
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
@@ -41,7 +41,7 @@
 	                {{method_field('Patch')}}{{csrf_field()}}
 	                <button class="btn btn-success btn-success-sm">Update</button>
 	              </form> |
-                  <a href="{{action('InventoryCategoryController@edit', $category->id)}}" class="btn btn-primary" >Edit</a>
+                  <a href="{{'/admin/inventory-category/'.$category->id.'/edit'}}" class="btn btn-primary" >Edit</a>
     		       </td>
 	                </tr>
 
