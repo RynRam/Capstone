@@ -11,7 +11,7 @@ class EventCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('event_categories')->get()->count() == 0){
+       
         DB::table('event_categories')->insert([
         [
             'name' => 'Debut Catering',
@@ -24,4 +24,4 @@ class EventCategoriesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ]]);
     }}
-}
+

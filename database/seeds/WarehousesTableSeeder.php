@@ -12,7 +12,7 @@ class StockroomsTableSeeder extends Seeder
      */
     public function run()
     { 
-          if(DB::table('warehouses')->get()->count() == 0){
+       
         DB::table('warehouses')->insert([
         [
             
@@ -68,4 +68,4 @@ class StockroomsTableSeeder extends Seeder
     );
         
     }
-}}
+}

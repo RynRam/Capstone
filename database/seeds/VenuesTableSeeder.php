@@ -11,7 +11,7 @@ class VenuesTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('venues')->get()->count() == 0){
+      
         DB::table('venues')->insert([[
             'name' => 'Republic of Cavite Restaurant',
             'address' => 'City Hall Road ,Trece Martires, Cavite',
@@ -466,4 +466,4 @@ class VenuesTableSeeder extends Seeder
         ]]
     );
     }
-}}
+}

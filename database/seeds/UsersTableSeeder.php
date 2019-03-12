@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('users')->get()->count() == 0){
+     
         DB::table('users')->insert([
         [
             'name' => 'Lynagails',
@@ -106,5 +106,5 @@ class UsersTableSeeder extends Seeder
         ]
 
     );
-    }}
+    }
 }

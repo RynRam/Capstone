@@ -12,7 +12,7 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-      if(DB::table('customers')->get()->count() == 0){
+   
         DB::table('customers')->insert([
          [
             'fname' => 'Chase',
@@ -752,4 +752,4 @@ class CustomersTableSeeder extends Seeder
         ]]
     );
     }}
-    }
+    

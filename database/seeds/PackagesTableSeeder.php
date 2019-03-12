@@ -13,7 +13,7 @@ class PackagesTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('packages')->get()->count() == 0){
+      
         DB::table('packages')->insert([[
             'name' => 'Package A',
             'inclusion' =>' (1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and One Dessert',
@@ -106,5 +106,5 @@ class PackagesTableSeeder extends Seeder
         ]]
     );
     }
-}
+
 }

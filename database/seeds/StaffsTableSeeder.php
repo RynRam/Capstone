@@ -11,7 +11,7 @@ class StaffsTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('staffs')->get()->count() == 0){
+       
         DB::table('staffs')->insert([
         [
             'firstname' => 'Karl Vincent',
@@ -506,5 +506,4 @@ class StaffsTableSeeder extends Seeder
 
     );
     }
-}
 }

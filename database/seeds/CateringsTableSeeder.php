@@ -13,7 +13,7 @@ class CateringsTableSeeder extends Seeder
      */
     public function run()
     {
-        if(DB::table('caterings')->get()->count() == 0){
+       
         DB::table('caterings')->insert([
         [
             'name' => 'Corporate Event',
@@ -71,4 +71,3 @@ class CateringsTableSeeder extends Seeder
         ]]
     ); 
     }}
-}
