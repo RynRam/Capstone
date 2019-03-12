@@ -41,7 +41,7 @@
               <td>{{$staff->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
                 <form action="{{ action('ManpowerController@updateStatus', $staff->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
-                  {{method_field('patch')}}{{csrf_field()}}
+                  {{method_field('put')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> |
                   <a href="{{'/admin/manpower/'.$staff->id.'/edit'}}" class="btn btn-primary" >Edit</a>
@@ -61,7 +61,7 @@
       <div class="span6">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>{{$reservationsIncoming->eventdate ?? ''}} | {{$reservationsIncoming->lname ?? ''}} | {{$reservationsIncoming->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming->guest ?? ''}} | @ {{$reservationsIncoming->venuename ?? ''}}</h5>
+            <h5>{{$reservationsIncoming->eventdate ?? ''}} | {{$reservationsIncoming->lname ?? ''}} | {{$reservationsIncoming->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming->guest ?? ''}} | @ {{$reservationsIncoming->venue->name ?? ''}}</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
@@ -101,7 +101,7 @@
       <div class="span6">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>{{$reservationsIncoming2->eventdate ?? ''}} | {{$reservationsIncoming2->lname ?? ''}} | {{$reservationsIncoming2->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming2->guest ?? ''}} | @ {{$reservationsIncoming2->venuename ?? ''}}</h5>
+            <h5>{{$reservationsIncoming2->eventdate ?? ''}} | {{$reservationsIncoming2->lname ?? ''}} | {{$reservationsIncoming2->category->name ?? ''}} | <b>Guest:</b>{{$reservationsIncoming2->guest ?? ''}} | @ {{$reservationsIncoming2->venue->name ?? ''}}</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">

@@ -57,7 +57,7 @@
 	
 	
 	//Admin Login
-	Route::match(['get','post'],'/admin', 'AdminController@login')->middleware('adminauth');;
+	Route::match(['get','post'],'/admin', 'AdminController@login')->middleware('adminauth');
 
 	Auth::routes();
 
@@ -68,12 +68,14 @@
 
 	Route::get('/admin/dashboard', 'AdminController@dashboard')->middleware('auth');
 	Route::get('/admin/settings', 'AdminController@settings')->middleware('auth');
-	//Inventory Category
+	//CMS
 	Route::resource('/admin/post','CMSController');
+
 	//Inventory
 	Route::resource('/admin/inventory','InventoryController');
 	Route::get('/admin/Inventorypdf','InventoryController@pdf');
-		Route::get('/admin/InventoryDamage','InventoryController@dmg');
+	Route::post('/admin/inventory','InventoryController@store');
+	Route::get('/admin/InventoryDamage','InventoryController@dmg');
 	Route::get('/admin/InventoryDefect','InventoryController@dft');
 
 	Route::put('/admin/inventory/{inventory}','InventoryController@update');
@@ -81,6 +83,8 @@
 
 	//Inventory Category
 	Route::resource('/admin/inventory-category','InventoryCategoryController');
+	Route::get('/admin/inventory/{inventory-category}/edit', 'InventoryCategoryController@edit');
+	Route::get('/admin/inventory/{inventory-category}', 'InventoryCategoryController@update');	
 	Route::patch('/admin/inventory-category/{inventory_category}', 'InventoryCategoryController@updateStatus');
 	//Inventory Warehouse
 	Route::resource('/admin/warehouse','WarehouseController');
@@ -99,14 +103,19 @@
 	Route::get('/admin/food/create', 'FoodController@create')->name('Create New Package');
 	Route::get('/admin/food/{food}/edit', 'FoodController@edit')->name('Update Package');
 	Route::patch('/admin/food/{food}', 'FoodController@updateStatus'); 
+	Route::put('/admin/food/{food}', 'FoodController@update');
+
 	//Catering
 	Route::resource('/admin/category','CategoryController');
+	Route::post('/admin/category','CategoryController@store');
 	//Users
 	Route::resource('/admin/user','UserController');
 	Route::patch('/admin/user/{user}', 'UserController@updateStatus'); 
+
 	//Admin
 	Route::get('/admin/check-pwd','AdminController@check_password');
 	Route::match(['get','post'],'/admin/update-pwd','AdminController@update_password');
+
 	//Venue
 	Route::resource('/admin/venue','VenueController');
 	Route::get('/admin/Venuepdf','VenueController@pdf');
@@ -114,8 +123,9 @@
 	//Manpower
 	Route::resource('/admin/manpower','ManpowerController');
 	Route::resource('/admin/manpowerroles','ManpowerRolesController');
-	Route::patch('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus'); 
-	Route::patch('/admin/manpower/{manpower}', 'ManpowerController@updateStatus'); 
+	Route::put('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus'); 
+	Route::put('/admin/manpower/{manpower}', 'ManpowerController@updateStatus'); 
+	Route::patch('/admin/manpower/{manpower}', 'ManpowerController@update'); 
 	Route::get('/admin/manpowerReserve1pdf','ManpowerController@pdf');
 	Route::get('/admin/manpowerReserve2pdf','ManpowerController@pdfreserve');
 	//Audit

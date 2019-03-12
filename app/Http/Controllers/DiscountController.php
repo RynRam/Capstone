@@ -67,6 +67,7 @@ class DiscountController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Discount';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
             //audits
 

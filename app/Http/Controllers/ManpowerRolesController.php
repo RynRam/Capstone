@@ -60,6 +60,7 @@ class ManpowerRolesController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Role';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
         //audits
         return response()->redirectTo('admin/manpowerroles');

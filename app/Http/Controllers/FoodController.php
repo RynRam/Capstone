@@ -8,6 +8,7 @@ use App\Packages;
 use App\Audits;
 use App\EventCategories;
 use PDF;
+use Auth;
 class FoodController extends Controller
 {
          public function __construct()
@@ -98,6 +99,7 @@ class FoodController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Package';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
             //audits
         return response()->redirectTo('admin/food');              

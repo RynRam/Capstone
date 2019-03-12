@@ -70,6 +70,7 @@ class UserController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'User Account';
         $audits->new_values =  $data;
+        $audits->old_values =  ' ';
         $audits->save();
         //audits
         Session::flash('status','Account Created!');

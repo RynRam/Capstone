@@ -76,6 +76,7 @@ class CategoryController extends Controller
             $audits->event = 'created';
             $audits->audit_type = 'Category';
             $audits->new_values =  $data;
+            $audits->old_values =  'No Data';
             $audits->save();
                //audits
 
@@ -151,7 +152,7 @@ class CategoryController extends Controller
 
 
         
-        return response()->redirect('/admin/category');
+        return response()->redirectTo('/admin/category');
     }
 
     /**
@@ -164,7 +165,7 @@ class CategoryController extends Controller
     {
         $catering = Caterings::find($id);
         $catering->delete();
-       return response()->redirect('/admin/category');
+       return response()->redirectTo('/admin/category');
     }
 }
 

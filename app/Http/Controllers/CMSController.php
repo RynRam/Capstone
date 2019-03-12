@@ -74,6 +74,7 @@ class CMSController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Post';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
         //audits
         

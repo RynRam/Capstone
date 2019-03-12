@@ -13,23 +13,41 @@
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-list"></i> </span>
-            <h5>Audit Trail</h5>
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5>Audit Table</h5>
+
           </div>
-          <h4>Warehouse Audits</h4>
-          <ul>
-          @foreach($warehouse as $warehouse)
-              <li><b>ID:</b>{{$warehouse->id}} </li>
-              <li><b>USER:</b>{{$warehouse->user}} </li>
-              <li><b>EVENT:</b>{{$warehouse->event}} </li>
-              <li><b>CATEGORY:</b>{{$warehouse->audit_type}}</li>
-              <li><b>OLD VALUE:</b>{{json_encode($warehouse->old_values)}}</li>
-              <li><b>NEW VALUE:</b>{{json_encode($warehouse->new_values)}}</li>
-              <li><b>Date Created:</b>{{$warehouse->created_at->diffForHumans()}}</li>
-              <li><b>Date Updated:</b>{{$warehouse->updated_at->diffForHumans()}}</li>
-          
-            @endforeach
-          </ul>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>USER</th>
+                  <th>EVENT</th>
+                  <th>CATEGORY</th>
+                  <th>OLD VALUE</th>
+                  <th>NEW VALUE</th>
+                  <th>Date Added</th>
+                  <th>Date Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                @foreach($warehouse as $warehouse))
+                <tr class="gradeX">
+              <td>{{$warehouse->id}} </td>
+              <td>{{$warehouse->user}} </td>
+              <td>{{$warehouse->event}} </td>
+              <td>{{$warehouse->audit_type}}</td>
+              <td>{json_encode($warehouse->old_values)}}</td>
+              <td>{{json_encode($warehouse->new_values)}}</td>
+              <td>{{$warehouse->created_at->diffForHumans()}}</td>
+              <td>warehouse->updated_at->diffForHumans()}}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

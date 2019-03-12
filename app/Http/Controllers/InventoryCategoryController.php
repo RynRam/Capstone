@@ -68,6 +68,7 @@ class InventoryCategoryController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Inventory Category';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
         //audits
 

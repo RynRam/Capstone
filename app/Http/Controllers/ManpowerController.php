@@ -74,7 +74,7 @@ class ManpowerController extends Controller
     {
              $staffs = new Staffs; 
             $this->validate($request,[
-            'firstname' => 'required|unique:staffs',
+            'firstname' => 'required',
             'lastname' => 'required',
             'assign' => 'required',
             'role' => 'required',
@@ -98,6 +98,7 @@ class ManpowerController extends Controller
             $audits->event = 'created';
             $audits->audit_type = 'Staff';
             $audits->new_values =  $data;
+            $audits->old_values =  'No Data';
             $audits->save();
             //audits
             

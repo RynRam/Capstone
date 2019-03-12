@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="{{ action('InventoryController@store'}}" method="POST">
+		<form action="{{ action('InventoryController@store')}}" method="POST">
 	  	        {{csrf_field()}}
 	  	        @section('editMethod')
   	      		@show

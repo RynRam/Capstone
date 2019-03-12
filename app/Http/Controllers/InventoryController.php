@@ -119,6 +119,7 @@ class InventoryController extends Controller
         $audits->event = 'created';
         $audits->audit_type = 'Inventory';
         $audits->new_values =  $data;
+        $audits->old_values =  'No Data';
         $audits->save();
         //audits
        session()->flash('flash_message_success','Successfully Created');
