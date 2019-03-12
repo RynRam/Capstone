@@ -105,8 +105,8 @@ class WarehouseController extends Controller
             $audits->user = Auth::user()->name;
             $audits->event = 'updated';
             $audits->audit_type = 'Warehouse';
-            $audits->new_values =  ["name" =>  $warehouses->name];
-            $audits->old_values =   ["name" =>  $request->name];
+            $audits->new_values =  [$warehouses->name];
+            $audits->old_values =   [$request->name];
             $audits->save();
             //audits
         $this->validate($request,[
