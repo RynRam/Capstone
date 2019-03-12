@@ -59,7 +59,7 @@ class WarehouseController extends Controller
         $audits->user = Auth::user()->name;
         $audits->event = 'created';
         $audits->audit_type = 'Warehouse';
-        $audits->newvalues=  $data;
+        $audits->new_values=  $data;
 
         $audits->save();
         //audits
