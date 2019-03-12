@@ -84,9 +84,7 @@
 
 	//Inventory Category
 	Route::resource('/admin/inventory-category','InventoryCategoryController');
-	Route::post('/admin/inventory-category','InventoryCategoryController@store');
-	Route::get('/admin/inventory-category/create','InventoryController@create');
-	Route::get('/admin/inventory/{inventory-category}/edit', 'InventoryCategoryController@edit');
+	
 	Route::put('/admin/inventory/{inventory-category}', 'InventoryCategoryController@update');	
 	Route::patch('/admin/inventory-category/{inventory_category}', 'InventoryCategoryController@updateStatus');
 

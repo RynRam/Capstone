@@ -149,14 +149,14 @@ class UserController extends Controller
 
     public function updateStatus(Request $request,$id){
          $user = User::find($id);
-        if($user->is_active == 1){
-        $user->is_active = 0;
+        if($user->is_active == true){
+        $user->is_active = false;
         $user->save();
         session()->flash('flash_message_success','Successfully Updated');
         return response()->redirectTo('/admin/user');
         }
-        else if($user->is_active == 0){
-        $user->is_active = 1;
+        else if($user->is_active == false){
+        $user->is_active = true;
         $user->save();
         session()->flash('flash_message_success','Successfully Updated');
         return response()->redirectTo('/admin/user');
