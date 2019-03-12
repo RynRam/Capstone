@@ -18,16 +18,16 @@
           </div>
           <h4>Warehouse Audits</h4>
           <ul>
-          @foreach($warehouse as $warehouse){
+          @foreach($warehouse as $warehouse)
               <li><b>ID:</b>{{$warehouse->id}} </li>
               <li><b>USER:</b>{{$warehouse->user}} </li>
               <li><b>EVENT:</b>{{$warehouse->event}} </li>
               <li><b>CATEGORY:</b>{{$warehouse->audit_type}}</li>
               <li><b>OLD VALUE:</b>{{$warehouse->old_values}}</li>
               <li><b>NEW VALUE:</b>{{$warehouse->new_values}}</li>
-              <li><b>NEW VALUE:</b>{{$warehouse->created_at->diffForHumans()}}</li>
-              <li><b>NEW VALUE:</b>{{$warehouse->updated_at->diffForHumans()}}</li>
-            }
+              <li><b>Date Created:</b>{{$warehouse->created_at->diffForHumans()}}</li>
+              <li><b>Date Updated:</b>{{$warehouse->updated_at->diffForHumans()}}</li>
+          
             @endforeach
           </ul>
         </div>
