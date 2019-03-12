@@ -101,11 +101,11 @@ class WarehouseController extends Controller
         $warehouses = Warehouses::find($id);
                      //audits
         $old_data = array(
-        "name" =>  $warehouses->name,
+        "name" =>  $warehouses->name
         
         );
         $data = array(
-            "name" =>  $request->name,
+            "name" =>  $request->name
             );
         $audits = new Audits; 
         $audits->user = Auth::user()->name;
@@ -114,6 +114,7 @@ class WarehouseController extends Controller
         $audits->new_values=  $data;
         $audits->old_values=  $old_data;
         $audits->save();
+        
         //audits
         $this->validate($request,[
         'name' => 'required',
