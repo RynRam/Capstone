@@ -111,7 +111,7 @@ class VenueController extends Controller
             $file->capacity =  $request->capacity;
             $file->price = $request->price;
                $file->save();
-            return response()->redirect('admin/venue');
+            return response()->redirectTo('admin/venue');
     }
 
     /**
@@ -201,7 +201,7 @@ class VenueController extends Controller
         $file->file = $filename;
         $file->save();
 
-        return response()->redirect('admin/venue');
+        return response()->redirectTo('admin/venue');
            
        
         }else{
@@ -250,7 +250,7 @@ class VenueController extends Controller
             $file->capacity =  $request->capacity;
             $file->save();
 
-         return response()->redirect('admin/venue');
+         return response()->redirectTo('admin/venue');
          }
     }
 
@@ -260,12 +260,12 @@ class VenueController extends Controller
             $file->is_active = false;
             $file->save();
             session()->flash('flash_message_success','Successfully Updated');
-            return response()->redirect('/admin/venue');
+            return response()->redirectTo('/admin/venue');
         }else if($file->is_active == false ){
             $file->is_active = true;
             $file->save();
             session()->flash('flash_message_success','Successfully Updated');
-           return response()->redirect('/admin/venue');
+           return response()->redirectTo('/admin/venue');
         }
     }
 

@@ -63,7 +63,7 @@ class WarehouseController extends Controller
 
         $audits->save();
         //audits
-        return response()->redirect('/admin/warehouse');
+        return response()->redirectTo('/admin/warehouse');
     }
 
     /**
@@ -122,7 +122,7 @@ class WarehouseController extends Controller
         $warehouses->name =  $request->name;
         $warehouses->save();
    
-        return response()->redirect('/admin/warehouse');
+        return response()->redirectTo('/admin/warehouse');
     }
 
     /**
