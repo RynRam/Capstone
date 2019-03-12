@@ -67,7 +67,9 @@ class AdminController extends Controller
             );
         }
         $calendar_details = Calendar::addEvents($event_list); 
-        $payments = Payments::whereDate('created_at', Carbon::today()->format('Y-d-m'))->sum('amount_payment');
+        date_default_timezone_set('Asia/Manila');
+        $paymentdates = date('Y-m-d');
+        $payments = Payments::whereDate('created_at', '=', $paymentdates)->sum('amount_payment');
         $reservationsCount = Reservations::where('is_approved',1)->count();
         $todaydate = date("Y-m-d");
         // return $todaydate;

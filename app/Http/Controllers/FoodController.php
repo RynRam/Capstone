@@ -144,21 +144,6 @@ class FoodController extends Controller
         
         if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
-            $this->validate($request,[
-            'name' => 'required',
-            'inclusion' => 'required',
-            'price' => 'required|numeric',
-            'category' => 'required',
-            'file' => 'required',
-        ]);
-        $food->name = $request->name;
-        $food->inclusion = $request->inclusion;
-        $food->price = $request->price;
-        $food->event_categories_id = $request->category;
-        $food->file = $filename;
-        $food->save();
-
                 //audits
                 $old_data = array(
                     "name" =>  $food->name,
@@ -183,10 +168,50 @@ class FoodController extends Controller
                 $audits->old_values =  $old_data;
                 $audits->save();
                 //audits
+        $request->file->storeAs('public/upload',$filename);
+            $this->validate($request,[
+            'name' => 'required',
+            'inclusion' => 'required',
+            'price' => 'required|numeric',
+            'category' => 'required',
+            'file' => 'required',
+        ]);
+        $food->name = $request->name;
+        $food->inclusion = $request->inclusion;
+        $food->price = $request->price;
+        $food->event_categories_id = $request->category;
+        $food->file = $filename;
+        $food->save();
+
+        
         return response()->redirectTo('admin/food');      
                
         }else{
        $food = Packages::find($id);
+           //audits
+           $old_data = array(
+            "name" =>  $food->name,
+            "inclusion" => $food->inclusion,
+            "price" => $food->price,
+            "category" => $food->category,
+            "file" => $food->file
+            );
+        $data = array(
+            "name" =>  $request->name,
+            "inclusion" => $request->inclusion,
+            "price" => $request->price,
+            "category" => $request->category,
+            "file" => $food->file
+    
+            );
+        $audits = new Audits; 
+        $audits->user = Auth::user()->name;
+        $audits->event = 'updated';
+        $audits->audit_type = 'Package';
+        $audits->new_values =  $data;
+        $audits->old_values =  $old_data;
+        $audits->save();
+        //audits
             $this->validate($request,[
             'name' => 'required',
             'category' => 'required',
@@ -198,30 +223,7 @@ class FoodController extends Controller
         $food->event_categories_id = $request->category;
         $food->price = $request->price;
         $food->save();
-            //audits
-            $old_data = array(
-                "name" =>  $food->name,
-                "inclusion" => $food->inclusion,
-                "price" => $food->price,
-                "category" => $food->category,
-                "file" => $food->file
-                );
-            $data = array(
-                "name" =>  $request->name,
-                "inclusion" => $request->inclusion,
-                "price" => $request->price,
-                "category" => $request->category,
-                "file" => $food->file
         
-                );
-            $audits = new Audits; 
-            $audits->user = Auth::user()->name;
-            $audits->event = 'updated';
-            $audits->audit_type = 'Package';
-            $audits->new_values =  $data;
-            $audits->old_values =  $old_data;
-            $audits->save();
-            //audits
          return response()->redirectTo('/admin/food');
         }
     }

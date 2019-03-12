@@ -149,26 +149,12 @@ class VenueController extends Controller
     public function update(Request $request, $id)
         {    
             $file = Venues::find($id);
+        
+            
             if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
         $request->file->storeAs('public/upload',$filename);
-        $this->validate($request,[
-            'name' => 'required|unique:venues',
-            'address' => 'required',
-            'contact' => 'required|min:14',
-            'contact_person' => 'required',
-            'price' => 'required',
-        ]);
-
-        $file->name = $request->name;
-        $file->address = $request->address;
-        $file->contact = $request->contact;
-        $file->contact_person = $request->contact_person;
-        $file->price = $request->price;
-        $file->capacity =  $request->capacity;
-        $file->file = $filename;
-        $file->save();
-
+        
                      //audits
                      $old_data = array(
                         "name" =>  $file->name,
@@ -198,10 +184,56 @@ class VenueController extends Controller
                     $audits->old_values =  $old_data;
                     $audits->save();
                     //audits
+        $this->validate($request,[
+            'name' => 'required|unique:venues',
+            'address' => 'required',
+            'contact' => 'required|min:14',
+            'contact_person' => 'required',
+            'price' => 'required',
+        ]);
+
+        $file->name = $request->name;
+        $file->address = $request->address;
+        $file->contact = $request->contact;
+        $file->contact_person = $request->contact_person;
+        $file->price = $request->price;
+        $file->capacity =  $request->capacity;
+        $file->file = $filename;
+        $file->save();
+
         return response()->redirect('admin/venue');
            
        
         }else{
+                        //audits
+                        $old_data = array(
+                            "name" =>  $file->name,
+                            "address" => $file->address,
+                            "contact_person" => $file->contact_person,
+                            "contact" => $file->contact,
+                            "price" => $file->price,
+                            "capacity" => $file->capacity,
+                            "file" => $file->file
+                            );
+                        $data = array(
+                            "name" =>  $request->name,
+                            "address" => $request->address,
+                            "contact_person" => $request->contact_person,
+                            "contact" => $request->contact,
+                            "price" => $request->price,
+                            "capacity" => $request->capacity,
+                            "file" => $file->file
+            
+                    
+                            );
+                        $audits = new Audits; 
+                        $audits->user = Auth::user()->name;
+                        $audits->event = 'created';
+                        $audits->audit_type = 'Venue';
+                        $audits->new_values =  $data;
+                        $audits->old_values =  $old_data;
+                        $audits->save();
+                                    //audits
             $this->validate($request,[
             'name' => 'required|unique:venues',
             'address' => 'required',
@@ -217,35 +249,7 @@ class VenueController extends Controller
             $file->price = $request->price;
             $file->capacity =  $request->capacity;
             $file->save();
-            //audits
-            $old_data = array(
-                "name" =>  $file->name,
-                "address" => $file->address,
-                "contact_person" => $file->contact_person,
-                "contact" => $file->contact,
-                "price" => $file->price,
-                "capacity" => $file->capacity,
-                "file" => $file->file
-                );
-            $data = array(
-                "name" =>  $request->name,
-                "address" => $request->address,
-                "contact_person" => $request->contact_person,
-                "contact" => $request->contact,
-                "price" => $request->price,
-                "capacity" => $request->capacity,
-                "file" => $file->file
 
-        
-                );
-            $audits = new Audits; 
-            $audits->user = Auth::user()->name;
-            $audits->event = 'created';
-            $audits->audit_type = 'Venue';
-            $audits->new_values =  $data;
-            $audits->old_values =  $old_data;
-            $audits->save();
-                        //audits
          return response()->redirect('admin/venue');
          }
     }
