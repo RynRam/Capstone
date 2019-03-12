@@ -15,7 +15,6 @@
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Audit Table</h5>
-
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
@@ -33,16 +32,16 @@
               </thead>
               <tbody>
 
-                @foreach($warehouse as $warehouse))
+                @foreach($warehouse as $warehouse)
                 <tr class="gradeX">
               <td>{{$warehouse->id}} </td>
               <td>{{$warehouse->user}} </td>
               <td>{{$warehouse->event}} </td>
               <td>{{$warehouse->audit_type}}</td>
-              <td>{json_encode($warehouse->old_values)}}</td>
+              <td>{{json_encode($warehouse->old_values)}}</td>
               <td>{{json_encode($warehouse->new_values)}}</td>
               <td>{{$warehouse->created_at->diffForHumans()}}</td>
-              <td>warehouse->updated_at->diffForHumans()}}</td>
+              <td>{{$warehouse->updated_at->diffForHumans()}}</td>
                 </tr>
                 @endforeach
               </tbody>

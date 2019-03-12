@@ -74,18 +74,22 @@
 	//Inventory
 	Route::resource('/admin/inventory','InventoryController');
 	Route::get('/admin/Inventorypdf','InventoryController@pdf');
-	Route::post('/admin/inventory','InventoryController@store');
+	Route::get('/admin/inventory/{inventory}/edit', 'InventoryController@edit');
 	Route::get('/admin/InventoryDamage','InventoryController@dmg');
 	Route::get('/admin/InventoryDefect','InventoryController@dft');
+	Route::post('/admin/inventory','InventoryController@store');
 
 	Route::put('/admin/inventory/{inventory}','InventoryController@update');
 	Route::patch('/admin/inventory/{inventory}','InventoryController@updateStatus');
 
 	//Inventory Category
 	Route::resource('/admin/inventory-category','InventoryCategoryController');
+	Route::post('/admin/inventory-category','InventoryCategoryController@store');
+	Route::get('/admin/inventory-category/create','InventoryController@create');
 	Route::get('/admin/inventory/{inventory-category}/edit', 'InventoryCategoryController@edit');
-	Route::get('/admin/inventory/{inventory-category}', 'InventoryCategoryController@update');	
+	Route::put('/admin/inventory/{inventory-category}', 'InventoryCategoryController@update');	
 	Route::patch('/admin/inventory-category/{inventory_category}', 'InventoryCategoryController@updateStatus');
+
 	//Inventory Warehouse
 	Route::resource('/admin/warehouse','WarehouseController');
 	//Reservations
@@ -120,6 +124,7 @@
 	Route::resource('/admin/venue','VenueController');
 	Route::get('/admin/Venuepdf','VenueController@pdf');
 	Route::patch('/admin/venue/{venue}', 'VenueController@updateStatus'); 
+	Route::put('/admin/venue/{venue}', 'VenueController@update'); 
 	//Manpower
 	Route::resource('/admin/manpower','ManpowerController');
 	Route::resource('/admin/manpowerroles','ManpowerRolesController');
@@ -133,7 +138,7 @@
 	//Sales
 	Route::resource('/admin/sales','SalesController');
 	Route::get('/admin/salespdf','SalesController@pdf');
-	Route::post('/admin/category','SalesController@category');
+	Route::post('/admin/salescategory','SalesController@category');
 	Route::get('/admin/salescategorypdf','SalesController@categorypdf');
 	//Discount
 	Route::resource('/admin/discount','DiscountController');

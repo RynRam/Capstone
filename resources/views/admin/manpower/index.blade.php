@@ -44,7 +44,7 @@
                   {{method_field('put')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> |
-                  <a href="{{'/admin/manpower/'.$staff->id.'/edit'}}" class="btn btn-primary" >Edit</a>
+                  <a href="{{ action('ManpowerController@updateStatus', $staff->id) }}}" class="btn btn-primary" >Edit</a>
               </td>
                 </tr>
                 @endforeach
