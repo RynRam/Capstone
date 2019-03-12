@@ -196,7 +196,7 @@ class FrontController extends Controller
     }
 
     public function reserved(){
-        $reserve = Reservations::all();
+        $reserve = Reservations::where('is_approved',1)->get();
         return ($reserve);
     }
     public function receipt(){

@@ -104,9 +104,9 @@ class WarehouseController extends Controller
             "name" =>  $warehouses->name,
             
             );
-            $data = array(
-                "name" =>  $request->name,
-                );
+        $data = array(
+            "name" =>  $request->name,
+            );
             $audits = new Audits; 
             $audits->user = Auth::user()->name;
             $audits->event = 'updated';

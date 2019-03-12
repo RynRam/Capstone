@@ -690,7 +690,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 44,
+                'id' => 45,
             'fname' => 'Ada',
             'lname' => 'Owens',
             'contact' => '09158547791',
@@ -707,7 +707,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 45,
+                'id' => 46,
             'fname' => 'Angela',
             'lname' => 'Owens',
             'contact' => '09158547791',
@@ -724,7 +724,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 46,
+                'id' => 47,
             'fname' => 'Angel',
             'lname' => 'Owens',
             'contact' => '09158547791',
@@ -741,7 +741,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 47,
+                'id' => 48,
             'fname' => 'Angelica',
             'lname' => 'Owens',
             'contact' => '09158547791',
@@ -758,7 +758,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 48,
+                'id' => 49,
             'fname' => 'Ayah',
             'lname' => 'Owens',
             'contact' => '09158547791',
@@ -775,7 +775,7 @@ class CustomersTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
             [
-                'id' => 49,
+                'id' => 50,
             'fname' => 'Ayla',
             'lname' => 'Owens',
             'contact' => '09158547791',

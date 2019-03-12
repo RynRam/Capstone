@@ -9,6 +9,6 @@ class Audits extends Model
     protected $fillable= ['user', 'event','audit_type'];
     protected $casts = [
         'old_values' => 'array',
-        'new_values' => 'array'
+        'new_values' => 'array',
     ];
 }
