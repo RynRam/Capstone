@@ -28,7 +28,7 @@ class VenuesTableSeeder extends Seeder
         [
             'id' => 12,
             'name' => 'Stat Events and Trends',
-            'address' => 'EAM Building Barangay, Anabu 1D Aguinaldo Highway 2nd Floor Imus Cavite',
+            'address' => 'Anabu 1D Aguinaldo Highway 2nd Floor Imus Cavite',
             'contact_person' => 'Althea',
             'contact'=> '09176921168',
             'price' => 20000,
@@ -55,7 +55,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 14,
             'name' => 'The Living Room Bar',
-            'address' => '7610 Chestnut Street Amrcelo Green Village Paranaque, 1715 Metro Manila Paranaque City',
+            'address' => '7610 Chestnut, 1715 Metro Manila Paranaque City',
             'contact_person' => 'Edwin',
             'contact'=> '02-7751566',
             'price' => 15000,
@@ -69,7 +69,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 15,
             'name' => 'Tagaytay Wedding Café',
-            'address' => 'Tagaytay - Amadeo Road, Barangay Salaban Terrace Hill Resort, Amadeo, Cavite',
+            'address' => 'Barangay Salaban Terrace Hill Resort, Amadeo, Cavite',
             'contact_person' => 'Jason',
             'contact'=> '046-4835307',
             'price' => 80,000,
@@ -97,7 +97,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 17,
             'name' => 'Plaza San Luis Complex',
-            'address' => 'Geeral Luna Street cor Real St., Intramuros Manila, Metrol Manila',
+            'address' => 'Intramuros Manila, Metrol Manila',
             'contact_person' => 'Sergio',
             'contact'=> '02-5274084',
             'price' => 70000,
@@ -139,7 +139,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 20,
             'name' => 'Chardan Events Place',
-            'address' => '4103, 841 Emilio Aguinaldo Hwy, Anabu 1-D, Imus, Cavite',
+            'address' =>  'Imus, Cavite',
             'contact_person' => 'Mrs. Marya',
             'contact'=> '(046)6862441',
             'price' => 76000,
@@ -153,7 +153,7 @@ class VenuesTableSeeder extends Seeder
 		[   
             'id' => 21,
             'name' => 'The Paradiso Terrestre',
-            'address' => '1, 170933 National Road, Molino Highway, Molino IV, Cavite City',
+            'address' => 'Molino IV, Cavite City',
             'contact_person' => 'Mr. Janzon',
             'contact'=> '(02)5844127',
             'price' => 190000,
@@ -209,7 +209,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 25,
             'name' => 'Torreno Resort And Pavillion',
-            'address' => 'Dagohoy St. Extenson Bahayang Pag-asa Phase 1, Molino, Bacoor, Cavite',
+            'address' => 'Extenson Bahayang Pag-asa Phase 1, Molino, Bacoor, Cavite',
             'contact_person' => 'Kenneth',
             'contact'=> '(046)4167517',
             'price' => 50000,
@@ -279,7 +279,7 @@ class VenuesTableSeeder extends Seeder
 		[
             'id' => 30,
             'name' => 'South Country Garden',
-            'address' => 'Block 4 Lot 1 Panorama Ville, barangay Dita, Santa Rosa, Laguna',
+            'address' => 'barangay Dita, Santa Rosa, Laguna',
             'contact_person' => 'Event Planner',
             'contact'=> '09176733017',
             'price' => 100000,
