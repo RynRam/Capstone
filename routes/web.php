@@ -75,21 +75,22 @@
 	Route::resource('/admin/inventory','InventoryController');
 	Route::get('/admin/Inventorypdf','InventoryController@pdf');
 	Route::get('/admin/inventory/{inventory}/edit', 'InventoryController@edit');
+	Route::get('/admin/inventory/create', 'InventoryController@create');
 	Route::get('/admin/InventoryDamage','InventoryController@dmg');
 	Route::get('/admin/InventoryDefect','InventoryController@dft');
-	Route::post('/admin/inventory','InventoryController@store');
-
 	Route::put('/admin/inventory/{inventory}','InventoryController@update');
 	Route::patch('/admin/inventory/{inventory}','InventoryController@updateStatus');
 
 	//Inventory Category
 	Route::resource('/admin/inventory-category','InventoryCategoryController');
-	
+	Route::get('/admin/inventory/create', 'InventoryCategoryController@create');
+	Route::get('/admin/inventory/{inventory-category}/edit', 'InventoryCategoryController@edit');
 	Route::put('/admin/inventory/{inventory-category}', 'InventoryCategoryController@update');	
 	Route::patch('/admin/inventory-category/{inventory_category}', 'InventoryCategoryController@updateStatus');
 
 	//Inventory Warehouse
 	Route::resource('/admin/warehouse','WarehouseController');
+
 	//Reservations
 	Route::resource('/admin/reservation','ReservationController');
 	Route::get('/admin/reservationpdf','ReservationController@pdf');
@@ -110,6 +111,7 @@
 	//Catering
 	Route::resource('/admin/category','CategoryController');
 	Route::post('/admin/category','CategoryController@store');
+
 	//Users
 	Route::resource('/admin/user','UserController');
 	Route::patch('/admin/user/{user}', 'UserController@updateStatus'); 
@@ -123,12 +125,16 @@
 	Route::get('/admin/Venuepdf','VenueController@pdf');
 	Route::patch('/admin/venue/{venue}', 'VenueController@updateStatus'); 
 	Route::put('/admin/venue/{venue}', 'VenueController@update'); 
+	
 	//Manpower
 	Route::resource('/admin/manpower','ManpowerController');
+	Route::get('/admin/manpower/create', 'ManpowerController@create');
+	Route::get('/admin/manpower/{manpower}/edit', 'ManpowerController@edit');
+	Route::patch('/admin/manpower/{manpower}', 'ManpowerController@updateStatus'); 
+	Route::put('/admin/manpower/{manpower}', 'ManpowerController@update');
+
 	Route::resource('/admin/manpowerroles','ManpowerRolesController');
-	Route::put('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus'); 
-	Route::put('/admin/manpower/{manpower}', 'ManpowerController@updateStatus'); 
-	Route::patch('/admin/manpower/{manpower}', 'ManpowerController@update'); 
+	Route::put('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus');  
 	Route::get('/admin/manpowerReserve1pdf','ManpowerController@pdf');
 	Route::get('/admin/manpowerReserve2pdf','ManpowerController@pdfreserve');
 	//Audit

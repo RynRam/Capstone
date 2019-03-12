@@ -41,10 +41,10 @@
               <td>{{$staff->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
                 <form action="{{ action('ManpowerController@updateStatus', $staff->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
-                  {{method_field('put')}}{{csrf_field()}}
+                  {{method_field('Patch')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> |
-                  <a href="{{ action('ManpowerController@updateStatus', $staff->id) }}}" class="btn btn-primary" >Edit</a>
+                  <a href="{{ action('ManpowerController@update', $staff->id) }}}" class="btn btn-primary" >Edit</a>
               </td>
                 </tr>
                 @endforeach

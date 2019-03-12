@@ -50,7 +50,7 @@
               <td>{{$inventory->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
               <form action="{{ action('InventoryController@updateStatus', $inventory->id) }}" class="form-group" style="display: -webkit-inline-box;" method="post">
-                {{method_field('patch')}}{{csrf_field()}}
+                {{method_field('Patch')}}{{csrf_field()}}
                 <button class="btn btn-success btn-sm">Update</button>
               </form>  |
 
