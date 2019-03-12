@@ -6,11 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Audits extends Model
 {
-    protected $fillable= ['user', 'event','audit_type','oldvalues','newvalues'];
+    protected $fillable= ['user', 'event','audit_type','old_values','new_values'];
     protected $casts = [
-        'oldvalues' => 'array',
-        'newvalues' => 'array',
+        'old_values' => 'array',
+        'new_values' => 'array',
     ];
+    public function setOptionsAttribute($old_values,$new_values)
+{
+    $this->attributes['old_values'] = json_encode($old_values);
+    $this->attributes['new_values'] = json_encode($old_values);
+
+}
 
     protected $table = 'audits';
 }
