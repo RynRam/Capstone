@@ -13,7 +13,7 @@ class StockroomsTableSeeder extends Seeder
     public function run()
     { 
           if(DB::table('warehouses')->get()->count() == 0){
-        DB::table('warehouses')->insert(
+        DB::table('warehouses')->insert([
         [
             
             'name' => 'Stockroom 2',
@@ -64,7 +64,7 @@ class StockroomsTableSeeder extends Seeder
             'name' => 'Stockroom 10',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]
+        ]]
     );
         
     }

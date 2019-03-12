@@ -12,7 +12,7 @@ class InventoriesTableSeeder extends Seeder
     public function run()
     {
       if(DB::table('inventories')->get()->count() == 0){
-        DB::table('inventories')->insert([
+        DB::table('inventories')->insert([[
             'item_code' => 'ST00001',
             'item_name' => 'Table',
             'warehouses_id' => 1,
@@ -661,7 +661,7 @@ class InventoriesTableSeeder extends Seeder
             'is_active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]
+        ]]
     );
     }}
 }

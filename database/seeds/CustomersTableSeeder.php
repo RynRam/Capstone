@@ -13,7 +13,7 @@ class CustomersTableSeeder extends Seeder
     public function run()
     {
       if(DB::table('customers')->get()->count() == 0){
-        DB::table('customers')->insert(
+        DB::table('customers')->insert([
          [
             'fname' => 'Chase',
             'lname' => 'Doe',
@@ -749,7 +749,7 @@ class CustomersTableSeeder extends Seeder
             'remember_token' => str_random(40),
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]
+        ]]
     );
     }}
     }

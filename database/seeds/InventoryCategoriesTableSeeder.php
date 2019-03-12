@@ -14,7 +14,7 @@ class InventoryCategoriesTableSeeder extends Seeder
     public function run()
     {
         if(DB::table('inventory_categories')->get()->count() == 0){
-        DB::table('inventory_categories')->insert(
+        DB::table('inventory_categories')->insert([
         [
             'category' => 'Utensils',
             'description' =>'Only Utensils',
@@ -49,7 +49,7 @@ class InventoryCategoriesTableSeeder extends Seeder
             'is_active' => 1,         
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]);
+        ]]);
         }
     }
 }

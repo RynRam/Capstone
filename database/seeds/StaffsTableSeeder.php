@@ -12,7 +12,7 @@ class StaffsTableSeeder extends Seeder
     public function run()
     {
         if(DB::table('staffs')->get()->count() == 0){
-        DB::table('staffs')->insert(		
+        DB::table('staffs')->insert([
         [
             'firstname' => 'Karl Vincent',
             'lastname' => 'Escamilla',
@@ -500,6 +500,7 @@ class StaffsTableSeeder extends Seeder
             'is_active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
+        ]
         ]
 		
 

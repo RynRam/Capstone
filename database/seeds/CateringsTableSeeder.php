@@ -14,7 +14,7 @@ class CateringsTableSeeder extends Seeder
     public function run()
     {
         if(DB::table('caterings')->get()->count() == 0){
-        DB::table('caterings')->insert(
+        DB::table('caterings')->insert([
         [
             'name' => 'Corporate Event',
             'event_categories_id' => 1,
@@ -68,7 +68,7 @@ class CateringsTableSeeder extends Seeder
             'event_categories_id' => 1,    
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-        ]
+        ]]
     ); 
     }}
 }

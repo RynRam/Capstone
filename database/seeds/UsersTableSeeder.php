@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         if(DB::table('users')->get()->count() == 0){
-        DB::table('users')->insert(
+        DB::table('users')->insert([
         [
             'name' => 'Lynagails',
             'email' =>'lynagails@gmail.com',
@@ -103,7 +103,7 @@ class UsersTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]
-
+        ]
 
     );
     }}
