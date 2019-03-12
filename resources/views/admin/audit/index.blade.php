@@ -23,8 +23,8 @@
               <li><b>USER:</b>{{$warehouse->user}} </li>
               <li><b>EVENT:</b>{{$warehouse->event}} </li>
               <li><b>CATEGORY:</b>{{$warehouse->audit_type}}</li>
-              <li><b>OLD VALUE:</b>{{in_array($warehouse->old_values)}}</li>
-              <li><b>NEW VALUE:</b>{{in_array($warehouse->new_values)}}</li>
+              <li><b>OLD VALUE:</b>{{json_encode($warehouse->old_values)}}</li>
+              <li><b>NEW VALUE:</b>{{json_encode($warehouse->new_values)}}</li>
               <li><b>Date Created:</b>{{$warehouse->created_at->diffForHumans()}}</li>
               <li><b>Date Updated:</b>{{$warehouse->updated_at->diffForHumans()}}</li>
           
