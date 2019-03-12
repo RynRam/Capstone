@@ -18,8 +18,8 @@ class CreateAuditsDeploysTable extends Migration
             $table->string('user')->default(null);
             $table->string('event')->default(null);
             $table->string('audit_type')->default(null);
-            $table->json('old_values ')->default(null);
-            $table->json('new_values ')->default(null);
+            $table->json('old_values')->default(null);
+            $table->json('new_values')->default(null);
             $table->timestamps();
         });
     }

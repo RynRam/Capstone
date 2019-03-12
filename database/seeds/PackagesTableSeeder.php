@@ -14,17 +14,9 @@ class PackagesTableSeeder extends Seeder
     public function run()
     {
       
-        DB::table('packages')->insert([[
-            'name' => 'Package A',
-            'inclusion' =>' (1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and One Dessert',
-            'file' => 'packageA.png',
-            'price' => 550,
-            'is_active' => 1,         
-            'event_categories_id' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
+        DB::table('packages')->insert([
         [
+            'id' => 2,
             'name' => 'Package B',
             'inclusion' =>' (1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and Two Dessert',
             'file' => 'packageB.png',
@@ -35,6 +27,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 3,
             'name' => 'Package C',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable and (1)Seafood Pasta',
             'file' => 'packageC.png',
@@ -45,6 +38,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 4,
             'name' => 'Package A',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and One Dessert',
             'file' => 'packageA.png',
@@ -55,6 +49,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 5,
             'name' => 'Package B',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and Two Dessert',
             'file' => 'packageB.png',
@@ -65,6 +60,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 6,
             'name' => 'Package C',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable and (1)Seafood Pasta',
             'file' => 'packageC.png',
@@ -75,6 +71,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 7,
             'name' => 'Package A',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and One Dessert',
             'file' => 'packageA.png',
@@ -85,6 +82,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 8,
             'name' => 'Package B',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable, (1)Fish or (1)Seafood Pasta / Appetizer, Soup, Salad and Two Dessert',
             'file' => 'packageB.png',
@@ -95,6 +93,7 @@ class PackagesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 9,
             'name' => 'Package C',
             'inclusion' =>'(1)Beef, (1)Pork, (1)Chicken, (1)Vegetable and (1)Seafood Pasta',
             'file' => 'packageC.png',

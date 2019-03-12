@@ -14,11 +14,13 @@ class EventCategoriesTableSeeder extends Seeder
        
         DB::table('event_categories')->insert([
         [
+            'id' => 2,
             'name' => 'Debut Catering',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 3,
             'name' => 'Wedding Catering',        
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),

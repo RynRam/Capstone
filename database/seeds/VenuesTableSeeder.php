@@ -13,6 +13,7 @@ class VenuesTableSeeder extends Seeder
     {
       
         DB::table('venues')->insert([[
+            'id' => 11,
             'name' => 'Republic of Cavite Restaurant',
             'address' => 'City Hall Road ,Trece Martires, Cavite',
             'contact_person' => 'Cecille',
@@ -25,6 +26,7 @@ class VenuesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ],
         [
+            'id' => 12,
             'name' => 'Stat Events and Trends',
             'address' => 'EAM Building Barangay, Anabu 1D Aguinaldo Highway 2nd Floor Imus Cavite',
             'contact_person' => 'Althea',
@@ -36,21 +38,8 @@ class VenuesTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
-		
-        [
-            'name' => 'Mango Hills Garden',
-            'address' => '40 Yakal Street, Calendola Village San Pedro Laguna',
-            'contact_person' => 'Suzy',
-            'contact'=> '0932-1883111',
-            'price' => 75000,
-            'file' => 'mangohills.jpg',
-            'capacity' => 200,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
 		[
+            'id' => 13,
             'name' => 'The Monochrome',
             'address' => 'Venado. Santa Rosa City, Laguna',
             'contact_person' => 'Wilnel',
@@ -64,45 +53,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
-            'name' => 'Angelfields Nature Sanctuary',
-            'address' => 'Tagaytay - Sta. Rosa Road. Purok 5 Barangay Pasong Langka .Tagaytay Cavite',
-            'contact_person' => 'Baldo',
-            'contact'=> '0917-5424024',
-            'price' => 120000,
-            'file' => 'angelfields.jpg',
-            'capacity' => 300,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
-            'name' => 'Hacienda Isabella',
-            'address' => '8 Carasuchi Indang, 4122 Cavite',
-            'contact_person' => 'Lola',
-            'contact'=> '02-6252453',
-            'price' => 150,000,
-            'file' => 'hacienda.jpg',
-            'capacity' => 400,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
-            'name' => 'Fernbook Gardens',
-            'address' => 'Daang Reyna Portofino South Las Pinas, 1750 Metro Manila. Las Pinas City',
-            'contact_person' => 'Jeffrey',
-            'contact'=> '02-7108454',
-            'price' => 65,000,
-            'file' => 'fernbook.jpg',
-            'capacity' => 150,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
+            'id' => 14,
             'name' => 'The Living Room Bar',
             'address' => '7610 Chestnut Street Amrcelo Green Village Paranaque, 1715 Metro Manila Paranaque City',
             'contact_person' => 'Edwin',
@@ -116,6 +67,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 15,
             'name' => 'Tagaytay Wedding Café',
             'address' => 'Tagaytay - Amadeo Road, Barangay Salaban Terrace Hill Resort, Amadeo, Cavite',
             'contact_person' => 'Jason',
@@ -129,6 +81,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 16,
             'name' => 'Palacio De Maynila',
             'address' => '1809-1813 MH Del Pilar St. Manila City',
             'contact_person' => 'Mary',
@@ -142,6 +95,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 17,
             'name' => 'Plaza San Luis Complex',
             'address' => 'Geeral Luna Street cor Real St., Intramuros Manila, Metrol Manila',
             'contact_person' => 'Sergio',
@@ -155,19 +109,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
-            'name' => 'Events Center',
-            'address' => 'Kalayaan Avenue Makati Acity',
-            'contact_person' => 'Josephine',
-            'contact'=> '02-7056200',
-            'price' => 55000,
-            'file' => 'ec.jpg', 
-            'capacity' => 90,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
+            'id' => 18,
             'name' => 'The Pergola',
             'address' => 'Sen. Gil J. Puyat Avenue',
             'contact_person' => 'Andrei',
@@ -181,44 +123,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
-            'name' => 'C&C Makati Event Venue',
-            'address' => 'Malugay Makati, Metro Manila',
-            'contact_person' => 'Tonyo',
-            'contact'=> '0905-5541775',
-            'price' => 128000,
-            'file' => 'cc.jpg',
-            'capacity' => 190,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		[
-            'name' => 'Bayview Park Hotel',
-            'address' => '1118 Roxas Boulevard Manila, 1000 Metro Manila',
-            'contact_person' => 'Poy',
-            'contact'=> '02-2479000',
-            'price' => 255000,
-            'file' => 'bayview park.jpg',
-            'capacity' => 300,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
-            'name' => 'Faustinos Events Place',
-            'address' => '54 Tahimik St., Imus, 4103 Cavite',
-            'contact_person' => 'Jen',
-            'contact'=> '046-474 0234',
-            'price' => 149000,
-            'file' => 'faustino.jpg',
-            'capacity' => 200,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
+            'id' => 19,
             'name' => 'The Farm Green and Saddle Resort',
             'address' => 'Amuntay Road, Dasmarinas, 4114 Cavite',
             'contact_person' => 'Mr. Sid',
@@ -232,19 +137,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
-            'name' => 'Emps and Mels Patio',
-            'address' => 'Nueno Avenue, City of Imus, Cavite',
-            'contact_person' => 'MR. Patrik',
-            'contact'=> '(046) 471-62-19/ 418-91-21',
-            'price' => 30,000,
-            'file' => 'empsmels.png',
-            'capacity' => 60,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
+            'id' => 20,
             'name' => 'Chardan Events Place',
             'address' => '4103, 841 Emilio Aguinaldo Hwy, Anabu 1-D, Imus, Cavite',
             'contact_person' => 'Mrs. Marya',
@@ -256,21 +149,9 @@ class VenuesTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ],
-		
-		[
-            'name' => 'Garden Gazebo',
-            'address' => 'Silang-Banaybanay Rd, Lucsuhin, Silang, 4118 Cavite',
-            'contact_person' => 'Mrs. Sanchez',
-            'contact'=> '(046) 443 2481',
-            'price' => 280000,
-            'file' => 'garden gazebo.jpg',
-            'capacity' => 450,
-            'is_active' => 1,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-        ],
-		
-		[
+
+		[   
+            'id' => 21,
             'name' => 'The Paradiso Terrestre',
             'address' => '1, 170933 National Road, Molino Highway, Molino IV, Cavite City',
             'contact_person' => 'Mr. Janzon',
@@ -284,6 +165,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 22,
             'name' => 'Casa Ladrillo',
             'address' => 'Daang Hari Road, Imus Cavite',
             'contact_person' => 'Mrs. Diaz',
@@ -297,6 +179,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 23,
             'name' => 'Satis Place Party Venue',
             'address' => 'Avenida Rizal, Molino 5, Bacoor, Cavite',
             'contact_person' => 'Mr. Tolentino',
@@ -310,6 +193,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 24,
             'name' => 'Hannahs Garden Event Place',
             'address' => 'Silang Road, Calamba, Laguna',
             'contact_person' => 'Mrs. Roxas',
@@ -323,6 +207,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 25,
             'name' => 'Torreno Resort And Pavillion',
             'address' => 'Dagohoy St. Extenson Bahayang Pag-asa Phase 1, Molino, Bacoor, Cavite',
             'contact_person' => 'Kenneth',
@@ -336,6 +221,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 26,
             'name' => 'Patio Buendia',
             'address' => 'C.M De Los Reyes Ave, Amadeo, 4119 Cavite',
             'contact_person' => 'Event Planner',
@@ -349,6 +235,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 27,
             'name' => 'Aminsana Tagaytay Events Place',
             'address' => 'A. Mabini St., Barangay Cinco, Amadeo, Cavite',
             'contact_person' => 'Supervisor',
@@ -362,6 +249,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 28,
             'name' => 'S. Cassandras Place Events Venue Resort',
             'address' => 'San Francisco Road, Binan, Laguna',
             'contact_person' => 'Dishwasher',
@@ -375,6 +263,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 29,
             'name' => 'Takahara Hotel & Events Place',
             'address' => 'San Antonio, San Pedro Laguna',
             'contact_person' => 'Server',
@@ -388,6 +277,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 30,
             'name' => 'South Country Garden',
             'address' => 'Block 4 Lot 1 Panorama Ville, barangay Dita, Santa Rosa, Laguna',
             'contact_person' => 'Event Planner',
@@ -401,6 +291,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 31,
             'name' => 'C-Summit Events Place',
             'address' => 'Jp Rizal St, Calamaba, Laguna',
             'contact_person' => 'Server',
@@ -414,6 +305,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 32,
             'name' => 'Zion Events Place',
             'address' => 'San Antonio, San Pedro  Laguna',
             'contact_person' => 'Dishwasher',
@@ -427,6 +319,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 33,
             'name' => 'Lakehouse San Pablo Events Place',
             'address' => '645 Sabang Road, Concepcion, San Pablo City, Laguna',
             'contact_person' => 'Setup Crew',
@@ -440,6 +333,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 34,
             'name' => 'Patio Fernando',
             'address' => '41 Magsaysay Road San Antonio San Pedro, Laguna',
             'contact_person' => 'Dishwasher',
@@ -453,6 +347,7 @@ class VenuesTableSeeder extends Seeder
         ],
 		
 		[
+            'id' => 35,
             'name' => 'South Yard Events Place',
             'address' => 'National Highway, Santa Cruz, Laguna',
             'contact_person' => 'Mr. Roman',

@@ -98,28 +98,29 @@ class WarehouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-                $warehouses = Warehouses::find($id);
+        $warehouses = Warehouses::find($id);
+                     //audits
+        $old_data = array(
+            "name" =>  $warehouses->name,
+            
+            );
+            $data = array(
+                "name" =>  $request->name,
+                );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'updated';
+            $audits->audit_type = 'Warehouse';
+            $audits->new_values =  $data;
+            $audits->old_values =  $old_data;
+            $audits->save();
+            //audits
         $this->validate($request,[
         'name' => 'required',
         ]);
         $warehouses->name =  $request->name;
         $warehouses->save();
-        //audits
-        $old_data = array(
-        "name" =>  $warehouses->name,
-        
-        );
-        $data = array(
-            "name" =>  $request->name,
-            );
-        $audits = new Audits; 
-        $audits->user = Auth::user()->name;
-        $audits->event = 'updated';
-        $audits->audit_type = 'Warehouse';
-        $audits->new_values =  $data;
-        $audits->old_values =  $old_data;
-        $audits->save();
-        //audits
+   
         return response()->redirect('/admin/warehouse');
     }
 
