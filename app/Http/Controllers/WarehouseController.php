@@ -100,19 +100,13 @@ class WarehouseController extends Controller
     {
         $warehouses = Warehouses::find($id);
                      //audits
-        $old_data = array(
-            "name" =>  $warehouses->name,
-            
-            );
-        $data = array(
-            "name" =>  $request->name,
-            );
+    
             $audits = new Audits; 
             $audits->user = Auth::user()->name;
             $audits->event = 'updated';
             $audits->audit_type = 'Warehouse';
-            $audits->new_values =  $data;
-            $audits->old_values =  $old_data;
+            $audits->new_values =  ["name" =>  $warehouses->name];
+            $audits->old_values =   ["name" =>  $request->name];
             $audits->save();
             //audits
         $this->validate($request,[
