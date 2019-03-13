@@ -10,7 +10,7 @@
   <div class="container-fluid">
     <hr>
     <!-- Basic Catering -->
-     <a href="{{action('DiscountController@create')}}"><button class="btn btn-success">Add Discount +</button></a>
+     <a href="{{'/admin/discount/create'}}"><button class="btn btn-success">Add Discount +</button></a>
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">

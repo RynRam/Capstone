@@ -44,7 +44,7 @@
               <td>{{$user->updated_at->diffForHumans()}}</td>
               <td>
               <form action="{{ action('UserController@updateStatus', $user->id) }}}" class="form-group" style="display: inline-flex;" method="post">
-                {{method_field('patch')}}{{csrf_field()}}
+                {{method_field('Patch')}}{{csrf_field()}}
                 <button class="btn btn-success btn-sm">Update</button>
               </form>
             </td>

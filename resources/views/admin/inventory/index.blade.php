@@ -9,7 +9,7 @@
     @include('admin.partials.message')
   <div class="container-fluid">
     <hr>
-     <a href="{{action('InventoryController@create')}}"><button class="btn btn-success">Add Item +</button></a>
+     <a href="{{'/admin/inventory/create'}}"><button class="btn btn-success">Add Item +</button></a>
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
@@ -54,7 +54,7 @@
                 <button class="btn btn-success btn-sm">Update</button>
               </form>  |
 
-               <a href="{{action('InventoryController@edit', $inventory->id)}}" class="btn btn-primary" >Edit</a>
+               <a href="{{'/admin/inventory/'.$inventory->id.'/edit'}}" class="btn btn-primary" >Edit</a>
            
              </td>
                 </tr>

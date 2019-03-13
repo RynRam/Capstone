@@ -32,16 +32,16 @@
               </thead>
               <tbody>
 
-                @foreach($warehouse as $warehouse)
+                @foreach($audits as $audits)
                 <tr class="gradeX">
-              <td>{{$warehouse->id}} </td>
-              <td>{{$warehouse->user}} </td>
-              <td>{{$warehouse->event}} </td>
-              <td>{{$warehouse->audit_type}}</td>
-              <td>{{json_encode($warehouse->old_values)}}</td>
-              <td>{{json_encode($warehouse->new_values)}}</td>
-              <td>{{$warehouse->created_at->diffForHumans()}}</td>
-              <td>{{$warehouse->updated_at->diffForHumans()}}</td>
+              <td>{{$audits->id}} </td>
+              <td>{{$audits->user}} </td>
+              <td>{{$audits->event}} </td>
+              <td>{{$audits->audit_type}}</td>
+              <td>{{json_encode($audits->old_values)}}</td>
+              <td>{{json_encode($audits->new_values)}}</td>
+              <td>{{$audits->created_at->diffForHumans()}}</td>
+              <td>{{$audits->updated_at->diffForHumans()}}</td>
                 </tr>
                 @endforeach
               </tbody>

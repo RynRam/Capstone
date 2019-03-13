@@ -146,6 +146,7 @@
 	Route::get('/admin/salescategorypdf','SalesController@categorypdf');
 	//Discount
 	Route::resource('/admin/discount','DiscountController');
+	Route::put('/admin/discount/{discount}', 'DiscountController@update'); 
 	Route::patch('/admin/discount/{discount}', 'DiscountController@updateStatus'); 
 	//Payment
 	Route::resource('/admin/payment','PaymentController');

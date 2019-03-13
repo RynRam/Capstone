@@ -20,7 +20,7 @@ class AuditController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {    $audits::all();
         $category= Audits::where('audit_type','Category')->get();
         $cms= Audits::where('audit_type','Post')->get();
         $discount= Audits::where('audit_type','Discount')->get();
@@ -33,7 +33,7 @@ class AuditController extends Controller
         $user= Audits::where('audit_type','User Account')->get();
         $venue= Audits::where('audit_type','Venue')->get();
         $warehouse= Audits::where('audit_type','Warehouse')->get();
-        return view('admin.audit.index',compact('category','cms','discount','package','inventorycategory','inventory','manpower','roles','payment','user','venue','warehouse'));
+        return view('admin.audit.index',compact('category','cms','discount','package','inventorycategory','inventory','manpower','roles','payment','user','venue','warehouse','audits'));
     }
 
     /**

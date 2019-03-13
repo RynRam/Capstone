@@ -8,7 +8,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="{{ action('DiscountController@update', $discounts->id) }}" method="POST">
+		<form action="{{'/admin/discount/'.$discounts->id }}" method="POST">
 		  <div class="form-group">
  	  	    {{csrf_field()}} {{method_field('PUT')}}
      		@include('admin.partials.error')
