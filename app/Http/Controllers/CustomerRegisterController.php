@@ -77,7 +77,7 @@ class CustomerRegisterController extends Controller
             $customer->verification_token = Str::random(40);
             $customer->password = bcrypt($request->password);
             Session::flash('status','Please verify your email before logging in.');
-            return response()->redirectTo("/customer-login");
+            return response()->redirectTo('/customer-login');
         // $customer->save();
         // $insertedCustomer = Customer::findOrFail($customer->id);
         // $this->sendEmail($insertedCustomer);
@@ -90,7 +90,7 @@ class CustomerRegisterController extends Controller
         $customer = Customer::where(['email'=>$email,'verification_token'=>$verification_token])->first();
         if($customer){
             Customer::where(['email'=>$email,'verification_token'=>$verification_token])->update(['is_verified'=>'1','verification_token'=>NULL]);
-            return response()->redirectTo("/customer-login");
+            return response()->redirectTo('/customer-login');
         }else{
             'user not found';
         }
