@@ -23,7 +23,7 @@
             <h5>Reservation Bar Graph</h5>
           </div>
           <div class="widget-content">
-              
+                  {!! $chart->html() !!}
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
               <h5>Monthly Sales Graph</h5>
           </div>
           <div class="widget-content">
-  
+              {!! $chartpayment->html() !!}
           </div>
         </div>
       </div>
@@ -47,6 +47,8 @@
 </div>
 
 
-
+   {!! Charts::scripts() !!}
+    {!! $chart->script() !!}
+    {!! $chartpayment->script() !!}
     {!! $calendar_details->script() !!}
 @endsection
