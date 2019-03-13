@@ -134,7 +134,7 @@
 	Route::put('/admin/manpower/{manpower}', 'ManpowerController@update');
 
 	Route::resource('/admin/manpowerroles','ManpowerRolesController');
-	Route::put('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus');  
+	Route::patch('/admin/manpowerroles/{manpowerrole}', 'ManpowerRolesController@updateStatus');  
 	Route::get('/admin/manpowerReserve1pdf','ManpowerController@pdf');
 	Route::get('/admin/manpowerReserve2pdf','ManpowerController@pdfreserve');
 	//Audit

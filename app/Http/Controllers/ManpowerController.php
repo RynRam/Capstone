@@ -176,15 +176,14 @@ class ManpowerController extends Controller
 
     public function updateStatus(Request $request,$id){
          $staffs = Staffs::find($id);
+         return  $staffs ;
         if($staffs->is_active == false){
         $staffs->is_active = true;
-        return $staffs->is_active ;
         $staffs->save();
        return response()->redirectTo('/admin/manpower');
         }
         else if($staffs->is_active == true){
         $staffs->is_active = false;
-        return $staffs->is_active ;
         $staffs->save();
        return response()->redirectTo('/admin/manpower');
         }
