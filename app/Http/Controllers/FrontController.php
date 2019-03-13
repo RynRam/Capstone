@@ -17,7 +17,7 @@ use Session;
 use GuzzleHttp\Client;
 use Auth;
 use PDF;
-
+use App\Staffs;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Item;
@@ -197,6 +197,7 @@ class FrontController extends Controller
 
     public function reserved(){
         $reserve = Reservations::where('is_approved',1)->get();
+        // $staffs = Staffs::all();
         return ($reserve);
     }
     public function receipt(){
