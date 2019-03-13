@@ -54,14 +54,11 @@ class VenueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        $file = new Venues;
-        
+    {
         if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
-        // $request->file->storeAs('public/upload',$filename);
-        $request->file->storeAs->disk('public')->put('uploads/',$filename);
-  
+        $request->file->storeAs('public/upload',$filename);
+        $file = new Venues;
         $this->validate($request,[
             'name' => 'required|unique:venues',
             'address' => 'required',
