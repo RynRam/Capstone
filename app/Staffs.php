@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Staffs extends Model
 {
       protected $fillable = ['firstname','lastname','is_assign'];
+
+      protected $table = 'staffs';
 }
