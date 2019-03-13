@@ -35,7 +35,7 @@
               <td>{{$role->updated_at}}</td>
               <td>{{$role->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
-                  <form action="{{action('ManpowerRoles@updateStatus', $role->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
+                  <form action="{{action('ManpowerRolesController@updateStatus', $role->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
                   {{method_field('Patch')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> 
