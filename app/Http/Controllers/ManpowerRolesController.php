@@ -68,16 +68,14 @@ class ManpowerRolesController extends Controller
 
     public function updateStatus(Request $request,$id){
          $roles = ManpowerRoles::find($id);
-         return $roles;
-        if($roles->is_active == false){
-        $roles->is_active = true;
+        if($roles->is_active == true){
+        $roles->is_active = false;
        
         $roles->save();
         return response()->redirectTo('/admin/manpowerroles');
         }
-        else if($roles->is_active == true){
-           return $roles;
-        $roles->is_active = false;
+        else if($roles->is_active == false){
+        $roles->is_active = true;
        
         $roles->save();
         return response()->redirectTo('/admin/manpowerroles');

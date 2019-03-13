@@ -40,9 +40,10 @@
               <td>{{$staff->is_assign == 'Assign 1'? 'Assigned' : $staff->is_assign == 'Assign 2'? 'Assigned'  : 'Unassigned'}}</td>
               <td>{{$staff->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
-                <form action="{{ action('ManpowerController@updateStatus', $staff->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
-                  {{method_field('Patch')}}{{csrf_field()}}
-                  <button class="btn btn-success btn-sm">Update</button>
+              <form action="{{ action('ManpowerController@updateStatus', $staff->id) }}" class="form-group" style="display: inline-flex;" method="post">
+                {{method_field('Patch')}}{{csrf_field()}}
+                <button class="btn btn-success btn-sm">Update</button>
+              </form>
                 </form> |
                   <a href="{{'/admin/manpower/'.$staff->id.'/edit'}}" class="btn btn-primary" >Edit</a>
               </td>
