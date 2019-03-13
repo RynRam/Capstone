@@ -20,7 +20,8 @@ class AuditController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    $audits::all();
+    {   
+        $audits=Audits::all();
         $category= Audits::where('audit_type','Category')->get();
         $cms= Audits::where('audit_type','Post')->get();
         $discount= Audits::where('audit_type','Discount')->get();

@@ -9,7 +9,7 @@
     @include('admin.partials.message')
   <div class="container-fluid">
     <hr>
-       <a href="{{action('ManpowerRolesController@create')}}"><button class="btn btn-success">Add Manpower Roles +</button></a>
+       <a href="{{'/admin/manpowerroles/create'}}"><button class="btn btn-success">Add Manpower Roles +</button></a>
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
@@ -35,8 +35,8 @@
               <td>{{$role->updated_at}}</td>
               <td>{{$role->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
-                  <form action="{{ action('ManpowerRolesController@updateStatus', $role->id) }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
-                  {{method_field('patch')}}{{csrf_field()}}
+                  <form action="{{ {{'/admin/manpowerroles/'.$role->id.'/edit'}} }}}" class="form-group" style="display:-webkit-inline-box;" method="post">
+                  {{method_field('Patch')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> 
               </td>

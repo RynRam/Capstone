@@ -18,7 +18,7 @@ class CreateStaffsDeployTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('roles');
-            $table->string('is_assign')->default(null);;       
+            $table->string('is_assign')->default(null);  
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

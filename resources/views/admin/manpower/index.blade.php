@@ -9,7 +9,7 @@
     @include('admin.partials.message')
   <div class="container-fluid">
     <hr>
-       <a href="{{action('ManpowerController@create')}}"><button class="btn btn-success">Add Staff +</button></a>
+       <a href="{{'/admin/manpower/create'}}"><button class="btn btn-success">Add Staff +</button></a>
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
@@ -44,7 +44,7 @@
                   {{method_field('Patch')}}{{csrf_field()}}
                   <button class="btn btn-success btn-sm">Update</button>
                 </form> |
-                  <a href="{{ action('ManpowerController@update', $staff->id) }}}" class="btn btn-primary" >Edit</a>
+                  <a href="{{'/admin/manpower/'.$staff->id.'/edit'}}" class="btn btn-primary" >Edit</a>
               </td>
                 </tr>
                 @endforeach
