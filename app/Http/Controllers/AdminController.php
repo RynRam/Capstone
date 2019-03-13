@@ -69,14 +69,14 @@ class AdminController extends Controller
         $calendar_details = Calendar::addEvents($event_list); 
 
         // $payments = Payments::whereDate('created_at', '==', date('Y-m-d'))->sum('amount_payment');
-        $reservationsCount = Reservations::where('is_approved',1)->count();
-        $todaydate = date("Y-m-d");
-        // return $todaydate;
-        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
-        $post = Contents::where('is_active', 1)->count();
-        // return  $reservationsCount;
-        $usersCount = User::count();
-        $venuesCount = Venues::where('is_active',1)->count();
+        // $reservationsCount = Reservations::where('is_approved',1)->count();
+        // $todaydate = date("Y-m-d");
+        // // return $todaydate;
+        // $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
+        // $post = Contents::where('is_active', 1)->count();
+        // // return  $reservationsCount;
+        // $usersCount = User::count();
+        // $venuesCount = Venues::where('is_active',1)->count();
         
         $reservationgraph = Reservations::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
         $chart = Charts::database($reservationgraph, 'bar', 'highcharts')
