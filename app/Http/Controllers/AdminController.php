@@ -68,30 +68,30 @@ class AdminController extends Controller
         }
         $calendar_details = Calendar::addEvents($event_list); 
 
-        // $payments = Payments::whereDate('created_at', '==', date('Y-m-d'))->sum('amount_payment');
-        // $reservationsCount = Reservations::where('is_approved',1)->count();
-        // $todaydate = date("Y-m-d");
-        // // return $todaydate;
-        // $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
-        // $post = Contents::where('is_active', 1)->count();
-        // // return  $reservationsCount;
-        // $usersCount = User::count();
-        // $venuesCount = Venues::where('is_active',1)->count();
+        $payments = Payments::whereDate('created_at', '=', DB::raw('now()'))->sum('amount_payment');
+        $reservationsCount = Reservations::where('is_approved',1)->count();
+        $todaydate = date("Y-m-d");
+        // return $todaydate;
+        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
+        $post = Contents::where('is_active', 1)->count();
+        // return  $reservationsCount;
+        $usersCount = User::count();
+        $venuesCount = Venues::where('is_active',1)->count();
         
-        // $reservationgraph = Reservations::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
-        // $chart = Charts::database($reservationgraph, 'bar', 'highcharts')
-        //           ->title("Reservations Details")
-        //           ->elementLabel("Total Reservations")
-        //           ->dimensions(1000, 500)
-        //           ->responsive(true)
-        //           ->groupByMonth(date('Y'), true);
-        // $paymentgraph = Payments::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
-        // $chartpayment = Charts::database($paymentgraph, 'line', 'highcharts')
-        //           ->title("Sales Details")
-        //           ->elementLabel("Total Sales")
-        //           ->dimensions(1000, 500)
-        //           ->responsive(true)
-        //           ->groupByMonth(date('Y'), true);
+        $reservationgraph = Reservations::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
+        $chart = Charts::database($reservationgraph, 'bar', 'highcharts')
+                  ->title("Reservations Details")
+                  ->elementLabel("Total Reservations")
+                  ->dimensions(1000, 500)
+                  ->responsive(true)
+                  ->groupByMonth(date('Y'), true);
+        $paymentgraph = Payments::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
+        $chartpayment = Charts::database($paymentgraph, 'line', 'highcharts')
+                  ->title("Sales Details")
+                  ->elementLabel("Total Sales")
+                  ->dimensions(1000, 500)
+                  ->responsive(true)
+                  ->groupByMonth(date('Y'), true);
  
         
          // return $reservations; total count
