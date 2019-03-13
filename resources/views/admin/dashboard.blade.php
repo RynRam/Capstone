@@ -11,7 +11,15 @@
   <div  class="quick-actions_homepage">
   <div class="span12">
     <ul class="quick-actions">
-     
+      <ul class="site-stats">
+                <a href=""><li class="bg_lh"><i class="icon-bookmark"></i> <strong>{{$reservationsIncoming}}</strong> <small>Incoming Reservations</small></li></a>
+                <a href=""><li class="bg_db"><i class="icon-flag"></i> <strong>{{$reservationsCount}}</strong> <small>Total Reservations </small></li></a>
+                <a href=""><li class="bg_dg"><i class="icon-group"></i> <strong>{{$usersCount}}</strong> <small>Total Users</small></li></a>
+                <a href=""><li class="bg_ly"><i class="icon-map-marker"></i> <strong>{{$venuesCount}}</strong> <small> Available Venues </small></li></a>
+            
+                <a href=""><li class="bg_lr"><i class="icon-pencil"></i> <strong>{{$post}}</strong> <small>Total Posts</small></li></a>
+              </ul>
+
     </ul>
   </div>
   <div class="span1"></div>

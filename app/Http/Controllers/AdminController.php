@@ -69,14 +69,14 @@ class AdminController extends Controller
         $calendar_details = Calendar::addEvents($event_list); 
 
         // $payments = Payments::whereDate('created_at', '=', Carbon::today()->toDateString())->sum('amount_payment');
-        // $reservationsCount = Reservations::where('is_approved',1)->count();
-        // $todaydate = date("Y-m-d");
+        $reservationsCount = Reservations::where('is_approved',1)->count();
+        $todaydate = date("Y-m-d");
         // // return $todaydate;
-        // $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
-        // $post = Contents::where('is_active', 1)->count();
+        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
+        $post = Contents::where('is_active', 1)->count();
         // // return  $reservationsCount;
-        // $usersCount = User::count();
-        // $venuesCount = Venues::where('is_active',1)->count();
+        $usersCount = User::count();
+        $venuesCount = Venues::where('is_active',1)->count();
         
         $reservationgraph = Reservations::whereYear('created_at', '=', date('Y'))->get();
         $chart = Charts::database($reservationgraph, 'bar', 'highcharts')
@@ -95,9 +95,9 @@ class AdminController extends Controller
  
         
          // return $reservations; total count
-        //  ,compact('reservationsCount','usersCount','venuesCount','reservationsIncoming','payments','chart','calendar_details','chartpayment','post')
+        //  ,compact('','','','','payments','','','','')
          
-        return view('admin.dashboard',compact('calendar_details','chart','chartpayment'));
+        return view('admin.dashboard',compact('calendar_details','chart','chartpayment','venuesCount','usersCount','post','reservationsCount'));
     }
 
     public function settings(){
