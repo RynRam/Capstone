@@ -97,7 +97,7 @@ class AdminController extends Controller
          // return $reservations; total count
         //  ,compact('reservationsCount','usersCount','venuesCount','reservationsIncoming','payments','chart','calendar_details','chartpayment','post')
          
-        return view('admin.dashboard');
+        return view('admin.dashboard',compact('calendar_details'));
     }
 
     public function settings(){
