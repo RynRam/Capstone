@@ -11,7 +11,7 @@
   <div  class="quick-actions_homepage">
   <div class="span12">
     <ul class="quick-actions">
-      <ul class="site-stats">
+      <!-- <ul class="site-stats"> -->
                 <a href=""><li class="bg_lh"><i class="icon-bookmark"></i> <strong>{{$reservationsIncoming}}</strong> <small>Incoming Reservations</small></li></a>
                 <a href=""><li class="bg_db"><i class="icon-flag"></i> <strong>{{$reservationsCount}}</strong> <small>Total Reservations </small></li></a>
                 <a href=""><li class="bg_dg"><i class="icon-group"></i> <strong>{{$usersCount}}</strong> <small>Total Users</small></li></a>
@@ -31,7 +31,7 @@
             <h5>Reservation Bar Graph</h5>
           </div>
           <div class="widget-content">
-                  {!! $chart->html() !!}
+                  <!-- {!! $chart->html() !!} -->
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
               <h5>Monthly Sales Graph</h5>
           </div>
           <div class="widget-content">
-              {!! $chartpayment->html() !!}
+              <!-- {!! $chartpayment->html() !!} -->
           </div>
         </div>
       </div>
