@@ -7,6 +7,7 @@ use App\Reservations;
 use App\Payments;
 use App\Customer;
 use App\Audits;
+use Auth;
 class PaymentController extends Controller
 {
     public function __construct()
