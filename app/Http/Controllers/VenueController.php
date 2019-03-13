@@ -60,7 +60,7 @@ class VenueController extends Controller
         if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
         // $request->file->storeAs('public/upload',$filename);
-        $pathToFile = Storage::disk('public')->put('uploads/',$filename);
+        $request->file->storeAs->disk('public')->put('uploads/',$filename);
   
         $this->validate($request,[
             'name' => 'required|unique:venues',
@@ -75,31 +75,30 @@ class VenueController extends Controller
         $file->contact = $request->contact;
         $file->contact_person = $request->contact_person;
         $file->price = $request->price;
-        $file->file = $pathToFile;
+        $file->file = $filename;
         $file->capacity =  $request->capacity;
-        return $pathToFile;
-        // $file->save();
-        // //audits
-        //     $data = array(
-        //         "name" =>  $request->name,
-        //         "address" => $request->address,
-        //         "contact_person" => $request->contact_person,
-        //         "contact" => $request->contact,
-        //         "price" => $request->price,
-        //         "capacity" => $request->capacity,
-        //         "file" => $pathToFile
+        $file->save();
+        //audits
+            $data = array(
+                "name" =>  $request->name,
+                "address" => $request->address,
+                "contact_person" => $request->contact_person,
+                "contact" => $request->contact,
+                "price" => $request->price,
+                "capacity" => $request->capacity,
+                "file" => $filename
 
         
-        //         );
-        //     $audits = new Audits; 
-        //     $audits->user = Auth::user()->name;
-        //     $audits->event = 'created';
-        //     $audits->audit_type = 'Venue';
-        //     $audits->new_values =  $data;
-        //     $audits->old_values =  'No Data';
-        //     $audits->save();
-        //     //audits
-        // return response()->redirectTo('admin/venue');
+                );
+            $audits = new Audits; 
+            $audits->user = Auth::user()->name;
+            $audits->event = 'created';
+            $audits->audit_type = 'Venue';
+            $audits->new_values =  $data;
+            $audits->old_values =  'No Data';
+            $audits->save();
+            //audits
+        return response()->redirectTo('admin/venue');
         }
             $this->validate($request,[
             'name' => 'required|unique:venues',
