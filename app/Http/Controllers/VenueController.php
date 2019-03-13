@@ -54,11 +54,14 @@ class VenueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $file = new Venues;
+        
         if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
-        $file = new Venues;
+        // $request->file->storeAs('public/upload',$filename);
+        $pathToFile = Storage::disk('public')->put('uploads/',$filename);
+  
         $this->validate($request,[
             'name' => 'required|unique:venues',
             'address' => 'required',
@@ -72,30 +75,31 @@ class VenueController extends Controller
         $file->contact = $request->contact;
         $file->contact_person = $request->contact_person;
         $file->price = $request->price;
-        $file->file = $filename;
+        $file->file = $pathToFile;
         $file->capacity =  $request->capacity;
-        $file->save();
-        //audits
-            $data = array(
-                "name" =>  $request->name,
-                "address" => $request->address,
-                "contact_person" => $request->contact_person,
-                "contact" => $request->contact,
-                "price" => $request->price,
-                "capacity" => $request->capacity,
-                "file" => $filename
+        return $pathToFile;
+        // $file->save();
+        // //audits
+        //     $data = array(
+        //         "name" =>  $request->name,
+        //         "address" => $request->address,
+        //         "contact_person" => $request->contact_person,
+        //         "contact" => $request->contact,
+        //         "price" => $request->price,
+        //         "capacity" => $request->capacity,
+        //         "file" => $pathToFile
 
         
-                );
-            $audits = new Audits; 
-            $audits->user = Auth::user()->name;
-            $audits->event = 'created';
-            $audits->audit_type = 'Venue';
-            $audits->new_values =  $data;
-            $audits->old_values =  'No Data';
-            $audits->save();
-            //audits
-        return response()->redirectTo('admin/venue');
+        //         );
+        //     $audits = new Audits; 
+        //     $audits->user = Auth::user()->name;
+        //     $audits->event = 'created';
+        //     $audits->audit_type = 'Venue';
+        //     $audits->new_values =  $data;
+        //     $audits->old_values =  'No Data';
+        //     $audits->save();
+        //     //audits
+        // return response()->redirectTo('admin/venue');
         }
             $this->validate($request,[
             'name' => 'required|unique:venues',
@@ -155,7 +159,7 @@ class VenueController extends Controller
             if($request->hasFile('file')){
         $filename = $request->file->getClientOriginalName();
         $request->file->storeAs('public/upload',$filename);
-        
+   
                      //audits
                      $old_data = array(
                         "name" =>  $file->name,
