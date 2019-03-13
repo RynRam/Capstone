@@ -34,6 +34,7 @@
 	
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');
+	Route::post('/customer-register','CustomerRegisterController@store');
 	Route::get('/execute-payment','CustomerPaymentController@execute');
 	// Route::post('/customer-login', 'CustomersLoginController@logout');
 	// Route::get('/customer-login', 'CustomersLoginController@showLoginForm');
