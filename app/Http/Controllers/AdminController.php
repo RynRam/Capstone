@@ -77,14 +77,15 @@ class AdminController extends Controller
         // // return  $reservationsCount;
         // $usersCount = User::count();
         // $venuesCount = Venues::where('is_active',1)->count();
-        $reservationgraph = DB::table('reservations')->select(DB::raw("(DATE_FORMAT(created_at,'%Y'))"))->get();
+        
+        $reservationgraph = Reservations::whereYear('created_at', '=', date('Y'));
         $chart = Charts::database($reservationgraph, 'bar', 'highcharts')
                   ->title("Reservations Details")
                   ->elementLabel("Total Reservations")
                   ->dimensions(1000, 500)
                   ->responsive(true)
                   ->groupByMonth(date('Y'), true);
-        $paymentgraph = DB::table('payments')->select(DB::raw("(DATE_FORMAT(created_at,'%Y'))"))->get();
+        $paymentgraph = Payments::whereYear('created_at', '=', date('Y'));
         $chartpayment = Charts::database($paymentgraph, 'line', 'highcharts')
                   ->title("Sales Details")
                   ->elementLabel("Total Sales")
