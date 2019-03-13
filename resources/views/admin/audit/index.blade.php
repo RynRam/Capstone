@@ -35,14 +35,14 @@
             <tbody role="alert" aria-live="polite" aria-relevant="all">
             @foreach($audits as $audits)
                 <tr class="gradeU odd">
-                <td class="  sorting_1">{{$audits->id}}</td>
+                <td class="  ">{{$audits->id}}</td>
                   <td class=" ">{{$audits->user}}</td>
                   <td class=" ">{{$audits->event}}</td>
-                  <td class="center ">{{$audits->audit_type}}</td>
-                  <td class=" ">{{$audits->old_values}}</td>
-                  <td class=" ">{{$audits->new_values}}</td>
-                  <td class="  sorting_1">{{$audits->created_at->diffForHumans()}}</td>
-                  <td class="center ">{{$audits->updated_at->diffForHumans()}}</td>
+                  <td class=" ">{{$audits->audit_type}}</td>
+                  <td class=" ">{{json_encode($audits->old_values)}}</td>
+                  <td class=" ">{{json_encode($audits->new_values)}}</td>
+                  <td class="  ">{{$audits->created_at->diffForHumans()}}</td>
+                  <td class=" ">{{$audits->updated_at->diffForHumans()}}</td>
                 </tr>
                 @endforeach
                 </tbody></table><div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix"><div class="dataTables_filter" id="DataTables_Table_0_filter"><label>Search: <input type="text" aria-controls="DataTables_Table_0"></label></div><div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate"><a tabindex="0" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default" id="DataTables_Table_0_first">First</a><a tabindex="0" class="previous fg-button ui-button ui-state-default" id="DataTables_Table_0_previous">Previous</a><span><a tabindex="0" class="fg-button ui-button ui-state-default">2</a><a tabindex="0" class="fg-button ui-button ui-state-default">3</a><a tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">4</a><a tabindex="0" class="fg-button ui-button ui-state-default">5</a><a tabindex="0" class="fg-button ui-button ui-state-default">6</a></span><a tabindex="0" class="next fg-button ui-button ui-state-default" id="DataTables_Table_0_next">Next</a><a tabindex="0" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default" id="DataTables_Table_0_last">Last</a></div></div></div>
