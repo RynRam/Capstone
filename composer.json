@@ -22,6 +22,7 @@
         "owen-it/laravel-auditing": "7.0",
         "paypal/rest-api-sdk-php": "*",
         "php-coveralls/php-coveralls": "^2.1",
+        "s-ichikawa/laravel-sendgrid-driver": "1.2.6",
         "timetoogo/pinq": "3.4.1",
         "venturecraft/revisionable": "^1.28"
     },
