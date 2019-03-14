@@ -200,6 +200,18 @@ class FrontController extends Controller
         // $staffs = Staffs::all();
         return ($reserve);
     }
+    public function reservedpackage(){
+        $package = Packages::all();
+     
+        // $staffs = Staffs::all();
+        return ($package);
+    }
+    public function reservedvenue(){
+        
+        $venue = Venues::all();
+        // $staffs = Staffs::all();
+        return ($venue);
+    }
     public function receipt(){
        
         $reservation = Reservations::where('customers_id', Auth::guard('customer')->user()->id)->get()->last();

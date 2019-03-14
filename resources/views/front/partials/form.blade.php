@@ -28,7 +28,7 @@
           <h3 class="fs-subtitle">Planning & Setting</h3> 
           <input type="hidden" name="customer" value="{{ Auth::guard('customer')->user()->id  ?? ''}}">
           <label >Food Package</label> 
-          <select class="form-control" name="package"> 
+          <select class="form-control" name="package" id="package"> 
           @foreach($package as $package)
            <option value="{{$package->id}}">{{$package->name}} -- {{$package->price}} per head</option>
           @endforeach 
@@ -45,8 +45,8 @@
             <option data-capacity="{{$venue->capacity}}" value="{{$venue->id}}">{{$venue->name}}-({{$venue->capacity}} max capacity)</option>
           @endforeach 
           </select> 
-          <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 
-          <button class="add-button" id="add" type="button">Add</button> 
+          <!-- <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 
+          <button class="add-button" id="add" type="button">Add</button>  -->
           <label >Event Schedule</label> 
           <input type="text" id="datepicker" name="schedule" class="form-control" style="padding:10px;" readonly/>
           <label >Number of Pax :</label> 
@@ -55,14 +55,22 @@
           <a href="/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
                 @else
                 <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU"></div>
-                <input type="button" name="next" class="next action-button" value="Next" /> 
+                <input type="button" name="next" class="next action-button" value="Next" id="showPrice"/> 
                 @endif
          
           </fieldset> 
 
             <fieldset> 
-            <h2 class="fs-title">Payment</h2> 
+            <h2 class="fs-title">Payment</h2>             
             <h3 class="fs-subtitle">Reservation Fee</h3> 
+            <div class="form-group">
+            <label for="venue_price" class="col-form-label">Venue Price:</label>
+            <input type="number" class="form-control" id="venue_price" name="venue_price"  readonly> 
+            <label for="package_price" class="col-form-label">(Package Price x No. of Pax):</label>
+            <input type="number" class="form-control" id="package_price" name="package_price"  readonly> 
+            <label for="total_price" class="col-form-label">Total Amount:</label>
+            <input type="number" class="form-control" id="total_price" name="total_price"  readonly> 
+            </div>
             <div><input type="submit" name="submit" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
             <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('https://lynagailscaters.herokuapp.com/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
             <input type="button" name="previous" class="previous action-button" value="Previous" /> 

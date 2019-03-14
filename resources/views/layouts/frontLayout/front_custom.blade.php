@@ -202,6 +202,44 @@
  });
  
    </script>
+
+<!-- show price -->
+<script>
+
+$(function(){
+   $('#showPrice').click(function(e) {
+     var venue = $('#select').val();
+     var package = $('#package').val();
+     var pax =  $('#people').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reservedvenue",
+      data: price,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        let venue = $('#select').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].eventdate == date){
+            alert('Date is already reserved');
+            return false;
+          }
+          
+        }
+
+      }
+    });
+   });
+
+ });
+ 
+
+
+</script>
+
+
+   
 <script>
 $(function(){
   $('#msform').submit(function(e) {

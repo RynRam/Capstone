@@ -28,7 +28,7 @@
           <h3 class="fs-subtitle">Planning & Setting</h3> 
           <input type="hidden" name="customer" value="{{ Auth::guard('customer')->user()->id  ?? ''}}">
           <label >Food Package</label> 
-          <select class="form-control" name="package"> 
+          <select class="form-control" name="package" id="package"> 
           @foreach($package as $package)
            <option value="{{$package->id}}">{{$package->name}} -- {{$package->price}} per head</option>
           @endforeach 
@@ -45,8 +45,8 @@
             <option value="{{$venue->name}}">{{$venue->name}}</option>
           @endforeach 
           </select> 
-          <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 
-          <button class="add-button" id="add" type="button">Add</button> 
+          <!-- <input type="text" id="venue" name="others" class="form-control" placeholder="(optional)" style="width:40%;display:inline-block;padding:8px 10px"> 
+          <button class="add-button" id="add" type="button">Add</button>  -->
           <label >Event Schedule</label> 
           <input type="text" id="datepicker" name="schedule" class="form-control" style="padding:10px;" readonly/>
           <label >Number of Pax :</label> 
