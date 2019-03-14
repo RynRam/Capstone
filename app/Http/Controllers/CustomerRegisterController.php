@@ -78,11 +78,12 @@ class CustomerRegisterController extends Controller
             $customer->is_verified = 0;
             $customer->verification_token = Str::random(40);
             $customer->password = bcrypt($request->password);
-        $customer->save();
+            $customer->save();
+        
         $insertedCustomer = Customer::findOrFail($customer->id);
-        $this->sendEmail($insertedCustomer);
+        return $this->sendEmail($insertedCustomer);
         Session::flash('status','Please verify your email before logging in.');
-        return response()->redirectTo('/customer-login');
+        // return response()->redirectTo('/customer-login');
     
        
     }
