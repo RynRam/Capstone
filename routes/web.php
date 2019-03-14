@@ -53,6 +53,7 @@
 	Route::put('/customer-profile/{id}','CustomerProfileController@update');
 	// Route::get('/customer-login','CustomerLoginController@create')->name('customer.login');
 	Route::get('/verify', 'CustomerRegisterController@verifyFirst');
+	Route::post('/sendemail', 'CustomerRegisterController@sendEmail');
 	Route::get('/verifyDone', 'CustomerRegisterController@verifyDone');
 	Route::get('verify/{email}/{verification_token}','CustomerRegisterController@sendEmailDone')->name('sendEmailDone');
 	

@@ -10,6 +10,7 @@ use App\Customer;
 use Mail;
 use App\Mail\Verifyemail;
 use Session;
+use Sichikawa\LaravelSendgridDriver\SendGrid;
 class CustomerRegisterController extends Controller
 {
     public function __construct()
@@ -43,9 +44,10 @@ class CustomerRegisterController extends Controller
     public function verifyDone(Customer $customer){
         
     }
-
+    use SendGrid;
     public function sendEmail($customer){
         Mail::to($customer["email"])->send(new Verifyemail($customer));
+        dd('Mail Sent');
     }
 
     /**

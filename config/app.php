@@ -182,6 +182,7 @@ return [
         OwenIt\Auditing\AuditingServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Sichikawa\LaravelSendgridDriver\SendgridTransportServiceProvider::class,
     ],
 
     /*
@@ -236,6 +237,7 @@ return [
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        
     ],
 
 ];
