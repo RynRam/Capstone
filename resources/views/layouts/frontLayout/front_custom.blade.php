@@ -218,6 +218,7 @@ $(function(){
       cache: false,
       datatype:'json',
       success: function(data){
+        alert(data);
         let venue = $('#select').val();
        
         for (let x = 0; x < data.length; x++) {

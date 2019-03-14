@@ -40,7 +40,7 @@
           @endforeach 
           </select> 
           <label style="display:block;" >Event Venue</label> 
-          <select class="form-control" name="venuename" id="select" style="width:47%;display:inline-block;"> 
+          <select class="form-control" name="venuename" id="select" style="display:inline-block;"> 
           @foreach($venue as $venue) 
             <option value="{{$venue->name}}">{{$venue->name}}</option>
           @endforeach 
