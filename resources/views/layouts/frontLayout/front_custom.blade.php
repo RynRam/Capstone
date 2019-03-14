@@ -223,8 +223,8 @@ $(function(){
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].id == venue){
-            alert(data[x].price);
-           
+            $('#venue_price').val(data[x].price);
+            
           }
           
         }
@@ -240,6 +240,46 @@ $(function(){
 </script>
 
 
+<script>
+
+$(function(){
+   $('#showPrice').click(function(e) {
+    
+     var package = $('#package').val();
+     var pax =  $('#people').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reservedpackage",
+      data: package,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        
+        let package = $('#package').val();
+        let pax =  $('#people').val();
+        let venue = $('#venue_price').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].id == package){
+          let data_total = (pax * data[x].price); 
+            $('#package_price').val(data_total);
+            $('#total_price').val(data_total + venue);
+            
+          }
+          
+        }
+
+      }
+    });
+   });
+
+ });
+ 
+
+
+</script>
+
+<!-- show price -->
    
 <script>
 $(function(){
