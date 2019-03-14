@@ -263,7 +263,8 @@ $(function(){
           if(data[x].id == package){
           let data_total = (pax * data[x].price); 
             $('#package_price').val(data_total);
-            $('#total_price').val(data_total + venue);
+            let total_amount = parseInt(data_total) + parseInt(venue);  
+            $('#total_price').val(total_amount);
             
           }
           
