@@ -218,12 +218,12 @@ $(function(){
       cache: false,
       datatype:'json',
       success: function(data){
-        alert(data);
+        
         let venue = $('#select').val();
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].id == venue){
-            alert(data[x].eventdate);
+            alert(data[x].price);
            
           }
           
