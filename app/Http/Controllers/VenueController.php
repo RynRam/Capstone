@@ -62,7 +62,7 @@ class VenueController extends Controller
         $this->validate($request,[
             'name' => 'required|unique:venues',
             'address' => 'required',
-            'contact' => 'required',
+            'contact' => 'required|max:14',
             'contact_person' => 'required',
             'price' => 'required',
         ]);
@@ -100,7 +100,7 @@ class VenueController extends Controller
             $this->validate($request,[
             'name' => 'required|unique:venues',
             'address' => 'required',
-            'contact' => 'required|min:14',
+            'contact' => 'required|max:14',
             'contact_person' => 'required',
             'price' => 'required',
         ]);
