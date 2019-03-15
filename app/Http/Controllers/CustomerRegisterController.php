@@ -6,13 +6,16 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+
 use App\Customer;
 use Mail;
 use App\Mail\Verifyemail;
 use Session;
+use Sichikawa\LaravelSendgridDriver\SendGrid;
 
 class CustomerRegisterController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('customerauth')->except('logout');
@@ -44,8 +47,9 @@ class CustomerRegisterController extends Controller
     public function verifyDone(Customer $customer){
         
     }
-  
+    use SendGrid;
     public function sendEmail($customer){
+  
         Mail::to($customer["email"])->send(new Verifyemail($customer));
         dd('Mail Sent');
     }
@@ -81,9 +85,9 @@ class CustomerRegisterController extends Controller
             $customer->save();
         
         $insertedCustomer = Customer::findOrFail($customer->id);
-        return $this->sendEmail($insertedCustomer);
+        $this->sendEmail($insertedCustomer);
         Session::flash('status','Please verify your email before logging in.');
-        // return response()->redirectTo('/customer-login');
+        return response()->redirectTo('/customer-login');
     
        
     }
