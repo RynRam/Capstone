@@ -10,22 +10,19 @@
       <div class="span12">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Payment Table</h5>
+            <h5>Sales Table</h5>
 
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered data-table">
               <thead>
                 <tr>
-                  <th>Name</th>
+                  <th>Customer ID</th>
                   <th>Event</th>
-                  <th>Payment</th>
-                  <th>Percentage</th>
-                  <th>Amount Due</th>
+                  <th>Payment</th>          
                   <th>Balance</th>
-                  <th>Method of Payment</th>
                   <th>Invoice Date</th>
-                  <th>Print Receipt</th>
+
 
                 </tr>
               </thead>
@@ -33,15 +30,12 @@
 
                 @foreach($payments as $payment)
                 <tr class="gradeX">
-              <td> {{ucfirst($payment->reservation->customer->fname)}} {{ucfirst($payment->reservation->customer->lname)}}</td>
+              <td> {{ucfirst($payment->reservation->customer->id)}}</td>
               <td>{{$payment->reservation->category->name}}</td>
               <td>{{$payment->amount_payment}}</td>
-              <td>{{$payment->percentage}}</td>
-              <td>{{$payment->change}}</td>
               <td>{{$payment->balance}}</td>
-              <td>CASH</td> 
               <td>{{date('m-d-y',strtotime($payment->date_invoice)) }}</td>
-              <td> <a href="{{action('PaymentController@show',$payment->id)}}"><button class="btn btn-success">Receipt</button></a></td>
+ 
 
                 </tr>
 

@@ -4,7 +4,7 @@
 
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Venue</a> </div>
+    <div id="breadcrumb"> <a href="/admin/venue" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Venue</a> </div>
     <h1>EDIT VENUE</h1>
   </div>
   <div class="container-fluid">

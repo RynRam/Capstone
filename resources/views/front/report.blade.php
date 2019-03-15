@@ -12,7 +12,7 @@
        <h4 style="text-align:center; width:240px; margin:0 auto;">254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100</h4>
         <h5 style="text-align:center;">TIN No. :000-000-549-000</h5>
         <div  style="position:absolute;top:14%;left:0;">  
-        <hr style="height: 5px; width: 150%;background-color:#000;">
+        <hr style="height: 5px; width: 100%;background-color:#000;">
         
         <b>Dear Customer:</b>
         <p>Thank you for choosing Lynagails Catering Services. Its our pleasure to confirm your reservation as follows.</p>
@@ -85,7 +85,7 @@
       </tbody>
       </table>
       </div>
-      <hr style="height: 5px; width: 150%;background-color:#000;">
+      <hr style="height: 5px; width: 100%;background-color:#000;">
         
         <b>Thanks and Regards,</b>
         <p><b>Reservation Executive </b><p>

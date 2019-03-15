@@ -152,7 +152,7 @@ class ReservationController extends Controller
     $edate = Session::get('reservations_eventdate')['eventdate'];
     $pdf = \App::make('dompdf.wrapper');
     $eventdates = Reservations::where('eventdate',$edate)->get();
-    $pdf->loadView('reports.ReservationsEventReport',compact('eventdates','amount'));
+    $pdf->loadView('reports.ReservationsEventReport',compact('eventdates'));
     return $pdf->stream();
     }
 

@@ -2,7 +2,7 @@
 @section('content')
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Tables</a> </div>
+    <div id="breadcrumb"> <a href="/admin/inventory" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Tables</a> </div>
     <h1>INVENTORY <a onclick="window.open('/admin/Inventorypdf')" class="btn btn-danger" style="float:right; margin-right: 50px;">Convert to PDF</a></h1>
 
   </div>

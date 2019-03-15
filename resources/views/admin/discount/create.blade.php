@@ -3,7 +3,7 @@
 
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Discount</a> </div>
+    <div id="breadcrumb"> <a href="/admin/discount" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Discount</a> </div>
     <h1>ADD NEW DISCOUNT</h1>
   </div>
   <div class="container-fluid">

@@ -24,7 +24,7 @@
       </div>
     </section><!-- #call-to-action -->
 
-@include('front.partials.form2')
+@include('front.partials.form')
 <!-- 
 @include('front.partials.classApartials')
 @include('front.partials.classBpartials')
