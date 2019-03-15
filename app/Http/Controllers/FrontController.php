@@ -132,7 +132,7 @@ class FrontController extends Controller
             'eventdate' => $request->schedule,
             'category_id' => $request->category,
             'guest' => $request->people,
-            'total' =>($reservations->guest * $reservations->package->price)
+            'total' => $request->total_price
             ]); 
             
         $itemList = new ItemList();

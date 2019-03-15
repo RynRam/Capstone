@@ -6,6 +6,54 @@
   <h1>Sales Reports</h1>
     <div class="container-fluid">
     <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5>Payment Table</h5>
+
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Event</th>
+                  <th>Payment</th>
+                  <th>Percentage</th>
+                  <th>Amount Due</th>
+                  <th>Balance</th>
+                  <th>Method of Payment</th>
+                  <th>Invoice Date</th>
+                  <th>Print Receipt</th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                @foreach($payments as $payment)
+                <tr class="gradeX">
+              <td> {{ucfirst($payment->reservation->customer->fname)}} {{ucfirst($payment->reservation->customer->lname)}}</td>
+              <td>{{$payment->reservation->category->name}}</td>
+              <td>{{$payment->amount_payment}}</td>
+              <td>{{$payment->percentage}}</td>
+              <td>{{$payment->change}}</td>
+              <td>{{$payment->balance}}</td>
+              <td>CASH</td> 
+              <td>{{date('m-d-y',strtotime($payment->date_invoice)) }}</td>
+              <td> <a href="{{action('PaymentController@show',$payment->id)}}"><button class="btn btn-success">Receipt</button></a></td>
+
+                </tr>
+
+                @endforeach
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- As Date -->
     <form action="{{action('SalesController@store')}}" method="POST">
     {{csrf_field()}}

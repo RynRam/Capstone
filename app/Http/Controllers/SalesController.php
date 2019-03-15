@@ -27,7 +27,8 @@ class SalesController extends Controller
     public function index()
     {
         $eventCategories=Caterings::all();
-        return view('admin.sales.index',compact('eventCategories'));
+        $payments = Payments::all();
+        return view('admin.sales.index',compact('eventCategories','payments'));
     }
     public function pdf()
     {

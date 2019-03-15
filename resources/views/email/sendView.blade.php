@@ -7,7 +7,18 @@
 echo date('F j, Y g:i a'); ?>
 </h6>
 <h1 class="center text-center">Welcome to Lynagail's Catering</h1>
-<img src="http://cavite.info/custom/domain_1/image_files/photo_379.jpg" alt="" style="width:auto;">
 <br>
+<p>
+Hi,
+
+Thanks for choosing Lynagail's Catering! Please confirm your email address by clicking on the link below. We'll communicate with you from time to time via email so it's important that we have an up-to-date email address on file.
+
 <h3>To verify your account kindly <a href="{{route('sendEmailDone',['email' => $customer->email,'verification_token'=>$customer->verification_token])}}" style="text-align:center;padding:10px;background:#18d36e;">Click Here</a></h3>
+
+If you did not sign up for a  Lynagail's Catering account please disregard this email.
+
+Happy emailing! 
+
+</p>
+
 </div>
