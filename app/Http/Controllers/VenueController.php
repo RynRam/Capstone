@@ -56,8 +56,11 @@ class VenueController extends Controller
     public function store(Request $request)
     {
         if($request->hasFile('file')){
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('images', $filename, 'public_uploads');
+        $file = $request->file('file');
+        $filename = $request->file->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $file->move($destinationPath, $filename);
+        // $request->file->storeAs('images', $filename, 'public_uploads');
         $file = new Venues;
         $this->validate($request,[
             'name' => 'required|unique:venues',
