@@ -32,7 +32,7 @@
 	              <td>{{$stock->item_name}}</td>
 	              <td>{{$stock->stock_on_hand}}</td>
 	              <td>          
-                  <a href="{{action('CriticalStock@edit', $stock->id)}}" class="btn btn-primary btn-lg"><button class="btn btn-success" data-toggle="modal" data-target="#critical{{$stock->id}}">Add Stock  +</button></a>
+                  <a href="{{action('CriticalStockController@edit', $stock->id)}}" class="btn btn-primary btn-lg"><button class="btn btn-success" data-toggle="modal" data-target="#critical{{$stock->id}}">Add Stock  +</button></a>
     		       </td>
 	                </tr>
 
@@ -57,7 +57,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{action('CriticalStock@update', $inventories->id)}}" method="POST">
+        <form action="{{action('CriticalStockController@update', $inventories->id)}}" method="POST">
             {{csrf_field()}}	{{method_field('PUT')}}
           <div class="form-group">
             <label for="critical" class="col-form-label">Item Code:</label>
