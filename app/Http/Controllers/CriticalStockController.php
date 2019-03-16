@@ -23,7 +23,7 @@ class CriticalStockController extends Controller
         $stocks = Inventory::find($id);
 
         // // return $inventories;
-        // return view('admin.inventory.critical.index',compact('inventories'));
+        return view('admin.inventory.critical.index',compact('stocks'));
     }
 
     /**

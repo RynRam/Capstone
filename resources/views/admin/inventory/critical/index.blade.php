@@ -35,9 +35,18 @@
                   <a href="{{action('CriticalStockController@edit', $stock->id)}}"><button class="btn btn-success" data-toggle="modal" data-target="#critical{{$stock->id}}">Add Stock  +</button></a>
     		       </td>
 	                </tr>
-                  
-                                      <!-- edit -->
-                    <div class="modal fade" id="critical{{$stock->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                       <!-- edit -->
+                       <div class="modal fade" id="critical{{$stocks->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -47,15 +56,15 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="{{action('CriticalStockController@update', $stock->id)}}" method="POST">
+                            <form action="{{action('CriticalStockController@update', $stocks->id)}}" method="POST">
                                 {{csrf_field()}}	{{method_field('PUT')}}
                               <div class="form-group">
                                 <label for="critical" class="col-form-label">Item Code:</label>
-                                <input type="text" class="form-control" name="critical" id="critical" value="{{$stock->item_code}}" style="margin-bottom: 0;" readonly> 
+                                <input type="text" class="form-control" name="critical" id="critical" value="{{$stocks->item_code}}" style="margin-bottom: 0;" readonly> 
                             </div> 
                             <div class="form-group">
                                 <label for="name" class="col-form-label">Item Name:</label>
-                                <input type="text" class="form-control" name="name" id="name" value="{{$stock->item_name}}" style="margin-bottom: 0;" readonly> 
+                                <input type="text" class="form-control" name="name" id="name" value="{{$stocks->item_name}}" style="margin-bottom: 0;" readonly> 
                             </div> 
                             <div class="form-group">
                                 <label for="stock" class="col-form-label">Item Stock:</label>
@@ -70,16 +79,4 @@
                         </div>
                       </div>
                     </div>
-	               
-                    @endforeach
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 @endsection 
