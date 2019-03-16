@@ -84,6 +84,11 @@
 	Route::put('/admin/inventory/{inventory}','InventoryController@update');
 	Route::patch('/admin/inventory/{inventory}','InventoryController@updateStatus');
 
+	//Critical Inventory
+	Route::get('/admin/inventory-critical','CriticalStock@index');
+	Route::put('/admin/inventory-critical/{inventory-critical}','CriticalStock@update');
+	
+	
 	//Inventory Category
 	Route::resource('/admin/inventory-category','InventoryCategoryController');
 	Route::get('/admin/inventory-category/create', 'InventoryCategoryController@create');

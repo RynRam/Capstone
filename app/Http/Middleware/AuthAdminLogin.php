@@ -17,8 +17,8 @@ class AuthAdminLogin
     {
         if (Auth::guard($guard)->check()) {
             return redirect('/admin/dashboard');
+        }else{
+            return redirect('/admin');
         }
-
-        return $next($request);
     }
 }

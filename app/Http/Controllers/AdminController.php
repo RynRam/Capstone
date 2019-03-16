@@ -139,6 +139,6 @@ class AdminController extends Controller
 
     public function logout(){
         Auth::logout();
-       return redirect('/admin')->with('flash_message_success','Logged out Successfully');
+       return response()->redirect('/admin')->with('flash_message_success','Logged out Successfully');
     }
 }
