@@ -22,17 +22,10 @@ class CriticalStockController extends Controller
     {
         $stocks = Inventory::find($id);
 
-        // // return $inventories;
-        return view('admin.inventory.critical.index',compact('stocks'));
+        // // // return $inventories;
+        // return view('admin.inventory.critical.index',compact('stocks'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $inventories = Inventory::find($id);
