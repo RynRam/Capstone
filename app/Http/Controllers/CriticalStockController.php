@@ -30,7 +30,7 @@ class CriticalStockController extends Controller
     {
         $inventories = Inventory::find($id);
 
-        $inventories->stock_on_hand = $inventories->stock_on_hand + $request->critical;
+        $inventories->stock_on_hand = $inventories->stock_on_hand + $request->stock;
         $inventories->save();
 
         return response()->redirectTo('/admin/inventory-critical');
