@@ -51,7 +51,6 @@ class CustomerRegisterController extends Controller
     public function sendEmail($customer){
   
         Mail::to($customer["email"])->send(new Verifyemail($customer));
-        dd('Mail Sent');
        
     }
 
