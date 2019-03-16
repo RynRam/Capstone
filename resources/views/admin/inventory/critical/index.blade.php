@@ -35,7 +35,41 @@
                   <a href="{{action('CriticalStockController@edit', $stock->id)}}" class="btn btn-primary btn-lg"><button class="btn btn-success" data-toggle="modal" data-target="#critical{{$stock->id}}">Add Stock  +</button></a>
     		       </td>
 	                </tr>
-
+                  
+                                      <!-- edit -->
+                    <div class="modal fade" id="critical{{$stock->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">ADD STOCKS</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="{{action('CriticalStockController@update', $stock->id)}}" method="POST">
+                                {{csrf_field()}}	{{method_field('PUT')}}
+                              <div class="form-group">
+                                <label for="critical" class="col-form-label">Item Code:</label>
+                                <input type="text" class="form-control" name="critical" id="critical" value="{{$stock->item_code}}" style="margin-bottom: 0;" readonly> 
+                            </div> 
+                            <div class="form-group">
+                                <label for="name" class="col-form-label">Item Name:</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{$stock->item_name}}" style="margin-bottom: 0;" readonly> 
+                            </div> 
+                            <div class="form-group">
+                                <label for="stock" class="col-form-label">Item Stock:</label>
+                                <input type="text" class="form-control" name="stock" id="stock"  style="margin-bottom: 0;">
+                                <input type="submit" value="+" class="btn btn-success"> 
+                            </div> 
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 	               
                     @endforeach
               </tbody>
@@ -46,39 +80,6 @@
     </div>
   </div>
 </div>
-<!-- edit -->
-<div class="modal fade" id="critical{{$inventories->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ADD STOCKS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="{{action('CriticalStockController@update', $inventories->id)}}" method="POST">
-            {{csrf_field()}}	{{method_field('PUT')}}
-          <div class="form-group">
-            <label for="critical" class="col-form-label">Item Code:</label>
-            <input type="text" class="form-control" name="critical" id="critical" value="{{$inventories->item_code}}" style="margin-bottom: 0;" readonly> 
-         </div> 
-         <div class="form-group">
-            <label for="name" class="col-form-label">Item Name:</label>
-            <input type="text" class="form-control" name="name" id="name" value="{{$inventories->item_name}}" style="margin-bottom: 0;" readonly> 
-         </div> 
-         <div class="form-group">
-            <label for="stock" class="col-form-label">Item Stock:</label>
-            <input type="text" class="form-control" name="stock" id="stock"  style="margin-bottom: 0;">
-            <input type="submit" value="+" class="btn btn-success"> 
-         </div> 
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 @endsection 
