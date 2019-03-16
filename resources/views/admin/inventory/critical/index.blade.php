@@ -58,7 +58,7 @@
                             </div> 
                             <div class="form-group">
                                 <label for="stock" class="col-form-label">Item Stock:</label>
-                                <input type="text" class="form-control" name="stock" id="stock"  style="margin-bottom: 0;">
+                                <input type="number" class="form-control" name="stock" id="stock"  style="margin-bottom: 0;">
                                 <input type="submit" value="+" class="btn btn-success"> 
                             </div> 
                             </form>
