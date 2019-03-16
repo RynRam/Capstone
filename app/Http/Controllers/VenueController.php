@@ -59,7 +59,13 @@ class VenueController extends Controller
         if($request->hasFile('file')){
         $file = $request->file('file');
         $filename = $request->file->getClientOriginalName();
-        Cloudder::upload($filename, null);
+        // $filename_name = $request->file->getRealPath();
+        Cloudder::upload($filename);
+        // list($width, $height) = getimagesize($filename_name);
+        // $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+        // $this->saveImages($request, $image_url);
+
+
         // $destinationPath = public_path('/images');
         // $file->move($destinationPath, $filename);
         // $request->file->storeAs('images', $filename, 'public_uploads');
