@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@sendgrid.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'lynagails.catering@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Email Verification'),
     ],
 
