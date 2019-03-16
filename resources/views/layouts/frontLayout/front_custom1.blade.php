@@ -42,7 +42,7 @@
         <!-- <h1><a href="https://lynagailscaters.herokuapp.com" class="scrollto">Lynagails Catering</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
          <!-- <a href="#intro"><img src="{{asset('images/backend_images/logo.png')}}" alt="" title="" /></a> -->
-         <a href="#intro"><img src="../../images/logo2.png" alt="" title="" /></a>
+         <a href="https://lynagailscaters.herokuapp.com"><img src="../../images/logo2.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
