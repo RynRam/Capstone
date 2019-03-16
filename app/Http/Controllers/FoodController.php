@@ -67,8 +67,10 @@ class FoodController extends Controller
         ]);
      
         if($request->hasFile('file')){
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
+            $file = $request->file('file');
+            $filename = $request->file->getClientOriginalName();
+            $destinationPath = public_path('/images');
+            $file->move($destinationPath, $filename);
         $food = new Packages;
             $this->validate($request,[
             'name' => 'required|unique:packages',
@@ -145,7 +147,10 @@ class FoodController extends Controller
 
         
         if($request->hasFile('file')){
+                $file = $request->file('file');
         $filename = $request->file->getClientOriginalName();
+        $destinationPath = public_path('/images');
+        $file->move($destinationPath, $filename);
                 //audits
                 $old_data = array(
                     "name" =>  $food->name,

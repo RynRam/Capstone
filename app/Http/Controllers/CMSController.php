@@ -49,8 +49,10 @@ class CMSController extends Controller
             'file' => 'required',                
         ]);
          if($request->hasFile('file')){
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
+            $file = $request->file('file');
+            $filename = $request->file->getClientOriginalName();
+            $destinationPath = public_path('/images');
+            $file->move($destinationPath, $filename);
         $posts = new Contents;
 
 
@@ -119,8 +121,10 @@ class CMSController extends Controller
     {
 
          if($request->hasFile('file')){
+        $file = $request->file('file');
         $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
+        $destinationPath = public_path('/images');
+        $file->move($destinationPath, $filename);
         $posts = Contents::find($id);
 
             //audits

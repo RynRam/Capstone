@@ -156,8 +156,10 @@ class VenueController extends Controller
         
             
             if($request->hasFile('file')){
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('public/upload',$filename);
+                $file = $request->file('file');
+                $filename = $request->file->getClientOriginalName();
+                $destinationPath = public_path('/images');
+                $file->move($destinationPath, $filename);
    
                      //audits
                      $old_data = array(

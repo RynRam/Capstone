@@ -58,7 +58,7 @@
 
                 			<li style="font-size: 17px;"><i>"{{$post->info}}"</i></li>
                 		</ul>
-                     <li><img src="{{asset('storage/upload/'.$post->file)}}"></li>
+                     <li><img src="../../images/{{$post->file}}"></li>
                 	</li>
                 	@endforeach
                 </ul>

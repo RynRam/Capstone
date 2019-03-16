@@ -42,7 +42,7 @@
               <td>{{$food->category->name}}</td>
               <td>{{$food->created_at->diffForHumans()}}</td>
               <td>{{$food->updated_at->diffForHumans()}}</td>
-              <td style='text-align:center !important;'><a href="{{asset('storage/upload/'.$food->file)}}" data-lightbox="food" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>
+              <td style='text-align:center !important;'><a href="../../images/{{$food->file}}" data-lightbox="food" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>
                <td>{{$food->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
               <td>
                 <form action="{{ action('FoodController@updateStatus', $food->id) }}" class="form-group" style="display: -webkit-inline-box;" method="post">
