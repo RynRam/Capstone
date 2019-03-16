@@ -47,7 +47,7 @@ class CustomerRegisterController extends Controller
     public function verifyDone(Customer $customer){
         
     }
-    
+    use SendGrid;
     public function sendEmail($customer){
   
         Mail::to($customer["email"])->send(new Verifyemail($customer));
