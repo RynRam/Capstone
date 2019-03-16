@@ -47,7 +47,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="{{'/admin/inventory-critical/'.$stock->id }}" method="POST">
+                            <form action="{{action('CriticalStockController@update', $stock->id)}}" method="POST">
                                 {{csrf_field()}}	{{method_field('PUT')}}
                               <div class="form-group">
                                 <label for="critical" class="col-form-label">Item Code:</label>

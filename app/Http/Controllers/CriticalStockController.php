@@ -20,11 +20,10 @@ class CriticalStockController extends Controller
 
     public function edit($id)
     {
-        $inventories = Inventory::find($id);
+        $stocks = Inventory::find($id);
 
-        // return $inventories;
-        return view('admin.inventory.critical.index',compact('inventories'));
-
+        // // return $inventories;
+        // return view('admin.inventory.critical.index',compact('inventories'));
     }
 
     /**
@@ -41,7 +40,7 @@ class CriticalStockController extends Controller
         $inventories->stock_on_hand = $inventories->stock_on_hand + $request->critical;
         $inventories->save();
 
-        return response()->redirectTo('admin/inventory-critical');
+        return response()->redirectTo('/admin/inventory-critical');
     }
 
 
