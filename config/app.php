@@ -183,6 +183,7 @@ return [
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Sichikawa\LaravelSendgridDriver\SendgridTransportServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
     ],
 
     /*
@@ -237,6 +238,7 @@ return [
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
         
     ],
 

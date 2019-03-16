@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Venues;
+use JD\Cloudder\Facades\Cloudder;
 use PDF;
 use App\Audits;
 // use App\User;
@@ -58,8 +59,9 @@ class VenueController extends Controller
         if($request->hasFile('file')){
         $file = $request->file('file');
         $filename = $request->file->getClientOriginalName();
-        $destinationPath = public_path('/images');
-        $file->move($destinationPath, $filename);
+        Cloudder::upload($filename, null);
+        // $destinationPath = public_path('/images');
+        // $file->move($destinationPath, $filename);
         // $request->file->storeAs('images', $filename, 'public_uploads');
         $file = new Venues;
         $this->validate($request,[
