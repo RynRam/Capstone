@@ -227,28 +227,28 @@ class FrontController extends Controller
 
     }
     public function menuA(){
-        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package B')->get();
+        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package B')->pluck('price');
         return view('front.classA',compact('packages'));
     }
 
     public function menuB(){
-        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package A')->get();
+        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package A')->pluck('price');
         return view('front.classB',compact('packages'));
     }
     public function menuC(){
-        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package C')->get();
+        $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package C')->pluck('price');
         return view('front.classC',compact('packages'));
     }
     public function debutA(){
-        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package B')->get();
+        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package B')->pluck('price');
         return view('front.debutA',compact('packages'));
     }
     public function debutB(){
-        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package A')->get();
+        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package A')->pluck('price');
         return view('front.debutB',compact('packages'));
     }
     public function debutC(){
-        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package C')->get();
+        $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package C')->pluck('price');
         return view('front.debutC',compact('packages'));
     }
     public function blog(){
