@@ -179,14 +179,14 @@ class CMSController extends Controller
             "title" =>  $posts->title,
             "info" => $posts->info,
             "author" =>  $posts->author,
-            "file" => $post->file  
+            "file" => $posts->file  
     
             );
         $data = array(
         "title" =>  $request->title,
         "info" => $request->info,
         "author" =>  $request->author,
-        "file" => $post->file
+        "file" => $posts->file
 
         );
         $audits = new Audits; 
