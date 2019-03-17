@@ -28,6 +28,9 @@
           <li><a href="#contact">Contact</a></li> -->
           <li class="menu-has-children"><a href="#">Packages</a>
             <ul>
+              <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/cateringB">Catering Package B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/cateringC">Catering Package C</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut Package A</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debutB">Debut Package B</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debutC">Debut Package C</a></li>

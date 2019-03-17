@@ -33,7 +33,7 @@
  @yield('content')
 
 
- <script src="https://lynagailscaters.herokuapp.com/js/frontend_js/main.js"></script>
+ 
 
 
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/jquery.min.js"></script> 
