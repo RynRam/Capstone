@@ -34,6 +34,7 @@
                 <div class="icon"><i class="ion-ios-book-outline"></i></div>
               </div>
               <h2 class="title">WEDDING B</h2>
+							<h2 class="title">{{$packages}} price per head</h2>
               <p>
                 <ul>
                 	<li>Appetizer and One Dessert</li>

@@ -26,14 +26,14 @@
           <li><a href="#portfolio">Catered Events</a></li> -->
           <!-- <li><a href="#feedbacks">Feedbacks</a>
           <li><a href="#contact">Contact</a></li> -->
-          <li class="menu-has-children"><a href="#">Menus</a>
+          <li class="menu-has-children"><a href="#">Packages</a>
             <ul>
-              <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut A</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/debutB">Debut B</a></li>
-              
-              <li><a href="https://lynagailscaters.herokuapp.com/classA">Wedding A</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/classB">Wedding B</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/classC">Wedding C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut Package A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutB">Debut Package B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debutC">Debut Package C</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classA">Wedding Package A</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classB">Wedding Package B</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/classC">Wedding Package C</a></li>
             </ul>
           </li>
           <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>

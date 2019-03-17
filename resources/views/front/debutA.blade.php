@@ -34,6 +34,7 @@
                 <div class="icon"><i class="ion-ios-book-outline"></i></div>
               </div>
               <h2 class="title">DEBUT A</h2>
+              <h2 class="title">{{$packages}} price per head</h2>
               <p>
                 <ul>
                     <li>Appetizer, Soup, Salad and Two Dessert</li>

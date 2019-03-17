@@ -21,9 +21,9 @@
   </li>
   <li><a href="https://lynagailscaters.herokuapp.com/admin/reservation"><i class="icon icon-flag"></i> <span>Reservations</span></a></li>
   <li> <a href="https://lynagailscaters.herokuapp.com/admin/payment"><i class="icon icon-money"></i> <span>Payments</span><span class="label label-important"></span></a> </li>
-  <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory</span></a>
+  <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory</span><span class="label label-important">{{$alert}}</span></a>
       <ul>
-      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory Module</span><span class="label label-important">{{$alert}}</span></a></li>
+      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory Module</span></a></li>
       <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory">Reports</a>
         <ul>
           <li ><a onclick="window.open('https://lynagailscaters.herokuapp.com/admin/InventoryDamage')" ><i class="icon icon-file"></i> <span>Damage Report</span></a></li>

@@ -34,9 +34,10 @@
                 <div class="icon"><i class="ion-ios-book-outline"></i></div>
               </div>
               <h2 class="title">DEBUT B</h2>
+							<h2 class="title">{{$packages}} price per head</h2>
               <p>
                 <ul>
-                	<li>Appetizer, Soup, Salad and Two Dessert</li>
+                	<li>Appetizer, Soup, Salad and One Dessert</li>
                 	<li style="list-style: none;"><b>Main Entrée</b>
                 		<ul>
                 			<li>Beef, Pork, Chicken, Vegetable,Fish, or Seafood Pasta</li>

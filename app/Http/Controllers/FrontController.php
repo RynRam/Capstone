@@ -227,23 +227,29 @@ class FrontController extends Controller
 
     }
     public function menuA(){
-        return view('front.classA');
+        $packages = Packages::where('event_categories_id','3')->where('name','Package B')->get('price');
+        return view('front.classA',compact('packages'));
     }
 
     public function menuB(){
-        return view('front.classB');
+        $packages = Packages::where('event_categories_id','3')->where('name','Package A')->get('price');
+        return view('front.classB',compact('packages'));
     }
     public function menuC(){
-        return view('front.classC');
+        $packages = Packages::where('event_categories_id','3')->where('name','Package C')->get('price');
+        return view('front.classC',compact('packages'));
     }
     public function debutA(){
-        return view('front.debutA');
+        $packages = Packages::where('event_categories_id','2')->where('name','Package B')->get('price');
+        return view('front.debutA',compact('packages'));
     }
     public function debutB(){
-        return view('front.debutB');
+        $packages = Packages::where('event_categories_id','2')->where('name','Package A')->get('price');
+        return view('front.debutB',compact('packages'));
     }
     public function debutC(){
-        return view('front.debutC');
+        $packages = Packages::where('event_categories_id','2')->where('name','Package C')->get('price');
+        return view('front.debutC',compact('packages'));
     }
     public function blog(){
         $posts = Contents::where('is_active', 1)->get();
