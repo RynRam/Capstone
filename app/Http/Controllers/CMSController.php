@@ -47,7 +47,7 @@ class CMSController extends Controller
     {   
         $this->validate($request,[
             'title' => 'required',
-            'info' => 'required',
+            'info' => 'required|min:3|max:191',
             'author' => 'required',
             'file' => 'required',                
         ]);
@@ -200,7 +200,7 @@ class CMSController extends Controller
         
             $this->validate($request,[
             'title' => 'required',
-            'info' => 'required',
+            'info' => 'required|min:3|max:191',
             'active' => 'required',
             'author' => 'required',
             
