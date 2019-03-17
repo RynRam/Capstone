@@ -239,6 +239,7 @@ class FrontController extends Controller
         $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package C')->pluck('price');
         return view('front.classC',compact('packages'));
     }
+
     public function debutA(){
         $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package B')->pluck('price');
         return view('front.debutA',compact('packages'));
@@ -250,6 +251,19 @@ class FrontController extends Controller
     public function debutC(){
         $packages = Packages::select('price')->where('event_categories_id','2')->where('name','Package C')->pluck('price');
         return view('front.debutC',compact('packages'));
+    }
+    public function cateringA(){
+        $packages = Packages::select('price')->where('event_categories_id','1')->where('name','Package B')->pluck('price');
+        return view('front.cateringA',compact('packages'));
+    }
+
+    public function cateringB(){
+        $packages = Packages::select('price')->where('event_categories_id','1')->where('name','Package A')->pluck('price');
+        return view('front.cateringB',compact('packages'));
+    }
+    public function cateringC(){
+        $packages = Packages::select('price')->where('event_categories_id','1')->where('name','Package C')->pluck('price');
+        return view('front.cateringC',compact('packages'));
     }
     public function blog(){
         $posts = Contents::where('is_active', 1)->get();

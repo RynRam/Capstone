@@ -21,6 +21,9 @@
 	Route::get('/classA', 'FrontController@menuA');
 	Route::get('/classB', 'FrontController@menuB');
 	Route::get('/classC', 'FrontController@menuC');
+	Route::get('/cateringA', 'FrontController@cateringA');
+	Route::get('/cateringB', 'FrontController@cateringB');
+	Route::get('/cateringC', 'FrontController@cateringC');
 	Route::get('/debutA', 'FrontController@debutA');
 	Route::get('/debutB', 'FrontController@debutB');
 	Route::get('/debutC', 'FrontController@debutC');
