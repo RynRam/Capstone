@@ -9,6 +9,7 @@ use App\Audits;
 use App\EventCategories;
 use PDF;
 use Auth;
+use App\Inventory;
 class FoodController extends Controller
 {
          public function __construct()
@@ -24,8 +25,9 @@ class FoodController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
           $food = Packages::all();
-        return view('admin.food.index',compact('food'));
+        return view('admin.food.index',compact('food','alert'));
     }
 
     public function pdf()
@@ -46,8 +48,9 @@ class FoodController extends Controller
      */
     public function create()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $eventcategories = EventCategories::all();
-        return view('admin.food.create',compact('eventcategories'));
+        return view('admin.food.create',compact('eventcategories','alert'));
     }
 
     /**
@@ -127,11 +130,12 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $packagesId = Packages::find($id)->category;
 
         $eventcategories = EventCategories::all(); 
         $food = Packages::find($id);
-        return view('admin.food.edit',compact('food','eventcategories','packagesId'));
+        return view('admin.food.edit',compact('food','eventcategories','packagesId','alert'));
     }
 
     /**

@@ -57,7 +57,7 @@ class AdminController extends Controller
 
 
     public function dashboard(){
-        $alert =  $stocks = Inventory::where('stock_on_hand', '<=', '80')->count();
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $events = Reservations::where('is_approved',1)->get();
         $event_list = [];
         foreach ($events as $key => $event) {
@@ -103,11 +103,13 @@ class AdminController extends Controller
     }
 
     public function settings(){
-        return view('admin.settings');
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.settings',compact('alert'));
     }
 
     public function inventory(){
-        return view('admin.inventory');
+        $alert = Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.inventory',compact('alert'));
     }
 
 

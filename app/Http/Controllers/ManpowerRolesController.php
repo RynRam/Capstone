@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ManpowerRoles;
 use App\Audits;
+use App\Inventory;
 use Auth;
 class ManpowerRolesController extends Controller
 {
@@ -20,7 +21,8 @@ class ManpowerRolesController extends Controller
     public function index()
     {
         $roles = ManpowerRoles::all();
-        return view('admin.manpower.roles.index',compact('roles'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.manpower.roles.index',compact('roles','alert'));
     }
 
     /**
@@ -30,7 +32,8 @@ class ManpowerRolesController extends Controller
      */
     public function create()
     {
-        return view('admin.manpower.roles.create');
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.manpower.roles.create',compact('alert'));
     }
 
     /**

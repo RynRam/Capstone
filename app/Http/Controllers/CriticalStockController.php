@@ -14,8 +14,9 @@ class CriticalStockController extends Controller
     }
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $stocks = Inventory::where('stock_on_hand', '<=', '80')->get();
-        return view('admin.inventory.critical.index',compact('stocks'));
+        return view('admin.inventory.critical.index',compact('stocks','alert'));
     }
 
     public function edit($id)

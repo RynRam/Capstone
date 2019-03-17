@@ -7,7 +7,7 @@ use App\Caterings;
 use App\Audits;
 use Auth;
 use App\EventCategories;
-
+use App\Inventory;
 class CategoryController extends Controller
 {
          public function __construct()
@@ -24,13 +24,13 @@ class CategoryController extends Controller
     public function index()
     {
          
-        
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
          // dd($eventcategories->caterings->event_categories_id);
          //  return view('admin.category.index');  
          $caterings = Caterings::all();
           $eventcategories = EventCategories::all();
          // return $eventcategories;
-        return view('admin.category.index',compact('caterings','eventcategories'));
+        return view('admin.category.index',compact('caterings','eventcategories','alert'));
 
 
               }
@@ -42,11 +42,11 @@ class CategoryController extends Controller
      */
     public function create()
     {   
-        
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $caterings = Caterings::all();      
         $eventcategories = EventCategories::all();
 
-        return view('admin.category.create',compact('caterings','eventcategories'));
+        return view('admin.category.create',compact('caterings','eventcategories','alert'));
     }
 
     /**
@@ -107,9 +107,9 @@ class CategoryController extends Controller
  
         $eventcategories = EventCategories::all(); 
 
-  
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
 
-        return view('admin.category.edit',compact('caterings','eventcategories','categoryId'));
+        return view('admin.category.edit',compact('caterings','eventcategories','categoryId','alert'));
         // return 'hello';
     }
 

@@ -9,7 +9,7 @@ use App\Packages;
 use App\Audits;
 use App\Venues;
 use App\Caterings;
-
+use App\Inventory;
 use Pinq\ITraversable, Pinq\Traversable;
 use App\Payments;
 use Session;
@@ -31,7 +31,7 @@ class ReservationController extends Controller
     {   
 
         $reservations = Reservations::all();
-        
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         foreach ($reservations as $reservation) {
             $id = $reservation->id;
             $reservation->customer = Reservations::find($id)->customer;
@@ -47,7 +47,7 @@ class ReservationController extends Controller
      
         }     
         // return $reservations;
-        return view ('admin.reservation.index',compact('reservations'));
+        return view ('admin.reservation.index',compact('reservations','alert'));
     }
  
 
@@ -105,6 +105,7 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
+        
       $reservations = Reservations::find($id);
      
     }

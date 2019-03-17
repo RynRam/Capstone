@@ -7,6 +7,7 @@ use App\Reservations;
 use App\Payments;
 use App\Customer;
 use App\Audits;
+use App\Inventory;
 use Auth;
 class PaymentController extends Controller
 {
@@ -23,9 +24,10 @@ class PaymentController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $payments = Payments::all();
         
-        return view('admin.payment.index',compact('payments'));
+        return view('admin.payment.index',compact('payments','alert'));
     }
 
     /**
@@ -107,13 +109,14 @@ class PaymentController extends Controller
      */
     public function edit($id)
     { 
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $package = Reservations::find($id);
         $total = $package->total;
         $reservations = Reservations::find($id)->customer;
         $category = Reservations::find($id)->category->name;
 
 
-        return view('admin.payment.edit',compact('reservations','package','total','category'));
+        return view('admin.payment.edit',compact('reservations','package','total','category','alert'));
     }
 
     /**

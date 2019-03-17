@@ -9,6 +9,7 @@ use PDF;
 use App\Reservations;
 use App\Audits;
 use Auth;
+use App\Inventory;
 class ManpowerController extends Controller
 {
 
@@ -24,15 +25,17 @@ class ManpowerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   date_default_timezone_set('Asia/Manila');
+    {   
+        date_default_timezone_set('Asia/Manila');
         $todaydate = date("Y-m-d");
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',1)->first();
         $reservationsIncoming2 = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',1)->skip(1)->first();
         
         $staffs = Staffs::all();
         $assign1 = Staffs::where('is_assign','Assign 1')->where('is_active',1)->get();
         $assign2 = Staffs::where('is_assign','Assign 2')->where('is_active',1)->get();
-        return view ('admin.manpower.index',compact('staffs','assign1','assign2','reservationsIncoming','reservationsIncoming2'));
+        return view ('admin.manpower.index',compact('staffs','assign1','assign2','reservationsIncoming','reservationsIncoming2','alert'));
     }
 
     /**
@@ -61,7 +64,8 @@ class ManpowerController extends Controller
     public function create()
     {
         $roles = ManpowerRoles::where('is_active',1)->get();
-         return view('admin.manpower.create',compact('roles'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+         return view('admin.manpower.create',compact('roles','alert'));
     }
 
     /**
@@ -126,7 +130,8 @@ class ManpowerController extends Controller
     {
         $roles = ManpowerRoles::where('is_active',1)->get();
         $staffs = Staffs::find($id);
-     return view('admin.manpower.edit',compact('staffs','roles'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+     return view('admin.manpower.edit',compact('staffs','roles','alert'));
     }
 
     /**

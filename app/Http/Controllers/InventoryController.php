@@ -28,11 +28,12 @@ class InventoryController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $inventories = Inventory::all();
         $categories = InventoryCategories::all();
         $damages = Inventory::where('damage','>=','1')->get();
         $defects = Inventory::where('defect','>=','1')->get();
-        return view('admin.inventory.index', compact('inventories','categories','damages','defects'));
+        return view('admin.inventory.index', compact('inventories','categories','damages','defects','alert'));
     }
     public function pdf()
     {
@@ -70,9 +71,10 @@ class InventoryController extends Controller
      */
     public function create()
     { 
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
      $categories = InventoryCategories::all(); 
      $warehouses = Warehouses::all(); 
-     return view('admin.inventory.create',compact('categories','warehouses'));
+     return view('admin.inventory.create',compact('categories','warehouses','alert'));
     }
 
     /**
@@ -150,8 +152,9 @@ class InventoryController extends Controller
         $warehouseId = Inventory::find($id)->warehouse;
         $categories = InventoryCategories::all();
         $warehouses = Warehouses::all();
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         // return $inventories;
-        return view('admin.inventory.edit',compact('inventories','categories','categoryId','warehouseId','warehouses'));
+        return view('admin.inventory.edit',compact('inventories','categories','categoryId','warehouseId','warehouses','alert'));
 
     }
 

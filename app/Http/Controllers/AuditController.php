@@ -21,6 +21,7 @@ class AuditController extends Controller
      */
     public function index()
     {   
+         $alert = Inventory::where('stock_on_hand', '<=', '80')->count();
         $audits=Audits::all();
         $category= Audits::where('audit_type','Category')->get();
         $cms= Audits::where('audit_type','Post')->get();

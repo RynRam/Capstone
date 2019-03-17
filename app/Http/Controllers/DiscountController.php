@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Discounts;
 use App\Audits;
 use Auth;
+use App\Inventory;
 class DiscountController extends Controller
 {
     public function __construct()
@@ -20,8 +21,9 @@ class DiscountController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $discounts = Discounts::all();
-        return view('admin.discount.index',compact('discounts'));
+        return view('admin.discount.index',compact('discounts','alert'));
     }
 
     /**
@@ -31,7 +33,8 @@ class DiscountController extends Controller
      */
     public function create()
     {
-      return view('admin.discount.create');
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+      return view('admin.discount.create',compact('alert'));
     }
 
     /**
@@ -93,8 +96,9 @@ class DiscountController extends Controller
      */
     public function edit($id)
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $discounts = Discounts::find($id);
-           return view('admin.discount.edit',compact('discounts'));
+           return view('admin.discount.edit',compact('discounts','alert'));
     }
 
     /**

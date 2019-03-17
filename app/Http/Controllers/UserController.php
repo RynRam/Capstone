@@ -7,6 +7,7 @@ use App\Audits;
 use App\User;
 use Auth;
 use Session;
+use App\Inventory;
 class UserController extends Controller
 {
          public function __construct()
@@ -23,8 +24,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        
-        return view('admin.usersManagement.index', compact('users'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.usersManagement.index', compact('users','alert'));
     }
 
     /**
@@ -34,7 +35,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.usersManagement.create');
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.usersManagement.create',compact('alert'));
     }
 
     /**
@@ -98,8 +100,9 @@ class UserController extends Controller
     public function edit($id)
     {
        $users = User::find($id);
+       $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
        
-        return view('admin.usersManagement.edit',compact('users'));
+        return view('admin.usersManagement.edit',compact('users','alert'));
     }
 
     /**

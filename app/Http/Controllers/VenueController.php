@@ -8,6 +8,7 @@ use App\Venues;
 use PDF;
 use App\Audits;
 // use App\User;
+use App\Inventory;
 use Auth;
 class VenueController extends Controller
 {
@@ -26,8 +27,9 @@ class VenueController extends Controller
     {
          $files = Venues::all();
         // $countVenue = Venues::count();
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         // $count = User::count();
-        return view('admin.venue.index', compact('files'));
+        return view('admin.venue.index', compact('files','alert'));
     }
 
     public function pdf()
@@ -43,8 +45,10 @@ class VenueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
-        return view('admin.venue.create');
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.venue.create',compact('alert'));
     }
 
     /**
@@ -138,9 +142,10 @@ class VenueController extends Controller
      */
     public function edit($id)
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
        $files = Venues::find($id);
         // return $files;
-        return view('admin.venue.edit',compact('files'));
+        return view('admin.venue.edit',compact('files','alert'));
     }
 
     /**

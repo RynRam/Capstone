@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Warehouses;
 use App\Audits;
 use Auth;
+use App\Inventory;
 class WarehouseController extends Controller
 {
 
@@ -22,9 +23,9 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-                
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $warehouses = Warehouses::all();
-        return view('admin.inventory.warehouse.index',compact('warehouses'));
+        return view('admin.inventory.warehouse.index',compact('warehouses','alert'));
     }
 
     /**
@@ -86,8 +87,9 @@ class WarehouseController extends Controller
      */
     public function edit($id)
     {
-               $warehouseId = Warehouses::find($id);
-               return view('admin.inventory.warehouse.edit',compact('warehouseId'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        $warehouseId = Warehouses::find($id);
+        return view('admin.inventory.warehouse.edit',compact('warehouseId','alert'));
     }
 
     /**

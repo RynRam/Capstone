@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Contents;
 use App\Audits;
 use Auth;
+use App\Inventory;
 class CMSController extends Controller
 {
      public function __construct()
@@ -20,8 +21,9 @@ class CMSController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $posts = Contents::all();
-        return view('content.index',compact('posts'));
+        return view('content.index',compact('posts','alert'));
     }
 
     /**
@@ -31,7 +33,8 @@ class CMSController extends Controller
      */
     public function create()
     {
-             return view('content.create');    
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+             return view('content.create',compact('alert'));    
      }
 
     /**
@@ -106,8 +109,9 @@ class CMSController extends Controller
      */
     public function edit($id)
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $posts = Contents::find($id);
-          return view('content.edit',compact('posts'));   
+          return view('content.edit',compact('posts','alert'));   
     }
 
     /**

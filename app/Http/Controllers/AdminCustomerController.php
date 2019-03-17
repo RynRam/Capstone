@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Inventory;
 use Session;
 class AdminCustomerController extends Controller
 {
@@ -14,8 +15,9 @@ class AdminCustomerController extends Controller
      */
     public function index()
     {
+        $alert = Inventory::where('stock_on_hand', '<=', '80')->count();
         $customers=  Customer::all();
-        return view('admin.customer.index',compact('customers'));
+        return view('admin.customer.index',compact('customers','alert'));
     }
 
     /**

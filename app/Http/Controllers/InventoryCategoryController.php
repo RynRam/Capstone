@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\InventoryCategories;
 use Auth;
+use App\Inventory;
 use App\Audits;
 class InventoryCategoryController extends Controller
 {
@@ -22,9 +23,9 @@ class InventoryCategoryController extends Controller
      */
     public function index()
     {   
-        
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $categories = InventoryCategories::all();
-        return view('admin.inventory.category.index',compact('categories'));
+        return view('admin.inventory.category.index',compact('categories','alert'));
     }
 
     /**
@@ -34,7 +35,8 @@ class InventoryCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.inventory.category.create');  
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+        return view('admin.inventory.category.create',compact('alert'));  
   }
 
     /**
@@ -94,9 +96,10 @@ class InventoryCategoryController extends Controller
      */
     public function edit($id)
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
       $category = InventoryCategories::find($id);
     
-        return view('admin.inventory.category.edit',compact('category'));
+        return view('admin.inventory.category.edit',compact('category','alert'));
     }
 
 
