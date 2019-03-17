@@ -15,6 +15,7 @@ use Charts;
 use Calendar;
 use DB;
 use Carbon\Carbon;
+use App\Inventory;
 
 class AdminController extends Controller
 {
@@ -56,6 +57,7 @@ class AdminController extends Controller
 
 
     public function dashboard(){
+        $alert =  $stocks = Inventory::where('stock_on_hand', '<=', '80')->count();
         $events = Reservations::where('is_approved',1)->get();
         $event_list = [];
         foreach ($events as $key => $event) {
@@ -97,7 +99,7 @@ class AdminController extends Controller
          // return $reservations; total count
         //  ,compact('','','','','','','','','')
          
-        return view('admin.dashboard',compact('calendar_details','chart','chartpayment','venuesCount','usersCount','post','reservationsCount','reservationsIncoming','payments'));
+        return view('admin.dashboard',compact('calendar_details','chart','chartpayment','venuesCount','usersCount','post','reservationsCount','reservationsIncoming','payments','alert'));
     }
 
     public function settings(){
@@ -128,9 +130,9 @@ class AdminController extends Controller
                 $password = bcrypt($request->new_pwd);
                  $user_id = Auth::User()->id; 
                 User::where('id',$user_id)->update(['password'=> $password]);
-               return response()->redirect('admin/settings')->with('flash_message_success','Updated Successfully!');
+               return response()->redirectTo('admin/settings')->with('flash_message_success','Updated Successfully!');
             }else{
-               return response()->redirect('admin/settings')->with('flash_message_error','Incorrect Current Password!');
+               return response()->redirectTo('admin/settings')->with('flash_message_error','Incorrect Current Password!');
             }
 
         }
@@ -139,6 +141,6 @@ class AdminController extends Controller
 
     public function logout(){
         Auth::logout();
-       return response()->redirect('/admin')->with('flash_message_success','Logged out Successfully');
+       return response()->redirectTo('/admin')->with('flash_message_success','Logged out Successfully');
     }
 }

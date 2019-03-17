@@ -30,7 +30,7 @@
           <li ><a onclick="window.open('https://lynagailscaters.herokuapp.com/admin/InventoryDefect')" ><i class="icon icon-file"></i> <span>Defect Report</span></a></li>
         </ul>
       </li>
-      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-critical"><i class="icon icon-map-marker"></i> <span>Critical Stocks Module</span></a></li>
+      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-critical"><i class="icon icon-map-marker"></i> <span>Critical Stocks Module</span> <span class="label label-important">{{$alert}}</span></a></li>
       <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-category"><i class="icon icon-inbox"></i> <span>Inventory Category Module</span></a></li>
       <li><a href="https://lynagailscaters.herokuapp.com/admin/warehouse"><i class="icon icon-map-marker"></i> <span>Stock Room Module</span></a></li>
     </ul>

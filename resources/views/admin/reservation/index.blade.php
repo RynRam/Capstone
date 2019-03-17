@@ -41,7 +41,7 @@
                 <td>{{$reservation->eventdate}}</td>
                 <td>{{$reservation->category->name}}</td>
                 <td>{{$reservation->guest}}</td>
-                <td>{{$reservation->is_approved == 0 ? 'Pending' : 'Accepted'}}</td>
+                <td>{{$reservation->is_approved == 0 ? 'Cancelled' : 'Accepted'}}</td>
                 <td>{{$reservation->total}}</td>
                 <td>
                   <a href="{{action('ReservationController@edit', $reservation->id)}}"><button class="btn btn-primary" data-toggle="modal" data-target="#reserve_edit{{$reservation->id}}" >Discount</button></a>
