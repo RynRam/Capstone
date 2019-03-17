@@ -7,7 +7,6 @@ use App\Inventory;
 use Session;
 use App\Payments;
 use App\Audits;
-
 use App\Caterings;
 use App\Reservations;
 class SalesController extends Controller
@@ -27,11 +26,9 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $from = Session::get('sales')['from'];
-        $to = Session::get('sales')['to'];
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $eventCategories=Caterings::all();
-        $payments = Payments::all()->filter(whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get());
+        $payments = Payments::all();
         return view('admin.sales.index',compact('eventCategories','payments','alert'));
     }
     public function pdf()
