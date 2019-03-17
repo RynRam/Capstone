@@ -27,9 +27,11 @@ class SalesController extends Controller
      */
     public function index()
     {
+        $from = Session::get('sales')['from'];
+        $to = Session::get('sales')['to'];
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $eventCategories=Caterings::all();
-        $payments = Payments::all();
+        $payments = Payments::all()->filter(whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get());
         return view('admin.sales.index',compact('eventCategories','payments','alert'));
     }
     public function pdf()

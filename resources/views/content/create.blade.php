@@ -22,7 +22,7 @@
             <div class="controls">
               <input type="text" class="span12 block" name="title" placeholder="Enter Title ..." required>
               <input type="text" class="span12 block" name="author" placeholder="Enter Author Name ..." required>
-              <textarea rows="6"  name="info" placeholder="Enter Text ..." required></textarea>
+              <textarea class="span12" rows="6"  name="info" placeholder="Enter Text ..." required></textarea>
             <div class="form-group">
               <label for="file">Upload Image:</label>
               <input type="file" class="form-control" name="file" id="file" required>

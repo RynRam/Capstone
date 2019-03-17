@@ -35,7 +35,7 @@ class AuditController extends Controller
         $user= Audits::where('audit_type','User Account')->get();
         $venue= Audits::where('audit_type','Venue')->get();
         $warehouse= Audits::where('audit_type','Warehouse')->get();
-        return view('admin.audit.index',compact('category','cms','discount','package','inventorycategory','inventory','manpower','roles','payment','user','venue','warehouse','audits'));
+        return view('admin.audit.index',compact('category','cms','discount','package','inventorycategory','inventory','manpower','roles','payment','user','venue','warehouse','audits','alert'));
     }
 
     /**
