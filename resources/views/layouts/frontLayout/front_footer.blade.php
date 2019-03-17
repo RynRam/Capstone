@@ -3,16 +3,16 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
+<!-- 
         <div class="col-lg-3 col-md-6 footer-links">
             <h4>Payments</h4>
             <ul>
 
 
             </ul>
-        </div>
+        </div> -->
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Help & Support</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com">Home</a></li>
@@ -23,7 +23,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
               <strong>Address: </strong>254 M. Gregorio St. cor Reynoso St San Antonio Cavite City Cavite City, Philippines 4100<br/>
@@ -40,7 +40,7 @@
 
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-newsletter">
+          <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Mailing List</h4>
             <p>Receive invitations, updates and news</p>
             <form action="" method="post">

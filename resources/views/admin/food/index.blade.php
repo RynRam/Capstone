@@ -7,12 +7,13 @@
 
   </div>
     @include('admin.partials.message')
-  <div class="container-fluid">
+<div class="container-fluid" style="position: relative;overflow: auto;overflow-x: visible;">
     <hr>
      <a href="{{action('FoodController@create')}}"><button class="btn btn-success">Add Package +</button></a>
+  
     <div class="row-fluid">
       <div class="span12">
-        <div class="widget-box">
+        <div class="widget-box" style="overflow-x:auto;">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Food Table</h5>
 

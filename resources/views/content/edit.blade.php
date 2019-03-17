@@ -17,7 +17,7 @@
       </div>
       <div class="widget-content">
         <div class="control-group">
-          <form action="/admin/post/{{$posts->id}}" method="post" enctype="multipart/form-data">
+          <form action="{{action('CMSController@update', $posts->id)}}" method="post" enctype="multipart/form-data">
 		  	      {{csrf_field()}}{{method_field('PUT')}}
               <div class="controls">
               <input type="text" class="span12 block" name="title" placeholder="Enter Title ..." value="{{$posts->title}}">

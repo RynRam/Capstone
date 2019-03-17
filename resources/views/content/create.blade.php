@@ -17,7 +17,7 @@
       </div>
       <div class="widget-content">
         <div class="control-group">
-          <form action="/admin/post/" method="post" enctype="multipart/form-data">
+          <form action="{{action('CMSController@store')}}" method="post" enctype="multipart/form-data">
 		  	      {{csrf_field()}}
             <div class="controls">
               <input type="text" class="span12 block" name="title" placeholder="Enter Title ..." required>

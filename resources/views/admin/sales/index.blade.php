@@ -4,7 +4,7 @@
   <div id="content-header">
   <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Sales</a> </div>
   <h1>Sales Reports</h1>
-    <div class="container-fluid">
+<div class="container-fluid" style="position: relative;overflow: auto;overflow-x: visible;">
     <hr>
   
     <!-- As Date -->
@@ -43,9 +43,10 @@
         <!-- /As Category -->
         <hr>
 
-        <div class="row-fluid">
+ 
+    <div class="row-fluid">
       <div class="span12">
-        <div class="widget-box">
+        <div class="widget-box" style="overflow-x:auto;">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Sales Table</h5>
 
