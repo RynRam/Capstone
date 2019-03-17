@@ -84,7 +84,7 @@ class CMSController extends Controller
         //audits
         
 
-        return response()->redirectTo('admin/post');
+        return response()->redirectTo('/admin/post');
         
 
         }
@@ -170,7 +170,7 @@ class CMSController extends Controller
 
         $posts->save();
 
-        return redirect('admin/post');
+        return response->redirectTo('/admin/post');
         }else{
          $posts = Contents::find($id);
 
@@ -212,7 +212,7 @@ class CMSController extends Controller
         $posts->is_active = $request->active;
         $posts->save();
 
-        return redirect('admin/post');
+        return response->redirectTo('/admin/post');
         }
     }
 
@@ -226,6 +226,6 @@ class CMSController extends Controller
     {
       $posts = Contents::find($id);
         $posts->delete();
-       return redirect('/admin/post');
+       return response->redirectTo('/admin/post');
     }
 }
