@@ -30,20 +30,20 @@ class PostsTableSeeder extends Seeder
         	"Original article courtesy of Bride and Breakfast This couple is taking grand to the next level with their wedding–especial.",
         	"Gaining support for your mission starts with knowing who you are trying to reach and what inspires them. With this clear understanding in mind and experts by your side.",
         	"Wedding season is just around the corner and it’s time to start making your rental plans.outdoor events and inclement weather are all special considerations rentals.",
-        	"Out in the catering and hospitality business might be slightly taken aback when they learn that a tent could be custom built over a swimming pool with transparent flooring or alongside a 100-foot cliff.",
+        	"Out in the catering and hospitality business might be slightly taken aback when they learn that a tent could be custom built.",
         	"The Pantone Color of the Year, Living Coral, is helping to bring a fabulous new year of design to life. Subtlety is falling by the wayside as bright, happy shades join coral.",
         	"Professional event lighting is an art. Among design elements, it is in the top echelon of those that can completely transform a space, elevating everyday events to extraordinary levels.",
         	"I strongly believe every company must choose from one of two distinct paths as to where they want to be in their event and catering businesses.",
-              "In today’s society, it’s as easy to speak to someone on the other side of the world as someone in the next room. Cultural influences from all around the world play a part in our daily lives.",
+              "In today’s society, it’s as easy to speak to someone on the other side of the world as someone in the next room. Cultural influences from all around in our daily lives.",
               "It seems impossible, but the holidays are right around the corner once again. While this is a time of year when many people find great pleasure in the traditional.",
-              "This generation that popularized the foodie culture, invented the concept of photographing each meal and publishing it for all to see, on the event experience—and the menu is integral to it.",
-              "Among the best ways to transform a room from everyday okay to seasonal sensation is to choose the perfect rentals. These are some of the year’s highly anticipated must-have rentals for the season.",
-              "Attending the office Christmas party or a neighbor’s holiday gathering may be one person’s idea of fun. But for others, it can be a social nightmare. Familiar faces with uncomfortable chatter.",
-              "In recent years, the event industry has witnessed a pretty significant shift in popularity from the tried-and-true summer event to the eclectic, seasonal fall event.transition has brought a plethora of new trends.",
-              "In a highly competitive industry, maintaining positive, fruitful relationships with your fellow vendors can be more than a little bit challenging. The friction caused by erupting egos, irrational fears.",
-              "A timeline is nothing less than the backbone of an event—an essential part that can make a day a great success or an epic fail. If you are lucky, the event planner will provide you with a flawless, balanced.",
+              "This generation that popularized the foodie culture, invented the concept of photographing each meal, on the event experience—and the menu is integral to it.",
+              "Among the best ways to transform a room from everyday okay to seasonal sensation is to choose the perfect rentals. ",
+              "Attending the office Christmas party or a neighbor’s holiday gathering may be one person’s idea of fun.it can be a social nightmare. Familiar faces with uncomfortable chatter.",
+              "In recent years, the event industry has witnessed a pretty significant shift in popularity from the tried-and-true summer event to the eclectic, seasonal fall event.",
+              "In a highly competitive industry, maintaining positive, fruitful relationships with your fellow vendors can be more than a little bit challenging.",
+              "A timeline is nothing less than the backbone of an event—an essential part that can make a day a great success or an epic fail.",
               "Here are some ways that our panel of internationally-recognized wedding professionals expect to see them take center stage in 2018.",
-              "Most event professionals recognize the transformative power of lighting on a venue. Candles of all ilk play an essential role in lighting design, and while it might seem simple to purchase them for your clients."); 
+              "Most event professionals recognize the transformative power of lighting on a venue. Candles of all ilk play an essential role in lighting design."); 
         $author = array("Maigne","Maigne", "Maigne","Maigne","Maigne","Maigne","Maigne","Maigne","Maigne","Charlie Bougas","Heather Rouffe","International Caterers Association","Kylie Carlson","Kevin Dennis","Sebastien Centner","Kylie Carlson","Meghan Ely","Emily Sullivan","Heather Rouffe","National Association for Catering and Events","Heather Jones","Emily Sullivan","Kevin Dennis","Kylie Carlson","Audrey Isaac"); 
         $file = array("1.jpg", "2.jpg", "3.jpeg","4.jpg","5.jpg","6.jpeg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg"); 
 
