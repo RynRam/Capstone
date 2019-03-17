@@ -81,7 +81,7 @@ class CustomerRegisterController extends Controller
             $customer->gplus = $request->gplus;
             $customer->is_verified = 0;
             $customer->verification_token = Str::random(40);
-            $customer->password = encrypt($request->password);
+            $customer->password = bcrypt($request->password);
             $customer->save();
         
         $insertedCustomer = Customer::findOrFail($customer->id);
