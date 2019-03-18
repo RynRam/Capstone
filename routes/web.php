@@ -157,6 +157,7 @@
 	Route::resource('/admin/audit','AuditController');
 	//Sales
 	Route::resource('/admin/sales','SalesController');
+	Route::get('/admin/salesreport','SalesController@report');
 	Route::get('/admin/salespdf','SalesController@pdf');
 	Route::post('/admin/salescategory','SalesController@category');
 	Route::get('/admin/salescategorypdf','SalesController@categorypdf');

@@ -29,7 +29,14 @@ class SalesController extends Controller
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $eventCategories=Caterings::all();
         $payments = Payments::all();
-        return view('admin.sales.index',compact('eventCategories','payments','alert'));
+        $paymentsFrom = Payments::where('created_at')->first();
+        $paymentsTo = Payments::where('created_at')->last();
+        return view('admin.sales.index',compact('eventCategories','payments','alert','paymentsFrom','paymentsTo'));
+    }
+    public function report()
+    {
+        $payments = Payments::all();
+        return ($payments);
     }
     public function pdf()
     {

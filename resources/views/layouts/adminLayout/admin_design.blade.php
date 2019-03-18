@@ -94,6 +94,43 @@
 	});
 </script>
 
+<script>
+   $('#submit').submit(function(e) {
+     var from = $('#salesfrom').val();
+     var to = $('#salesto').val();
+	 var category = $('#category').val();
+
+	 var $markup = "";
+     var reserved =$.ajax({
+                dataType: "json",
+                url: "/admin/salesreport",
+                data: {category: category,  from: from, to: to },
+                type: 'GET',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    console.log(data.length);
+                    
+               
+                    for (var i = 0; i < data.length; i++) {
+
+                        $markup += "<tr class="gradeX"> " +
+                    ]
+                            "<td>" + data[i].id +"</td>" +
+                            "<td>" + data[i].category + "</td>" +
+                            "<td>" + data[i].amount_payment + "</td>" +
+                            "<td>" + data[i].balance +"</td>"+
+                            "<td>" + date('m-d-y',strtotime(data[i].date_invoicee)) +"</td>"+
+                        
+                    "</tr>";
+                    }
+                    $("#tablebody").html($markup);
+                }
+            });
+
+
+ });
+ 
+ </script>
 
 </body>
 </html>
