@@ -8,7 +8,7 @@
     <hr>
   
     <!-- As Date -->
-    <form action="{{action('SalesController@store')}}" method="POST">
+    <form action="{{action('SalesController@report')}}" method="GET">
     {{csrf_field()}}
 
       <div class="form-group text-center" style="margin-top:100px;">

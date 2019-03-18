@@ -33,11 +33,70 @@ class SalesController extends Controller
 
         return view('admin.sales.index',compact('eventCategories','payments','alert'));
     }
-    public function report()
-    {
-        $payments = Payments::all();
-        return ($payments);
+    public function report(Request $request)
+    {   
+        $from = $request->from;
+        $to = $request->to;
+        $category = $request->category;
+        if($category != null){
+            if($from != null){
+                if($to != null){
+                     $payments = Payments::where('category',$category)->whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+                     $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                     $eventCategories=Caterings::all();
+                     return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }else{
+                    $payments = Payments::where('category',$category)->whereDate('created_at','>=',$from)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }
+            }
+            else{
+                if($to != null){
+                    $payments = Payments::where('category',$category)->whereDate('created_at','<=',$to)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }else{
+                    $payments = Payments::where('category',$category)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }
+            } 
+        }
+        else{
+            if($from != null){
+                if($to != null){
+                    $payments = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }else{
+                    $payments = Payments::whereDate('created_at','>=',$from)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert')); 
+                }
+            }else{
+                if($to != null){
+                    $payments = Payments::whereDate('created_at','<=',$to)->get();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }else{
+                    $payments = Payments::all();
+                    $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+                    $eventCategories=Caterings::all();
+                    return view('admin.sales.index',compact('eventCategories','payments','alert'));
+                }
+            }
+        }
+   
     }
+
+    
     public function pdf()
     {
     $from = Session::get('sales')['from'];
