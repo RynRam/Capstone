@@ -8,11 +8,12 @@
     <hr>
   
     <!-- As Date -->
-    <form action="{{action('SalesController@report')}}" method="GET">
+    <form action="{{action('SalesController@report')}}" method="post">
     {{csrf_field()}}
 
       <div class="form-group text-center" style="margin-top:100px;">
       <h2>Report Filter</h2>
+      <h4 style="display:inline-block;">Category :</h3> 
       <select name="category" id="category" style="width:20%;">
         @foreach($eventCategories as $event)
         <option value="{{$event->name}}">{{$event->name}}</option>
