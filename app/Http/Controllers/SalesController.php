@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Inventory;
 use Session;
 use App\Payments;
@@ -29,8 +30,8 @@ class SalesController extends Controller
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $eventCategories=Caterings::all();
         $payments = Payments::all();
-        $paymentsFrom = Payments::where('date_invoice')->get()->first();
-        $paymentsTo = Payments::where('date_invoice')->get()->latest()->first();;
+        $paymentsFrom = DB::table('payments')->first();
+        $paymentsTo = DB::table('payments')->latest()->first();;
         return view('admin.sales.index',compact('eventCategories','payments','alert','paymentsFrom','paymentsTo'));
     }
     public function report()
