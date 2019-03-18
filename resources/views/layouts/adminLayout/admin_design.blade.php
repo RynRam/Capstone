@@ -113,7 +113,7 @@
                
                     for (var i = 0; i < data.length; i++) {
 
-                        $markup += "<tr class="gradeX"> " +
+                        $markup += "<tr class="gradeX">" +
                     ]
                             "<td>" + data[i].id +"</td>" +
                             "<td>" + data[i].category + "</td>" +
