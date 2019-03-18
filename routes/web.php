@@ -159,8 +159,8 @@
 	Route::resource('/admin/sales','SalesController');
 	Route::post('/admin/salesreport','SalesController@report');
 	Route::get('/admin/salespdf','SalesController@pdf');
-	Route::post('/admin/salescategory','SalesController@category');
-	Route::get('/admin/salescategorypdf','SalesController@categorypdf');
+	// Route::post('/admin/salescategory','SalesController@category');
+	// Route::get('/admin/salescategorypdf','SalesController@categorypdf');
 	//Discount
 	Route::resource('/admin/discount','DiscountController');
 	Route::put('/admin/discount/{discount}', 'DiscountController@update'); 

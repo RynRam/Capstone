@@ -35,6 +35,12 @@ class SalesController extends Controller
     }
     public function report(Request $request)
     {   
+        Session::put('sales', [
+            'from' => $request->from,
+            'to' => $request->to,
+            'category' => $request->category
+            ]);  
+            
         $from = $request->from;
         $to = $request->to;
         $category = $request->category;
@@ -101,9 +107,47 @@ class SalesController extends Controller
     {
     $from = Session::get('sales')['from'];
     $to = Session::get('sales')['to'];
+    $category = Session::get('sales')['category'];
     $pdf = \App::make('dompdf.wrapper');
-    $dates = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
-    $sales = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->sum('balance');
+    if($category != null){
+        if($from != null){
+            if($to != null){
+                 $dates = Payments::where('category',$category)->whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+                 $sales = Payments::where('category',$category)->whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->sum('balance');
+            }else{
+                $dates = Payments::where('category',$category)->whereDate('created_at','>=',$from)->get();
+                $sales = Payments::where('category',$category)->whereDate('created_at','>=',$from)->sum('balance');
+            }
+        }
+        else{
+            if($to != null){
+                $dates = Payments::where('category',$category)->whereDate('created_at','<=',$to)->get();
+                $sales = Payments::where('category',$category)->whereDate('created_at','<=',$to)->sum('balance');
+            }else{
+                $dates = Payments::where('category',$category)->get();
+                $sales = Payments::where('category',$category)->sum('balance');
+            }
+        } 
+    }
+    else{
+        if($from != null){
+            if($to != null){
+                $dates = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
+                $sales = Payments::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->sum('balance');
+            }else{
+                $dates = Payments::whereDate('created_at','>=',$from)->get();
+                $sales = Payments::whereDate('created_at','>=',$from)->sum('balance');
+            }
+        }else{
+            if($to != null){
+                $dates = Payments::whereDate('created_at','<=',$to)->get();
+                $sales = Payments::whereDate('created_at','<=',$to)->sum('balance');
+            }else{
+                $dates = Payments::all();
+                $sales = Payments::all()->sum('balance');
+            }
+        }
+    }
     $pdf->loadView('reports.SalesReport',compact('sales','from','to','dates'));
     return $pdf->stream();
     }
@@ -133,25 +177,25 @@ class SalesController extends Controller
             return response()->redirectTo('admin/salespdf');
     }
     
-    public function categorypdf()
-    {
+    // public function categorypdf()
+    // {
 
 
-    $category = Session::get('sales_category')['category'];
-    $pdf = \App::make('dompdf.wrapper');
-    $amount =Payments::where('category',$category)->sum('balance');
-    $sales = Payments::where('category',$category)->get();
-    $pdf->loadView('reports.SalesCategoryReport',compact('sales','amount'));
-    return $pdf->stream();
-    }
+    // $category = Session::get('sales_category')['category'];
+    // $pdf = \App::make('dompdf.wrapper');
+    // $amount =Payments::where('category',$category)->sum('balance');
+    // $sales = Payments::where('category',$category)->get();
+    // $pdf->loadView('reports.SalesCategoryReport',compact('sales','amount'));
+    // return $pdf->stream();
+    // }
 
-    public function category(Request $request)
-    {
-        Session::put('sales_category', [
-            'category' => $request->category,
-            ]);  
-            return response()->redirectTo('admin/salescategorypdf');
-    }
+    // public function category(Request $request)
+    // {
+    //     Session::put('sales_category', [
+    //         'category' => $request->category,
+    //         ]);  
+    //         return response()->redirectTo('admin/salescategorypdf');
+    // }
 
 
     /**

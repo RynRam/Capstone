@@ -3,7 +3,7 @@
 <div id="content">
   <div id="content-header">
   <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Sales</a> </div>
-  <h1>Sales Reports</h1>
+  <h1>Sales Reports<a onclick="window.open('/admin/salespdf')" class="btn btn-danger" style="float:right; margin-right: 50px;">Convert to PDF</a></h1>
 <div class="container-fluid" style="position: relative;overflow: auto;overflow-x: visible;">
     <hr>
   
@@ -15,6 +15,7 @@
       <h2>Report Filter</h2>
       <h4 style="display:inline-block;">Category :</h3> 
       <select name="category" id="category" style="width:20%;">
+        <option value=""></option>
         @foreach($eventCategories as $event)
         <option value="{{$event->name}}">{{$event->name}}</option>
         @endforeach
