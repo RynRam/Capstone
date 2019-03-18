@@ -19,9 +19,9 @@
         @endforeach
       </select>
       <h4 style="display:inline-block;">From :</h3> 
-      <input type="date" name="from" id="salesfrom" value="{{$paymentsFrom}}" >
+      <input type="date" name="from" id="salesfrom" value="{{$paymentsFrom->date_invoice}}" >
       <h4 style="display:inline-block;">To :</h3> 
-      <input type="date" name="to" id="salesto" value="{{$paymentsTo}} >
+      <input type="date" name="to" id="salesto" value="{{$paymentsTo->date_invoice}}" >
       </div>
         <div class="form-group text-center">
         <input type="submit" value="View or Print" class="btn btn-success" id="submit">
