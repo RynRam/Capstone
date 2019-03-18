@@ -30,8 +30,8 @@
 	Route::get('/blog', 'FrontController@blog');
 	Route::get('/terms&condition', 'FrontController@terms');
 	Route::get('/privacy&policy', 'FrontController@privacy');
-	Route::get('/receipt', 'FrontController@receipt')->middleware('auth');
-	Route::get('/receipt/report', 'FrontController@report')->middleware('auth');
+	Route::get('/receipt', 'FrontController@receipt');
+	Route::get('/receipt/report', 'FrontController@report');
 	Route::get('/reserved', 'FrontController@reserved');
 	Route::get('/reservedpackage', 'FrontController@reservedpackage');
 	Route::get('/reservedvenue', 'FrontController@reservedvenue');
