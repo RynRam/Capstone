@@ -100,7 +100,7 @@ class InventoryController extends Controller
         $inventories->item_name = $request->description;
         $inventories->inventory_categories_id = $request->category;
         $inventories->warehouses_id = $request->warehouse ;
-        $inventories->price = $request->price ;
+        $inventories->price = intval($request->price) ;
         $inventories->stock_on_hand = $request->quantity;
         $inventories->save();
 
@@ -211,7 +211,7 @@ class InventoryController extends Controller
         $inventories->item_name = $request->description;
         $inventories->inventory_categories_id = $request->category;
         $inventories->warehouses_id = $request->warehouse;
-        $inventories->price = $request->price ;
+        $inventories->price = intval($request->price) ;
         $inventories->damage = $request->damage + $inventories->damage;
         $inventories->defect = $request->defect + $inventories->defect;
         

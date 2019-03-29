@@ -131,7 +131,7 @@ class FrontController extends Controller
             'package_id' => $request->package,
             'eventdate' => $request->schedule,
             'category_id' => $request->category,
-            'guest' => $request->people,
+            'guest' => intval($request->people),
             'total' => $request->total_price
             ]); 
             

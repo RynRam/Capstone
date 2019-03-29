@@ -55,7 +55,7 @@ class DiscountController extends Controller
         ]);
         $discounts->name = $request->name;
         $discounts->description = $request->description;
-        $discounts->discount = $request->discount;
+        $discounts->discount = intval($request->discount);
         $discounts->save();
 
         //audits
@@ -143,7 +143,7 @@ class DiscountController extends Controller
         ]);
         $discounts->name = $request->name;
         $discounts->description = $request->description;
-        $discounts->discount = $request->discount;
+        $discounts->discount = intval($request->discount);
         $discounts->save();
 
         return response()->redirectTo('admin/discount');

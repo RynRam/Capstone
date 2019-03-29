@@ -56,12 +56,12 @@ class PaymentController extends Controller
             'terms' => 'required',   
 
         ]);
-        
+         
         $payments->reservations_id = $request->reserveid;
-        $payments->amount_payment = $request->tender;
+        $payments->amount_payment = intval($request->tender);
         $payments->percentage = $request->terms;
-        $payments->change = $request->change;
-        $payments->balance = $request->balance;
+        $payments->change = intval($request->change);
+        $payments->balance = intval($request->balance);
         $payments->category = $request->category;
         $payments->save();
 

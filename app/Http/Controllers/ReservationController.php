@@ -125,7 +125,7 @@ class ReservationController extends Controller
         $reservations->eventdate = $reservations->eventdate;
         $reservations->category_id = $reservations->category_id;
         $reservations->guest = $reservations->guest;
-        $discount = $request->discount;
+        $discount = intval($request->discount);
         $discounts = $reservations->total * ($discount / 100);
         $reservations->total = $reservations->total - $discounts;
         $reservations->save();      

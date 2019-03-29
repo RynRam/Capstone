@@ -84,7 +84,7 @@ class FoodController extends Controller
         ]);
         $food->name = $request->name;
         $food->inclusion = $request->inclusion;
-        $food->price = $request->price;
+        $food->price = intval($request->price);
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
@@ -94,7 +94,7 @@ class FoodController extends Controller
         $data = array(
             "name" =>  $request->name,
             "inclusion" => $request->inclusion,
-            "price" => $request->price,
+            "price" => intval($request->price),
             "category" => $request->category,
             "file" => $filename,
     
@@ -189,7 +189,7 @@ class FoodController extends Controller
         ]);
         $food->name = $request->name;
         $food->inclusion = $request->inclusion;
-        $food->price = $request->price;
+        $food->price = intval($request->price);
         $food->event_categories_id = $request->category;
         $food->file = $filename;
         $food->save();
@@ -232,7 +232,7 @@ class FoodController extends Controller
         $food->name = $request->name;
         $food->inclusion = $request->inclusion;
         $food->event_categories_id = $request->category;
-        $food->price = $request->price;
+        $food->price = intval($request->price);
         $food->save();
         
          return response()->redirectTo('/admin/food');

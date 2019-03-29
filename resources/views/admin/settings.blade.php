@@ -2,7 +2,7 @@
 @section('content')
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Settings</a> </div>
+    <div id="breadcrumb"> <a href="/admin/dashboard" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a>Settings</a> </div>
     <h1>Admin Settings</h1>
       @if(Session::has('flash_message_error'))
         <div class="alert alert-danger alert-block">
