@@ -39,7 +39,7 @@
                       <td>{{$post->author}}</td>
                     	<td>{{$post->info}}</td>
                       <td>{{$post->created_at}}</td>
-                      <td style='text-align:center !important;'><a href="../../images/{{$post->file}}" data-lightbox="venue" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>                  	<td>{{$post->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
+                      <td style='text-align:center !important;'><a href="https://s3-ap-southeast-1.amazonaws.com/lynagails-caters/uploads/{{$post->file}}" data-lightbox="venue" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>                  	<td>{{$post->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
                     	<td>
                          <a href="{{'/admin/post/'.$post->id.'/edit'}}" class="btn btn-primary">Edit</a>|
                     <form action="{{'/admin/post/'.$post->id}}" class="form-group" style="display: -webkit-inline-box;" method="post">

@@ -43,7 +43,7 @@
               <td>{{$file->contact_person}}</td>
               <td>{{$file->contact}}</td>
               <td>{{$file->price}}</td>
-              <td style='text-align:center !important;'><a href="../../images/{{$file->file}}" data-lightbox="venue" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>
+              <td style='text-align:center !important;'><a href="https://s3-ap-southeast-1.amazonaws.com/lynagails-caters/uploads/{{$file->file}}" data-lightbox="venue" class="link-preview " title="Preview"><i class="ion ion-eye" style="font-size:23px;color:#18d26e;"></i></a></td>
                <td>{{$file->is_active == 1 ? 'Available' : 'Unavailable'}}</td>
                <td>{{$file->capacity}}</</td>
                 <td><form action="{{ action('VenueController@updateStatus', $file->id) }}" class="form-group" style="display:-webkit-inline-box;" method="post">
