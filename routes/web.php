@@ -35,6 +35,7 @@
 	Route::get('/reserved', 'FrontController@reserved');
 	Route::get('/reservedpackage', 'FrontController@reservedpackage');
 	Route::get('/reservedvenue', 'FrontController@reservedvenue');
+	Route::get('/my-events','CustomerReservedController@index');
 
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');

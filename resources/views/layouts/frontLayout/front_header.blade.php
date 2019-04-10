@@ -51,6 +51,7 @@
           <li class="menu-has-children"><a href=""><i class="ion-ios-contact" ></i> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>
+            <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>
               <li>
                   <a href="{{ route('logout') }}"
                       onclick="event.preventDefault();
