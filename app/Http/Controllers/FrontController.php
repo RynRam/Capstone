@@ -278,9 +278,10 @@ class FrontController extends Controller
     }
     public function feedback(){
         $feedbacks = new Feedbacks;
-        $feedback->name = $request->name;
-        $feedback->feedback = $request->feedback;
-        $feedback->save();
+        $feedbacks->name = $request->name;
+        $feedbacks->feedback = $request->feedback;
+        $feedbacks->save();
+        return response()->redirectTo('/admin/feedback');
     }
 
     public function indexfeedback(){
