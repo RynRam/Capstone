@@ -281,7 +281,7 @@ class FrontController extends Controller
         $feedbacks->name = $request->name;
         $feedbacks->feedback = $request->feedback;
         $feedbacks->save();
-        return response()->redirectTo('/admin/feedback');
+        return response()->redirectTo('/feedback');
     }
 
     public function indexfeedback(){
