@@ -3,7 +3,7 @@
 <div id="content">
   <div id="content-header">
     <div id="breadcrumb"> <a href="/admin/feedback" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Tables</a> </div>
-    <h1>CUSTOMERS FEEDBACKS<a onclick="window.open('/admin/Feedback')"  class="btn btn-danger" style="float:right; margin-right: 50px;">Convert to PDF</a></h1>
+    <h1>CUSTOMERS FEEDBACKS<a onclick="window.open('/admin/Feedbackpdf')"  class="btn btn-danger" style="float:right; margin-right: 50px;">Convert to PDF</a></h1>
 
   </div>
     @include('admin.partials.message')
@@ -15,7 +15,7 @@
       <div class="span12">
         <div class="widget-box" style="overflow-x:auto;">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-            <h5>Food Table</h5>
+            <h5>Feedbacks Table</h5>
 
           </div>
           <div class="widget-content nopadding">

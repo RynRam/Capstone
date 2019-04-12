@@ -19,6 +19,7 @@
               <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/terms&condition">Terms & Conditions</a></li>
+             <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/feedback">Feedbacks</a></li>
          
             </ul>
           </div>
