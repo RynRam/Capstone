@@ -275,6 +275,15 @@ class FrontController extends Controller
     public function privacy(){
         return view('front.privacy');
     }
+    public function feedback(){
+        $feedbacks = new Feedbacks;
+        $feedback->name = $request->name;
+        $feedback->feedback = $request->feedback;
+        $feedback->save();
+    }
 
+    public function indexfeedback(){
+        return view('front.feedback');
+    }
 
 }

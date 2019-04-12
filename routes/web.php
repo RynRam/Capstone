@@ -16,6 +16,8 @@
 	Route::get('/', 'FrontController@getIndex');
 	Route::get('/basic-catering', 'FrontController@getCatering');
 	Route::post('/basic-catering','FrontController@postCatering');
+	Route::post('/feedback','FrontController@feedback');
+	Route::get('/feedback','FrontController@indexfeedback');
 	Route::get('/debut', 'FrontController@getDebut');
 	Route::get('/wedding', 'FrontController@getWedding');
 	Route::get('/classA', 'FrontController@menuA');
@@ -125,6 +127,10 @@
 	Route::patch('/admin/food/{food}', 'FoodController@updateStatus'); 
 	Route::put('/admin/food/{food}', 'FoodController@update');
 
+	//Feedbacks
+	Route::resource('/admin/feedback','FeedbackController');
+	Route::get('/admin/Feedbackpdf','FeedbackController@pdf');
+	Route::patch('/admin/feedback/{feedback}', 'FeedbackController@updateStatus'); 
 	//Catering
 	Route::resource('/admin/category','CategoryController');
 	Route::post('/admin/category','CategoryController@store');

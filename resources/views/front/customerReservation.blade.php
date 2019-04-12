@@ -1,4 +1,4 @@
-@extends('layouts.frontLayout.front_custom_account')
+@extends('layouts.frontLayout.front_custom1')
 @section('content')
 @include('front.partials.accountStyle')
 <main id="main">
@@ -22,7 +22,7 @@
                     <th scope="col">Event Date</th>
                     <th scope="col">Guest</th>
                     <th scope="col">Total Amount</th>
-                    <th></th>
+                 
                     </tr>
                 </thead>
                 <tbody>
@@ -34,8 +34,8 @@
                     <td>{{$customer->package->name}}</td>
                     <td>{{$customer->eventdate}} </td> 
                     <td>{{$customer->guest}} </td>
-                    <td>{{$customer->total}}</td>
-                    <td></td>
+                    <td>{{$customer->total}} PHP</td>
+               
                     </tr>
                 @endforeach
                 </tbody>
