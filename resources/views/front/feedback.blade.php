@@ -23,7 +23,7 @@
                   <label for="feedback">Feedback:</label>
                 <textarea class="form-control" rows="5" id="feeback" name="feedback"  required></textarea>
 
-                  <input type="submit" name="submit" class="submit action-button" value="Login" />
+                  <input type="submit" name="submit" class="submit action-button" value="Submit" />
 
               </fieldset>
              </form>

@@ -276,7 +276,7 @@ class FrontController extends Controller
     public function privacy(){
         return view('front.privacy');
     }
-    public function feedback(){
+    public function feedback(Request $request){
         $feedbacks = new Feedbacks;
         $feedbacks->name = $request->name;
         $feedbacks->feedback = $request->feedback;
