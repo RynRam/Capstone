@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Feedbacks;
 use PDF;
 use Auth;
+use App\Inventory;
 class FeedbackController extends Controller
 {
     /**
@@ -15,8 +16,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
         $feedback = Feedbacks::all();
-        return view('admin.feedback.index',compact('feedback'));
+        return view('admin.feedback.index',compact('feedback','alert'));
     }
 
     /**
