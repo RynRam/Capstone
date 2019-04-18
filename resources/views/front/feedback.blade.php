@@ -1,4 +1,4 @@
-@extends('layouts.frontLayout.front_custom_account')
+@extends('layouts.frontLayout.front_custom')
 @section('content')
 @include('front.partials.accountStyle')
 <main id="main">

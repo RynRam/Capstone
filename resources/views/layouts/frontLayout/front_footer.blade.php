@@ -3,14 +3,16 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-<!-- 
-        <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Payments</h4>
+
+        <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Site Map</h4>
             <ul>
-
-
+            <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
             </ul>
-        </div> -->
+        </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Help & Support</h4>
@@ -41,13 +43,13 @@
 
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Mailing List</h4>
             <p>Receive invitations, updates and news</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe" disabled="true">
             </form>
-          </div>
+          </div> -->
 
         </div>
       </div>

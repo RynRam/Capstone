@@ -48,7 +48,13 @@
         <ul class="nav-menu">
           <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           <li><a href="#form">Fill Up</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="menu-has-children"><a href="#services">Services</a>
+            <ul>
+              <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+            </ul>
+          </li>
           <li class="menu-has-children"><a href="#">Packages</a>
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
@@ -73,7 +79,7 @@
          @else
           <li><a href=""> {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
-            <li><a href="https://lynagailscaters.herokuapp.com/customer-profile">Profile</a></li>
+            <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>
             <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>
             <li>
                 <a href="{{ route('logout') }}"
@@ -103,14 +109,15 @@
       <div class="container">
         <div class="row">
 
-
-        <!-- <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Payments</h4>
+        <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Site Map</h4>
             <ul>
-              
-
+            <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+              <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
             </ul>
-        </div> -->
+        </div>
 
 
           <div class="col-lg-4 col-md-6 footer-links">
@@ -141,14 +148,14 @@
             </div>
 
           </div>
-
+<!-- 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Mailing List</h4>
             <p>Receive invitations, updates and news</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe" disabled="true">
             </form>
-          </div>
+          </div> -->
 
         </div>
       </div>

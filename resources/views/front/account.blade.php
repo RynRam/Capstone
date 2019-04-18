@@ -25,7 +25,7 @@
                   <h3 class="fs-subtitle">This is step 1</h3>
                   <input type="email" name="email" placeholder="Email" required/>
                   <input type="password" name="password" placeholder="Password" required/>
-                  <input type="password" name="cpass" placeholder="Confirm Password" />
+                  <input type="password" name="cpass" placeholder="Confirm Password" required/>
                   <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>
                 <fieldset>
@@ -40,8 +40,8 @@
                 <fieldset>
                   <h2 class="fs-title">Personal Details</h2>
                   <h3 class="fs-subtitle">We will never sell it</h3>
-                  <input type="text" name="fname" placeholder="First Name" required />
-                  <input type="text" name="lname" placeholder="Last Name" required />
+                  <input type="text" name="fname" placeholder="First Name" pattern="^[a-zA-Z ]*$" required />
+                  <input type="text" name="lname" placeholder="Last Name" pattern="^[a-zA-Z ]*$" required />
                   <input type="text" name="contact" placeholder="Phone" required />
                   <textarea name="address" placeholder="Address" required></textarea>
                   <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('https://lynagailscaters.herokuapp.com/privacy&policy')">Terms and Conditions and Privacy Policy</a></u></div>
