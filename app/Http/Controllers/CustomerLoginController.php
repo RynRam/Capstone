@@ -49,7 +49,7 @@ class CustomerLoginController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-      $customer = Auth::guard('customer')->attempt(['email'=>$request->email,'password'=> $request->password,'is_verified'=>'1']);
+      $customer = Auth::guard('customer')->attempt(['email'=>strcasecmp($request->email),'password'=> $request->password,'is_verified'=>'1']);
         if($customer){
            return redirect('/');
         }else{ 

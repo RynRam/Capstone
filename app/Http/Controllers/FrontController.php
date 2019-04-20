@@ -47,10 +47,10 @@ class FrontController extends Controller
         $calendar_details = Calendar::addEvents($event_list); 
  
     	$catering = Caterings::where('event_categories_id',1)->get();
-    	$venue = Venues::where('is_active',1)->take(12)->get();
+    	$venue = Venues::where('is_active',1)->get();
     	$package = Packages::where('is_active',1)->where('event_categories_id','1')->get();
-        $food = Packages::where('is_active',1)->take(12)->get();
-        $location = Venues::where('is_active',1)->take(12)->get();
+        $food = Packages::where('is_active',1)->get();
+        $location = Venues::where('is_active',1)->get();
 
 	    return view('front.catering',compact('catering','venue','package','food','location','calendar_details'));
     }
@@ -69,9 +69,9 @@ class FrontController extends Controller
         $calendar_details = Calendar::addEvents($event_list); 
  
         $catering = Caterings::where('event_categories_id',2)->get();
-        $venue = Venues::where('is_active',1)->take(12)->get();
+        $venue = Venues::where('is_active',1)->get();
               $package = Packages::where('is_active',1)->where('event_categories_id','2')->get();
-        $location = Venues::where('is_active',1)->take(12)->get();
+        $location = Venues::where('is_active',1)->get();
         return view('front.debut',compact('catering','venue','package','location','calendar_details'));
     }
 
@@ -89,9 +89,9 @@ class FrontController extends Controller
         $calendar_details = Calendar::addEvents($event_list); 
  
         $catering = Caterings::where('event_categories_id',3)->get();
-        $venue = Venues::where('is_active',1)->take(12)->get();
+        $venue = Venues::where('is_active',1)->get();
         $package = Packages::where('is_active',1)->where('event_categories_id','3')->get();
-        $location = Venues::where('is_active',1)->take(12)->get();
+        $location = Venues::where('is_active',1)->get();
         return view('front.wedding',compact('catering','venue','package','location','calendar_details'));
     }
 

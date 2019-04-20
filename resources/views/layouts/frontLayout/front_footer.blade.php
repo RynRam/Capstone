@@ -7,10 +7,10 @@
         <div class="col-lg-4 col-md-6 footer-links">
             <h4>Site Map</h4>
             <ul>
-            <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
-              <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
+            <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
             </ul>
         </div>
 

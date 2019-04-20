@@ -303,7 +303,7 @@ li a:hover {
         <div class="stars">
             <div class="custom-navbar">
                 <div class="brand-logo">
-                    <img src="http://cavite.info/custom/domain_1/image_files/photo_379.jpg" width="80px">
+                <img src="../../images/logo2.png" width="200">
                 </div>
                 <div class="navbar-links">
                     <ul>
