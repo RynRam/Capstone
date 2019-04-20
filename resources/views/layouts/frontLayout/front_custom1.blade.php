@@ -183,33 +183,174 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
 
+ 
+  <!-- Form Venue validation -->
   <script>
-      var dateToday = new Date();
-      var dates = $("#datepicker").datepicker({
-          defaultDate: "+1w",
-          changeMonth: true,
-          numberOfMonths: 1,
-          minDate: dateToday
-      });
-</script>
-  <script>
+ 
+ $(function(){
+   $('#msform').submit(function(e) {
+     var date = $('#datepicker').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reserved",
+      data: date,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        let date = $('#datepicker').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].eventdate == date){
+            alert('Date is already reserved');
+            return false;
+          }
+          
+        }
 
-$(function() {
-
-    $('#add').on('click', function(){
-        var changed = this;
-    console.log(changed);
-        var select = $('#venue').val();
-        $('#select').append('<option value='+select+' selected>'+select+'</option>');
-
-
-
-
+      }
     });
+   });
+ });
+ 
+   </script>
+
+<!-- show price -->
+<script>
+
+$(function(){
+   $('#showPrice').click(function(e) {
+     var venue = $('#select').val();
+    //  var package = $('#package').val();
+    //  var pax =  $('#people').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reservedvenue",
+      data: venue,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        
+        let venue = $('#select').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].id == venue){
+            $('#venue_price').val(data[x].price);
+            
+          }
+          
+        }
+
+      }
+    });
+   });
+
+ });
+ 
+
+
+</script>
+
+
+<script>
+
+$(function(){
+   $('#showPrice').click(function(e) {
+    
+     var package = $('#package').val();
+     var pax =  $('#people').val();
+     var reserved =$.ajax({
+      type: "GET",
+      url: "/reservedpackage",
+      data: package,
+      cache: false,
+      datatype:'json',
+      success: function(data){
+        
+        let package = $('#package').val();
+        let pax =  $('#people').val();
+        let venue = $('#venue_price').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].id == package){
+          let data_total = (pax * data[x].price); 
+            $('#package_price').val(data_total);
+            let total_amount = parseInt(data_total) + parseInt(venue);  
+            $('#total_price').val(total_amount);
+            
+          }
+          
+        }
+
+      }
+    });
+   });
+
+ });
+ 
+
+
+</script>
+
+<!-- show price -->
+   
+<script>
+$(function(){
+  $('#msform').submit(function(e) {
+ 
+    var venue = $("select#select").find(':selected').data('capacity');
+    var pax = $('#people').val();
+    if(document.getElementById('agree').checked){
+      if (venue < pax) {
+        alert('The pax exceeds the venue limit');
+     return false;
+      }
+    }
+    else{
+      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+      console.log(venue);
+     return false;
+    }
+
+
+  });
 });
 
- 
+  </script>
+
+
+
+<!-- form datepicker -->
+<script>
+  function addDays(dateObj, numDays) {
+   dateObj.setDate(dateObj.getDate() + numDays);
+   return dateObj;
+  }
+  $(function() {
+  $("#datepicker").datepicker({ dateFormat: 'yyyy-mm-dd' });
+  });
+  var dateToday = addDays(new Date(), 7)
+  var dates = $("#datepicker").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      minDate: dateToday,
+      format: "yyyy-mm-dd"
+  });
 </script>
+<!-- /form datepicker -->
+<!-- select button add value -->
+<script>
+  $(function() {
+      $('#add').on('click', function(){
+          var changed = this;
+      console.log(changed);
+          var select = $('#venue').val();
+          $('#select').append('<option value='+ select +' selected>'+select+'</option>');
+      });
+  });
+</script>
+<!-- /select button add value -->
+<!-- captcha validate -->
 <script>
   $(function(){
     $('#fillform').submit(function(event){
@@ -220,7 +361,97 @@ $(function() {
     });
   });
 </script>
+<!-- captcha validate -->
+<!-- form -->
+<script>
 
+  //jQuery time
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var left, opacity, scale; //fieldset properties which we will animate
+  var animating; //flag to prevent quick multi-click glitches
+
+  $(".next").click(function(){
+    if(animating) return false;
+    animating = true;
+    
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+    
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    
+    //show the next fieldset
+    next_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+        //2. bring next_fs from the right(50%)
+        left = (now * 50)+"%";
+        //3. increase opacity of next_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({
+          'transform': 'scale('+scale+')',
+          'position': 'relative'
+        });
+        next_fs.css({'left': left, 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  });
+
+  $(".previous").click(function(){
+    if(animating) return false;
+    animating = true;
+    
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+    
+    //de-activate current step on progressbar
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    
+    //show the previous fieldset
+    previous_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale previous_fs from 80% to 100%
+        scale = 0.8 + (1 - now) * 0.2;
+        //2. take current_fs to the right(50%) - from 0%
+        left = ((1-now) * 50)+"%";
+        //3. increase opacity of previous_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'left': left});
+        previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  });
+
+  // $(".submit").click(function(){
+  // 	return false;
+  // });
+</script> 
+<!-- /form -->
+
+  <!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
 
   
 </body>

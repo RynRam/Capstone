@@ -1378,71 +1378,38 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 auto;
   width: 100% !important;
 }
-@media only screen and (max-width : 480px) {
-
-  #recaptcha_challenge_image{
-  margin: 0 !important;
+iframe{
   width: 100% !important;
-  height: auto !important;
-  }
-  #recaptcha_response_field
-  {
-  margin: 0 !important;
-  width: 100% !important;
-  height: auto !important;
-  }
-  .recaptchatable #recaptcha_image {
-  margin: 0 !important;
-  width: 100% !important;
-  height: auto !important;
-  }
-  .recaptchatable .recaptcha_r1_c1, 
-  .recaptchatable .recaptcha_r3_c1, 
-  .recaptchatable .recaptcha_r3_c2, 
-  .recaptchatable .recaptcha_r7_c1, 
-  .recaptchatable .recaptcha_r8_c1, 
-  .recaptchatable .recaptcha_r3_c3, 
-  .recaptchatable .recaptcha_r2_c1, 
-  .recaptchatable .recaptcha_r4_c1, 
-  .recaptchatable .recaptcha_r4_c2, 
-  .recaptchatable .recaptcha_r4_c4, 
-  .recaptchatable .recaptcha_image_cell {
-
-  margin: 0 !important;
-  width: 100% !important;
-  background: none !important;
-  height: auto !important;
-  }
-
 }
 
+
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:none;
   }
 }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:none;
   }
 }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:none;
   }
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:block !important;
   }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:block !important;
   }
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ 
-  .menu-has-children> a> .menu-has-children{
+  #mobile-nav ul .menu-has-children i.ion-ios-contact{
     display:block !important;
   }
 }
