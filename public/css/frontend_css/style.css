@@ -1376,10 +1376,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .g-recaptcha div{
   margin: 0 auto;
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
   width: 100% !important;
 }
-iframe{
-  width: 100% !important;
+.container {
+  /* max-width: 300px;
+  background: #ccc;
+  padding: 20px; */
 }
 
 
