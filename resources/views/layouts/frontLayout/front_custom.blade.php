@@ -451,40 +451,15 @@ $(function(){
 <!-- /form -->
 
 <script>
-// Resize reCAPTCHA to fit width of container
-// Since it has a fixed width, we're scaling
-// using CSS3 transforms
-// ------------------------------------------
-// captchaScale = containerWidth / elementWidth
-
-function scaleCaptcha(elementWidth) {
-  // Width of the reCAPTCHA element, in pixels
-  var reCaptchaWidth = 304;
-  // Get the containing element's width
-	var containerWidth = $('.container').width();
-  
-  // Only scale the reCAPTCHA if it won't fit
-  // inside the container
-  if(reCaptchaWidth > containerWidth) {
-    // Calculate the scale
-    var captchaScale = containerWidth / reCaptchaWidth;
-    // Apply the transformation
-    $('.g-recaptcha').css({
-      'transform':'scale('+captchaScale+')'
-    });
-  }
+var width = $('.g-recaptcha').parent().width();
+if (width < 302) {
+	var scale = width / 302;
+	$('.g-recaptcha').css('transform', 'scale(' + scale + ')');
+	$('.g-recaptcha').css('-webkit-transform', 'scale(' + scale + ')');
+	$('.g-recaptcha').css('transform-origin', '0 0');
+	$('.g-recaptcha').css('-webkit-transform-origin', '0 0');
 }
-
-$(function() { 
- 
-  // Initialize scaling
-  scaleCaptcha();
-  
-  // Update scaling on window resize
-  // Uses jQuery throttle plugin to limit strain on the browser
-  $(window).resize( $.throttle( 100, scaleCaptcha ) );
-  
-});</script>
+</script>
   <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
