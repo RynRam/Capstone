@@ -143,7 +143,7 @@ class UserController extends Controller
            'role' => 'required|in:admin,reservation,sales,logistics,hr,venue,account,audit', 
         ]);
         $users->name = $request->name;
-        $users->email = $request->email;
+        $users->email = strtolower($request->email);
         $users->role_id = $request->role;
         $users->password = bcrypt($request->password);
         $users->save();

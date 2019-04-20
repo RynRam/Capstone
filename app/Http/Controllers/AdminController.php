@@ -24,12 +24,12 @@ class AdminController extends Controller
     	
 
         if(Auth::attempt([
-            'email' => $request->email,
+            'email' => strtolower($request->email),
             'password' => $request->password,
             'is_active' => 1,
         ]))
         {
-            $user = User::where('email', $request->email)->first();
+            $user = User::where('email', strtolower($request->email))->first();
             if ($user->role('admin')) {
                return redirect('/admin/dashboard');
             }else if ($user->role('venue')) {

@@ -41,7 +41,7 @@ class CustomerProfileController extends Controller
             $customer->fname = $request->fname;
             $customer->contact = $request->contact;
             $customer->address = $request->address;
-            $customer->email = $request->email;
+            $customer->email = strtolower($request->email);
             $customer->facebook = $request->facebook;
             $customer->twitter = $request->twitter;
             $customer->gplus = $request->gplus;
