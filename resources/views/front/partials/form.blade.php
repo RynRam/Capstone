@@ -54,7 +54,7 @@
           @if (Auth::guard('customer')->guest())
           <a href="/customer-login"><input type="button" name="next" class="next action-button" value="Next" /></a>
                 @else
-                <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU" style="transform:scale(0.50);-webkit-transform:scale(0.50);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                <div class="g-recaptcha text-center" data-sitekey="6LdhPIEUAAAAAN3qHnV06dwg_INJOBAb_wb3trjU" style="transform:scale(0.70);-webkit-transform:scale(0.70);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
                 <input type="button" name="next" class="next action-button" value="Next" id="showPrice"/> 
                 @endif
          
