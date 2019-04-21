@@ -17,6 +17,7 @@
         <ul>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/post"><i class="icon icon-pencil "></i> <span>Blogs</span><span class="label label-important"></span></a> </li>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/discount"><i class="icon icon-info-sign"></i> <span>Discounts</span> <span class="label label-important"></span></a></li>
+        <li> <a href="https://lynagailscaters.herokuapp.com/admin/feedback"><i class="icon icon-info-sign"></i> <span>Feedbacks</span> <span class="label label-important"></span></a></li>
         </ul>
   </li>
   <li><a href="https://lynagailscaters.herokuapp.com/admin/reservation"><i class="icon icon-flag"></i> <span>Reservations</span></a></li>
@@ -55,9 +56,10 @@
         <ul>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/post"><i class="icon icon-pencil "></i> <span>Blogs</span><span class="label label-important"></span></a> </li>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/discount"><i class="icon icon-info-sign"></i> <span>Discounts</span> <span class="label label-important"></span></a></li>
+        <li> <a href="https://lynagailscaters.herokuapp.com/admin/feedback"><i class="icon icon-info-sign"></i> <span>Feedbacks</span> <span class="label label-important"></span></a></li>
         </ul>
   </li>
-  <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory</span></a>
+  <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory</span><span class="label label-important">{{$alert}}</span></a>
       <ul>
       <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory"><i class="icon icon-inbox"></i> <span>Inventory Module</span></a></li>
       <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/inventory">Reports</a>
@@ -66,11 +68,11 @@
           <li ><a onclick="window.open('https://lynagailscaters.herokuapp.com/admin/InventoryDefect')" ><i class="icon icon-file"></i> <span>Defect Report</span></a></li>
         </ul>
       </li>
-      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-category"><i class="icon icon-inbox"></i> <span>Inventory Category</span></a></li>
+      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-critical"><i class="icon icon-map-marker"></i> <span>Critical Stocks Module</span> <span class="label label-important">{{$alert}}</span></a></li>
+      <li><a href="https://lynagailscaters.herokuapp.com/admin/inventory-category"><i class="icon icon-inbox"></i> <span>Inventory Category Module</span></a></li>
       <li><a href="https://lynagailscaters.herokuapp.com/admin/warehouse"><i class="icon icon-map-marker"></i> <span>Stock Room Module</span></a></li>
     </ul>
   </li>
- 
          @endif
       
 
@@ -80,6 +82,7 @@
         <ul>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/post"><i class="icon icon-pencil "></i> <span>Blogs</span><span class="label label-important"></span></a> </li>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/discount"><i class="icon icon-info-sign"></i> <span>Discounts</span> <span class="label label-important"></span></a></li>
+        <li> <a href="https://lynagailscaters.herokuapp.com/admin/feedback"><i class="icon icon-info-sign"></i> <span>Feedbacks</span> <span class="label label-important"></span></a></li>
         </ul>
   </li>
   <li><a href="https://lynagailscaters.herokuapp.com/admin/reservation"><i class="icon icon-flag"></i> <span>Reservations</span></a></li>
@@ -93,11 +96,13 @@
         <ul>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/post"><i class="icon icon-pencil "></i> <span>Blogs</span><span class="label label-important"></span></a> </li>
         <li> <a href="https://lynagailscaters.herokuapp.com/admin/discount"><i class="icon icon-info-sign"></i> <span>Discounts</span> <span class="label label-important"></span></a></li>
+        <li> <a href="https://lynagailscaters.herokuapp.com/admin/feedback"><i class="icon icon-info-sign"></i> <span>Feedbacks</span> <span class="label label-important"></span></a></li>
         </ul>
   </li>
   <li class="submenu"><a href="https://lynagailscaters.herokuapp.com/admin/manpower"><i class="icon icon-sitemap"></i> <span>Manpower</span></a>
     <ul>
       <li ><a href="https://lynagailscaters.herokuapp.com/admin/manpower"><i class="icon icon-th"></i> <span>Manpower</span></a></li>
+      <li ><a href="https://lynagailscaters.herokuapp.com/admin/manpowerroles"><i class="icon icon-th"></i> <span>Manpower Roles</span></a></li>
       <li ><a onclick="window.open('https://lynagailscaters.herokuapp.com/admin/manpowerReserve1pdf')" ><i class="icon icon-file"></i> <span>Assign 1 Report</span></a></li>
       <li ><a onclick="window.open('https://lynagailscaters.herokuapp.com/admin/manpowerReserve2pdf')" ><i class="icon icon-file"></i> <span>Assign 2 Report</span></a></li>
     </ul>
