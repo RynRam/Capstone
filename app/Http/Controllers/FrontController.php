@@ -32,7 +32,7 @@ class FrontController extends Controller
     public function getIndex(){
        $discounts = Discounts::where('is_active',1)->get();
        $feedbacks = Feedbacks::where('is_active',1)->get();
-	    return view('front.home',compact('discounts','feebacks'));
+	    return view('front.home',compact('discounts','feedbacks'));
     }
     public function getCatering(){
         $events= Reservations::where('is_approved',1)->get();
