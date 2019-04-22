@@ -45,7 +45,7 @@
                 <form action="{{ action('FeedbackController@updateStatus', $feedback->id) }}" class="form-group" style="display: -webkit-inline-box;" method="post">
                 {{method_field('Patch')}}{{csrf_field()}}
                 <button class="btn btn-success btn-sm" name="updateFood">Update</button>
-              </form> |
+              </form> 
             </td> 
                 </tr>
 

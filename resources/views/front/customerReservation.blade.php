@@ -15,7 +15,6 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Category</th>
                     <th scope="col">Venue</th>
                     <th scope="col">Package</th>
@@ -28,7 +27,6 @@
                 <tbody>
                 @foreach($customers as $customer)
                     <tr>
-                    <td>{{$customer->id}}</td>
                     <td>{{$customer->category->name}} </td>
                     <td>{{$customer->venue->name}}</td>
                     <td>{{$customer->package->name}}</td>

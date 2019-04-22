@@ -81,8 +81,8 @@
 
 
 
-	Route::get('/admin/dashboard', 'AdminController@dashboard')->middleware('auth');
-	Route::get('/admin/settings', 'AdminController@settings')->middleware('auth');
+	Route::get('/admin/dashboard', 'AdminController@dashboard')->middleware('admincontentauth');
+	Route::get('/admin/settings', 'AdminController@settings')->middleware('admincontentauth');
 	//CMS
 	Route::resource('/admin/post','CMSController');
 
@@ -178,4 +178,4 @@
 	//Customer
 	Route::resource('/admin/customers','AdminCustomerController');
 	Route::get('/admin/customerspdf','AdminCustomerController@pdf');
-Route::get('/logout', 'AdminController@logout')->middleware('auth');
+Route::get('/logout', 'AdminController@logout')->middleware('admincontentauth');

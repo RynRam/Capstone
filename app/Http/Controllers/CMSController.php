@@ -9,9 +9,9 @@ use Auth;
 use App\Inventory;
 class CMSController extends Controller
 {
-     public function __construct()
+    public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admincontentauth');
     }
        
     /**

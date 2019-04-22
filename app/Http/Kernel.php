@@ -78,5 +78,6 @@ class Kernel extends HttpKernel
         'customerauth' => \App\Http\Middleware\AuthCustomerLogin::class, 
         'customerprofileauth' => \App\Http\Middleware\AuthCustomerProfile::class, 
         'adminauth' => \App\Http\Middleware\AuthAdminLogin::class,
+        'admincontentauth' => \App\Http\Middleware\AuthAdminContent::class, 
     ];
 }

@@ -9,6 +9,10 @@ use Auth;
 use App\Inventory;
 class FeedbackController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admincontentauth');
+    }
     /**
      * Display a listing of the resource.
      *

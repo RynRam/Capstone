@@ -12,7 +12,7 @@ class UserController extends Controller
 {
          public function __construct()
     {
-        $this->middleware('account');
+        $this->middleware('admin');
 
        
     }

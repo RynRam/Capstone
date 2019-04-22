@@ -306,7 +306,15 @@
 
             </p>
           </div>
-
+          @foreach($feedbacks as $feedback)
+          <div class="testimonial-item">
+            <h3>{{$feedback->name}}</h3>
+            <h4>Client</h4>
+            <p>
+            {{$feedback->feedback}}
+            </p>
+          </div>
+          @endforeach
         </div>
 
       </div>
