@@ -197,13 +197,13 @@
       cache: false,
       datatype:'json',
       success: function(data){
-        let date = $('#datepicker').val();
+        var date = $('#datepicker').val();
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
             
-        alert("Date is already reserved");
-        return false;
+        swal("Date is already reserved", "", "error");
+        e.preventDefault();
           }
           
         }
