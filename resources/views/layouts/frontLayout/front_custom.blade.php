@@ -200,8 +200,18 @@
       cache: false,
       datatype:'json',
       success: function(data){
-        alert(data);
-        alert(reserved);
+         alert(data.eventdate);
+        let date = $('#datepicker').val();
+       
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].eventdate == date){
+
+            swal("Date is already reserved", "", "error");
+            e.preventDefault();
+
+          }
+          
+        }
 
       }
     });
