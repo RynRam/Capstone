@@ -188,7 +188,7 @@
   <script>
  
  $(function(){
-   $('#msform').submit(function(e) {
+   $('#msform').on('submit',function(e) {
      var date = $('#datepicker').val();
      var reserved =$.ajax({
       type: "GET",
