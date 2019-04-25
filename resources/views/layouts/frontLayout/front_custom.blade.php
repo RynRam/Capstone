@@ -208,13 +208,14 @@
             swal("Date is already reserved", "", "error");
       
             return false;
+            e.preventDefault();
           }
           
         }
-
+        e.preventDefault();
       }
     });
-   e.preventDefault();
+
    });
  });
  
