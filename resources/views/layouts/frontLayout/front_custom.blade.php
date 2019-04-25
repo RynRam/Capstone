@@ -206,7 +206,7 @@
           if(data[x].eventdate <= date){
 
             swal("Date is already reserved", "", "error");
-            e.preventDefault();
+      
             return false;
           }
           
@@ -214,7 +214,7 @@
 
       }
     });
-
+   e.preventDefault();
    });
  });
  
