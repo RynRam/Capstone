@@ -5,7 +5,7 @@
   	  <section id="form">
         <div class="container">
           <header class="section-header wow fadeInUp" style="padding-top: 45px;">
-            <h3 style="color:#fff;">Login Form</h3>
+            <h3 style="color:#fff;">Customer Feedback</h3>
             <p>It’s easy, just fill up the form below with the necessary details</p>
           </header>         
             <form id="msform" action="{{action('FrontController@feedback')}}" method="post" role="form" >
@@ -18,8 +18,11 @@
                     {{ session('status') }}
                    @endif
                    </h3>
+                   @if (Auth::guard('customer')->guest())
+                   <input type="text" name="name" placeholder="Full Name" required/>
+                   @else 
                   <input type="hidden" name="name" value="{{Auth::guard('customer')->user()->fname}} {{Auth::guard('customer')->user()->lname}}" required/>
-                  
+                  @endif
                   <label for="feedback">Feedback:</label>
                 <textarea class="form-control" rows="5" id="feeback" name="feedback"  required></textarea>
 

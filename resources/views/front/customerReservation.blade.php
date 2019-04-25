@@ -10,7 +10,7 @@
           </header>         
             <form id="msform" role="form" >
 
-                <fieldset>
+                <fieldset style="overflow-x: auto;scroll-behavior: smooth;">
 
                 <table class="table table-bordered">
                 <thead>

@@ -36,7 +36,7 @@
             <div class="carousel-background"><img src="../../images/frontend_images/Wedding.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Debuts</h2>
+                <h2>Debut Caterings</h2>
                 <p>The debut is a traditional Filipino coming-of-age celebration which celebrates a young woman's 18th birthday, the age of maturity in the Philippines. Although also reaching legal maturity at 18, a Filipino man may mark his own debut on his 21st birthday, albeit with less formal celebrations or none at all.</p>
                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
               </div>
@@ -47,7 +47,7 @@
             <div class="carousel-background"><img src="../../images/frontend_images/post2.jpg" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2>Weddings</h2>
+                <h2>Wedding Caterings</h2>
                 <p>A wedding is a ceremony where two people are united in marriage.Special wedding garments are often worn, and the ceremony is sometimes followed by a wedding reception. Music, poetry, prayers or readings from religious texts or literature are also commonly incorporated into the ceremony.</p>
                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
               </div>
@@ -179,11 +179,11 @@
               <figure>
                 <img src="../../images/frontend_images/weddingfirst.jpg" class="img-fluid" alt="">
                 <a href="../../images/frontend_images/weddingfirst.jpg" class="link-preview" data-lightbox="services" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="https://lynagailscaters.herokuapp.com/basic-catering" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                <a href="https://lynagailscaters.herokuapp.com/wedding" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
               </figure>
 
               <div class="services-info">
-                <h4><a href="https://lynagailscaters.herokuapp.com/basic-catering">Wedding</a></h4>
+                <h4><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></h4>
                 <p>Details</p>
               </div>
             </div>

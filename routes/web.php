@@ -32,12 +32,12 @@
 	Route::get('/blog', 'FrontController@blog');
 	Route::get('/terms&condition', 'FrontController@terms');
 	Route::get('/privacy&policy', 'FrontController@privacy');
-	Route::get('/receipt', 'FrontController@receipt');
-	Route::get('/receipt/report', 'FrontController@report');
+	Route::get('/receipt', 'FrontController@receipt')->middleware('customerprofileauth');
+	Route::get('/receipt/report', 'FrontController@report')->middleware('customerprofileauth');
 	Route::get('/reserved', 'FrontController@reserved');
 	Route::get('/reservedpackage', 'FrontController@reservedpackage');
 	Route::get('/reservedvenue', 'FrontController@reservedvenue');
-	Route::get('/my-events','CustomerReservedController@index');
+	Route::get('/my-events','CustomerReservedController@index')->middleware('customerprofileauth');
 
 		//Customer Account
 	Route::resource('/customer-register','CustomerRegisterController');

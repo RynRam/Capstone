@@ -177,7 +177,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.5/isotope.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Template Main Javascript File -->
   <script src="https://lynagailscaters.herokuapp.com/js/frontend_js/main.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
@@ -201,7 +201,8 @@
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
-            alert('Date is already reserved');
+            
+        swal("Date is already reserved'", "", "error");
             return false;
           }
           
@@ -293,6 +294,7 @@ $(function(){
 
 <!-- show price -->
    
+   
 <script>
 $(function(){
   $('#msform').submit(function(e) {
@@ -301,12 +303,13 @@ $(function(){
     var pax = $('#people').val();
     if(document.getElementById('agree').checked){
       if (venue < pax) {
-        alert('The pax exceeds the venue limit');
+        swal("The pax exceeds the venue limit", "", "error");
+      
      return false;
       }
     }
     else{
-      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+      swal("Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy", "", "warning");
       console.log(venue);
      return false;
     }

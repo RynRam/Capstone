@@ -179,6 +179,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.5/isotope.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="https://lynagailscaters.herokuapp.com/js/frontend_js/main.js"></script>
@@ -202,7 +203,8 @@
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
-            alert('Date is already reserved');
+            
+        swal("Date is already reserved'", "", "error");
             return false;
           }
           
@@ -302,12 +304,13 @@ $(function(){
     var pax = $('#people').val();
     if(document.getElementById('agree').checked){
       if (venue < pax) {
-        alert('The pax exceeds the venue limit');
+        swal("The pax exceeds the venue limit", "", "error");
+      
      return false;
       }
     }
     else{
-      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');
+      swal("Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy", "", "warning");
       console.log(venue);
      return false;
     }
