@@ -204,8 +204,10 @@
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
             
-        swal("Date is already reserved'", "", "error");
+        alert("Date is already reserved");
             return false;
+          }else{
+            return true;
           }
           
         }
