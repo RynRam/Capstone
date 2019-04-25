@@ -191,6 +191,7 @@
  
  $(function(){
    $('#msform').submit(function(e) {
+    e.preventDefault();
      var date = $('#datepicker').val();
      var reserved =$.ajax({
       type: "GET",
@@ -203,15 +204,17 @@
        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate <= date){
-            
+            e.preventDefault();
             swal("Date is already reserved", "", "error");
-          return false;
+            e.preventDefault();
+            return false;
           }
           
         }
 
       }
     });
+   e.preventDefault();
    });
  });
  
