@@ -71,7 +71,7 @@
             <label for="total_price" class="col-form-label">Total Amount:</label>
             <input type="number" class="form-control" id="total_price" name="total_price"  readonly> 
             </div>
-            <div><input type="submit" name="submitCater" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
+            <div><input type="submit" name="submit" value="Paypal Pay Now" class="action-button submit" style="background:#0070ba;width:200px;"></div>
             <div><input type="checkbox" name="checkbox" value="check" id="agree"  style="width:auto;"/> I have read and agree to the <u><a onclick="window.open('https://lynagailscaters.herokuapp.com/terms&condition')">Terms and Conditions and Privacy Policy</a></u></div>
             <input type="button" name="previous" class="previous action-button" value="Previous" /> 
             

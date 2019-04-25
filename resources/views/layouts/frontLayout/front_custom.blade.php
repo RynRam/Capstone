@@ -190,8 +190,8 @@
   <script>
  
  $(function(){
-   $('.submitCater').click(function(e) {
-    e.preventDefault();
+   $('.submit').submit(function(e) {
+
      var date = $('#datepicker').val();
      var reserved =$.ajax({
       type: "GET",
@@ -202,17 +202,15 @@
       success: function(data){
         let date = $('#datepicker').val();
        
-        swal($reserved, data, "error");
-        // for (let x = 0; x < data.length; x++) {
-        //   if(data[x].eventdate == date){
+        for (let x = 0; x < data.length; x++) {
+          if(data[x].eventdate == date){
 
-        //     swal($reserved, "", "error");
-      
-        //     return false;
+            swal("Date is already reserved", "", "error");
+            e.preventDefault();
 
-        //   }
+          }
           
-        // }
+        }
 
       }
     });
