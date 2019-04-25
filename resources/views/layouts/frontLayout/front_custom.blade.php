@@ -202,10 +202,10 @@
         let date = $('#datepicker').val();
        
         for (let x = 0; x < data.length; x++) {
-          if(data[x].eventdate == date){
+          if(data[x].eventdate <= date){
             
-        swal("Date is already reserved", "", "error");
-        e.preventDefault();
+            swal("Date is already reserved", "", "error");
+          return false;
           }
           
         }

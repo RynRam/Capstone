@@ -188,7 +188,7 @@
   <script>
  
  $(function(){
-   $('#msform').on('submit',function(e) {
+   $('#msform').submit(function(e) {
      var date = $('#datepicker').val();
      var reserved =$.ajax({
       type: "GET",
@@ -200,10 +200,9 @@
         var date = $('#datepicker').val();
        
         for (let x = 0; x < data.length; x++) {
-          if(data[x].eventdate == date){
-            
+          if(data[x].eventdate <= date){
         swal("Date is already reserved", "", "error");
-        e.preventDefault();
+        return false;
           }
           
         }
@@ -360,6 +359,7 @@ $(function(){
       var verified = grecaptcha.getResponse();
       if(verified.length === 0){
         event.preventDefault();
+        swal("Please select the recaptcha box", "", "warning");
       } 
     });
   });
