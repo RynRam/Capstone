@@ -190,7 +190,7 @@
   <script>
  
  $(function(){
-   $('.submit').submit(function(e) {
+   $('#msform').submit(function(e) {
 
      var date = $('#datepicker').val();
      var reserved =$.ajax({
@@ -200,17 +200,8 @@
       cache: false,
       datatype:'json',
       success: function(data){
-        let date = $('#datepicker').val();
-       
-        for (let x = 0; x < data.length; x++) {
-          if(data[x].eventdate == date){
-
-            swal("Date is already reserved", "", "error");
-            e.preventDefault();
-
-          }
-          
-        }
+        alert(data);
+        alert(reserved);
 
       }
     });
