@@ -203,7 +203,9 @@
           if(data[x].eventdate == date){
             
         swal("Date is already reserved'", "", "error");
-            return false;
+        return false;
+          }else{
+        return true;
           }
           
         }
