@@ -191,7 +191,7 @@
   <script>
  
  $(function(){
-   $('#msform').submit(function(e) {
+   $('#msform').bind('submit',function(e) {
      var date = $('#datepicker').val();
      var reserved =$.ajax({
       type: "GET",
@@ -201,11 +201,11 @@
       datatype:'json',
       success: function(data){
         var date = $('#datepicker').val();
-       
+        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
         swal("Date is already reserved", "", "error");
-        return false;
+        e.preventDefault();
           }
           
         }
