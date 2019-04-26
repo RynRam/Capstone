@@ -191,7 +191,7 @@
   <script>
  
  $(function(){
-   $('#msform').submit(function(e) {
+   $('#msform').bind('submit'. function(e) {
      var date = $('#datepicker').val();
      var valid = true;
      var reserved =$.ajax({
@@ -213,7 +213,9 @@
 
       }
     });
-    return valid;
+    if(!valid){
+      e.preventDefault();
+    }
    });
  });
  
