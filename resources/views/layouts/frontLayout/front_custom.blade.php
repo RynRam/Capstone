@@ -206,19 +206,14 @@
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
         swal("Date is already reserved", "", "error");
-        var valid = false;
-        return valid;
-          }else{
-            return valid;
+            valid = false;
           }
           
         }
 
       }
     });
-    if(valid == false){
-      e.preventDefault();
-    }
+    return valid;
    });
  });
  
