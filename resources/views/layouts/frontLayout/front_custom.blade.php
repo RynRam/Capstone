@@ -191,7 +191,7 @@
   <script>
  
  $(function(){
-   $('form').submit(function(e) {
+   $('#msform').submit(function(e) {
 
     e.preventDefault();
     var valid = true;
