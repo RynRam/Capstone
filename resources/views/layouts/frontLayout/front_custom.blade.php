@@ -187,15 +187,12 @@
   <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
 
   <!-- Form Venue validation -->
-  <!-- Form Venue validation -->
-  <script>
+    <script>
  
  $(function(){
    $('#msform').submit(function(e) {
-
-    e.preventDefault();
-    var valid = true;
      var date = $('#datepicker').val();
+     var form = this;
      var reserved =$.ajax({
       type: "GET",
       url: "/reserved",
@@ -204,18 +201,18 @@
       datatype:'json',
       success: function(data){
         var date = $('#datepicker').val();
+        
         for (let x = 0; x < data.length; x++) {
           if(data[x].eventdate == date){
         swal("Date is already reserved", "", "error");
-        valid = false;
+         form.submit();
           }
+          
         }
 
       }
     });
-    if (valid) {
-      this.submit();
-    }
+    return false;
    });
  });
  
