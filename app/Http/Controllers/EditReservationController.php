@@ -98,7 +98,7 @@ class EditReservationController extends Controller
         $reservation = Reservations::find($id); 
 
         $reservation->package_id = $request->package;
-        return $reservation->package_id->package->price;
+        return $reservation->package->price;
         // $reservation->category_id =  $request->category;
         // $reservation->venues_id = $request->venuename;
         // $reservation->guest =  intval($request->people);
