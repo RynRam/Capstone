@@ -97,9 +97,6 @@ class EditReservationController extends Controller
 
         $reservation = Reservations::find($id); 
 
-        $this->validate($request,[
-        'name' => 'required',
-        ]);
         $reservation->package_id = $request->package;
         return $reservation->package_id->price;
         // $reservation->category_id =  $request->category;
