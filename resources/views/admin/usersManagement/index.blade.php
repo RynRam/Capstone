@@ -52,7 +52,7 @@
             </td>
                 </tr>
                         <!-- edit -->
-              <div class="modal fade" id="reserve_edit{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="reserve_edit{{$user->id}}"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -66,7 +66,7 @@
                             {{method_field('patch')}}{{csrf_field()}}          
                             <div class="form-group" style="width: 250px;">
                               <label for="role">Select Role:</label>
-                              <select name="role" class="form-control d-block" style="display:block;" >
+                              <select name="role" class="form-control d-block" >
                                     <option value="{{$user->role_id}}">{{$user->role_id}}</option>
                                     <option value="admin">Admin</option>
                                     <option value="reservation">Reservation</option>
