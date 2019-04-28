@@ -117,7 +117,7 @@
 	Route::get('/admin/reservationseventdatepdf','ReservationController@eventdatepdf');
 	// Route::get('/admin/reserveDatePDF','ReservationController@reserveDatePDF');
 	Route::put('/admin/reservation/{reservation}', 'ReservationController@updateStatus');
-
+	Route::resource('/admin/editreservation','EditReservationController');
 
 	//Food Package
 	Route::resource('/admin/food','FoodController');
