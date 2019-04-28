@@ -82,7 +82,7 @@ class EditReservationController extends Controller
 
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
 
-        return view('admin.reservation.edit',compact('caterings','package','venue','alert','venueId','packageId','categoryId','reserveId'));
+        return view('admin.reservation.edit',compact('catering','package','venue','alert','venueId','packageId','categoryId','reserveId'));
     }
 
     /**
