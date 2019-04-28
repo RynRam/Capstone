@@ -48,14 +48,14 @@
         <ul class="nav-menu">
           <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           <li><a href="#form">Fill Up</a></li>
-          <li class="menu-has-children"><a href="#services">Services</a>
+          <li class="menu-has-children">Services
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
             </ul>
           </li>
-          <li class="menu-has-children"><a href="#">Packages</a>
+          <li class="menu-has-children">Packages
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringB">Catering Package B</a></li>
@@ -77,7 +77,7 @@
             </ul>
           </li>
          @else
-          <li class="menu-has-children"><a href=""><i class="ion-ios-contact" style="position:relative !important;"></i>  {{ Auth::guard('customer')->user()->fname }} </a>
+          <li class="menu-has-children"><i class="ion-ios-contact" style="position:relative !important;"></i>  {{ Auth::guard('customer')->user()->fname }} 
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>
             <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>
@@ -113,8 +113,8 @@
             <h4>Site Map</h4>
             <ul>
             <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
-              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
-              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/debut">Debut Catering</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding Catering</a></li>
               <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
             </ul>
         </div>
@@ -128,7 +128,6 @@
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/terms&condition">Terms & Conditions</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/feedback">Feedbacks</a></li>
-
             </ul>
           </div>
 

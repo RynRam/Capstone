@@ -53,14 +53,14 @@
           <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           </li>
          @if (Auth::guard('customer')->guest())
-          <li class="menu-has-children"><a href="">Account</a>
+          <li class="menu-has-children">Account
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-register">Register</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-login">Login</a></li>
             </ul>
           </li>
          @else
-         <li class="menu-has-children"><a href=""><i class="ion-ios-contact" style="position:relative !important;" ></i>  {{ Auth::guard('customer')->user()->fname }} </a>
+         <li class="menu-has-children"><i class="ion-ios-contact" style="position:relative !important;" ></i>  {{ Auth::guard('customer')->user()->fname }} 
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>
          <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>

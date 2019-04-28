@@ -12,7 +12,7 @@
             <form id="msform" action="{{ route('customer.password.email') }}" method="post" role="form" >
 	              {{csrf_field()}}
                 <!-- fieldsets -->
-                <fieldset>
+                <fieldset style="color:#fff;">
                   <h2 class="fs-title">Forgot your account?</h2>
                   <h3 class="fs-subtitle">  
                   @if (session('status'))

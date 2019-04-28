@@ -4,7 +4,7 @@
   <div id="content-header">
   <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Sales</a> </div>
   <h1>Sales Reports<a onclick="window.open('/admin/salespdf')" class="btn btn-danger" style="float:right; margin-right: 50px;">Convert to PDF</a></h1>
-<div class="container-fluid" style="position: relative;overflow: auto;overflow-x: visible;">
+<div class="container-fluid" style="position: relative;">
     <hr>
   
     <!-- As Date -->
@@ -36,16 +36,16 @@
  
     <div class="row-fluid">
       <div class="span12">
-        <div class="widget-box" style="overflow-x:auto;">
+        <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Sales Table</h5>
 
           </div>
-          <div class="widget-content nopadding">
+          <div class="widget-content nopadding" style="overflow-x:auto;">
             <table class="table table-bordered data-table">
               <thead>
                 <tr>
-                  <th>Customer ID</th>
+                  <th>Customer</th>
                   <th>Event</th>
                   <th>Payment</th>          
                   <th>Balance</th>
@@ -58,7 +58,7 @@
 
                 @foreach($payments as $payment)
                 <tr class="gradeX">
-              <td> {{ucfirst($payment->reservation->customer->id)}}</td>
+              <td> {{ucfirst($payment->reservation->customer->fname)}} {{ucfirst($payment->reservation->customer->Lname)}}</td>
               <td>{{$payment->reservation->category->name}}</td>
               <td>{{$payment->amount_payment}}</td>
               <td>{{$payment->balance}}</td>

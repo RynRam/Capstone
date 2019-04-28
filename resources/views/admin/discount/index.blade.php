@@ -6,19 +6,19 @@
     <h1>DISCOUNTS</h1>
 
   </div>
-  <div class="container-fluid" style="position: relative;overflow: auto;overflow-x: visible;">
+  <div class="container-fluid" style="position: relative;">
     <hr>
     <!-- Basic Catering -->
      <a href="{{'/admin/discount/create'}}"><button class="btn btn-success">Add Discount +</button></a>
 
     <div class="row-fluid">
       <div class="span12">
-        <div class="widget-box" style="overflow-x:auto;">
+        <div class="widget-box">
           <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Discount Table</h5>
 
           </div>
-          <div class="widget-content nopadding">
+          <div class="widget-content nopadding" style="overflow-x:auto;">
             <table class="table table-bordered data-table">
               <thead>
                 <tr>
