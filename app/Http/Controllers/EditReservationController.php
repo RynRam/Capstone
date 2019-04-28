@@ -79,9 +79,9 @@ class EditReservationController extends Controller
         $venue = Venues::where('is_active',1)->get();
         
 
-        $venueId = Venues::find($id);
-        $packageId = Packages::find($id);
-        $cateringId = Caterings::find($id);
+        $venueId = Reservations::find($id)->venue;
+        $packageId = Reservations::find($id)->package;
+        $cateringId = Reservations::find($id)->category;
         $reserveId = Reservations::find($id);
  
     
