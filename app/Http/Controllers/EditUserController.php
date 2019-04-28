@@ -68,7 +68,7 @@ class EditUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $users = User::find($id);
         $users->name = $user->name;
         $users->email = strtolower($user->email);
         $users->role_id = $request->role;
