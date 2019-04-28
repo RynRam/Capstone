@@ -94,22 +94,23 @@ class EditReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $this->validate($request,[
+            'people' => 'required',
+            ]);
         $reservation = Reservations::find($id); 
-
+        $reservation->customers_id  = $reservation->customers_id ;
+        $reservation->eventdate = $reservation->eventdate;
         $reservation->package_id = $request->package;
-        return $reservation->package->price;
-        // $reservation->category_id =  $request->category;
-        // $reservation->venues_id = $request->venuename;
-        // $reservation->guest =  intval($request->people);
-        // $reservation->total = ($reservation->package_id->price);
+        $reservation->category_id =  $request->category;
+        $reservation->venues_id = $request->venuename;
+        $reservation->guest =  intval($request->people);
+        $reservation->total = ($reservation->package->price * intval($request->people)) + $reservation->venue->price ;
 
-        // $reservation->save();
+        $reservation->save();
+        return response()->redirectTo('/admin/reservation');    
 
 
 
-        
-        // return response()->redirectTo('/admin/category');
     }
 
     /**

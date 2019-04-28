@@ -8,7 +8,7 @@
   </div>
   <div class="container-fluid">
     <hr>
-		<form action="{{ action('EditReservationController@update', $reserveId->id) }}" method="POST">
+		<form action="{{ action('EditReservationController@update', $reserveId->id) }}" method="POST" id="msform">
 			  	      {{csrf_field()}}	{{method_field('PUT')}}
       		@include('admin.partials.error')
         <div class="form-group" style="width: 250px;">
@@ -38,9 +38,10 @@
             @endforeach 
             </select> 
         </div>
+        <div class="form-group">
         <label >Number of Pax :</label> 
         <input type="number" class="form-control" name="people" id="people" required="true" value="{{$reserveId->guest}}" /> 
-
+        </div>
 		  <input type="submit" value="submit" class="btn btn-success">
 		</form>
 

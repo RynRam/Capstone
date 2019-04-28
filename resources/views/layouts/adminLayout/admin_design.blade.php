@@ -132,5 +132,24 @@
  
  </script>
 
+ <script>
+$(function(){
+  $('#msform').submit(function(e) {
+ 
+    var venue = $("select#select").find(':selected').data('capacity');
+    var pax = $('#people').val();
+   
+      if (venue < pax) {
+        swal("The pax exceeds the venue limit", "", "error");
+      
+     return false;
+      }
+
+
+  });
+});
+
+  </script>
+
 </body>
 </html>
