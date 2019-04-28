@@ -16,6 +16,12 @@ use App\Inventory;
 
 class EditReservationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('reservation');
+
+       
+    }
     /**
      * Display a listing of the resource.
      *

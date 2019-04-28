@@ -52,11 +52,28 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   $('.textarea_editor').wysihtml5();
 </script>
 
+<script>
+$(function(){
+  $('#msform').submit(function(e) {
+ 
+    var venue = $("select#select").find(':selected').data('capacity');
+    var pax = $('#people').val();
+   
+      if (venue < pax) {
+        swal("The pax exceeds the venue limit", "", "error");
+     return false;
+      }
 
+
+  });
+});
+
+  </script>
 <script>
 	$(function() {
 
@@ -132,24 +149,7 @@
  
  </script>
 
- <script>
-$(function(){
-  $('#msform').submit(function(e) {
- 
-    var venue = $("select#select").find(':selected').data('capacity');
-    var pax = $('#people').val();
-   
-      if (venue < pax) {
-        swal("The pax exceeds the venue limit", "", "error");
-      
-     return false;
-      }
 
-
-  });
-});
-
-  </script>
 
 </body>
 </html>
