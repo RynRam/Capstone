@@ -137,6 +137,7 @@
 
 	//Users
 	Route::resource('/admin/user','UserController');
+	Route::resource('/admin/edituser','EditUserController');
 	Route::patch('/admin/user/{user}', 'UserController@updateStatus'); 
 
 	//Admin

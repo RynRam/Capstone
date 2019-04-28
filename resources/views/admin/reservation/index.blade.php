@@ -44,7 +44,7 @@
                 <td>{{$reservation->is_approved == 0 ? 'Cancelled' : 'Accepted'}}</td>
                 <td>{{$reservation->total}}</td>
                 <td>                
-                @if($reservation->total_paid < $reservation->total)
+                @if($reservation->total_paid < $reservation->total && $reservation->is_approved == true )
                 <a href="{{action('ReservationController@edit', $reservation->id)}}"><button class="btn btn-primary" data-toggle="modal" data-target="#reserve_edit{{$reservation->id}}" >Discount</button></a>
                 <a href="{{action('EditReservationController@edit', $reservation->id)}}" class="btn btn-info">Edit</a> 
                  <a href="{{action('PaymentController@edit', $reservation->id)}}" class="btn btn-info">Payment</a> 
@@ -57,7 +57,7 @@
                 <a  class="btn btn-danger disabled">Edit</a> 
                  <a class="btn btn-danger disabled" >Payment</a> 
                 <button class="btn btn-danger btn-sm disabled" >Update</button>
-                @elseif($reservation->is_approved == false)
+                @elseif($reservation->is_approved == 0)
                 <button class="btn btn-danger disabled">Discount</button>
                 <a  class="btn btn-danger disabled">Edit</a> 
                  <a class="btn btn-danger disabled" >Payment</a> 
