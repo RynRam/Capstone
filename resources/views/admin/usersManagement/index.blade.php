@@ -66,7 +66,7 @@
                             {{method_field('patch')}}{{csrf_field()}}          
                             <div class="form-group" style="width: 250px;">
                               <label for="role">Select Role:</label>
-                              <select name="role" class="form-control d-block" >
+                              <select name="role" class="form-control d-block" style="display:block;" >
                                     <option value="{{$user->role_id}}">{{$user->role_id}}</option>
                                     <option value="admin">Admin</option>
                                     <option value="reservation">Reservation</option>
