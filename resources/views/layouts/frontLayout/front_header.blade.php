@@ -26,7 +26,7 @@
           <li><a href="#portfolio">Catered Events</a></li> -->
           <!-- <li><a href="#feedbacks">Feedbacks</a>
           <li><a href="#contact">Contact</a></li> -->
-          <li class="menu-has-children">Package
+          <li class="menu-has-children"><a href="">Package</a>
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringB">Catering Package B</a></li>
@@ -41,7 +41,7 @@
           </li>
           <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
          @if (Auth::guard('customer')->guest())
-          <li class="menu-has-children">Account
+          <li class="menu-has-children"><a href="">Account</a>
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-register">Register</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-login">Login</a></li>
