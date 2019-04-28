@@ -75,14 +75,14 @@ class EditReservationController extends Controller
 
         $venueId = Venues::find($id);
         $packageId = Packages::find($id);
-        $categoryId = Caterings::find($id);
+        $cateringId = Caterings::find($id);
         $reserveId = Reservations::find($id);
  
     
 
         $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
 
-        return view('admin.reservation.edit',compact('catering','package','venue','alert','venueId','packageId','categoryId','reserveId'));
+        return view('admin.reservation.edit',compact('catering','package','venue','alert','venueId','packageId','cateringId','reserveId'));
     }
 
     /**
