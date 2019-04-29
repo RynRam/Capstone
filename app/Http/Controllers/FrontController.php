@@ -228,6 +228,14 @@ class FrontController extends Controller
        return $pdf->stream();
 
     }
+    public function reportlist($id){
+       
+        $pdf = \App::make('dompdf.wrapper');
+        $reservation = Reservations::find($id);
+       $pdf->loadView('front.reportlist',compact('reservation'));
+       return $pdf->stream();
+
+    }
     public function menuA(){
         $packages = Packages::select('price')->where('event_categories_id','3')->where('name','Package B')->pluck('price');
         return view('front.classA',compact('packages'));

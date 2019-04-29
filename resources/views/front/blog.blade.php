@@ -56,7 +56,7 @@
                    <li style="font-size: 17px;">Written by <i style="color:#000 !important;"> {{$post->author}} </i>| {{$post->created_at->diffForHumans() }} </li>
                 		<ul>
 
-                			<li style="font-size: 17px; color:#000 !important;"><i>"{{$post->info}}"</i></li>
+                			<li style="font-size: 17px;"><i style="color:#000 !important;">"{{$post->info}}"</i></li>
                 		</ul>
                      <li><img src="../../images/{{$post->file}}"></li>
                 	</li>

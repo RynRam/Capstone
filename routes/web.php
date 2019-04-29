@@ -34,6 +34,7 @@
 	Route::get('/privacy&policy', 'FrontController@privacy');
 	Route::get('/receipt', 'FrontController@receipt')->middleware('customerprofileauth');
 	Route::get('/receipt/report', 'FrontController@report')->middleware('customerprofileauth');
+	Route::get('/receipt/report/{id}', 'FrontController@reportlist')->middleware('customerprofileauth');
 	Route::get('/reserved', 'FrontController@reserved');
 	Route::get('/reservedpackage', 'FrontController@reservedpackage');
 	Route::get('/reservedvenue', 'FrontController@reservedvenue');

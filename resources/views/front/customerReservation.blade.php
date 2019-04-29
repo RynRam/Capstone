@@ -21,7 +21,7 @@
                     <th scope="col">Event Date</th>
                     <th scope="col">Guest</th>
                     <th scope="col">Total Amount</th>
-                 
+                    <th scope="col">Receipt</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                     <td>{{$customer->eventdate}} </td> 
                     <td>{{$customer->guest}} </td>
                     <td>{{$customer->total}} PHP</td>
-               
+                    <td> <a href="{{action('FrontController@reportlist',$customer->id)}}"><button class="btn btn-success">View</button></a> </td>
                     </tr>
                 @endforeach
                 </tbody>
