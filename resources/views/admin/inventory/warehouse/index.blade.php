@@ -9,7 +9,7 @@
     @include('admin.partials.message')
 <div class="container-fluid" style="position: relative;">
     <hr>
-     <a href="{{action('WarehouseController@create')}}"><button class="btn btn-success" data-toggle="modal" data-target="#warehouse">Add Warehouse +</button></a>
+     <a href="{{action('WarehouseController@create')}}"><button class="btn btn-success" data-toggle="modal" data-target="#warehouse">New Warehouse +</button></a>
 
     <div class="row-fluid">
       <div class="span12">

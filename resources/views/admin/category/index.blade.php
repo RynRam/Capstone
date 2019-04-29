@@ -10,7 +10,7 @@
   <div class="container-fluid" style="position: relative;">
     <hr>
     <!-- Basic Catering -->
-     <a href="{{action('CategoryController@create')}}"><button class="btn btn-success">Add Category +</button></a>
+     <a href="{{action('CategoryController@create')}}"><button class="btn btn-success">New Category +</button></a>
 
     <div class="row-fluid">
       <div class="span12">

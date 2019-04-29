@@ -9,7 +9,7 @@
     @include('admin.partials.message')
 <div class="container-fluid" style="position: relative;">
     <hr>
-     <a href="{{action('VenueController@create')}}"><button class="btn btn-success">Add Venue +</button></a>
+     <a href="{{action('VenueController@create')}}"><button class="btn btn-success">New Venue +</button></a>
 
     <div class="row-fluid">
       <div class="span12">

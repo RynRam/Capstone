@@ -9,7 +9,7 @@
     @include('admin.partials.message')
 <div class="container-fluid" style="position: relative;">
     <hr>
-     <a href="{{'/admin/inventory/create'}}"><button class="btn btn-success">Add Item +</button></a>
+     <a href="{{'/admin/inventory/create'}}"><button class="btn btn-success">New Item +</button></a>
 
     <div class="row-fluid">
       <div class="span12">

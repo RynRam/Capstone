@@ -9,7 +9,7 @@
   <div class="container-fluid" style="position: relative;">
     <hr>
     <!-- Basic Catering -->
-     <a href="{{'/admin/discount/create'}}"><button class="btn btn-success">Add Discount +</button></a>
+     <a href="{{'/admin/discount/create'}}"><button class="btn btn-success">New Discount +</button></a>
 
     <div class="row-fluid">
       <div class="span12">
