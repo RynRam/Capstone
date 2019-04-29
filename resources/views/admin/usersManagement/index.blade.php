@@ -48,43 +48,9 @@
                 {{method_field('Patch')}}{{csrf_field()}}
                 <button class="btn btn-success btn-sm">Update</button>
               </form>
-              <a href="{{action('EditUserController@edit', $user->id)}}"><button class="btn btn-primary" data-toggle="modal" data-target="#reserve_edit{{$user->id}}" >Role</button></a>
+              <a href="{{action('EditUserController@edit', $user->id)}}"><button class="btn btn-primary"  style="display: inline-flex;">Role</button></a>
             </td>
-                </tr>
-                        <!-- edit -->
-              <div class="modal fade" id="reserve_edit{{$user->id}}"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Edit Role? </h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form action="{{action('EditUserController@update', $user->id)}}" method="POST">
-                            {{method_field('patch')}}{{csrf_field()}}          
-                            <div class="form-group" style="width: 250px;">
-                              <label for="role">Select Role:</label>
-                              <select name="role" class="form-control d-block">
-                                    <option value="{{$user->role_id}}">{{ucfirst($user->role_id)}}</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="reservation">Reservation</option>
-                                    <option value="inventory">Inventory</option>
-                                    <option value="manpower">Manpower</option>
-                                </select> 
-                            </div>
-                        <div class="form-group">
-                          <input type="submit" value="SUBMIT" class="btn btn-success" style="padding: 5px;"  >
-                          </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>                      
+                </tr>              
                 @endforeach
               </tbody>
             </table>
@@ -96,4 +62,3 @@
 </div>
 
 @endsection 
-
