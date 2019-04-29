@@ -51,7 +51,6 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
-          </li>
          @if (Auth::guard('customer')->guest())
           <li class="menu-has-children"><a href="">Account</a>
             <ul>

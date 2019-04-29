@@ -8,7 +8,7 @@
  		list-style: none;
  	}
     ul li i{
-    color: #000 !important;
+    color: #fff !important;
     font-weight: 500;
     font-family: -webkit-pictograph !important;
     list-style: none;
