@@ -8,21 +8,21 @@
             <h4>Site Map</h4>
             <ul>
             <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
-              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
-              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/debut">Debut Catering</a></li>
+              <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding Catering</a></li>
               <li><i class="ion-ios-arrow-right"></i><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
             </ul>
         </div>
 
+
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Help & Support</h4>
             <ul>
-            <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com">Home</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/#about">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/terms&condition">Terms & Conditions</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/feedback">Feedbacks</a></li>
-         
             </ul>
           </div>
 
@@ -36,8 +36,8 @@
 
             <div class="social-links text-center">
               <a href="https://www.facebook.com/Lynagails-Catering-Services-313110160307/" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/lynagailscatering/" class="https://www.instagram.com/lynagailscatering/"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.pinoyprofessionals.com/Food+Services/20623/lynagails-catering" class="https://www.pinoyprofessionals.com/Food+Services/20623/lynagails-catering"><i class="fa fa-google-plus"></i></a>
+              <a href="https://www.instagram.com/lynagailscatering/" ><i class="fa fa-instagram"></i></a>
+              <a href="https://www.pinoyprofessionals.com/Food+Services/20623/lynagails-catering"><i class="fa fa-google-plus"></i></a>
         
             </div>
 

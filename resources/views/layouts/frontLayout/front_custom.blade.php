@@ -77,7 +77,7 @@
             </ul>
           </li>
          @else
-          <li class="menu-has-children"><i class="ion-ios-contact" style="position:relative !important;"></i>  {{ Auth::guard('customer')->user()->fname }} 
+          <li class="menu-has-children"><a><i class="ion-ios-contact" style="position:relative !important;"></i>  {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>
             <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>

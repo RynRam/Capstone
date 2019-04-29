@@ -11,24 +11,18 @@
       </div>
 
       <nav id="nav-menu-container">
-      
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
-          <li class="menu-has-children"><a href="#services">Services</a>
+          <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
+          <li class="menu-has-children"><a>Services</a>
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
             </ul>
           </li>
-            <!-- <li><a href="#skills">Why Us</a></li>
-            <li><a href="#about">About Us</a></li>
-          <li><a href="#portfolio">Catered Events</a></li> -->
-          <!-- <li><a href="#feedbacks">Feedbacks</a>
-          <li><a href="#contact">Contact</a></li> -->
-          <li class="menu-has-children"><a href="">Package</a>
+          <li class="menu-has-children"><a>Packages</a>
             <ul>
-              <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
+            <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringB">Catering Package B</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringC">Catering Package C</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debutA">Debut Package A</a></li>
@@ -40,31 +34,36 @@
             </ul>
           </li>
           <li><a href="https://lynagailscaters.herokuapp.com/blog">Blog</a></li>
-         @if (Auth::guard('customer')->guest())
-          <li class="menu-has-children"><a href="">Account</a>
+    @if (Auth::guard('customer')->guest())
+          <li class="menu-has-children"><a>Account<a>
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-register">Register</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/customer-login">Login</a></li>
             </ul>
           </li>
          @else
-          <li class="menu-has-children"><i class="ion-ios-contact" style="position:relative !important;"></i> {{ Auth::guard('customer')->user()->fname }} 
+          <li class="menu-has-children"><a><i class="ion-ios-contact"  style="position:relative !important;"></i>  {{ Auth::guard('customer')->user()->fname }} </a>
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/customer-profile/{{Auth::guard('customer')->user()->id}}/edit">Profile</a></li>
             <li><a href="https://lynagailscaters.herokuapp.com/my-events">My Events</a></li>
-              <li>
-                  <a href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                      Logout
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                  </form>
-              </li>
+            <li>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
             </ul>
          </li>
           @endif
+        </ul>
+      </nav>
+    </div>
+  </header>
         </ul>
 
       </nav><!-- #nav-menu-container -->
