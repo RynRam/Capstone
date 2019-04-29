@@ -75,7 +75,6 @@ class EditUserController extends Controller
         $users = User::find($id);
 
         $users->role_id = $request->role;
-        $users->password = bcrypt('secret');
         $users->save();
 
         return response()->redirectTo('/admin/user');
