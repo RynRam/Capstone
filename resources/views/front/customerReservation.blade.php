@@ -33,7 +33,7 @@
                     <td>{{$customer->eventdate}} </td> 
                     <td>{{$customer->guest}} </td>
                     <td>{{$customer->total}} PHP</td>
-                    <td> <a href="{{action('FrontController@reportlist',$customer->id)}}"><button class="btn btn-success">View</button></a> </td>
+                    <td> <a href="{{action('FrontController@reportlist',$customer->id)}}" class="btn btn-success">View</a> </td>
                     </tr>
                 @endforeach
                 </tbody>
