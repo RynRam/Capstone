@@ -85,7 +85,18 @@
                   </div>
                 </div>
               </div>                      
+              <script>
+                $(document).ready(function() {
 
+                $('#reserve_edit{{$users->id}}').on('show.bs.modal', function() {
+                  $('#select2-sample').select2();
+                })
+
+                $('#reserve_edit{{$users->id}}').on('hidden.bs.modal', function() {
+                  $('#select2-sample').select2('destroy');
+                })
+                });
+              </script>
                 @endforeach
               </tbody>
             </table>
@@ -95,19 +106,6 @@
     </div>
   </div>
 </div>
-<script>
-$(document).ready(function() {
 
-$('#reserve_edit{{$users->id}}').on('show.bs.modal', function() {
-  $('#select2-sample').select2();
-})
-
-$('#reserve_edit{{$users->id}}').on('hidden.bs.modal', function() {
-  $('#select2-sample').select2('destroy');
-})
-});
-
-
-  </script>
 @endsection 
 

@@ -53,10 +53,10 @@
                 <ul>
                 	@foreach($posts as $post)
                 	<li style="list-style: none;font-size: 23px;"><u><b>{{$post->title}}</b></u>
-                   <li style="font-size: 17px;">Written by <i> {{$post->author}} </i>| {{$post->created_at->diffForHumans() }} </li>
+                   <li style="font-size: 17px;">Written by <i style="color:#000 !important;"> {{$post->author}} </i>| {{$post->created_at->diffForHumans() }} </li>
                 		<ul>
 
-                			<li style="font-size: 17px;"><i>"{{$post->info}}"</i></li>
+                			<li style="font-size: 17px; color:#000 !important;"><i>"{{$post->info}}"</i></li>
                 		</ul>
                      <li><img src="../../images/{{$post->file}}"></li>
                 	</li>
