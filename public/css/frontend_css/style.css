@@ -1276,7 +1276,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 8px;
-  color: #ddd;
+  color: #ddd !important;
 }
 
 #footer .footer-top .footer-links ul li {
