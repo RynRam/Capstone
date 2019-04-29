@@ -57,7 +57,9 @@ class EditUserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.usersManagement.update',compact('user'));
+        $alert =Inventory::where('stock_on_hand', '<=', '80')->count();
+
+        return view('admin.usersManagement.update',compact('user','alert'));
     }
 
     /**
