@@ -69,8 +69,7 @@ class EditUserController extends Controller
     public function update(Request $request, $id)
     {
         $users = User::find($id);
-        $users->name = $users->name;
-        $users->email = strtolower($users->email);
+
         $users->role_id = $request->role;
         $users->password = "secret";
         $users->save();
