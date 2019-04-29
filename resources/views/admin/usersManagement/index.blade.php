@@ -66,7 +66,7 @@
                             {{method_field('patch')}}{{csrf_field()}}          
                             <div class="form-group" style="width: 250px;">
                               <label for="role">Select Role:</label>
-                              <select name="role" class="form-control d-block" id="select2-sample" >
+                              <select name="role" class="form-control d-block">
                                     <option value="{{$user->role_id}}">{{$user->role_id}}</option>
                                     <option value="admin">Admin</option>
                                     <option value="reservation">Reservation</option>
@@ -85,18 +85,6 @@
                   </div>
                 </div>
               </div>                      
-              <script>
-                $(document).ready(function() {
-
-                $('#reserve_edit{{$users->id}}').on('show.bs.modal', function() {
-                  $('#select2-sample').select2();
-                })
-
-                $('#reserve_edit{{$users->id}}').on('hidden.bs.modal', function() {
-                  $('#select2-sample').select2('destroy');
-                })
-                });
-              </script>
                 @endforeach
               </tbody>
             </table>

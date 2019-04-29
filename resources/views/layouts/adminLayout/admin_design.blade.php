@@ -15,7 +15,7 @@
 <link href="https://lynagailscaters.herokuapp.com/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.0/css/font-awesome.css" rel="stylesheet">
 <link href="https://lynagailscaters.herokuapp.com/css/backend_css/uniform.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/css/backend_css/select2.css" />
+
 <link rel="stylesheet" href="https://lynagailscaters.herokuapp.com/css/backend_css/bootstrap-wysihtml5.css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
@@ -43,7 +43,7 @@
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/jquery.validate.js"></script> 
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/matrix.form_validation.js"></script> 
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/jquery.uniform.js"></script> 
-<script src="https://lynagailscaters.herokuapp.com/js/backend_js/select2.min.js"></script> 
+
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/jquery.dataTables.min.js"></script> 
 <script src="https://lynagailscaters.herokuapp.com/js/backend_js/matrix.tables.js"></script>
  <script src="https://lynagailscaters.herokuapp.com/lib/lightbox/js/lightbox.min.js"></script>
