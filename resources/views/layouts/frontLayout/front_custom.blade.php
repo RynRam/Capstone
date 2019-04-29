@@ -48,14 +48,14 @@
         <ul class="nav-menu">
           <li><a href="https://lynagailscaters.herokuapp.com">Home</a></li>
           <li><a href="#form">Fill Up</a></li>
-          <li class="menu-has-children">Services
+          <li class="menu-has-children"><a href="">Services</a>
             <ul>
               <li><a href="https://lynagailscaters.herokuapp.com/basic-catering">Basic Catering</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/debut">Debut</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/wedding">Wedding</a></li>
             </ul>
           </li>
-          <li class="menu-has-children">Packages
+          <li class="menu-has-children"><a href="">Packages</a>
             <ul>
             <li><a href="https://lynagailscaters.herokuapp.com/cateringA">Catering Package A</a></li>
               <li><a href="https://lynagailscaters.herokuapp.com/cateringB">Catering Package B</a></li>
