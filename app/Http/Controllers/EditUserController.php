@@ -72,7 +72,7 @@ class EditUserController extends Controller
         $users->name = $users->name;
         $users->email = strtolower($users->email);
         $users->role_id = $request->role;
-        $users->password = bcrypt($users->password);
+        $users->password = "secret";
         $users->save();
 
         return response()->redirectTo('/admin/user');
