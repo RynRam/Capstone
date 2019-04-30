@@ -1,13 +1,8 @@
 @extends('layouts.frontLayout.front_custom1')
 @section('content')
 @include('front.partials.accountStyle')
-@if (session('alert'))
-<script>
 
-    swal("{{ session('alert') }}","","info");
 
-</script>
-@endif
 <main id="main">
   	  <section id="form">
         <div class="container">
@@ -16,7 +11,9 @@
             
           </header>         
             <form id="msform" role="form" >
-
+            @if (session('alert'))
+    {{ session('alert') }}
+    @endif
                 <fieldset>
                   <h2 class="fs-title">Official Receipt</h2>
                 
