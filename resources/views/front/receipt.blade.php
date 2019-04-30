@@ -50,7 +50,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
 @if (session('alert'))
-    swal("{{ session('alert') }}","","info");
+    swal("{{ session('alert') }}","","success");
 @endif
 </script>
 
