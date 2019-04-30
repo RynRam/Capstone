@@ -17,6 +17,12 @@
 	.section-header h3{
 		color:#fff;
 	}
+  #services{
+    position: relative;
+    padding: 40px 0;
+    background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/backend_images/Blog3.jpg) fixed center center;
+    background-size: cover;
+  }
  </style>
   <main id="main">
 <!-- about section -->

@@ -16,7 +16,7 @@
 
        <!-- test --> 
        
-       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" > 
+       <form id="msform" action="{{action('FrontController@postCatering')}}" method="post" role="form" onsubmit=" swal('Thank you!', '', 'success');" > 
        {{csrf_field()}}
         <!-- progressbar --> 
         <ul id="progressbar" style="display:none;">

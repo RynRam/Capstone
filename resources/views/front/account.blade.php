@@ -24,9 +24,9 @@
                   <h2 class="fs-title">Create your account</h2>
                   <h3 class="fs-subtitle">Use valid accounts</h3>
                   <input type="email" name="email" placeholder="Email" required/>
-                  <input type="password" name="password" placeholder="Password" required/>
-                  <input type="password" name="cpass" placeholder="Confirm Password" required/>
-                  <input type="button" name="next" class="next action-button" value="Next" />
+                  <input type="password" name="password" placeholder="Password" id="pass" required/>
+                  <input type="password" name="cpass" placeholder="Confirm Password" id="cpass" required/>
+                  <input type="button" name="next" class="next action-button" value="Next"  id="validate"/>
                 </fieldset>
                 <fieldset>
                 <h2 class="fs-title">Personal Details</h2>

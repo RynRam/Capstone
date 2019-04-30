@@ -59,7 +59,7 @@ class CustomerPaymentController extends Controller
 
         $result = $payment->execute($execution, $apiContext);
         
-        return response()->redirectTo('receipt');
+        return response()->redirectTo('receipt')->with('alert','Thank you!');
        
  
     }

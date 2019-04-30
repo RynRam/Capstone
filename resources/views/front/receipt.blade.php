@@ -1,6 +1,11 @@
 @extends('layouts.frontLayout.front_custom1')
 @section('content')
 @include('front.partials.accountStyle')
+<script>
+@if (session('alert'))
+    swal("{{ session('alert') }}");
+@endif
+</script>
 <main id="main">
   	  <section id="form">
         <div class="container">

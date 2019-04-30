@@ -187,6 +187,18 @@
   // 	return false;
   // });
 </script>
+<script>
+ $("#validate").click(function(){
+  var pass = $('#pass').val();
+  var cpass = $('#cpass').val();
+    if(pass == cpass){
+      return true;
+    }
+    else{
+      swal('Confirm password must be same to your password!', '', 'error');
+    }
+  });
+</script>
 <!-- /form -->
 </body>
 </html>
