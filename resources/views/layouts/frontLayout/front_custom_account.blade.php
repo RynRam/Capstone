@@ -196,6 +196,7 @@
     }
     else{
       swal('Confirm password must be same to your password!', '', 'error');
+      return false;
     }
   });
 </script>
