@@ -198,7 +198,7 @@
        correct = false;
     }
     if(correct){
-      $('#validate').click();
+      $('.next').click();
     }
   });
 </script>

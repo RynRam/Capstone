@@ -3,6 +3,7 @@
 @include('front.partials.accountStyle')
 
 
+
 <main id="main">
   	  <section id="form">
         <div class="container">
@@ -11,9 +12,7 @@
             
           </header>         
             <form id="msform" role="form" >
-            @if (session('alert'))
-    {{ session('alert') }}
-    @endif
+
                 <fieldset>
                   <h2 class="fs-title">Official Receipt</h2>
                 
@@ -48,8 +47,12 @@
 	    </section><!-- #form -->
 
   </main>
-
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+@if (session('alert'))
+    swal("{{ session('alert') }}","","info");
+@endif
+</script>
 
 
 

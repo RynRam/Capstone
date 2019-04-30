@@ -26,7 +26,7 @@
                   <input type="email" name="email" placeholder="Email" required/>
                   <input type="password" name="password" placeholder="Password" id="pass" required/>
                   <input type="password" name="cpass" placeholder="Confirm Password" id="cpass" required/>
-                  <input type="button" name="next" class="next action-button" value="Next"  id="validate"/>
+                  <input type="button" name="next" class="action-button" value="Next"  id="validate"/>
                 </fieldset>
                 <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
