@@ -121,7 +121,7 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Help & Support</h4>
             <ul>
-              <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com">Home</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/privacy&policy">Privacy Policy</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/#about">About us</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="https://lynagailscaters.herokuapp.com/terms&condition">Terms & Conditions</a></li>
