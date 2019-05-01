@@ -74,7 +74,7 @@ class AdminController extends Controller
         $reservationsCount = Reservations::where('is_approved',1)->count();
         $todaydate = date("Y-m-d");
         // // return $todaydate;
-        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',0)->count();
+        $reservationsIncoming = Reservations::whereDate('eventdate', '>=', $todaydate)->where('is_approved',1)->count();
         $post = Contents::where('is_active', 1)->count();
         // // return  $reservationsCount;
         $usersCount = User::count();
