@@ -110,6 +110,7 @@
   var left, opacity, scale; //fieldset properties which we will animate
   var animating; //flag to prevent quick multi-click glitches
 
+function testing(){
   $(".next").click(function eventclick(){
     if(animating) return false;
     animating = true;
@@ -147,6 +148,7 @@
       easing: 'easeInOutBack'
     });
   });
+}
 
   $(".previous").click(function(){
     if(animating) return false;
@@ -198,11 +200,7 @@
       e.preventDefault();
     }
     if(correct){
- 
-      var element = document.getElementById("validate");
-      element.classList.add("next");
-      return correct;
-
+      testing();
 
     }
   });
