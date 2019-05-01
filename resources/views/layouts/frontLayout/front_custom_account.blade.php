@@ -200,7 +200,7 @@
     if(correct){
  
       var element = document.getElementById("validate");
-      element.classList.add(" next");
+      element.classList.add("next");
 
     }
   });
