@@ -85,7 +85,7 @@
     <!-- credits to chilli con code -->
 <style type="text/css">
     #featured-services .colour-block {
-      background:#369A7E;
+      background:#6e1414;
       width:100%;
       padding:7% 10% 10% 10%;
       color:#fff;
@@ -100,13 +100,13 @@
     #featured-services .scallop-down{
       height:35px;
       width:100%;
-      background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#369A7E), color-stop(0.49, #369A7E), color-stop(0.51, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
+      background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#6e1414), color-stop(0.49, #6e1414), color-stop(0.51, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
     -webkit-background-size: 49px 100%;
     }
     #featured-services .scallop-up{
       height:35px;
       width:100%;
-      background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, from(#369A7E), color-stop(0.49, #369A7E), color-stop(0.51, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
+      background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, from(#6e1414), color-stop(0.49, #6e1414), color-stop(0.51, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
     -webkit-background-size: 49px 100%;
     }
     </style>
@@ -195,9 +195,9 @@
     </section><!-- #services -->
 <!-- skill section -->
     <section id="skills">
-    <header class="section-header">
-          <h3 style="color:#fff;">Why Us</h3>
-    <img src="../../images/frontend_images/why_us_final.png" alt="" width="100%">
+    <header class="section-header" style="text-align:center;">
+          <h3 >Why Us</h3>
+    <img src="https://s3-ap-southeast-1.amazonaws.com/lynagails-caters/uploads/why.png" alt="" width="80%">
    
     </section>
     <!-- about section -->

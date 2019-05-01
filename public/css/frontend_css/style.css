@@ -646,7 +646,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-col {
-  background: #e5e5e5;
+  background: #6e1414;
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
@@ -685,7 +685,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 #about .about-col h2 {
-  color: #000;
+  color: #fff;
   text-align: center;
   font-weight: 700;
   font-size: 20px;
@@ -694,7 +694,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-col h2 a {
-  color: #000;
+  color: #fff;
 }
 
 
@@ -702,9 +702,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col p {
   font-size: 14px;
   line-height: 24px;
-  color: #333;
+  color: #fff;
   margin-bottom: 0;
   padding: 0 20px 20px 20px;
+  text-align:justify;
 }
 
 /* Services Section
@@ -796,7 +797,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .services-item .services-info {
-  background: #e5e5e5;
+  background: #6e1414;
   text-align: center;
   padding: 30px;
   height: 90px;
@@ -812,7 +813,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .services-item .services-info h4 a {
-  color: #333;
+  color: #fff;
 }
 
 #services .services-item .services-info h4 a:hover {
@@ -889,9 +890,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Call To Action Section
 --------------------------------*/
 #skills {
-  padding: 60px 0;
-  background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/frontend_images/corporate-768x576.jpg) fixed center center;
-  background-size: cover;
+  padding: 40px 0;
+  /* background: linear-gradient(rgba(21, 2, 2, 0.7), rgba(21, 2, 2, 0.7)), url(../../images/frontend_images/corporate-768x576.jpg) fixed center center;
+  background-size: cover; */
 }
 
 
