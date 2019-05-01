@@ -99,7 +99,8 @@ class AdminCustomerController extends Controller
     $to = Session::get('dates')['to'];
     $pdf = \App::make('dompdf.wrapper');
     $dates = Customer::whereDate('created_at','>=',$from)->whereDate('created_at','<=',$to)->get();
-    $pdf->loadView('reports.CustomerReport',compact('from','to','dates'));
+    $pdf->loadView('reports.CustomerReport',compact('from','to','dates'))->setPaper('a4', 'landscape');
+
     return $pdf->stream();
     }
 }
