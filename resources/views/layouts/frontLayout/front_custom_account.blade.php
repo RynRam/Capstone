@@ -201,6 +201,7 @@
  
       var element = document.getElementById("validate");
       element.classList.add("next");
+      return correct;
 
     }
   });
