@@ -15,6 +15,25 @@
 	.section-header h3{
 		color:#fff;
 	}
+	
+	#about .about-col {
+		background: #18d26e;
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+		margin-bottom: 20px;
+	}
+	#about .about-col h2 {
+  color: #000;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 0;
+  margin: 40px 0 12px 0;
+}
+
+#about .about-col h2 a {
+  color: #000;
+}
  </style>
   <main id="main">
 <!-- about section -->
