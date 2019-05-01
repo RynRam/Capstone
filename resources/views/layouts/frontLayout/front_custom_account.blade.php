@@ -189,20 +189,20 @@
 </script>
 <script>
  $("#validate").click(function(e){
-  e.preventDefault();
+
   var pass = $('#pass').val();
   var cpass = $('#cpass').val();
   var correct = true;
     if(cpass !== pass){
       swal('Confirm password must be same to your password!', '', 'error');
-       correct = false;
+      e.preventDefault();
     }
     if(correct){
  
       var element = document.getElementById("validate");
       element.classList.add("next");
       return correct;
-      eventclick();
+
 
     }
   });
