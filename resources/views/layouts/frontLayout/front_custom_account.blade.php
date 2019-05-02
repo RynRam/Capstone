@@ -195,33 +195,36 @@
   var email = $('#email').val();
   var correct = true;
   
-    if(cpass !== pass && !email){
+    if(!pass){
+      swal('Password cannot be null', '', 'error');
+       correct = false;
+    }
+    else if(cpass !== pass && !email){
       swal('Confirm password must be same to your password and input is not null or invalid!', 'ex.johndoe@gmail.com', 'error');
        correct = false;
     }else if(cpass !== pass){
       swal('Confirm password must be same to your password and input is not null or invalid!', '', 'error');
        correct = false;
     }else if(!email){
-      swal('Input valid email!', '', 'error');
+      swal('Please input valid email and not null!', '', 'error');
        correct = false;
     }else{
-      Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this but still not submitted yet!",
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes!'
-        }).then((result) => {
-          if (result.value) {
-            Swal.fire(
-              '',
-              '',
-              'success'
-            )
-          }
-        })
+        swal({
+            title: "Are you sure?",
+            text: "You won't be able to revert this but still not submitted yet!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Yey! You finished your account profile next is personal. Please answer :)", {
+                icon: "success",
+              });
+            } else {
+              correct = true;
+            }
+          });
     }
 
 
