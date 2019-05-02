@@ -194,19 +194,18 @@
   var cpass = $('#cpass').val();
   var email = $('#email').val();
   var correct = true;
-  
-    if(!pass){
+
+    if(!email){
+      swal('Please input valid email and not null!', '', 'error');
+       correct = false;
+    }else if(!pass){
       swal('Password cannot be null', '', 'error');
        correct = false;
-    }
-    else if(cpass !== pass && !email){
+    }else if(cpass !== pass && !email){
       swal('Confirm password must be same to your password and input is not null or invalid!', 'ex.johndoe@gmail.com', 'error');
        correct = false;
     }else if(cpass !== pass){
       swal('Confirm password must be same to your password and input is not null or invalid!', '', 'error');
-       correct = false;
-    }else if(!email){
-      swal('Please input valid email and not null!', '', 'error');
        correct = false;
     }else{
         swal({
