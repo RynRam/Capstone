@@ -192,11 +192,40 @@
   e.preventDefault();
   var pass = $('#pass').val();
   var cpass = $('#cpass').val();
+  var email = $('#email').val();
   var correct = true;
-    if(cpass !== pass){
-      swal('Confirm password must be same to your password!', '', 'error');
+  
+    if(cpass !== pass && !email){
+      swal('Confirm password must be same to your password and input is not null or invalid!', 'ex.johndoe@gmail.com', 'error');
        correct = false;
+    }else if(cpass !== pass){
+      swal('Confirm password must be same to your password and input is not null or invalid!', '', 'error');
+       correct = false;
+    }else if(!email){
+      swal('Input valid email!', '', 'error');
+       correct = false;
+    }else{
+      Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this but still not submitted yet!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes!'
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire(
+              '',
+              '',
+              'success'
+            )
+          }
+        })
+        }
     }
+
+
     if(correct){
       
       var element = document.getElementById("validate");
@@ -215,7 +244,7 @@
         
         //activate next step on progressbar using the index of next_fs
         $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-        
+
         //show the next fieldset
         next_fs.show(); 
         //hide the current fieldset with style
@@ -244,8 +273,7 @@
         });
       });
 
-
-    }
+  
   });
 </script>
 <!-- /form -->

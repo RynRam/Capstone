@@ -23,7 +23,7 @@
                 <fieldset>
                   <h2 class="fs-title">Create your account</h2>
                   <h3 class="fs-subtitle">Use valid accounts</h3>
-                  <input type="email" name="email" placeholder="Email" required/>
+                  <input type="email" name="email" placeholder="Email (ex.johndoe@yahoo.com)"  id="email" required/>
                   <input type="password" name="password" placeholder="Password" id="pass" required/>
                   <input type="password" name="cpass" placeholder="Confirm Password" id="cpass" required/>
                   <input type="button" name="next" class="action-button" value="Next"  id="validate"/>
@@ -35,7 +35,6 @@
                   <input type="text" name="lname" placeholder="Last Name" pattern="^[a-zA-Z ]*$" required />
                   <input type="text" name="contact" placeholder="Phone" required />
                   <textarea name="address" placeholder="Address" required></textarea>
-                  <input type="button" name="previous" class="previous action-button" value="Previous" />
                   <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>
                 <fieldset>
