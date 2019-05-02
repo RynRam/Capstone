@@ -211,22 +211,7 @@
       var element = document.getElementById("validate");
       element.classList.add("next");
     }
-    swal({
-            title: "Are you sure?",
-            text: "You won't be able to revert this but still not submitted yet!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              swal("Yey! You finished your account profile next is personal. Please answer :)", {
-                icon: "success",
-              });
-            } else {
-              correct = false;
-            }
-          });
+
 
     if(correct){
      

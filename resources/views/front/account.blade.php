@@ -35,6 +35,7 @@
                   <input type="text" name="lname" placeholder="Last Name" pattern="^[a-zA-Z ]*$" required />
                   <input type="text" name="contact" placeholder="Phone" required />
                   <textarea name="address" placeholder="Address" required></textarea>
+                  <input type="button" name="previous" class="previous action-button" value="Previous" />
                   <input type="button" name="next" class="next action-button" value="Next" />
                 </fieldset>
                 <fieldset>
