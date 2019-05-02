@@ -208,7 +208,10 @@
       swal('Confirm password must be same to your password and input is not null or invalid!', '', 'error');
        correct = false;
     }else{
-        swal({
+      var element = document.getElementById("validate");
+      element.classList.add("next");
+    }
+    swal({
             title: "Are you sure?",
             text: "You won't be able to revert this but still not submitted yet!",
             icon: "warning",
@@ -221,16 +224,12 @@
                 icon: "success",
               });
             } else {
-              correct = true;
+              correct = false;
             }
           });
-    }
-
 
     if(correct){
-      
-      var element = document.getElementById("validate");
-      element.classList.add("next");
+     
 
   //jQuery time
   var current_fs, next_fs, previous_fs; //fieldsets
