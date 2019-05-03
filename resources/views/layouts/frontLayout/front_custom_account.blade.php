@@ -196,16 +196,16 @@
   var correct = true;
 
     if(!email){
-      swal('Please input valid email and not null!', '', 'error');
+      swal('Please input valid email and not empty!', '', 'error');
        correct = false;
     }else if(!pass){
-      swal('Password cannot be null', '', 'error');
+      swal('Password cannot be empty', '', 'error');
        correct = false;
     }else if(cpass !== pass && !email){
-      swal('Confirm password must be same to your password and input is not null or invalid!', 'ex.johndoe@gmail.com', 'error');
+      swal('Confirm password must be same to your password and input is not empty or invalid!', 'ex.johndoe@gmail.com', 'error');
        correct = false;
     }else if(cpass !== pass){
-      swal('Confirm password must be same to your password and input is not null or invalid!', '', 'error');
+      swal('Confirm password must be same to your password and input is not empty or invalid!', '', 'error');
        correct = false;
     }else{
       var element = document.getElementById("validate");

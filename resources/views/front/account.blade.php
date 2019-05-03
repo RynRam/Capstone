@@ -11,13 +11,14 @@
           </header>
 
          
-            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form"  onsubmit="if(document.getElementById('agree').checked) {   swal('Thank you!', '', 'success');  return true; } else { swal('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy', '', 'info'); return false; }" >
+            <form id="msform"  action="{{action('CustomerRegisterController@store')}}" method="post" role="form"  onsubmit="if(document.getElementById('agree').checked) {   swal('Thank you! We sent you an email verification please check your inbox', '', 'success');  return true; } else { swal('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy', '', 'info'); return false; }" >
 	 {{csrf_field()}}
                 <!-- progressbar -->
                 <ul id="progressbar">
                   <li class="active">Account Setup</li>
-                  <li>Social Profiles</li>
                   <li>Personal Details</li>
+                  <li>Social Profiles</li>
+
                 </ul>
                 <!-- fieldsets -->
                 <fieldset>
