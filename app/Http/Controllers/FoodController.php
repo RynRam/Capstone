@@ -148,58 +148,7 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {   
-         $food = Packages::find($id);
-
-        
-        if($request->hasFile('file')){
-                $file = $request->file('file');
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('uploads', $filename, 's3');
-        // $destinationPath = public_path('/images');
-        // $file->move($destinationPath, $filename);
-                //audits
-                $old_data = array(
-                    "name" =>  $food->name,
-                    "inclusion" => $food->inclusion,
-                    "price" => $food->price,
-                    "category" => $food->category,
-                    "file" => $food->file
-                    );
-                $data = array(
-                    "name" =>  $request->name,
-                    "inclusion" => $request->inclusion,
-                    "price" => $request->price,
-                    "category" => $request->category,
-                    "file" => $filename
-            
-                    );
-                $audits = new Audits; 
-                $audits->user = Auth::user()->name;
-                $audits->event = 'updated';
-                $audits->audit_type = 'Package';
-                $audits->new_values =  $data;
-                $audits->old_values =  $old_data;
-                $audits->save();
-                //audits
-        $request->file->storeAs('public/upload',$filename);
-            $this->validate($request,[
-            'name' => 'required',
-            'inclusion' => 'required',
-            'price' => 'required|numeric',
-            'category' => 'required',
-            'file' => 'required',
-        ]);
-        $food->name = $request->name;
-        $food->inclusion = $request->inclusion;
-        $food->price = intval($request->price);
-        $food->event_categories_id = $request->category;
-        $food->file = $filename;
-        $food->save();
-
-        
-        return response()->redirectTo('admin/food');      
-               
-        }else{
+              
        $food = Packages::find($id);
            //audits
            $old_data = array(
@@ -238,7 +187,7 @@ class FoodController extends Controller
         $food->save();
         
          return response()->redirectTo('/admin/food');
-        }
+        
     }
 
 

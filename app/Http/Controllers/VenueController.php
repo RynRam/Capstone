@@ -77,7 +77,7 @@ class VenueController extends Controller
 
         $file->name = $request->name;
         $file->address = $request->address;
-        $file->contact = intval($request->contact);
+        $file->contact = $request->contact;
         $file->contact_person = $request->contact_person;
         $file->price = intval($request->price);
         $file->file = $filename;
@@ -115,7 +115,7 @@ class VenueController extends Controller
 
             $file->name = $request->name;
             $file->address = $request->address;
-            $file->contact = intval($request->contact);
+            $file->contact = $request->contact;
             $file->contact_person = $request->contact_person;
             $file->capacity =  intval($request->capacity);
             $file->price =  intval($request->price);
