@@ -62,7 +62,7 @@ class FoodController extends Controller
     public function store(Request $request)
     {     
            $this->validate($request,[
-            'name' => 'required|unique:packages',
+            'name' => 'required',
             'inclusion' => 'required',
             'price' => 'required|numeric',
             'category' => 'required',
