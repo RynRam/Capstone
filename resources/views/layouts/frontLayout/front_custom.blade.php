@@ -299,7 +299,7 @@ $(function(){
 </script>
 
 <!-- show price -->
-   
+
 <script>
 $(function(){
   $('#msform').submit(function(e) {
@@ -309,11 +309,13 @@ $(function(){
     if(document.getElementById('agree').checked){
       if (venue < pax) {
         swal("The pax exceeds the venue limit", "", "error");
-        return false;
+     return false;
       }else if(pax < 20 ) {
-        swal("The minimum pax is 20 for any event", "", "error");
-        return false;
-      }else{
+     swal("The minimum pax is 20 for any event", "", "error");
+     return false;
+   }
+    }
+    else{
       swal("Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy", "", "warning");
       console.log(venue);
      return false;
