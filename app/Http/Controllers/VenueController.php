@@ -167,10 +167,10 @@ class VenueController extends Controller
                 $request->file->storeAs('uploads', $filename, 's3');
                 // $destinationPath = public_path('/images');
                 // $file->move($destinationPath, $filename);
-   
+                $file = Venues::find($id);
                      //audits
                      $old_data = array(
-                        "name" =>  "nice",
+                        "name" =>  $file->name,
                         "address" => $file->address,
                         "contact_person" => $file->contact_person,
                         "contact" => $file->contact,
