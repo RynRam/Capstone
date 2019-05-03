@@ -170,7 +170,7 @@ class VenueController extends Controller
    
                      //audits
                      $old_data = array(
-                        "name" =>  $file->name,
+                        "name" =>  "nice",
                         "address" => $file->address,
                         "contact_person" => $file->contact_person,
                         "contact" => $file->contact,
