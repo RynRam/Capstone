@@ -36,10 +36,7 @@
 		    <label for="capacity">Capacity:</label>
 		    <input type="number" class="form-control" name="capacity" id="capacity" value="{{$files->capacity}}">
 		  </div>
-  		  <div class="form-group">
-		    <label for="file">Upload Image:</label>
-		    <input type="file" class="form-control" name="file" id="file" value="{{$files->file}}">
-		  </div>
+
 		  <input type="submit" value="submit" class="btn btn-success form-control" style="margin-top: 17px;">
 		</form>
       </div>
