@@ -124,56 +124,7 @@ class CMSController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-         if($request->hasFile('file')){
-        $file = $request->file('file');
-        $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('uploads', $filename, 's3');
-        // $destinationPath = public_path('/images');
-        // $file->move($destinationPath, $filename);
-        $posts = Contents::find($id);
-
-            //audits
-            $old_data = array(
-                "title" =>  $posts->title,
-                "info" => $posts->info,
-                "author" =>  $posts->author,
-                "file" => $posts->file
-        
-                );
-            $data = array(
-                "title" =>  $request->title,
-                "info" => $request->info,
-                "author" =>  $request->author,
-                "file" => $request->filename
-        
-                );
-            $audits = new Audits; 
-            $audits->user = Auth::user()->name;
-            $audits->event = 'updated';
-            $audits->audit_type = 'Post';
-            $audits->new_values =  $data;
-            $audits->old_values =  $old_data;
-            $audits->save();
-                //audits
-
-        $posts = Contents::find($id);
-        $this->validate($request,[
-            'title' => 'required',
-            'info' => 'required',
-            'author' => 'required', 
-          
-        ]);
-
-        $posts->title = $request->title;
-        $posts->info = $request->info;
-        $posts->author = $request->author;
-        $posts->file = $filename;
-
-        $posts->save();
-
-        return response()->redirectTo('/admin/post');
-        }else{
+ 
          $posts = Contents::find($id);
 
         //audits
@@ -215,7 +166,7 @@ class CMSController extends Controller
         $posts->save();
 
         return response()->redirectTo('/admin/post');
-        }
+ 
     }
 
     /**

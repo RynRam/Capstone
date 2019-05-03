@@ -23,10 +23,6 @@
               <input type="text" class="span12 block" name="title" placeholder="Enter Title ..." value="{{$posts->title}}">
               <input type="text" class="span12 block" name="author" placeholder="Enter Author Name ..." value="{{$posts->author}}" required>
               <textarea class="span12" rows="6"  name="info" placeholder="Enter Text ...">{{$posts->info}}</textarea>
-             <div class="form-group">
-              <label for="file">Upload Image:</label>
-              <input type="file" class="form-control" name="file" id="file" value="{{$posts->file}}">
-              </div>
             	<div class="form-group ">
 	            <label for="role" class="col-md-4 control-label">Availability</label>
 	                <select name="active" class="form-control" style="width: 17%" >

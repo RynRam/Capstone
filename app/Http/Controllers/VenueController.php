@@ -190,7 +190,7 @@ class VenueController extends Controller
                 $audits->save();
                             //audits
             $this->validate($request,[
-            'name' => 'required|unique:venues',
+            'name' => 'required',
             'address' => 'required',
             'contact' => 'required',
             'contact_person' => 'required',
