@@ -10,8 +10,6 @@
     ul li i{
     color: #fff !important;
     font-weight: 500;
-    font-family: -webkit-pictograph !important;
-    list-style: none;
     font-size: 18px !important;
   }
   ul li img{

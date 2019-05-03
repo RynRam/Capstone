@@ -23,16 +23,16 @@
                   Date & Time: <?php date_default_timezone_set('Asia/Manila'); echo date('F j, Y g:i a'); ?><br/>
                    </h3>
                    <div class="text-left">
-                   <b> ID no :</b> <u style="font-size:23px;">{{$reservation->id}} </u><br/>
-                   <b>  Account name :</b> <u style="font-size:23px;">{{$reservation->customer->fname}} {{$reservation->customer->lname}} </u><br/>
-                   <b> Email Account :</b><u style="font-size:23px;"> {{$reservation->customer->email}} </u><br/>
-                   <b> Venue :</b> <u style="font-size:23px;">{{$reservation->venue->name}} </u><br/>
-                   <b> Package :</b> <u style="font-size:23px;">{{$reservation->package->name}} </u><br/>
-                   <b> Event Date :</b> <u style="font-size:23px;">{{$reservation->eventdate}} </u><br/>
-                   <b> Category :</b> <u style="font-size:23px;">{{$reservation->category->name}} </u><br/>
-                   <b> Guest :</b> <u style="font-size:23px;">{{$reservation->guest}} </u><br/>
-                   <b> Total Amount :</b> <u style="font-size:23px;">{{$reservation->total}} </u><br/>
-                   <b> Status :</b> <u style="font-size:23px;">{{$reservation->is_approved == 0 ? 'Pending' : 'Approved'}} </u><br/>
+                   <b> ID no :</b> <u style="font-size:100%;">{{$reservation->id}} </u><br/>
+                   <b>  Account name :</b> <u style="font-size:100%;">{{$reservation->customer->fname}} {{$reservation->customer->lname}} </u><br/>
+                   <b> Email Account :</b><u style="font-size:100%;"> {{$reservation->customer->email}} </u><br/>
+                   <b> Venue :</b> <u style="font-size:100%;">{{$reservation->venue->name}} </u><br/>
+                   <b> Package :</b> <u style="font-size:100%;">{{$reservation->package->name}} </u><br/>
+                   <b> Event Date :</b> <u style="font-size:100%;">{{$reservation->eventdate}} </u><br/>
+                   <b> Category :</b> <u style="font-size:100%;">{{$reservation->category->name}} </u><br/>
+                   <b> Guest :</b> <u style="font-size:100%;">{{$reservation->guest}} </u><br/>
+                   <b> Total Amount :</b> <u style="font-size:100%;">{{$reservation->total}} </u><br/>
+                   <b> Status :</b> <u style="font-size:100%;">{{$reservation->is_approved == 0 ? 'Pending' : 'Approved'}} </u><br/>
                    </div>
                    <a href="/"><input type="button" class="submit action-button" value="Back to home" /></a>
                    <a href="/receipt/report"><input type="button" class="submit action-button" value="Print" /></a>
