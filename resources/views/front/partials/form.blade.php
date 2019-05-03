@@ -63,7 +63,7 @@
             <fieldset> 
             <h2 class="fs-title">Payment</h2>             
             <h3 class="fs-subtitle">Reservation Fee</h3> 
-            <label style="font-size:auto;"><b>Please not we use Philippine peso</b></label>
+            <label style="font-size:auto;"><b>Please note we use Philippine peso</b></label>
             <div class="form-group">
             <label for="venue_price" class="col-form-label">Venue Price:</label>
             <input type="number" class="form-control" id="venue_price" name="venue_price"  readonly> 
