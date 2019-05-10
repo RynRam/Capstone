@@ -112,7 +112,7 @@
               <input type="date" name="to" id="salesto" value="<?php echo date('Y-m-d'); ?>" >
               </div>
                 <div class="form-group text-center">
-                <input type="submit" value="View or Print" class="btn btn-success">
+                <input type="submit" value="View or Print" class="btn btn-success" id="sales">
                 </div>
             </form>
               <!-- /As Date -->

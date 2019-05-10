@@ -112,22 +112,25 @@ $(function(){
 </script>
 
 <!-- show price -->
-<!-- <script>
+<script>
 
 $(function(){
-   $('#showPrice').submit(function(e) {
+   $('#sales').submit(function(e) {
      var from = $('#salesfrom').val();
      var to = $('#salesto').val();
     //  var package = $('#package').val();
    
-    if()
+    if(from > to){
+      swal('Your inputs is invalid!', '', 'info');
+        return false;
+    }
    });
 
  });
  
 
 
-</script> -->
+</script>
 
 
 <script>
@@ -135,6 +138,11 @@ $(function(){
      var from = $('#salesfrom').val();
      var to = $('#salesto').val();
 	 var category = $('#category').val();
+
+   if(from > to){
+      swal('Your inputs is invalid!', '', 'info');
+        return false;
+    }else{
 
 	 var $markup = "";
      var reserved =$.ajax({
@@ -162,7 +170,7 @@ $(function(){
                     $("#tablebody").html($markup);
                 }
             });
-
+    }
 
  });
  
