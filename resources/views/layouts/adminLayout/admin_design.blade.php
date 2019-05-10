@@ -120,12 +120,11 @@ $(function(){
      var from = $('#salesfrom').val();
      var to = $('#salesto').val();
     //  var package = $('#package').val();
-    e.preventDefault();
     if(from > to){
       swal('Your inputs is invalid!', '', 'info');
         return false;
     }else{
-      $('#sales').submit();
+       return true;
     }
    });
 
@@ -141,11 +140,6 @@ $(function(){
      var from = $('#salesfrom').val();
      var to = $('#salesto').val();
 	 var category = $('#category').val();
-
-   if(from > to){
-      swal('Your inputs is invalid!', '', 'info');
-        return false;
-    }else{
 
 	 var $markup = "";
      var reserved =$.ajax({
@@ -173,13 +167,28 @@ $(function(){
                     $("#tablebody").html($markup);
                 }
             });
-    }
+    
 
  });
  
  </script>
 
 
+<script>
+   $('#paymentsales').submit(function(e) {
+     var from = $('#salesfrom').val();
+     var to = $('#salesto').val();
+	 var category = $('#category').val();
+
+   if(from > to){
+      swal('Your inputs is invalid!', '', 'info');
+        return false;
+    }
+      return true;
+
+ });
+ 
+ </script>
 
 </body>
 </html>
