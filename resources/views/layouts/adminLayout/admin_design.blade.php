@@ -116,13 +116,16 @@ $(function(){
 
 $(function(){
    $('#sales').submit(function(e) {
+     
      var from = $('#salesfrom').val();
      var to = $('#salesto').val();
     //  var package = $('#package').val();
-   
+    e.preventDefault();
     if(from > to){
       swal('Your inputs is invalid!', '', 'info');
         return false;
+    }else{
+      $('#sales').submit();
     }
    });
 

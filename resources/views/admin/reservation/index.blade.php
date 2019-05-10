@@ -101,7 +101,7 @@
             </table>
           </div>
                 <!-- As Date -->
-            <form action="{{action('ReservationController@store')}}" method="POST">
+            <form action="{{action('ReservationController@store')}}" method="POST" id="sales">
             {{csrf_field()}}
 
               <div class="form-group text-center" style="margin-top:100px;">
@@ -112,7 +112,7 @@
               <input type="date" name="to" id="salesto" value="<?php echo date('Y-m-d'); ?>" >
               </div>
                 <div class="form-group text-center">
-                <input type="submit" value="View or Print" class="btn btn-success" id="sales">
+                <input type="submit" value="View or Print" class="btn btn-success" >
                 </div>
             </form>
               <!-- /As Date -->
