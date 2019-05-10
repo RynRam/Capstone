@@ -73,7 +73,7 @@ $(function(){
   });
 });
 
-  </script>
+</script>
 <script>
 	$(function() {
 
@@ -110,6 +110,25 @@ $(function(){
 		});
 	});
 </script>
+
+<!-- show price -->
+<!-- <script>
+
+$(function(){
+   $('#showPrice').submit(function(e) {
+     var from = $('#salesfrom').val();
+     var to = $('#salesto').val();
+    //  var package = $('#package').val();
+   
+    if()
+   });
+
+ });
+ 
+
+
+</script> -->
+
 
 <script>
    $('#submit').submit(function(e) {
