@@ -283,7 +283,7 @@
         swal("Date is already reserved", "", "error");
            valid = false; 
           }else{
-            var element = document.getElementById("validate");
+            var element = document.getElementById("showPrice");
             element.classList.add("next");
           }
           
